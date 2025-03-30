@@ -1,0 +1,58 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://ca3nxfrskgtde"]
+
+[ext_resource type="Texture2D" uid="uid://dlkm84fflcm4j" path="res://Assets/Image/Character/Wolves/Gold/Gold_Wolf.png" id="2_o2pmx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhnfu"]
+atlas = ExtResource("2_o2pmx")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxsyx"]
+atlas = ExtResource("2_o2pmx")
+region = Rect2(448, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gv1r"]
+atlas = ExtResource("2_o2pmx")
+region = Rect2(512, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmvci"]
+atlas = ExtResource("2_o2pmx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4fgs"]
+atlas = ExtResource("2_o2pmx")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_314ba"]
+atlas = ExtResource("2_o2pmx")
+region = Rect2(128, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhnfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxsyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gv1r")
+}],
+"loop": false,
+"name": &"Howl",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmvci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4fgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_314ba")
+}],
+"loop": true,
+"name": &"iddle",
+"speed": 5.0
+}]

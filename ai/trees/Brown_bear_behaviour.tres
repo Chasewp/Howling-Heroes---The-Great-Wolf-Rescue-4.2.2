@@ -1,0 +1,31 @@
+[gd_resource type="BehaviorTree" load_steps=7 format=3 uid="uid://btcc6rnco0i0m"]
+
+[ext_resource type="Script" path="res://ai/tasks/choose random movement.gd" id="1_gvn3c"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_awxt4"]
+var/dir/name = &"dir"
+var/dir/type = 3
+var/dir/value = 0.0
+var/dir/hint = 0
+var/dir/hint_string = ""
+
+[sub_resource type="BTAction" id="BTAction_fgu24"]
+script = ExtResource("1_gvn3c")
+range_min_in_dir = 40.0
+range_max_in_dir = 125.0
+position_var = &"pos"
+dir_var = &"dir"
+
+[sub_resource type="BTWait" id="BTWait_k4r3p"]
+duration = 2.0
+
+[sub_resource type="BTSequence" id="BTSequence_je4hl"]
+custom_name = "Random Move Sequence"
+children = [SubResource("BTAction_fgu24"), SubResource("BTWait_k4r3p")]
+
+[sub_resource type="BTSelector" id="BTSelector_m3f60"]
+children = [SubResource("BTSequence_je4hl")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_awxt4")
+root_task = SubResource("BTSelector_m3f60")

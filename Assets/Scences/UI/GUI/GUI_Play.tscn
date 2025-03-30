@@ -1,0 +1,272 @@
+[gd_scene load_steps=19 format=3 uid="uid://c1ph53byo1unb"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/UI/GUI/GUI_Play.gd" id="1_xqce5"]
+[ext_resource type="Texture2D" uid="uid://bdt31qn81emlg" path="res://Assets/Image/Character/Player/Face/Face.png" id="2_5c6aw"]
+[ext_resource type="FontFile" uid="uid://bj1q5gmkmip6u" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="2_68s4u"]
+[ext_resource type="Texture2D" uid="uid://clx4pyp1hdpjb" path="res://Assets/Image/Items/Key/Taiga/pine key.png" id="4_y1y3y"]
+[ext_resource type="Texture2D" uid="uid://bpcb1apxg6611" path="res://Assets/Image/Items/Key/Taiga/Ice key 32x32.png" id="5_fw4fl"]
+[ext_resource type="Texture2D" uid="uid://yoo2gv3vvl7" path="res://Assets/Image/Items/Key/Taiga/Stone_key 32 x 32.png" id="6_5dvk6"]
+[ext_resource type="Texture2D" uid="uid://db4x5gywg2ofu" path="res://Assets/Image/Items/Key/tundra/snowfang_key-removebg-preview.png" id="7_igh0v"]
+[ext_resource type="Texture2D" uid="uid://d3cdp6amnu8p7" path="res://Assets/Image/Items/Key/tundra/frozen_paw_securelock_keyu-removebg-preview.png" id="8_asro1"]
+[ext_resource type="Texture2D" uid="uid://dr10wjqus2n7s" path="res://Assets/Image/Items/Key/Grassland/grass_key.png" id="9_dqrri"]
+[ext_resource type="Texture2D" uid="uid://di8t5kruqfbcp" path="res://Assets/Image/Items/Key/Grassland/Flower_key.png" id="10_oi5vy"]
+[ext_resource type="Texture2D" uid="uid://duytkcr5esu5g" path="res://Assets/Image/Items/Key/Grassland/Ground_Key.png" id="11_2l8vb"]
+[ext_resource type="Texture2D" uid="uid://dq73i31uryqil" path="res://Assets/Image/Items/Key/Dessert/Dessert_Key-removebg-preview.png" id="12_dmpkh"]
+[ext_resource type="Texture2D" uid="uid://crsn2crb72ha" path="res://Assets/Image/Items/Weapon/Player/machete.png" id="13_hxru0"]
+[ext_resource type="FontFile" uid="uid://dmorfn4drgakd" path="res://Assets/Fonts/DisposableDroidBB_bldital.ttf" id="14_qex4s"]
+[ext_resource type="Texture2D" uid="uid://bvkdmf0q41fua" path="res://Assets/Image/Items/Weapon/Player/Brust Garou 976 x 134.png" id="15_awwr7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grsui"]
+bg_color = Color(0, 0.392157, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74kd0"]
+bg_color = Color(0, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_h7bqu"]
+
+[node name="GuiPlay" type="Control"]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xqce5")
+
+[node name="Character_Profile" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.1
+anchor_bottom = 0.178
+offset_bottom = -0.160004
+texture = ExtResource("2_5c6aw")
+expand_mode = 1
+
+[node name="Character_Name" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112
+anchor_right = 0.307
+anchor_bottom = 0.033
+offset_left = -0.360001
+offset_top = 5.0
+offset_right = 0.039978
+offset_bottom = 5.24
+theme_override_fonts/font = ExtResource("2_68s4u")
+theme_override_font_sizes/font_size = 18
+text = "LABEL"
+
+[node name="Health_Bar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112
+anchor_top = 0.049
+anchor_right = 0.307
+anchor_bottom = 0.086
+offset_left = -0.360001
+offset_top = -0.280003
+offset_right = 0.039978
+offset_bottom = 0.079998
+theme_override_fonts/font = ExtResource("2_68s4u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_grsui")
+rounded = true
+
+[node name="Armor_Bar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112
+anchor_top = 0.097
+anchor_right = 0.307
+anchor_bottom = 0.135
+offset_left = -0.360001
+offset_top = 0.159996
+offset_right = 0.039978
+offset_bottom = -0.200005
+theme_override_fonts/font = ExtResource("2_68s4u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_74kd0")
+
+[node name="Biome_Location" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112
+anchor_top = 0.132
+anchor_right = 0.309
+anchor_bottom = 0.165
+offset_left = 2.64
+offset_top = -0.0400085
+offset_right = 0.47998
+offset_bottom = 0.200012
+theme_override_fonts/font = ExtResource("2_68s4u")
+theme_override_font_sizes/font_size = 18
+text = "LABEL
+"
+
+[node name="Keys" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+columns = 9
+
+[node name="Pine_Keys" type="TextureRect" parent="Keys" groups=["pine_key"]]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("4_y1y3y")
+
+[node name="Ice_Key" type="TextureRect" parent="Keys" groups=["ice_key"]]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("5_fw4fl")
+
+[node name="Stone_Key" type="TextureRect" parent="Keys" groups=["stone_key"]]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("6_5dvk6")
+
+[node name="Snow_Fang_Key" type="TextureRect" parent="Keys" groups=["snow_fang_key"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("7_igh0v")
+expand_mode = 1
+
+[node name="Frozen_Paw_SecureLock_Key" type="TextureRect" parent="Keys" groups=["frozen_paw_securelock_key"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("8_asro1")
+expand_mode = 1
+
+[node name="Grass_Key" type="TextureRect" parent="Keys" groups=["grass_key"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_dqrri")
+expand_mode = 1
+
+[node name="Flower_Key" type="TextureRect" parent="Keys" groups=["flower_key"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("10_oi5vy")
+expand_mode = 1
+
+[node name="Ground_Key" type="TextureRect" parent="Keys" groups=["ground_key"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("11_2l8vb")
+expand_mode = 1
+
+[node name="Dessert_Key" type="TextureRect" parent="Keys" groups=["dessert_key"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("12_dmpkh")
+expand_mode = 1
+
+[node name="Weapon_Switcher" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.175
+offset_left = 960.0
+offset_top = 35.0
+offset_right = 1283.0
+offset_bottom = -38.0
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="Machete" type="VBoxContainer" parent="Weapon_Switcher"]
+layout_mode = 2
+theme = SubResource("Theme_h7bqu")
+theme_override_constants/separation = 2
+
+[node name="Machete_background" type="ColorRect" parent="Weapon_Switcher/Machete" groups=["machete"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 51)
+layout_mode = 2
+color = Color(1, 0.74902, 0, 1)
+
+[node name="Machete" type="TextureRect" parent="Weapon_Switcher/Machete/Machete_background" groups=["machete"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 32)
+layout_mode = 2
+offset_top = 4.0
+offset_right = 128.0
+offset_bottom = 36.0
+texture = ExtResource("13_hxru0")
+expand_mode = 1
+
+[node name="LabelMacchete" type="Label" parent="Weapon_Switcher/Machete/Machete_background" groups=["machete"]]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.102
+anchor_top = 0.627
+anchor_right = 0.859
+anchor_bottom = 1.0
+offset_left = -0.0560007
+offset_top = -2.977
+offset_right = 0.0479965
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.168627, 0.168627, 0.168627, 1)
+theme_override_colors/font_outline_color = Color(0, 0.92549, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("14_qex4s")
+theme_override_font_sizes/font_size = 20
+text = "Activated"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Burst_garou" type="VBoxContainer" parent="Weapon_Switcher"]
+layout_mode = 2
+theme = SubResource("Theme_h7bqu")
+theme_override_constants/separation = 2
+
+[node name="Burst-Garou_background" type="ColorRect" parent="Weapon_Switcher/Burst_garou" groups=["burstgarou"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 51)
+layout_mode = 2
+color = Color(0.227451, 0.227451, 0.227451, 1)
+
+[node name="Brust_Garou" type="TextureRect" parent="Weapon_Switcher/Burst_garou/Burst-Garou_background" groups=["burstgarou"]]
+unique_name_in_owner = true
+modulate = Color(0.345098, 0.345098, 0.345098, 1)
+custom_minimum_size = Vector2(128, 32)
+layout_mode = 2
+offset_top = 4.0
+offset_right = 128.0
+offset_bottom = 36.0
+texture = ExtResource("15_awwr7")
+expand_mode = 1
+
+[node name="Labelbusrstgarou" type="Label" parent="Weapon_Switcher/Burst_garou/Burst-Garou_background" groups=["burstgarou"]]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.078
+anchor_top = 0.608
+anchor_right = 0.836
+anchor_bottom = 1.003
+offset_left = 0.0159998
+offset_top = -2.008
+offset_right = 0.0159988
+offset_bottom = -0.0210037
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.168627, 0.168627, 0.168627, 1)
+theme_override_colors/font_outline_color = Color(0, 0.92549, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("14_qex4s")
+theme_override_font_sizes/font_size = 20
+text = "Deactived"
+horizontal_alignment = 1
+vertical_alignment = 1

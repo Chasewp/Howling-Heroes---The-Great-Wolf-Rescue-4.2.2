@@ -1,0 +1,255 @@
+[gd_resource type="SpriteFrames" load_steps=61 format=3 uid="uid://c3fw3fyilfg7d"]
+
+[ext_resource type="Texture2D" uid="uid://xc4i48eykmgo" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_00_delay-0.05s.png" id="1_1ld2l"]
+[ext_resource type="Texture2D" uid="uid://dwc7m2q7n7kt5" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_00_delay-0.05s.png" id="1_mulrh"]
+[ext_resource type="Texture2D" uid="uid://bod4so7g8c6le" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_01_delay-0.05s.png" id="2_0bkui"]
+[ext_resource type="Texture2D" uid="uid://bsxj0cjvaw6ld" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_01_delay-0.05s.png" id="2_jfw56"]
+[ext_resource type="Texture2D" uid="uid://bioe7w4wdaxgt" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_02_delay-0.05s.png" id="3_84rhv"]
+[ext_resource type="Texture2D" uid="uid://sakmfdv8hm77" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_02_delay-0.05s.png" id="3_nlmda"]
+[ext_resource type="Texture2D" uid="uid://dww851iddk8s1" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_03_delay-0.05s.png" id="4_g4eiw"]
+[ext_resource type="Texture2D" uid="uid://dthkukqm04afh" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_03_delay-0.05s.png" id="4_s0smy"]
+[ext_resource type="Texture2D" uid="uid://cn26458owtw7i" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_04_delay-0.05s.png" id="5_0dco3"]
+[ext_resource type="Texture2D" uid="uid://buvhtngfiuu6n" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_04_delay-0.05s.png" id="5_tkyoa"]
+[ext_resource type="Texture2D" uid="uid://cyvggkwc2uxap" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_05_delay-0.05s.png" id="6_if1sl"]
+[ext_resource type="Texture2D" uid="uid://bjlv2d7j5olmx" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_05_delay-0.05s.png" id="6_ikhe4"]
+[ext_resource type="Texture2D" uid="uid://caqcrnq60l5pk" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_06_delay-0.05s.png" id="7_ixm4n"]
+[ext_resource type="Texture2D" uid="uid://cvw15vuudte5v" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_06_delay-0.05s.png" id="7_yhe3c"]
+[ext_resource type="Texture2D" uid="uid://dw1s71hqosk6j" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_07_delay-0.05s.png" id="8_vmo3w"]
+[ext_resource type="Texture2D" uid="uid://qod6e4dt6soo" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_07_delay-0.05s.png" id="8_y5pbe"]
+[ext_resource type="Texture2D" uid="uid://clyhnkcnufhww" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_08_delay-0.05s.png" id="9_pfu66"]
+[ext_resource type="Texture2D" uid="uid://b4qvvar3wcf2k" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_08_delay-0.05s.png" id="9_xwvcl"]
+[ext_resource type="Texture2D" uid="uid://if5x50n2eol" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_09_delay-0.05s.png" id="10_drnjk"]
+[ext_resource type="Texture2D" uid="uid://csxtr7vxpbyk6" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_09_delay-0.05s.png" id="10_owpul"]
+[ext_resource type="Texture2D" uid="uid://bcc72aq8vhneo" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_10_delay-0.05s.png" id="11_2gnm7"]
+[ext_resource type="Texture2D" uid="uid://b0xxbibnokrnv" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_10_delay-0.05s.png" id="11_x3v07"]
+[ext_resource type="Texture2D" uid="uid://b5ppfvfosoalb" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_11_delay-0.05s.png" id="12_ipwdh"]
+[ext_resource type="Texture2D" uid="uid://r65p2lrql02q" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_11_delay-0.05s.png" id="12_wa5yq"]
+[ext_resource type="Texture2D" uid="uid://bu83qyo2q28po" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_12_delay-0.05s.png" id="13_oehi7"]
+[ext_resource type="Texture2D" uid="uid://diwbm4hcnnibl" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_12_delay-0.05s.png" id="13_ubcj5"]
+[ext_resource type="Texture2D" uid="uid://dnvjddi1advj7" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_13_delay-0.05s.png" id="14_1j868"]
+[ext_resource type="Texture2D" uid="uid://c32lseiftrfo6" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_13_delay-0.05s.png" id="14_riwba"]
+[ext_resource type="Texture2D" uid="uid://nw832exixxpk" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_14_delay-0.05s.png" id="15_dcgxj"]
+[ext_resource type="Texture2D" uid="uid://duewmw6k0hfo8" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_14_delay-0.05s.png" id="15_is4ym"]
+[ext_resource type="Texture2D" uid="uid://bdxtweokt36gn" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_15_delay-0.05s.png" id="16_foq24"]
+[ext_resource type="Texture2D" uid="uid://dbd0b7746g1mq" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_15_delay-0.05s.png" id="16_otf6n"]
+[ext_resource type="Texture2D" uid="uid://7h07sw2yx000" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_16_delay-0.05s.png" id="17_7iio6"]
+[ext_resource type="Texture2D" uid="uid://dplicfapn2vab" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_16_delay-0.05s.png" id="17_l6k30"]
+[ext_resource type="Texture2D" uid="uid://djjhejiq0jb0r" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_17_delay-0.05s.png" id="18_s3gqv"]
+[ext_resource type="Texture2D" uid="uid://8jksnuo354g7" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_17_delay-0.05s.png" id="18_xpwk3"]
+[ext_resource type="Texture2D" uid="uid://cpdm8vd3ojhbp" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_18_delay-0.05s.png" id="19_dv416"]
+[ext_resource type="Texture2D" uid="uid://c2ltj6xtueg15" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_18_delay-0.05s.png" id="19_ivv1j"]
+[ext_resource type="Texture2D" uid="uid://d0fj3pk0hbr6k" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_19_delay-0.05s.png" id="20_ilhdy"]
+[ext_resource type="Texture2D" uid="uid://cbixsm6r46ene" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_19_delay-0.05s.png" id="20_lq4of"]
+[ext_resource type="Texture2D" uid="uid://c444xykqmitmv" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_20_delay-0.05s.png" id="21_37rdy"]
+[ext_resource type="Texture2D" uid="uid://bh3bbbqccqtyy" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_20_delay-0.05s.png" id="21_hk45e"]
+[ext_resource type="Texture2D" uid="uid://hq8w2ixpaarm" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_21_delay-0.05s.png" id="22_ajsio"]
+[ext_resource type="Texture2D" uid="uid://b8ri7lhr8uo2k" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_21_delay-0.05s.png" id="22_l4ekd"]
+[ext_resource type="Texture2D" uid="uid://ds3avrmm8gngg" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_22_delay-0.05s.png" id="23_sugl3"]
+[ext_resource type="Texture2D" uid="uid://k2rny7kjuiih" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_22_delay-0.05s.png" id="23_x6oxq"]
+[ext_resource type="Texture2D" uid="uid://7kr8jed0yktg" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_23_delay-0.05s.png" id="24_75b60"]
+[ext_resource type="Texture2D" uid="uid://b4exft2eoph3u" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_23_delay-0.05s.png" id="24_tvcqg"]
+[ext_resource type="Texture2D" uid="uid://b3unjbp1x0ugr" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_24_delay-0.05s.png" id="25_1mynp"]
+[ext_resource type="Texture2D" uid="uid://c7bms1c1d7epp" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_24_delay-0.05s.png" id="25_qmpgk"]
+[ext_resource type="Texture2D" uid="uid://dk81rbhvtawi6" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_25_delay-0.05s.png" id="26_i4coh"]
+[ext_resource type="Texture2D" uid="uid://cksffj6e6cpmi" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_25_delay-0.05s.png" id="26_mqwr0"]
+[ext_resource type="Texture2D" uid="uid://3rm8cddkvpjo" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_26_delay-0.05s.png" id="27_4mc4k"]
+[ext_resource type="Texture2D" uid="uid://bmid3r4hnpd2m" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_26_delay-0.05s.png" id="27_srb27"]
+[ext_resource type="Texture2D" uid="uid://cetmb7r5pke6m" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_27_delay-0.05s.png" id="28_1310t"]
+[ext_resource type="Texture2D" uid="uid://ekq7fcwl8p75" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_27_delay-0.05s.png" id="28_potpp"]
+[ext_resource type="Texture2D" uid="uid://dpy61ynajdevy" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_28_delay-0.05s.png" id="29_1o6s3"]
+[ext_resource type="Texture2D" uid="uid://cyo2sc2tq6vg4" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_28_delay-0.05s.png" id="29_twl5x"]
+[ext_resource type="Texture2D" uid="uid://b37mc0dtkt78x" path="res://Assets/Image/Items/Wolf Howl Coins/360/frame_29_delay-0.05s.png" id="30_72lhx"]
+[ext_resource type="Texture2D" uid="uid://cimxsuav0uk5t" path="res://Assets/Image/Items/Wolf Howl Coins/Fanish/frame_29_delay-0.05s.png" id="30_xsa4c"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1ld2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jfw56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nlmda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g4eiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0dco3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ikhe4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ixm4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vmo3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xwvcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_owpul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2gnm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ipwdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_oehi7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1j868")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_is4ym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_otf6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_l6k30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_xpwk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_dv416")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_lq4of")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_37rdy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ajsio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_sugl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_tvcqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qmpgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_mqwr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_4mc4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_potpp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_1o6s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_xsa4c")
+}],
+"loop": false,
+"name": &"Fanish",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mulrh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0bkui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_84rhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_s0smy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tkyoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_if1sl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yhe3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y5pbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pfu66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_drnjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_x3v07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wa5yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ubcj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_riwba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dcgxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_foq24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7iio6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_s3gqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ivv1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ilhdy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_hk45e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_l4ekd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_x6oxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_75b60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1mynp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_i4coh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_srb27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_1310t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_twl5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_72lhx")
+}],
+"loop": true,
+"name": &"Flip",
+"speed": 15.0
+}]

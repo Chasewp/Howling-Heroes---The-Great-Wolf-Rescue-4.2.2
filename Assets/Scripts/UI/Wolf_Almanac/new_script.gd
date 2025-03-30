@@ -1,0 +1,1 @@
+extends Wolf_Almanac_Main_Menu_Index

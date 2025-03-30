@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp171x53dlm7n"]
+
+[ext_resource type="Texture2D" uid="uid://dl5eqguayluap" path="res://Assets/Image/Items/Traps/Rock/PNG/canyon_rocks/canyon_rock1.png" id="1_m3gu7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtl5k"]
+size = Vector2(53, 72)
+
+[node name="desert_rock" type="Area2D"]
+collision_layer = 1024
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(2.5, -36)
+shape = SubResource("RectangleShape2D_dtl5k")
+debug_color = Color(0, 0.45098, 0.529412, 0.419608)
+
+[node name="Rock_Dessert_Trap_Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("1_m3gu7")
+centered = false
+offset = Vector2(-55, -159)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

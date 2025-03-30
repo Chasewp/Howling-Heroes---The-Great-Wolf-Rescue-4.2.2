@@ -1,0 +1,218 @@
+[gd_scene load_steps=27 format=3 uid="uid://c7v6u1y4p5djc"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Humanoid/Grassland/Hunter_MKII.gd" id="1_4u5wd"]
+[ext_resource type="Texture2D" uid="uid://dixg1egm733al" path="res://Assets/Image/Enemy/Humanoid/Taiga/Hunter riffle/Hunter-SpriteSheet/MC-Dodge-SpriteSheet.png" id="1_cb8uy"]
+[ext_resource type="Texture2D" uid="uid://c0flt8gtfijt1" path="res://Assets/Image/Enemy/Humanoid/Taiga/Hunter riffle/Hunter-SpriteSheet/MC-Idle-SpriteSheet.png" id="1_hi11s"]
+[ext_resource type="Texture2D" uid="uid://g5ac23wuelal" path="res://Assets/Image/Enemy/Humanoid/Taiga/Hunter riffle/Hunter-SpriteSheet/MC-Running(with Rifle)-SpriteSheet.png" id="1_u73py"]
+[ext_resource type="Texture2D" uid="uid://crmrb1nm8k8gv" path="res://Assets/Image/Enemy/Humanoid/Taiga/Hunter riffle/Hunter-SpriteSheet/MC-hurt-SpriteSheet.png" id="2_1egtv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jo3qo"]
+size = Vector2(150, 125.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o27jw"]
+atlas = ExtResource("1_u73py")
+region = Rect2(0, 0, 38, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c68o2"]
+atlas = ExtResource("1_u73py")
+region = Rect2(38, 0, 38, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mu0c"]
+atlas = ExtResource("1_u73py")
+region = Rect2(76, 0, 38, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvfbp"]
+atlas = ExtResource("1_u73py")
+region = Rect2(114, 0, 38, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4r4b"]
+atlas = ExtResource("1_u73py")
+region = Rect2(152, 0, 38, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xa1tc"]
+atlas = ExtResource("1_u73py")
+region = Rect2(190, 0, 38, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw2x7"]
+atlas = ExtResource("1_u73py")
+region = Rect2(228, 0, 38, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3r7w"]
+atlas = ExtResource("1_cb8uy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rki5p"]
+atlas = ExtResource("1_cb8uy")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vm0sc"]
+atlas = ExtResource("1_cb8uy")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af11v"]
+atlas = ExtResource("2_1egtv")
+region = Rect2(0, 0, 28, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uhiu"]
+atlas = ExtResource("2_1egtv")
+region = Rect2(28, 0, 28, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrru1"]
+atlas = ExtResource("1_hi11s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfkxg"]
+atlas = ExtResource("1_hi11s")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0olc"]
+atlas = ExtResource("1_hi11s")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_142pn"]
+atlas = ExtResource("1_hi11s")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1pgl3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o27jw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c68o2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mu0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvfbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4r4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xa1tc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kw2x7")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3r7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rki5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vm0sc")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_af11v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uhiu")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrru1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfkxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0olc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_142pn")
+}],
+"loop": true,
+"name": &"iddle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j230y"]
+size = Vector2(112, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha823"]
+size = Vector2(39, 50)
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_vot8h"]
+
+[node name="Hunter_MK II" type="CharacterBody2D" groups=["Boss"]]
+collision_layer = 32
+script = ExtResource("1_4u5wd")
+health = 550.0
+armor = 60.0
+jump = 1
+speed = 300.0
+damage = 25.0
+Acceleration = 15.0
+Jump_velocity = -350.0
+AP = true
+APdmg = 7.5
+eficient_Armor = 0.6
+
+[node name="CollisionShapeAwholebody" type="CollisionShape2D" parent="."]
+position = Vector2(4, -64.25)
+shape = SubResource("RectangleShape2D_jo3qo")
+debug_color = Color(0, 0.498039, 0.580392, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -10)
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_1pgl3")
+animation = &"attack"
+frame = 6
+frame_progress = 0.929627
+centered = false
+offset = Vector2(-19, -33)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+root_node = NodePath("../..")
+
+[node name="HitBox" type="Area2D" parent="." groups=["enemy_hurtbox"]]
+position = Vector2(17, -59)
+collision_layer = 128
+collision_mask = 0
+audio_bus_name = &"Sound_Effect"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(5, 0)
+shape = SubResource("RectangleShape2D_j230y")
+debug_color = Color(1, 0.160784, 0.392157, 0.419608)
+metadata/_edit_lock_ = true
+
+[node name="HurtBox" type="Area2D" parent="." groups=["enemy_hurtbox"]]
+position = Vector2(2, -57)
+collision_layer = 64
+collision_mask = 0
+audio_bus_name = &"Sound_Effect"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_ha823")
+debug_color = Color(1, 0.548312, 0.155148, 0.42)
+metadata/_edit_lock_ = true
+
+[node name="Projectile" type="Marker2D" parent="."]
+position = Vector2(78, -62)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(4, -93)
+target_position = Vector2(125, 0)
+
+[node name="BTPlayer" type="BTPlayer" parent="."]
+blackboard_plan = SubResource("BlackboardPlan_vot8h")

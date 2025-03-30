@@ -1,16 +1,16 @@
-res://Assets/Scences/Character/Mustadhyib Al-Rasyid.tscn
-res://Assets/Dialogue/Theme/Speaker_Mode.tres
-res://Assets/Dialogue/Theme/Pixelize_Visual_Novel.tres
-res://Assets/Script/Controller/UI/How to play/How_To_Play.gd
-res://Assets/Script/Controller/UI/Wolf Alamanac/Index/Wolf_Almanac_Idex.gd
-res://Assets/Theme/Player_Name/Player_Name.tres
-res://Assets/Scences/UI/Wolf_Almanac/Book/wolf_almanac.tscn
-res://Assets/Scences/UI/Main_Menu/main_menu.tscn
-res://Assets/Scences/Location/Bridge_Stone_Forest/Bridge_Stone_Forest.tscn
-res://Assets/Scences/UI/Wolf_Almanac/Index/wolf_almanac_idex_page_4.tscn
-res://Assets/Scences/UI/Wolf_Almanac/Index/wolf_almanac_idex_page_5.tscn
-res://Assets/Scences/UI/Game over/Game_Over.tscn
-res://Assets/Scences/UI/Credits/credit.tscn
-res://Assets/Scences/UI/Load_slot/loader_screen.tscn
-res://Assets/Scences/UI/Player_Name.tscn
-res://Assets/Script/Controller/UI/Player_Name/Player_Name.gd
+res://Assets/Scences/UI/Splash_Screen/Splash_1/Splash_1.tscn
+res://demo/ai/trees/01_agent_melee_simple.tres
+res://demo/ai/trees/02_agent_charger.tres
+res://demo/ai/trees/03_agent_imp.tres
+res://demo/ai/trees/04_agent_skirmisher.tres
+res://demo/ai/trees/05_agent_ranged.tres
+res://demo/ai/trees/06_agent_melee_combo.tres
+res://demo/ai/trees/07_agent_melee_nuanced.tres
+res://demo/ai/trees/08_agent_demon.tres
+res://demo/ai/trees/09_agent_summoner.tres
+res://Assets/Scripts/Splash/Splash_1/Splash_Screen_1.gd
+res://Assets/Scences/Stages/Taiga/taiga_a_3.tscn
+res://Assets/Tileset/Tileset_Taiga A1.tres
+res://Assets/Animate/Chacter/NPC/Wolves/Gray_-Wolf/gray_wolf.tres
+res://Assets/Animate/Chacter/Enemy/Animal/brown_bear.tres
+res://Assets/Scences/Character/Enemy/Animals/Taiga/brown_bear.tscn

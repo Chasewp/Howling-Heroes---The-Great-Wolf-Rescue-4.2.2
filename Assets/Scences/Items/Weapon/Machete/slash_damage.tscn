@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://3fimxshrqrjf"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Item/Bullets/Bullets/slash_damage.gd" id="1_80rk7"]
+[ext_resource type="Texture2D" uid="uid://cuue4jblm6bn3" path="res://Assets/Image/Items/Bullets/All_Fire_Bullet_Pixel_16x16_02.png" id="2_3bp7g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af5sp"]
+atlas = ExtResource("2_3bp7g")
+region = Rect2(576, 350, 64, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjobf"]
+atlas = ExtResource("2_3bp7g")
+region = Rect2(608, 144, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5o3ct"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_af5sp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjobf")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_ly7kg"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attack_1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Attack_1:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["default"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ust4y"]
+_data = {
+"default": SubResource("Animation_ly7kg")
+}
+
+[node name="Slash_Damage" type="Area2D"]
+collision_layer = 528
+collision_mask = 65
+script = ExtResource("1_80rk7")
+damage = 12.5
+
+[node name="Attack_1" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1, 2.39)
+sprite_frames = SubResource("SpriteFrames_5o3ct")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ust4y")
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-32.0128, -14.3529)
+polygon = PackedVector2Array(0.0127983, -0.647109, 10.0128, -0.647109, 10.0128, 2.35289, 17.0128, 2.35289, 17.0128, 4.35289, 24.0128, 4.35289, 24.0128, 7.35289, 29.0128, 7.35289, 29.0128, 9.35289, 34.0128, 9.35289, 34.0128, 12.3529, 37.0128, 12.3529, 37.0128, 14.3529, 40.0128, 14.3529, 40.0128, 16.3529, 42.0128, 16.3529, 42.0128, 19.3529, 44.0128, 19.3529, 44.0128, 21.3529, 45.0128, 21.3529, 45.0128, 23.3529, 46.0128, 23.3529, 46.0128, 26.3529, 47.0128, 26.3529, 47.0128, 31.3529, 48.0128, 31.3529, 48.0128, 50.3529, 47.0128, 50.3529, 47.0128, 55.3529, 46.0128, 55.3529, 46.0128, 57.3529, 45.0128, 57.3529, 45.0128, 59.3529, 44.0128, 59.3529, 44.0128, 62.3529, 43.0128, 62.3529, 43.0128, 64.3529, 41.0128, 64.3529, 41.0128, 66.3529, 38.0128, 66.3529, 38.0128, 69.3529, 35.0128, 69.3529, 35.0128, 71.3529, 30.0128, 71.3529, 30.0128, 74.3529, 16.0128, 74.3529, 16.0128, 71.3529, 21.0128, 71.3529, 21.0128, 68.3529, 24.0128, 68.3529, 24.0128, 66.3529, 26.0128, 66.3529, 26.0128, 64.3529, 28.0128, 64.3529, 28.0128, 62.3529, 29.0128, 62.3529, 29.0128, 59.3529, 30.0128, 59.3529, 30.0128, 54.3529, 31.0128, 54.3529, 31.0128, 47.3529, 32.0128, 47.3529, 32.0128, 38.3529, 31.0128, 38.3529, 31.0128, 30.3529, 29.0128, 30.3529, 29.0128, 26.3529, 29.0128, 23.3529, 28.0128, 23.3529, 28.0128, 21.3529, 27.0128, 21.3529, 27.0128, 19.3529, 26.0128, 19.3529, 26.0128, 16.3529, 24.0128, 16.3529, 24.0128, 14.3529, 21.0128, 14.3529, 21.0128, 12.3529, 18.0128, 12.3529, 18.0128, 9.35289, 14.0128, 9.35289, 14.0128, 7.35289, 9.0128, 7.35289, 9.0128, 5.35289, 5.0128, 5.35289, 5.0128, 2.35289, 0.0127983, 2.35289)
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(8, 0)
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

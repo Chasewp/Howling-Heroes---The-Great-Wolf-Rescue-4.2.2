@@ -1,0 +1,201 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2kow5kkphlx6"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/UI/mission_log/Mission_log.gd" id="1_3lxni"]
+[ext_resource type="Texture2D" uid="uid://dd68xqkvqo7lx" path="res://Assets/Image/Background/UI/Mission Log/1x/Asset 3.png" id="1_is4q6"]
+[ext_resource type="Theme" uid="uid://cya18eaoptu42" path="res://Assets/Theme/Player_Name/Player_Name.tres" id="1_ljw8f"]
+[ext_resource type="FontFile" uid="uid://bj1q5gmkmip6u" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="1_ng2ve"]
+[ext_resource type="FontFile" uid="uid://dk1ja3jllfjob" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="4_dgrlg"]
+[ext_resource type="FontFile" uid="uid://c4dpeuiv2xlp4" path="res://Assets/Fonts/DisposableDroidBB_ital.ttf" id="5_ob1tj"]
+
+[node name="Mission" type="Control"]
+layout_mode = 3
+anchor_right = 0.144
+anchor_bottom = 0.3
+offset_right = -0.320007
+offset_bottom = -1.52588e-05
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3lxni")
+wolf_total_taiga = 10
+boss_total_taiga = 10
+enemy_total_taiga = 320
+wolf_total_tundra = 5
+boss_total_tundra = 5
+enemy_total_tundra = 225
+wolf_total_grassland = 8
+boss_total_grassland = 8
+enemy_total_grassland = 384
+wolf_total_dessert = 4
+boss_total_dessert = 4
+enemy_total_dessert = 70
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(184, 216)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.122
+anchor_bottom = 1.317
+offset_right = -22.448
+offset_bottom = -68.472
+texture = ExtResource("1_is4q6")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(164, 164)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.056
+anchor_right = 0.935
+anchor_bottom = 0.907
+offset_left = 8.0
+offset_top = -0.0960007
+offset_right = -0.0400085
+offset_bottom = 0.0879822
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ljw8f")
+theme_override_constants/separation = 8
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Mission_Label_Tittle" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.321569, 0.321569, 0.321569, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_ng2ve")
+text = "MISSION LOG"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Mision 1" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.858824, 0.556863, 0.117647, 1)
+theme_override_colors/font_shadow_color = Color(0.317647, 0.317647, 0.317647, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_dgrlg")
+text = "- TOTAL WOLF RESCUES"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Mission_1_Task" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LBL_WR" type="Label" parent="VBoxContainer/Mission_1_Task"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_ob1tj")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="WR_Slash" type="Label" parent="VBoxContainer/Mission_1_Task"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_ob1tj")
+text = "/"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="TLT_WR" type="Label" parent="VBoxContainer/Mission_1_Task"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_ob1tj")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Mision 2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.858824, 0.556863, 0.117647, 1)
+theme_override_colors/font_shadow_color = Color(0.317647, 0.317647, 0.317647, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_dgrlg")
+text = "- ENEMY EXECUTED"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Mission_2_Task" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LBL_EE" type="Label" parent="VBoxContainer/Mission_2_Task"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_ob1tj")
+text = " 0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="EE_Slash" type="Label" parent="VBoxContainer/Mission_2_Task"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_ob1tj")
+text = "/"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="TLT_EE" type="Label" parent="VBoxContainer/Mission_2_Task"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_ob1tj")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Mision 3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.858824, 0.556863, 0.117647, 1)
+theme_override_colors/font_shadow_color = Color(0.317647, 0.317647, 0.317647, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_dgrlg")
+text = "- BOSSES ELEMINATED"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Mission 3_Task" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LBL_BE" type="Label" parent="VBoxContainer/Mission 3_Task"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_ob1tj")
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="BE_Slash" type="Label" parent="VBoxContainer/Mission 3_Task"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_ob1tj")
+text = "/"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="TLT_BE" type="Label" parent="VBoxContainer/Mission 3_Task"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_ob1tj")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2

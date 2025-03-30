@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmwtv2u6w6mv1"]
+
+[ext_resource type="TileSet" uid="uid://dti7dasx7n1s2" path="res://Assets/Tileset/Biome_Tileset.tres" id="1_x7g35"]
+
+[node name="Tundra-Platfrom" type="StaticBody2D"]
+collision_mask = 3
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_x7g35")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 1048576, 22, 65536, 1048576, 23, 1, 1114112, 22, 65537, 1114112, 23, 2, 1179648, 22, 65538, 1179648, 23, 3, 1245184, 22)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 32, 0, 32, 2, 40, 2, 40, 4, 46, 4, 46, 6, 54, 6, 54, 8, 56, 8, 56, 10, 54, 10, 54, 12, 52, 12, 52, 14, 50, 14, 50, 16, 44, 16, 44, 18, 38, 18, 38, 20, 36, 20, 36, 22, 30, 22, 30, 24, 24, 24, 24, 26, 18, 26, 18, 28, 12, 28, 12, 30, 6, 30, 6, 32, 0, 32)
+one_way_collision = true

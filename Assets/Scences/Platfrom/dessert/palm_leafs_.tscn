@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://df6apmterwiib"]
+
+[ext_resource type="TileSet" uid="uid://dti7dasx7n1s2" path="res://Assets/Tileset/Biome_Tileset.tres" id="1_ra4yt"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7euk5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xq7ft"]
+size = Vector2(122, 22)
+
+[node name="palm_leafs" type="StaticBody2D"]
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_7euk5")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_ra4yt")
+collision_visibility_mode = 1
+format = 2
+layer_0/tile_data = PackedInt32Array(-458758, 65536, 16, -393222, 65536, 17, -524293, 131072, 15, -458757, 131072, 16, -393221, 131072, 17, -327685, 131072, 18, -524292, 196608, 15, -458756, 196608, 16, -393220, 196608, 17, -327684, 196608, 18, -524291, 262144, 15, -458755, 262144, 16, -393219, 262144, 17, -589826, 327680, 14, -524290, 327680, 15, -458754, 327680, 16, -655361, 393216, 13, -589825, 393216, 14, -524289, 393216, 15, -458753, 393216, 16, -720896, 458752, 13, -655360, 458752, 14, -589824, 458752, 15, -524288, 458752, 16, -720895, 524288, 13, -655359, 524288, 14, -589823, 524288, 15, -524287, 524288, 16, -720894, 589824, 13, -655358, 589824, 14, -589822, 589824, 15, -524286, 589824, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-14, -124)
+shape = SubResource("RectangleShape2D_xq7ft")
+one_way_collision = true

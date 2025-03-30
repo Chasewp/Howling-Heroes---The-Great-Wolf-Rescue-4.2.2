@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcgqy35frqjee"]
+
+[ext_resource type="Texture2D" uid="uid://crun4fxtr4p4l" path="res://Assets/Image/Background/Stage/Taiga/pixel art taiga forest parallax background, side scroller, landscape 6k.png" id="1_2128l"]
+[ext_resource type="Shader" path="res://Assets/Shaders/sand_stromdessert.gdshader" id="2_h20y6"]
+
+[sub_resource type="Gradient" id="Gradient_lbd6v"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dnh25"]
+noise_type = 0
+frequency = 0.0343
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_emsdt"]
+width = 1024
+height = 720
+color_ramp = SubResource("Gradient_lbd6v")
+noise = SubResource("FastNoiseLite_dnh25")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5w3gs"]
+shader = ExtResource("2_h20y6")
+shader_parameter/smoke_color = Color(0.670588, 0.670588, 0.670588, 0.0196078)
+shader_parameter/distortion_speed = 0.0
+shader_parameter/radius = 6.0
+shader_parameter/softness = 10.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_emsdt")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mtcht"]
+
+[node name="Taiga_A3" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
+offset_left = 2942.0
+offset_right = 8942.0
+offset_bottom = 720.0
+texture = ExtResource("1_2128l")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_5w3gs")
+anchors_preset = -1
+anchor_right = 1.562
+anchor_bottom = 1.0
+offset_left = 2941.0
+offset_right = 6941.64
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_mtcht")

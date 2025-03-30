@@ -1,0 +1,115 @@
+[gd_scene load_steps=8 format=3 uid="uid://nxesci8m8pft"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Splash/Splash_1/Splash_Screen_1.gd" id="1_5jg83"]
+[ext_resource type="Texture2D" uid="uid://cppda8maktdmg" path="res://Assets/Image/Keyboard and Mouse/—Pngtree—flat wind keyboard mouse vector_5458958.png" id="2_65rb8"]
+[ext_resource type="FontFile" uid="uid://dk1ja3jllfjob" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="2_p3k8t"]
+
+[sub_resource type="Animation" id="Animation_dtfix"]
+resource_name = "Fade_In"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MakeFade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uhsud"]
+resource_name = "Fade_Out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MakeFade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gua5f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MakeFade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lbx1c"]
+_data = {
+"Fade_In": SubResource("Animation_dtfix"),
+"Fade_Out": SubResource("Animation_uhsud"),
+"RESET": SubResource("Animation_gua5f")
+}
+
+[node name="Splash_1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5jg83")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1127, 461)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -563.5
+offset_top = -286.5
+offset_right = 563.5
+offset_bottom = 174.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_65rb8")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -266.0
+offset_top = -119.0
+offset_right = 266.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_p3k8t")
+theme_override_font_sizes/font_size = 40
+text = "Play with a keyboard and mouse"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MakeFade" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lbx1c")
+}

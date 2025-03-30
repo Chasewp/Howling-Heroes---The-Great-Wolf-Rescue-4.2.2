@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cirolways5tkt"
+path="res://.godot/imported/Wolf Howl 22.wav-b8cbe3a0eb86aec562a2bd8e85668edb.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX/Howl/Wolf Howl 22.wav"
+dest_files=["res://.godot/imported/Wolf Howl 22.wav-b8cbe3a0eb86aec562a2bd8e85668edb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

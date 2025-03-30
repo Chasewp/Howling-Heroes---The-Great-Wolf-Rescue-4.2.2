@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca0nm25t6mv6w"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Utilities/Camera/Camera2D.gd" id="1_yg0wk"]
+
+[node name="Camera_Stage" type="Camera2D"]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
+script = ExtResource("1_yg0wk")

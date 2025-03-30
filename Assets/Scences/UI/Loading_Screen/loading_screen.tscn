@@ -1,15 +1,15 @@
 [gd_scene load_steps=8 format=3 uid="uid://cvjvmfot8bet4"]
 
-[ext_resource type="Script" path="res://Assets/Script/Controller/UI/Loading/loading_screen_Menu.gd" id="1_f1x7p"]
-[ext_resource type="Texture2D" uid="uid://bs4ejchvb0yx4" path="res://Assets/Image/Background/Loading_Screen/Firefly Gray Wolf-Howling night fullmoon pixel art 1441.jpeg" id="2_tw8l5"]
-[ext_resource type="FontFile" uid="uid://ccpiomxr4hnwi" path="res://Assets/Fonts/DisposableDroidBB_bldital.ttf" id="3_aayw6"]
+[ext_resource type="Script" path="res://Assets/Scripts/UI/Loading_Screen/Loading_screen_UI_Script.gd" id="1_f1x7p"]
+[ext_resource type="Texture2D" uid="uid://dj2n0fqecucnu" path="res://Assets/Image/Background/UI/Loading_Screen/Firefly Gray Wolf-Howling night fullmoon pixel art 1441.jpeg" id="2_tw8l5"]
+[ext_resource type="FontFile" uid="uid://dmorfn4drgakd" path="res://Assets/Fonts/DisposableDroidBB_bldital.ttf" id="3_aayw6"]
 
 [sub_resource type="Animation" id="Animation_qogmh"]
 length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:position:x")
+tracks/0/path = NodePath("Background:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -35,7 +35,7 @@ length = 1.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:position:x")
+tracks/0/path = NodePath("Background:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -61,7 +61,7 @@ length = 1.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:position:x")
+tracks/0/path = NodePath("Background:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -102,18 +102,18 @@ _data = {
 "start_load": SubResource("Animation_6u8qr")
 }
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="Loading_Screen" type="CanvasLayer"]
 follow_viewport_enabled = true
 script = ExtResource("1_f1x7p")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(1280, 720)
 offset_right = 1280.01
 offset_bottom = 720.0
 texture = ExtResource("2_tw8l5")
 expand_mode = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="TextureRect"]
+[node name="ProgressBar" type="ProgressBar" parent="Background"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05

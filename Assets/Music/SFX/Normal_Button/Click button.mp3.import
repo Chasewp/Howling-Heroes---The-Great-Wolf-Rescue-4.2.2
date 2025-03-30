@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ca2al0w7iqcu"
+path="res://.godot/imported/Click button.mp3-c433fd0cf10d704efa8bc03a8018a44e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/SFX/Normal_Button/Click button.mp3"
+dest_files=["res://.godot/imported/Click button.mp3-c433fd0cf10d704efa8bc03a8018a44e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d17tkqyhykne6"
+path="res://.godot/imported/Would you prefer to skip  Tutorial.wav-32078a2707a5a522186e0883e94834a8.sample"
+
+[deps]
+
+source_file="res://Assets/Music/Dialogues/Narator/Would you prefer to skip  Tutorial.wav"
+dest_files=["res://.godot/imported/Would you prefer to skip  Tutorial.wav-32078a2707a5a522186e0883e94834a8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

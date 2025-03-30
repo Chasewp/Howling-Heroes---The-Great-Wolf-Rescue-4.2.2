@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs6eioajavyjn"]
+
+[ext_resource type="SpriteFrames" uid="uid://dllvsykb0gqsy" path="res://Assets/Scences/Items/Bullets/Arrow/arrow_bullets.tres" id="1_b8kr2"]
+[ext_resource type="Script" path="res://Assets/Scripts/Item/Bullets/Arrow/arrow_bullets.gd" id="1_ddse2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ugc1a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsof1"]
+size = Vector2(22, 2)
+
+[node name="Arrow_bullets" type="RigidBody2D"]
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_ugc1a")
+script = ExtResource("1_ddse2")
+speed = 450.0
+AP_dmg = 5.0
+damage = 20.0
+penetrate = true
+
+[node name="Arroww" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_b8kr2")
+frame = 2
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tsof1")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(5.96046e-08, 0)
+scale = Vector2(1.1, 0.1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

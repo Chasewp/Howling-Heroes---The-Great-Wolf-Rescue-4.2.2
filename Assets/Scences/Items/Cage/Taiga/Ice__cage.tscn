@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://db8xg6m5kfj4a"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Item/Cage/Taiga/Ice_cage.gd" id="1_iwvdk"]
+[ext_resource type="Texture2D" uid="uid://1xldulgeet71" path="res://Assets/Image/Items/Cage/Taiga/Ice Cage.png" id="2_pdps6"]
+[ext_resource type="AudioStream" uid="uid://cxr4gssdh3h2u" path="res://Assets/Music/SFX/Cage/Cage sfx.wav" id="3_toiuf"]
+[ext_resource type="AudioStream" uid="uid://dhcgnrq2i6i07" path="res://Assets/Music/Dialogues/Cage/Access Denied.mp3" id="4_k3a2x"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wlwom"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_la7d7"]
+radius = 67.7661
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pk75u"]
+radius = 60.1041
+
+[node name="Ice__Cage" type="StaticBody2D" node_paths=PackedStringArray("sfx", "access_denied") groups=["Cages"]]
+z_index = 1
+collision_layer = 2048
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_wlwom")
+script = ExtResource("1_iwvdk")
+sfx = NodePath("SFX")
+access_denied = NodePath("Sound")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 1)
+shape = SubResource("CircleShape2D_la7d7")
+debug_color = Color(0.465116, 4.09111e-07, 0.247305, 0.42)
+
+[node name="Ice_Cage_Sprites" type="Sprite2D" parent="."]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_pdps6")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.125, 0.125)
+collision_layer = 2048
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4, -4)
+scale = Vector2(8, 8)
+shape = SubResource("CircleShape2D_pk75u")
+debug_color = Color(2.31028e-06, 0.628235, 0.732545, 0.42)
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_toiuf")
+bus = &"Sound_Effect"
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_k3a2x")
+bus = &"Voice"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

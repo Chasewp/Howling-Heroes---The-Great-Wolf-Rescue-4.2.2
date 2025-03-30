@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=20 format=3 uid="uid://daw7mmp0dwlt0"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_5dqx6"]
+[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_grk5j"]
+[ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="3_f0npa"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_tow1i"]
+[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="5_te1tq"]
+[ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="6_d8fu2"]
+[ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="7_h2vmw"]
+[ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="8_0fnhh"]
+[ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="9_2o5cu"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="10_dpt2q"]
+
+[sub_resource type="Resource" id="Resource_60rs6"]
+script = ExtResource("1_5dqx6")
+overrides = {
+"global_font": "\"res://Assets/Fonts/DisposableDroidBB.ttf\""
+}
+
+[sub_resource type="Resource" id="Resource_m0uct"]
+script = ExtResource("1_5dqx6")
+scene = ExtResource("2_grk5j")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_wusv0"]
+script = ExtResource("1_5dqx6")
+scene = ExtResource("3_f0npa")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_yj0xf"]
+script = ExtResource("1_5dqx6")
+scene = ExtResource("4_tow1i")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_rakkg"]
+script = ExtResource("1_5dqx6")
+scene = ExtResource("5_te1tq")
+overrides = {
+"bold_font": "\"res://Assets/Fonts/DisposableDroidBB_bld.ttf\"",
+"bold_italics_font": "\"res://Assets/Fonts/DisposableDroidBB_bldital.ttf\"",
+"italics_font": "\"res://Assets/Fonts/DisposableDroidBB_ital.ttf\"",
+"next_indicator_size": "Vector2(75, 75)",
+"next_indicator_texture": "\"res://Assets/Image/etc/Dialogue/NEXT_LINE_INDICATOR/7116bae26a854748edad8552e503e776H0f4LoJC35cXIVjD-0.png\""
+}
+
+[sub_resource type="Resource" id="Resource_n7720"]
+script = ExtResource("1_5dqx6")
+scene = ExtResource("6_d8fu2")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_bhc02"]
+script = ExtResource("1_5dqx6")
+scene = ExtResource("7_h2vmw")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_kcihh"]
+script = ExtResource("1_5dqx6")
+scene = ExtResource("8_0fnhh")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_lsplv"]
+script = ExtResource("1_5dqx6")
+scene = ExtResource("9_2o5cu")
+overrides = {}
+
+[resource]
+script = ExtResource("10_dpt2q")
+name = "Pixelize_font"
+layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17"])
+layer_info = {
+"": SubResource("Resource_60rs6"),
+"10": SubResource("Resource_m0uct"),
+"11": SubResource("Resource_wusv0"),
+"12": SubResource("Resource_yj0xf"),
+"13": SubResource("Resource_rakkg"),
+"14": SubResource("Resource_n7720"),
+"15": SubResource("Resource_bhc02"),
+"16": SubResource("Resource_kcihh"),
+"17": SubResource("Resource_lsplv")
+}
+base_overrides = {}
+layers = Array[ExtResource("1_5dqx6")]([])
+metadata/_latest_layer = "10"

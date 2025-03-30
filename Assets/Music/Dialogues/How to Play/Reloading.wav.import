@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c81so4d6x3036"
+path="res://.godot/imported/Reloading.wav-32caabe12f5dba95168b6c7fc00e546b.sample"
+
+[deps]
+
+source_file="res://Assets/Music/Dialogues/How to Play/Reloading.wav"
+dest_files=["res://.godot/imported/Reloading.wav-32caabe12f5dba95168b6c7fc00e546b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=3 uid="uid://qxkw3obbo0xs"]
+
+[ext_resource type="Texture2D" uid="uid://cayv0grim5yws" path="res://Assets/Image/etc/Trap/Suriken.png" id="1_37njm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pg7c"]
+atlas = ExtResource("1_37njm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4w7nv"]
+atlas = ExtResource("1_37njm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka2ju"]
+atlas = ExtResource("1_37njm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ea0ag"]
+atlas = ExtResource("1_37njm")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22on7"]
+atlas = ExtResource("1_37njm")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg6y7"]
+atlas = ExtResource("1_37njm")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cb40t"]
+atlas = ExtResource("1_37njm")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpt6i"]
+atlas = ExtResource("1_37njm")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5p4s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pg7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4w7nv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka2ju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ea0ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22on7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg6y7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cb40t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpt6i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6xx1i"]
+radius = 17.0294
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_albli"]
+
+[node name="Saw_Traps" type="StaticBody2D"]
+collision_layer = 1024
+collision_mask = 9
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_d5p4s")
+frame_progress = 0.138711
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6xx1i")
+debug_color = Color(0, 0.329412, 0.388235, 0.419608)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_albli")

@@ -13,209 +13,139 @@ config_version=5
 config/name="HOWLING HEROES : THE GREAT WOLF RESCUE"
 config/description="An interactive role-playing game called Howling Heroes: The Great Wolf Rescue takes place in the fascinating world of wolves, more especially the Canis lupus species. Navigating through difficult platformer stages, players must solve puzzles and face enemies in order to save endangered wolf packs. It's an engrossing trip. The game conveys a strong message about conservation in addition to providing an interesting and instructive experience about the complex lives of wolves in the wild. Howling Heroes seeks to raise awareness of environmental issues and motivate players to take action to safeguard animals and preserve the environment by means of its breathtaking visuals and engrossing gameplay."
 config/version="V 1.0"
-config/tags=PackedStringArray("final_project")
-run/main_scene="res://Assets/Scences/UI/Splash/Splash_Screen_Played.tscn"
-config/features=PackedStringArray("4.2")
+run/main_scene="res://Assets/Scences/UI/Splash_Screen/Splash_1/Splash_1.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="HOWLING HEROES - THE GREAT WOLF RESCUE"
+config/project_settings_override="HOWLING HEROES - THE GREAT WOLF RESCUE/Settings"
+config/auto_accept_quit=false
+config/quit_on_go_back=false
+config/features=PackedStringArray("4.2", "GL Compatibility")
 run/max_fps=144
+boot_splash/bg_color=Color(0.145098, 0.247059, 0.258824, 1)
+boot_splash/image="res://Assets/Image/Logo/WPA TEAM LOGO.png"
 config/icon="res://Assets/Image/Logo/Logo Project Howling Heroes The Great Wolf Rescue.png"
 
 [autoload]
 
-LoadingScreen="*res://Assets/Script/Controller/UI/Loading/loading_screen.gd"
-Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
-SaveSettings="*res://Assets/Script/Controller/Save/Settings/save_settings.gd"
-GlobalSettings="*res://Assets/Script/Controller/Save/Global_Settings/Global_Settings.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+SaveSettings="*res://Assets/Scripts/Auto_Load/Saver/Settings/settings_save.gd"
+WolfData="*res://Assets/Scripts/Auto_Load/Wolves Data/Wolf_Data.gd"
+WolfAlmanac="*res://Assets/Scripts/Auto_Load/Wolf_Almanac/Wolf_Almanac.gd"
+GlobalSettings="*res://Assets/Scripts/Auto_Load/Settings/Settings.gd"
+LoadingScreen="*res://Assets/Scripts/Auto_Load/Loading_Screen/Loading_Screen_Singleton_Autoloads.gd"
+DialogueManager="*res://Assets/Scripts/Auto_Load/Dialogue Manager/Dialogue_Singleton.gd"
+MusicAutoloadSingletons="*res://Assets/Scripts/Auto_Load/Music/Music_Autoload_Singletons.gd"
+MissionStatData="*res://Assets/Scripts/Auto_Load/Mission_data_stats/Mission_Stat_Data_Singleton.gd"
+player_singleton_autoload="*res://Assets/Scripts/Auto_Load/Player/Player_Singleton.gd"
+AlmanacOpenCloser="*res://Assets/Scripts/Auto_Load/Wolf_Almanac_Scence_Open_Closer/Almanac_Open_Close.gd"
 
 [dialogic]
 
-animations/join_default_length=0.5
-animations/leave_default_length=0.5
-animations/leave_default_wait=true
-animations/join_default_wait=true
-choices/autofocus_first=true
-choices/delay=0.2
-save/autosave_delay=60.0
-settings/text_speed=0.01
-text/skippable=true
-text/autoadvance_delay=1.0
-text/hide_empty_textbox=true
-text/autopauses={}
-glossary/default_case_sensitive=true
-layout/mode=0
-text/autocolor_names=false
-variables={
-"Stat": {
-"Attack": "",
-"Defences": "",
-"Health": "100"
-}
-}
-event_default_overrides={
-"Music": {
-"audio_bus": "Music"
-},
-"Sound": {
-"audio_bus": "Sound Effects"
-},
-"Voice": {
-"audio_bus": "Voices"
-},
-"Wait": {
-"hide_text": true
-},
-"Wait for Input": {
-"hide_textbox": false
-}
-}
-translation/enabled=true
-translation/original_locale="en"
-translation/file_mode=1
-translation/translation_folder=""
-translation/id_counter=16
-layout/layout_scene="res://addons/dialogic/Modules/DefaultStyles/Default/DialogicDefaultLayout.tscn"
-layout/export_overrides={
-"box_corner_radius": "0.0",
-"box_distance": "10.0",
-"box_padding": "5.0",
-"box_portrait_bg_modulate": "Color(0.968627, 0.968627, 0.968627, 0.309804)",
-"box_portrait_position": "1",
-"box_portrait_width_percentage": "0.5",
-"box_tilt": "0.0",
-"name_label_offset": "Vector2(-5, -5)",
-"portrait_stretch_factor": "0.35",
-"sizing_mode": "0"
-}
-layout/end_behaviour=0
-choices/reveal_delay=0
-choices/reveal_by_input=false
-layout/styles={
-"Pixelized-Text Bubble": {
-"export_overrides": {
-"bold_font": "\"res://Assets/Fonts/DisposableDroidBB_bld.ttf\"",
-"bold_italic_font": "\"res://Assets/Fonts/DisposableDroidBB_bldital.ttf\"",
-"italic_font": "\"res://Assets/Fonts/DisposableDroidBB_ital.ttf\"",
-"name_label_font": "\"res://Assets/Fonts/DisposableDroidBB.ttf\"",
-"normal_font": "\"res://Assets/Fonts/DisposableDroidBB.ttf\""
-},
-"layout": "res://addons/dialogic/Modules/DefaultLayouts/TextBubble/DialogicTextBubbleLayout.tscn"
-},
-"Pixelized-Visual_Novel": {
-"export_overrides": {
-"bold_font": "\"res://Assets/Fonts/DisposableDroidBB_bld.ttf\"",
-"bold_italic_font": "\"res://Assets/Fonts/DisposableDroidBB_bldital.ttf\"",
-"box_size": "Vector2(800, 180)",
-"italic_font": "\"res://Assets/Fonts/DisposableDroidBB_ital.ttf\"",
-"name_label_font": "\"res://Assets/Fonts/DisposableDroidBB.ttf\"",
-"name_label_font_size": "32.0",
-"normal_font": "\"res://Assets/Fonts/DisposableDroidBB.ttf\"",
-"text_size": "32.0"
-}
-},
-"SmallRPG_Style": {
-"layout": "res://addons/dialogic/Modules/DefaultLayouts/RPG_BoxPortrait/DialogicRPGLayout.tscn"
-},
-"SmallRPG_Style-Pixelized": {
-"export_overrides": {
-"bold_font": "\"res://Assets/Fonts/DisposableDroidBB_bld.ttf\"",
-"bold_italic_font": "\"res://Assets/Fonts/DisposableDroidBB_bldital.ttf\"",
-"italic_font": "\"res://Assets/Fonts/DisposableDroidBB_ital.ttf\"",
-"name_label_font": "\"res://Assets/Fonts/DisposableDroidBB.ttf\"",
-"name_label_font_size": "24.0",
-"normal_font": "\"res://Assets/Fonts/DisposableDroidBB.ttf\"",
-"text_size": "24.0"
-},
-"layout": "res://addons/dialogic/Modules/DefaultLayouts/RPG_BoxPortrait/DialogicRPGLayout.tscn"
-},
-"Smartphone_Style": {
-"layout": "res://Smartphone/SmartphoneLayout.tscn"
-},
-"VisualNovel_Style": {}
-}
-layout/default_style="res://Assets/Dialogue/Theme/Speaker_Mode.tres"
-text/skippable_delay=0.1
-text/input_action="interact"
-save/autosave=true
 directories/dch_directory={
-"Mr_Wolf": "res://Assets/Dialogue/Character/Mr_Wolf.dch"
+"Character/Mr_Wolf": "res://Assets/Dialogue/Character/Mr_Wolf.dch",
+"Character/Player": "res://Assets/Dialogue/Character/Player.dch",
+"Character/Sergant Lupine": "res://Assets/Dialogue/Character/Sergant Lupine.dch",
+"Mr_Wolf": "res://Assets/Character/Mr_Wolf.dch",
+"Player": "res://Assets/Character/Player.dch",
+"Sergant Lupine": "res://Assets/Character/Sergant Lupine.dch"
 }
 directories/dtl_directory={
+"Finish-Mission": "res://Assets/Dialogue/TimeLines/Finish-Mission.dtl",
 "How To Play": "res://Assets/Dialogue/TimeLines/How To Play.dtl",
-"Intro": "res://Assets/Dialogue/TimeLines/Intro.dtl"
+"Intro": "res://Assets/Dialogue/TimeLines/Intro.dtl",
+"Intro_Player": "res://Assets/Dialogue/TimeLines/Mission_Breffing.dtl",
+"Player": "res://Assets/Dialogue/TimeLines/Player.dtl"
 }
-layout/style_list=["res://Assets/Dialogue/Theme/Speaker_Mode.tres", "res://Assets/Dialogue/Theme/Pixelize_Visual_Novel.tres"]
+glossary/default_case_sensitive=true
+layout/style_list=["res://Assets/Dialogue/Theme/Pixelize_font.tres"]
+layout/default_style="res://Assets/Dialogue/Theme/Pixelize_font.tres"
+variables={}
+extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
 text/autoadvance_per_character_delay=0.1
 text/autoadvance_ignored_characters_enabled=true
+audio/max_channels=1.0
+animations/join_default_length=0.5
+animations/join_default_wait=true
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/cross_fade_default_length=0.5
+choices/autofocus_first=false
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
 save/encryption_on_exports_only=true
-save/encryption_password="Blizzard03"
-save/default_slot="Blizzard"
+text/input_action="interaction"
+save/default_slot="Blizzard03"
+translation/enabled=false
+translation/original_locale="en"
+translation/file_mode=1
+translation/translation_folder=""
 translation/save_mode=0
-extensions_folder="res://addons/dialogic_additions"
+translation/add_separator=false
+text/autopauses={}
+choices/hotkey_behaviour=0
+audio/type_sound_bus="Music"
+choices/def_false_behaviour=0
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/size/resizable=false
+window/energy_saving/keep_screen_on=false
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
-mouse_cursor/custom_image="res://Assets/Image/images/Cursor/Cursor 32x32.png"
+window/vsync/vsync_mode=0
+mouse_cursor/custom_image="res://Assets/Image/Cursor/Cursor 32x32.png"
 
 [dotnet]
 
-project/assembly_name="Dialogic Test Project"
+project/assembly_name="HOWLING HEROES : THE GREAT WOLF RESCUE"
+
+[editor]
+
+movie_writer/speaker_mode=3
+movie_writer/mjpeg_quality=1.0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/dialogic/plugin.cfg")
 
 [input]
 
-move_left={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"echo":false,"script":null)
-]
-}
-move_right={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"echo":false,"script":null)
-]
-}
-move_up={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"echo":false,"script":null)
-]
-}
-move_down={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"echo":false,"script":null)
-]
-}
-interact={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":90,"key_label":0,"unicode":122,"echo":false,"script":null)
-]
-}
-open_inventory={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":73,"key_label":0,"unicode":105,"echo":false,"script":null)
-]
-}
 open_wolf_almanac={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":6,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
-map={
+interaction={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":77,"key_label":0,"unicode":109,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":90,"key_label":0,"unicode":122,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":0,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
-pause={
+reloading={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":114,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":4,"axis_value":1.0,"script":null)
+]
+}
+shoot_brust_garou={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(210, 19),"global_position":Vector2(214, 60),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":9,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+slash_machete={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(199, 13),"global_position":Vector2(203, 54),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":10,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
 dialogic_default_action={
@@ -227,34 +157,85 @@ dialogic_default_action={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+move_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":-1.0,"script":null)
+]
+}
+move_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":1.0,"script":null)
+]
+}
+switch_weapon={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"echo":false,"script":null)
+]
+}
+jump={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":-1.0,"script":null)
+]
+}
+open_map={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":77,"key_label":0,"unicode":109,"echo":false,"script":null)
+]
+}
+quick_save={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":88,"key_label":0,"unicode":120,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":2,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+quick_load={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":67,"key_label":0,"unicode":99,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":3,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+mission_log={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":76,"key_label":0,"unicode":108,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":4,"pressure":0.0,"pressed":true,"script":null)
+]
+}
 
-[internationalization]
+[layer_names]
 
-locale/test="en"
-
-[physics]
-
-common/enable_pause_aware_picking=true
+2d_physics/layer_1="Terains"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Item"
+2d_physics/layer_4="Player_Hurtbox"
+2d_physics/layer_5="Player_Hitbox`"
+2d_physics/layer_6="Enemy"
+2d_physics/layer_7="Enemy_Hurtbox"
+2d_physics/layer_8="Enemy_Hitbox"
+2d_physics/layer_9="Brust_Garaou"
+2d_physics/layer_10="Machete"
+2d_physics/layer_11="Traps"
+2d_physics/layer_12="Cage"
+2d_physics/layer_13="Wolves"
+2d_physics/layer_14="SFX"
+2d_physics/layer_15="Music"
+2d_physics/layer_16="Chest"
+2d_physics/layer_17="boss_encounter"
 
 [rendering]
 
-textures/vram_compression/import_etc2_astc=true
-shading/overrides/force_vertex_shading=true
-shading/overrides/force_lambert_over_burley=true
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+lights_and_shadows/use_physical_light_units=true
+global_illumination/voxel_gi/quality=1
 camera/depth_of_field/depth_of_field_bokeh_quality=3
-camera/depth_of_field/depth_of_field_use_jitter=true
 environment/ssao/quality=4
 environment/ssil/quality=4
+environment/glow/upscale_mode=0
 environment/screen_space_reflection/roughness_quality=3
 environment/subsurface_scattering/subsurface_scattering_quality=3
-environment/defaults/default_clear_color=Color(0.128906, 0.148438, 0.179688, 1)
-anti_aliasing/quality/msaa_2d=3
-anti_aliasing/quality/msaa_3d=3
+viewport/transparent_background=true
 viewport/hdr_2d=true
-anti_aliasing/quality/screen_space_aa=1
-anti_aliasing/quality/use_taa=true
-anti_aliasing/quality/use_debanding=true
-
-[threading]
-
-worker_pool/max_threads=4

@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://culrb1suvevtd"]
+
+[ext_resource type="Shader" path="res://Assets/Shaders/sand_stromdessert.gdshader" id="1_j48ol"]
+[ext_resource type="Texture2D" uid="uid://duv0jmrs6dhhb" path="res://Assets/Image/Background/Stage/Taiga/pixel_art_A_breathtaking_scene.jpeg" id="1_phg6a"]
+
+[sub_resource type="Gradient" id="Gradient_ux1ey"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_o72i4"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3r5xn"]
+invert = true
+in_3d_space = true
+seamless = true
+seamless_blend_skirt = 1.0
+as_normal_map = true
+bump_strength = 32.0
+color_ramp = SubResource("Gradient_ux1ey")
+noise = SubResource("FastNoiseLite_o72i4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u4ifq"]
+shader = ExtResource("1_j48ol")
+shader_parameter/smoke_color = Color(0.32549, 0.32549, 0.32549, 1)
+shader_parameter/distortion_speed = 0.0
+shader_parameter/radius = 5.0
+shader_parameter/softness = 10.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_3r5xn")
+
+[node name="Taiga_1_Parallax" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
+custom_minimum_size = Vector2(1280, 720)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = 12.0
+offset_right = 1271.0
+offset_bottom = 732.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_phg6a")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_u4ifq")
+custom_minimum_size = Vector2(1280, 720)
+anchors_preset = -1
+anchor_right = 0.988
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -10.0
+offset_right = 0.359985
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_phg6a")
+metadata/_edit_use_anchors_ = true

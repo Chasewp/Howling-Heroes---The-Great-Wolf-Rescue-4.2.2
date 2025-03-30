@@ -1,0 +1,29 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dllvsykb0gqsy"]
+
+[ext_resource type="Texture2D" uid="uid://cgvd5uri5i5o" path="res://Assets/Image/Enemy/Humanoid/Taiga/hunter_bow/Arrow/Move.png" id="1_122qt"]
+[ext_resource type="Texture2D" uid="uid://dna3wets0hyke" path="res://Assets/Image/Enemy/Humanoid/Taiga/hunter_bow/Arrow/Static.png" id="2_gtpmg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nhbo"]
+atlas = ExtResource("1_122qt")
+region = Rect2(0, 0, 24, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8ll1"]
+atlas = ExtResource("1_122qt")
+region = Rect2(24, 0, 24, 5)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nhbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gtpmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8ll1")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]

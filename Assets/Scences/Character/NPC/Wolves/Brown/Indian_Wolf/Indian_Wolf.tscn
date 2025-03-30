@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhnwdg518fk1e"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Class/NPC/Wolves/Character/Brown/Indian_Wolf/Indian_Wolf.gd" id="1_8arpi"]
+[ext_resource type="PackedScene" uid="uid://ckjyyb3ed2skq" path="res://Assets/Scences/UI/Wolf_Almanac/Book/Indian Wolf/indian_wolf_almanac.tscn" id="2_32dpv"]
+[ext_resource type="SpriteFrames" uid="uid://dspb8hmvlvqhb" path="res://Assets/Animate/Chacter/NPC/Wolves/Brown_Wolf/brown_wolf.tres" id="3_en45s"]
+[ext_resource type="AudioStream" uid="uid://dnqgcto8jjyo3" path="res://Assets/Music/SFX/Howl/Wolf Howl 15.wav" id="4_i1inj"]
+[ext_resource type="AudioStream" uid="uid://b74qkv8adjb87" path="res://Assets/Music/SFX/Get_Wolf/Get_Wolf.wav" id="5_1c2us"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wi3iq"]
+radius = 61.2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_krm1x"]
+radius = 55.0
+
+[node name="Indian_Wolf" type="CharacterBody2D" node_paths=PackedStringArray("Choirs", "Howling_SFX", "Wolf_Animation") groups=["Wolves"]]
+z_index = 1
+y_sort_enabled = true
+collision_layer = 4096
+collision_mask = 9
+script = ExtResource("1_8arpi")
+Choirs = NodePath("Choirs")
+Howling_SFX = NodePath("Howling")
+book_alamanac = ExtResource("2_32dpv")
+Wolf_Animation = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("3_en45s")
+animation = &"Howl"
+autoplay = "iddle"
+frame = 2
+frame_progress = 1.0
+offset = Vector2(0, -29)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, -23)
+shape = SubResource("CircleShape2D_wi3iq")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-5, -22)
+collision_layer = 4096
+collision_mask = 2050
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_krm1x")
+debug_color = Color(0.654902, 0.513726, 0.196078, 0.419608)
+
+[node name="Howling" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_i1inj")
+bus = &"Sound_Effect"
+area_mask = 8192
+
+[node name="Choirs" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_1c2us")
+bus = &"Sound_Effect"
+area_mask = 8192
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_inside_the_wolf"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_outside_the_wolf"]

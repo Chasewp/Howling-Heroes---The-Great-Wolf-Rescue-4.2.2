@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b70eit682kb03"
+path="res://.godot/imported/Intro_finish_mission _1.mp3-ce00ed3d844451a6967325863a68c52d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Dialogues/Mission_Finish/Intro_finish_mission _1.mp3"
+dest_files=["res://.godot/imported/Intro_finish_mission _1.mp3-ce00ed3d844451a6967325863a68c52d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

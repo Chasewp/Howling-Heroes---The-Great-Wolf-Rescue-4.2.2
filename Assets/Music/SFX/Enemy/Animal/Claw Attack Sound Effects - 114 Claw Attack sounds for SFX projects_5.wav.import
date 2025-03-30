@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1w38ifrtk7ni"
+path="res://.godot/imported/Claw Attack Sound Effects - 114 Claw Attack sounds for SFX projects_5.wav-c779a020fd56a464c7d1f230466602ff.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX/Enemy/Animal/Claw Attack Sound Effects - 114 Claw Attack sounds for SFX projects_5.wav"
+dest_files=["res://.godot/imported/Claw Attack Sound Effects - 114 Claw Attack sounds for SFX projects_5.wav-c779a020fd56a464c7d1f230466602ff.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

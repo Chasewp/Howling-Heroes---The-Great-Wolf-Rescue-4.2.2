@@ -1,0 +1,58 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://lib3jddbreee"]
+
+[ext_resource type="Texture2D" uid="uid://2y2412sgqnsc" path="res://Assets/Image/Character/Wolves/Silver/Silver_Wolf.png" id="2_bh44e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w26ym"]
+atlas = ExtResource("2_bh44e")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb44l"]
+atlas = ExtResource("2_bh44e")
+region = Rect2(448, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxy3x"]
+atlas = ExtResource("2_bh44e")
+region = Rect2(512, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1lax"]
+atlas = ExtResource("2_bh44e")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eap7w"]
+atlas = ExtResource("2_bh44e")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mexlb"]
+atlas = ExtResource("2_bh44e")
+region = Rect2(128, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w26ym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb44l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxy3x")
+}],
+"loop": false,
+"name": &"Howl",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1lax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eap7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mexlb")
+}],
+"loop": true,
+"name": &"iddle",
+"speed": 5.0
+}]

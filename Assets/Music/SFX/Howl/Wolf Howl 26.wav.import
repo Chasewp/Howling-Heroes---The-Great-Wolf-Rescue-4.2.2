@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://db21i4g6xa6vy"
+path="res://.godot/imported/Wolf Howl 26.wav-7899f442df50c35f50a8a061a1d1ab08.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX/Howl/Wolf Howl 26.wav"
+dest_files=["res://.godot/imported/Wolf Howl 26.wav-7899f442df50c35f50a8a061a1d1ab08.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

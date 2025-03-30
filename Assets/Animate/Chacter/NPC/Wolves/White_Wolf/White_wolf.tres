@@ -1,0 +1,58 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://bxb035qj6is3c"]
+
+[ext_resource type="Texture2D" uid="uid://biv1m4cuwkskg" path="res://Assets/Image/Character/Wolves/White/White_Wolf.png" id="1_git2k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwtd4"]
+atlas = ExtResource("1_git2k")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2gfy"]
+atlas = ExtResource("1_git2k")
+region = Rect2(448, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orafd"]
+atlas = ExtResource("1_git2k")
+region = Rect2(512, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s73vm"]
+atlas = ExtResource("1_git2k")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atdxs"]
+atlas = ExtResource("1_git2k")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14hy7"]
+atlas = ExtResource("1_git2k")
+region = Rect2(128, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwtd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2gfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orafd")
+}],
+"loop": false,
+"name": &"Howl",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s73vm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atdxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14hy7")
+}],
+"loop": true,
+"name": &"iddle",
+"speed": 5.0
+}]

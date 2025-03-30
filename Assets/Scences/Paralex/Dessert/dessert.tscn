@@ -1,0 +1,225 @@
+[gd_scene load_steps=24 format=3 uid="uid://kcc5o6h6mu5s"]
+
+[ext_resource type="Texture2D" uid="uid://onphxq86dlns" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/9 Background.png" id="1_2f8gq"]
+[ext_resource type="Texture2D" uid="uid://ckj00fnryecer" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/8 Stars.png" id="2_577sp"]
+[ext_resource type="Texture2D" uid="uid://djjt7ivduxm3j" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/6 Sun.png" id="2_pcmlc"]
+[ext_resource type="Texture2D" uid="uid://nn8hua44ej52" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/8 Stars2.png" id="3_bh761"]
+[ext_resource type="Texture2D" uid="uid://bhdffk1itbdyu" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/5 Mountains.png" id="3_onb15"]
+[ext_resource type="Texture2D" uid="uid://qjkeiih5jdvr" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/7 Clouds.png" id="4_2qygd"]
+[ext_resource type="Shader" path="res://Assets/Scences/Stages/Tundra/auto_scroller.gdshader" id="4_65h55"]
+[ext_resource type="Texture2D" uid="uid://cbf5jqslactiq" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/7 Clouds2.png" id="5_pnrys"]
+[ext_resource type="Texture2D" uid="uid://d3xgg40071q3g" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/4 Layer4.png" id="8_s51lt"]
+[ext_resource type="Texture2D" uid="uid://dmc8c0opmiksw" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/3 Layer3.png" id="9_8ub03"]
+[ext_resource type="Texture2D" uid="uid://dwdbsgk4xeine" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/2 Layer2.png" id="10_qv1k5"]
+[ext_resource type="Texture2D" uid="uid://bvj1vykmxpnbk" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/1 Layer1.png" id="12_ftw8x"]
+[ext_resource type="Shader" path="res://Assets/Shaders/sand_stromdessert.gdshader" id="13_vbgpr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vglin"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_suf36"]
+shader = ExtResource("4_65h55")
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/speed_scale = 0.02
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_peg6j"]
+shader = ExtResource("4_65h55")
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/speed_scale = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_huydn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aqce1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f6vo1"]
+shader = ExtResource("4_65h55")
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/speed_scale = 5.02
+
+[sub_resource type="Gradient" id="Gradient_brumv"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w5amc"]
+fractal_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lp3xj"]
+resource_local_to_scene = true
+seamless = true
+as_normal_map = true
+color_ramp = SubResource("Gradient_brumv")
+noise = SubResource("FastNoiseLite_w5amc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bb0yi"]
+shader = ExtResource("13_vbgpr")
+shader_parameter/smoke_color = Color(0.956863, 0.619608, 0.352941, 1)
+shader_parameter/distortion_speed = 0.0
+shader_parameter/radius = 1.0
+shader_parameter/softness = 1.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_lp3xj")
+
+[node name="Dessert_Background" type="ParallaxBackground"]
+follow_viewport_enabled = true
+scroll_limit_end = Vector2(8000, 8000)
+
+[node name="Background" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+custom_minimum_size = Vector2(13023, 1000)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 13023.0
+offset_bottom = 1000.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2f8gq")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Stars_1" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Stars_1"]
+material = SubResource("ShaderMaterial_vglin")
+custom_minimum_size = Vector2(13023, 1000)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 13023.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_577sp")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Stars_2" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Stars_2"]
+custom_minimum_size = Vector2(13023, 1000)
+offset_right = 13023.0
+offset_bottom = 1000.0
+texture = ExtResource("3_bh761")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cloud" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Cloud"]
+material = SubResource("ShaderMaterial_suf36")
+custom_minimum_size = Vector2(13023, 1000)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 13023.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_2qygd")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cloud_2" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Cloud_2"]
+material = SubResource("ShaderMaterial_peg6j")
+custom_minimum_size = Vector2(13023, 1000)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 13023.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_pnrys")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sun" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Sun"]
+material = SubResource("ShaderMaterial_huydn")
+clip_contents = true
+custom_minimum_size = Vector2(13023, 1000)
+offset_right = 13023.0
+offset_bottom = 1080.0
+texture = ExtResource("2_pcmlc")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Mountain" type="ParallaxLayer" parent="."]
+position = Vector2(0, -13)
+
+[node name="TextureRect" type="TextureRect" parent="Mountain"]
+material = SubResource("ShaderMaterial_aqce1")
+custom_minimum_size = Vector2(13023, 1000)
+offset_left = 3.0
+offset_top = 10.0
+offset_right = 1283.0
+offset_bottom = 730.0
+texture = ExtResource("3_onb15")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Hills_1" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Hills_1"]
+custom_minimum_size = Vector2(13023, 1000)
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("8_s51lt")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Hills_2" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Hills_2"]
+custom_minimum_size = Vector2(13023, 1000)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 13023.0
+offset_bottom = 1000.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_8ub03")
+expand_mode = 1
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Hills_3" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Hills_3"]
+custom_minimum_size = Vector2(13023, 1000)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 13023.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_qv1k5")
+stretch_mode = 1
+
+[node name="Hills_4" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Hills_4"]
+material = SubResource("ShaderMaterial_f6vo1")
+custom_minimum_size = Vector2(13023, 1000)
+offset_right = 13023.0
+offset_bottom = 1080.0
+texture = ExtResource("12_ftw8x")
+
+[node name="sand_strome" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="sand_strome"]
+z_as_relative = false
+material = SubResource("ShaderMaterial_bb0yi")
+custom_minimum_size = Vector2(13023, 1156)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 13023.0
+offset_bottom = 1156.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_ftw8x")
+expand_mode = 1

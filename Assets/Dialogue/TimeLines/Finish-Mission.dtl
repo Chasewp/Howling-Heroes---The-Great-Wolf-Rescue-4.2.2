@@ -1,0 +1,41 @@
+[signal arg="No_Cursor"]
+[style name="Pixelize_font"]
+[voice path="res://Assets/Music/Dialogues/Mission_Finish/Intro_finish_mission _1.mp3" volume="0.0"]
+From the Taiga forest, UWF HQ (United Wolves Federation Headquarters) reaches out to the Player via Com-link. After rescuing wolves from four diverse biomes, the final mission in the desert is complete. Now, it's time for the report and recognition as Sergeant Lupine prepares to speak with the Player.
+[background arg="res://Assets/Image/Background/Intro_Com-link/Intro_com-link.png" fade="0.2" transition="Simple Fade"]
+join "Character/Sergant Lupine" rightmost [animation="Slide In Right" length="0.6"]
+[music path="res://Assets/Music/Music/Backsound/MIssion _Breffing/UWF HQ Backsound.mp3" fade="0.0" volume="-15.0" bus="SFX"]
+[voice path="res://Assets/Music/Dialogues/Mission_Breafing/Intro-2(Sergeant Lupine - 1) full_radio.wav" volume="0.0" bus="Voice"]
+"Sergant Lupine": This is Sergeant Lupine from United Wolves Federation Headquarters. Do you copy? Over.
+leave "Character/Sergant Lupine" [animation="Instant Out" length="0.3"]
+[background arg="res://Assets/Image/Background/Stage/Dessert/8.png" fade="0.2"]
+[music path="res://Assets/Music/SFX/Wind/wind1.wav" fade="0.0" volume="-15.0" bus="SFX"]
+join Character/Player leftmost [animation="Slide In Left"]
+[voice path="res://Assets/Music/Dialogues/Mission_Breafing/Intro-3(Player - 1) full_radio.wav" volume="0.0" bus="Voice"]
+Player: Copy and clear, Sergeant. This is the Player the wolf ranger and wolf biologist. Over.
+leave Character/Player [animation="Instant Out"]
+[background arg="res://Assets/Image/Background/Intro_Com-link/Intro_com-link.png" fade="0.2" transition="Simple Fade"]
+[music path="res://Assets/Music/Music/Backsound/MIssion _Breffing/UWF HQ Backsound.mp3" fade="0.0" volume="-15.0" bus="SFX"]
+join "Character/Sergant Lupine" rightmost [animation="Slide In Right" length="0.6"]
+[voice path="res://Assets/Music/Dialogues/Mission_Finish/Sergant_Lupine_D1_Mission(Full_Radio).wav" volume="0.0"]
+"Character/Sergant Lupine": Player, you have successfully completed your mission of rescuing wolves from the four biomes \: taiga,tundra, grassland, and dessert. We commend your dedication and bravery. Your efforts have made a significant impact on wolf conservation and have enhanced our understanding of their ecological needs. Over.
+leave "Character/Sergant Lupine" [animation="Instant Out" length="0.3"]
+[background arg="res://Assets/Image/Background/Stage/Dessert/8.png" fade="0.2"]
+[music path="res://Assets/Music/SFX/Wind/wind1.wav" fade="0.0" volume="-3.0" bus="SFX"]
+join Character/Player leftmost [animation="Slide In Left"]
+[voice path="res://Assets/Music/Dialogues/Mission_Finish/Player_D1_Mission(Full_Radio).wav" volume="0.0" bus="Voice"]
+Player: Thank you, Sergeant. It was my honor to serve. Over.
+leave Character/Player [animation="Slide In Left"]
+[background arg="res://Assets/Image/Background/Intro_Com-link/Intro_com-link.png" fade="0.2" transition="Simple Fade"]
+[music path="res://Assets/Music/Music/Backsound/MIssion _Breffing/UWF HQ Backsound.mp3" fade="0.0" volume="-15.0" bus="SFX"]
+join "Character/Sergant Lupine" rightmost [animation="Slide In Right" length="0.6"]
+[voice path="res://Assets/Music/Dialogues/Mission_Finish/Sergant_Lupine_D2_Mission(Full_Radio).wav" volume="0.0"]
+"Character/Sergant Lupine": I wish to express my gratitude, Player. You have performed admirably in saving all wolves from the four biomes \: taiga,tundra, grassland, and dessert. We trust that you now possess a deeper understanding of wolf ecology. See you on the next mission. Sergeant Lupine, over and out.
+leave "Character/Sergant Lupine" [animation="Instant Out" length="0.3"]
+[background arg="res://Assets/Image/Background/Stage/Dessert/8.png" fade="0.2"]
+[music path="res://Assets/Music/SFX/Wind/wind1.wav" fade="0.0" volume="-3.0" bus="SFX"]
+join Character/Player leftmost [animation="Slide In Left"]
+[voice path="res://Assets/Music/Dialogues/Mission_Finish/Player_D2_Mission(Full_Radio).wav" volume="0.0" bus="Voice"]
+Player: My pleasure, Sergeant. Player, over and out.
+leave Character/Player [animation="Slide In Left"]
+[signal arg="quit_game"]

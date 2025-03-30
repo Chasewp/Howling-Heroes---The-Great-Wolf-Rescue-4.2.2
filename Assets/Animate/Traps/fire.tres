@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://64iyn24sbc0n"]
+
+[ext_resource type="Texture2D" uid="uid://bjiohow7ruco" path="res://Assets/Image/Items/Traps/Etc/Fire.png" id="1_3t667"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdhcd"]
+atlas = ExtResource("1_3t667")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxs73"]
+atlas = ExtResource("1_3t667")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgl37"]
+atlas = ExtResource("1_3t667")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvyds"]
+atlas = ExtResource("1_3t667")
+region = Rect2(48, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdhcd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxs73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgl37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvyds")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

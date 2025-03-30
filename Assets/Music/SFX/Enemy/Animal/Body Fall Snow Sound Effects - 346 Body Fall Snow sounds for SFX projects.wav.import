@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://xv871r0ti6ib"
+path="res://.godot/imported/Body Fall Snow Sound Effects - 346 Body Fall Snow sounds for SFX projects.wav-042dc85043f739d5918aa1a9233df085.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX/Enemy/Animal/Body Fall Snow Sound Effects - 346 Body Fall Snow sounds for SFX projects.wav"
+dest_files=["res://.godot/imported/Body Fall Snow Sound Effects - 346 Body Fall Snow sounds for SFX projects.wav-042dc85043f739d5918aa1a9233df085.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

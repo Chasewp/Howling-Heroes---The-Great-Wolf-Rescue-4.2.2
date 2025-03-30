@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b0rubs5erwj3x"
+path="res://.godot/imported/Wolf Mission Failed.mp3-685fe08d9700d5e68543b40b16f74c35.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Dialogues/Wolf Rescue Mission Clear/Wolf Mission Failed.mp3"
+dest_files=["res://.godot/imported/Wolf Mission Failed.mp3-685fe08d9700d5e68543b40b16f74c35.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

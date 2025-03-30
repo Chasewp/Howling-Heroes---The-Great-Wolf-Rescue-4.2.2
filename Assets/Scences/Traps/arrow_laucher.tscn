@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://btbt4tvas7g0l"]
+
+[ext_resource type="Texture2D" uid="uid://dnxjhlljgs638" path="res://Assets/Image/Items/Bullets/All_Fire_Bullet_Pixel_16x16_04.png" id="1_1gcsx"]
+[ext_resource type="Script" path="res://Assets/Scripts/Item/Traps/Arrow_Traps.gd" id="1_03ub0"]
+[ext_resource type="Texture2D" uid="uid://p4b4p1bejrjt" path="res://Assets/Image/etc/Trap/Shooter_Arrow_Trap.png" id="2_e1mjm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wlrjm"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pc2i"]
+atlas = ExtResource("1_1gcsx")
+region = Rect2(320, 256, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eoy1x"]
+atlas = ExtResource("2_e1mjm")
+region = Rect2(64, 0, 16, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_heirk"]
+size = Vector2(12, 59)
+
+[node name="Arrow_laucher" type="Node2D"]
+script = ExtResource("1_03ub0")
+
+[node name="Arrow" type="Area2D" parent="." groups=["Traps"]]
+collision_layer = 1024
+collision_mask = 9
+audio_bus_name = &"Sound_Effect"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow"]
+position = Vector2(-6, 0)
+shape = SubResource("CircleShape2D_wlrjm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Arrow"]
+texture = SubResource("AtlasTexture_0pc2i")
+flip_h = true
+
+[node name="Launcher" type="Sprite2D" parent="."]
+position = Vector2(39, 0)
+rotation = 4.71239
+texture = SubResource("AtlasTexture_eoy1x")
+offset = Vector2(0, 4)
+
+[node name="shoot" type="Marker2D" parent="Launcher"]
+position = Vector2(3.57746e-08, 3)
+
+[node name="Arrow_end" type="Area2D" parent="."]
+collision_layer = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow_end"]
+position = Vector2(-112, 0)
+shape = SubResource("RectangleShape2D_heirk")
+
+[connection signal="area_entered" from="Arrow_end" to="." method="_on_SpikeEnd_area_entered"]

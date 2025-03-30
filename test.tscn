@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://vansl2xjk1ab"]
+
+[ext_resource type="PackedScene" uid="uid://dk0n5e4gmj3p3" path="res://Assets/Scences/Character/Player/player.tscn" id="1_nhn7o"]
+[ext_resource type="PackedScene" uid="uid://m5pl51gplgdp" path="res://Assets/Scences/Character/NPC/Wolves/Gray/Gray_Wolf/gray_wolf.tscn" id="2_tmtql"]
+[ext_resource type="PackedScene" uid="uid://csi1klkpv5puv" path="res://Assets/Scences/Traps/spining_fire.tscn" id="3_7a1qr"]
+[ext_resource type="PackedScene" uid="uid://b5a3j5sbcyw3s" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/brown_bear.tscn" id="4_jlk5r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_va5ar"]
+size = Vector2(579.5, 20)
+
+[node name="test" type="Node2D"]
+position = Vector2(45, 442)
+
+[node name="Player" parent="." instance=ExtResource("1_nhn7o")]
+position = Vector2(-1, -1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(225.75, -1)
+shape = SubResource("RectangleShape2D_va5ar")
+
+[node name="Gray_Wolf" parent="." instance=ExtResource("2_tmtql")]
+position = Vector2(347, -6)
+
+[node name="Spining_fire" parent="." instance=ExtResource("3_7a1qr")]
+position = Vector2(296, -114)
+scale = Vector2(4, 4)
+
+[node name="Brown_Bear" parent="." instance=ExtResource("4_jlk5r")]
+position = Vector2(185, -19)

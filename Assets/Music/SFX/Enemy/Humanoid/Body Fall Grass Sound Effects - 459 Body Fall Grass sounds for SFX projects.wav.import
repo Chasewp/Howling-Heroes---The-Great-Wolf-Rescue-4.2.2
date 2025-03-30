@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bdgugjvnbpqgc"
+path="res://.godot/imported/Body Fall Grass Sound Effects - 459 Body Fall Grass sounds for SFX projects.wav-c0f3cda5e8d346939c495874c7ce420b.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX/Enemy/Humanoid/Body Fall Grass Sound Effects - 459 Body Fall Grass sounds for SFX projects.wav"
+dest_files=["res://.godot/imported/Body Fall Grass Sound Effects - 459 Body Fall Grass sounds for SFX projects.wav-c0f3cda5e8d346939c495874c7ce420b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

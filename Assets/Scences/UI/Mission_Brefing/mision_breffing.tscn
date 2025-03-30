@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxrgalp6jn87q"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Utilities/Mission_Brefing/mision_breffing.gd" id="1_awvir"]
+
+[node name="MisionBreffing" type="Node2D"]
+script = ExtResource("1_awvir")

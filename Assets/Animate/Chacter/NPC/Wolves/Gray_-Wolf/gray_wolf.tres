@@ -1,0 +1,58 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://hn2ignqr2e3q"]
+
+[ext_resource type="Texture2D" uid="uid://w5rhjk1wt0qp" path="res://Assets/Image/Character/Wolves/Gray/Gray_Wolf.png" id="1_htis0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_piqh3"]
+atlas = ExtResource("1_htis0")
+region = Rect2(192, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgv2x"]
+atlas = ExtResource("1_htis0")
+region = Rect2(256, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0co80"]
+atlas = ExtResource("1_htis0")
+region = Rect2(320, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8k2ld"]
+atlas = ExtResource("1_htis0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkvu8"]
+atlas = ExtResource("1_htis0")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4j8h"]
+atlas = ExtResource("1_htis0")
+region = Rect2(128, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_piqh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgv2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0co80")
+}],
+"loop": false,
+"name": &"Howl",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8k2ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkvu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4j8h")
+}],
+"loop": true,
+"name": &"iddle",
+"speed": 5.0
+}]

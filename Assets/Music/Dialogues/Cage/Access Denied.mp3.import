@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dhcgnrq2i6i07"
+path="res://.godot/imported/Access Denied.mp3-bcfb60f7d5b6e162fc5ad606a0108908.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Dialogues/Cage/Access Denied.mp3"
+dest_files=["res://.godot/imported/Access Denied.mp3-bcfb60f7d5b6e162fc5ad606a0108908.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

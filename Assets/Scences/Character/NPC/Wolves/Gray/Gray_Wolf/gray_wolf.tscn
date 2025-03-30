@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://m5pl51gplgdp"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Class/NPC/Wolves/Character/Gray/Gray_Wolf/gray_wolf.gd" id="1_solam"]
+[ext_resource type="SpriteFrames" uid="uid://hn2ignqr2e3q" path="res://Assets/Animate/Chacter/NPC/Wolves/Gray_-Wolf/gray_wolf.tres" id="2_btxt1"]
+[ext_resource type="PackedScene" uid="uid://dh1sbw31x4fik" path="res://Assets/Scences/UI/Wolf_Almanac/Book/Gray Wolf/gray_wolf_almanac.tscn" id="2_wqjcd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wi3iq"]
+radius = 61.2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_krm1x"]
+radius = 55.0
+
+[node name="Gray_Wolf" type="CharacterBody2D" node_paths=PackedStringArray("Howling_SFX", "Wolf_Animation") groups=["Wolves"]]
+z_index = 1
+y_sort_enabled = true
+collision_layer = 4096
+collision_mask = 9
+script = ExtResource("1_solam")
+Howling_SFX = NodePath("Howling")
+book_alamanac = ExtResource("2_wqjcd")
+Wolf_Animation = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("2_btxt1")
+animation = &"iddle"
+autoplay = "iddle"
+frame_progress = 0.938825
+offset = Vector2(0, -29)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, -23)
+shape = SubResource("CircleShape2D_wi3iq")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-5, -22)
+collision_layer = 4096
+collision_mask = 2050
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_krm1x")
+debug_color = Color(0.654902, 0.513726, 0.196078, 0.419608)
+
+[node name="Howling" type="AudioStreamPlayer2D" parent="."]
+bus = &"Sound_Effect"
+area_mask = 8192
+
+[node name="Choirs" type="AudioStreamPlayer2D" parent="."]
+bus = &"Sound_Effect"
+area_mask = 8193
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_inside_the_wolf"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_outside_the_wolf"]
