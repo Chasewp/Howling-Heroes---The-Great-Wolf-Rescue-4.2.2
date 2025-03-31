@@ -1,4 +1,8 @@
-res://Assets/Scences/UI/Splash_Screen/Splash_1/Splash_1.tscn
+res://Assets/Scences/Character/Enemy/Animals/Taiga/brown_bear.tscn
+res://Assets/Dialogue/Theme/Pixelize_font.tres
+res://Assets/Tileset/Tileset_Taiga A1.tres
+res://Assets/Animate/Chacter/NPC/Wolves/Gray_-Wolf/gray_wolf.tres
+res://Assets/Animate/Chacter/Enemy/Animal/brown_bear.tres
 res://demo/ai/trees/01_agent_melee_simple.tres
 res://demo/ai/trees/02_agent_charger.tres
 res://demo/ai/trees/03_agent_imp.tres
@@ -8,9 +12,10 @@ res://demo/ai/trees/06_agent_melee_combo.tres
 res://demo/ai/trees/07_agent_melee_nuanced.tres
 res://demo/ai/trees/08_agent_demon.tres
 res://demo/ai/trees/09_agent_summoner.tres
-res://Assets/Scripts/Splash/Splash_1/Splash_Screen_1.gd
+res://Assets/Scripts/Class/Enemy/Animal/Taiga/Black_Bear.gd
+res://Assets/Scences/Character/Enemy/Animals/Taiga/black_bear.tscn
+res://Assets/Scripts/Class/Enemy/Animal/Taiga/Brown_Bear.gd
 res://Assets/Scences/Stages/Taiga/taiga_a_3.tscn
-res://Assets/Tileset/Tileset_Taiga A1.tres
-res://Assets/Animate/Chacter/NPC/Wolves/Gray_-Wolf/gray_wolf.tres
-res://Assets/Animate/Chacter/Enemy/Animal/brown_bear.tres
-res://Assets/Scences/Character/Enemy/Animals/Taiga/brown_bear.tscn
+res://Assets/Scences/Character/Enemy/Animals/Tundra/polar_bear.tscn
+res://Assets/Animate/Chacter/Enemy/Animal/polar_bear.tres
+res://Assets/Scences/UI/Splash_Screen/Splash_1/Splash_1.tscn
