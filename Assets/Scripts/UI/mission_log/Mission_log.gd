@@ -1,6 +1,8 @@
 class_name mission_log
 extends Control
 
+signal reset 
+
 @onready var Label_Wolf_Rescue = %LBL_WR
 @onready var Total_Wolf_Rescue_Label = %TLT_WR
 @onready var Label_Enemy_Executed = %LBL_EE
@@ -75,16 +77,33 @@ func _ready():
 			MissionStatData.set_total_wolves_rescued(wolf_total_tundra)
 			MissionStatData.set_total_boss_killed(boss_total_tundra)       
 			MissionStatData.set_total_enemies_killed(enemy_total_tundra)
+			Label_Wolf_Rescue.set_text(str(MissionStatData.wolf_rescued))
+			Total_Wolf_Rescue_Label.set_text(str(MissionStatData.total_wolves_rescued))
+			Label_Enemy_Executed.set_text(str(MissionStatData.enemy_kill))
+			total_enemy_executed_label.set_text(str(MissionStatData.total_enemies_killed))
+			Label_Boss_Elimited.set_text(str(MissionStatData.boss_kill))
+			total_boss_eleminated_Label.set_text(str(MissionStatData.total_boss_killed))
 		
 		elif player_singleton_autoload.location == "Grassland":
 			MissionStatData.set_total_wolves_rescued(wolf_total_grassland)
 			MissionStatData.set_total_boss_killed(boss_total_grassland)
 			MissionStatData.set_total_enemies_killed(enemy_total_grassland)
-	
+			Label_Wolf_Rescue.set_text(str(MissionStatData.wolf_rescued))
+			Total_Wolf_Rescue_Label.set_text(str(MissionStatData.total_wolves_rescued))
+			Label_Enemy_Executed.set_text(str(MissionStatData.enemy_kill))
+			total_enemy_executed_label.set_text(str(MissionStatData.total_enemies_killed))
+			Label_Boss_Elimited.set_text(str(MissionStatData.boss_kill))
+			total_boss_eleminated_Label.set_text(str(MissionStatData.total_boss_killed))
 		else :
 			MissionStatData.set_total_wolves_rescued(wolf_total_dessert)
 			MissionStatData.set_total_boss_killed(boss_total_dessert)
 			MissionStatData.set_total_enemies_killed(enemy_total_dessert)
+			Label_Wolf_Rescue.set_text(str(MissionStatData.wolf_rescued))
+			Total_Wolf_Rescue_Label.set_text(str(MissionStatData.total_wolves_rescued))
+			Label_Enemy_Executed.set_text(str(MissionStatData.enemy_kill))
+			total_enemy_executed_label.set_text(str(MissionStatData.total_enemies_killed))
+			Label_Boss_Elimited.set_text(str(MissionStatData.boss_kill))
+			total_boss_eleminated_Label.set_text(str(MissionStatData.total_boss_killed))
 			
 	else : 
 		print("Failed to load resource data.")
@@ -97,4 +116,12 @@ func _process(delta):
 func toggle_mission_log():
 	self.visible = !self.visible
 		
+
+func reset_data():
+	Label_Wolf_Rescue.set_text(str(0))
+	Total_Wolf_Rescue_Label.set_text(str(0))
+	Label_Enemy_Executed.set_text(str(0))
+	total_enemy_executed_label.set_text(str(0))
+	Label_Boss_Elimited.set_text(str(0))
+	total_boss_eleminated_Label.set_text(str(0))
 

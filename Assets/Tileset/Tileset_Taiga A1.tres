@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=6 format=3 uid="uid://be2o4st0shlrm"]
 
-[ext_resource type="Texture2D" uid="uid://c22flvh58d4xv" path="res://Assets/Image/Tile_Set/Taiga/forest_tileset.png" id="1_fg5n2"]
-[ext_resource type="Texture2D" uid="uid://j72wyfl00s7s" path="res://Assets/Image/Tile_Set/Biome/d5faddcd-9400-4c4c-846d-f3eaf096e311.png" id="2_fu4jp"]
+[ext_resource type="Texture2D" uid="uid://bsgldwrfl8ita" path="res://Assets/Image/Tile_Set/Taiga/forest_tileset.png" id="1_fg5n2"]
+[ext_resource type="Texture2D" uid="uid://nda03g3ohk3c" path="res://Assets/Image/Tile_Set/Biome/d5faddcd-9400-4c4c-846d-f3eaf096e311.png" id="2_fu4jp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_605ey"]
 

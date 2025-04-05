@@ -1,7 +1,7 @@
 [gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dllvsykb0gqsy"]
 
-[ext_resource type="Texture2D" uid="uid://cgvd5uri5i5o" path="res://Assets/Image/Enemy/Humanoid/Taiga/hunter_bow/Arrow/Move.png" id="1_122qt"]
-[ext_resource type="Texture2D" uid="uid://dna3wets0hyke" path="res://Assets/Image/Enemy/Humanoid/Taiga/hunter_bow/Arrow/Static.png" id="2_gtpmg"]
+[ext_resource type="Texture2D" uid="uid://eloi6mvacaoj" path="res://Assets/Image/Enemy/Humanoid/Taiga/hunter_bow/Arrow/Move.png" id="1_122qt"]
+[ext_resource type="Texture2D" uid="uid://bjl4c4v1koeq2" path="res://Assets/Image/Enemy/Humanoid/Taiga/hunter_bow/Arrow/Static.png" id="2_gtpmg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1nhbo"]
 atlas = ExtResource("1_122qt")

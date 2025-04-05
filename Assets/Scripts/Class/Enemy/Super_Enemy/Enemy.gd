@@ -40,9 +40,9 @@ var current_armor : float
 
 func _ready():
 	# Initialize hurtbox values
-	hurt_box.Health = hlt
-	hurt_box.Armor = arm
-	hurt_box.Eficient_Armor = eficient_Armor
+	hurt_box.Healths = hlt
+	hurt_box.Armors = arm
+	hurt_box.Eficient_Armors = eficient_Armor
 	
 	# Set current values
 	current_armor = arm
@@ -64,8 +64,8 @@ func _ready():
 
 func _on_received_damage(_damage: float, _is_ap: bool, _ap_dmg: float):
 	# Update current values from hurtbox
-	current_health = hurt_box.Health
-	current_armor = hurt_box.Armor
+	current_health = hurt_box.Healths
+	current_armor = hurt_box.Armors
 	
 	# Update health and armor bars
 	health_bar.value = current_health
@@ -74,6 +74,7 @@ func _on_received_damage(_damage: float, _is_ap: bool, _ap_dmg: float):
 	# Play hurt animation if not dead
 	if current_health > 0:
 		animate_state = state.HURT
+		enemy_sprite_animation.play()
 		update_animation(direction.x)
 		
 	# Debug print

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dk0n5e4gmj3p3" path="res://Assets/Scences/Character/Player/player.tscn" id="3_xb5hv"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Save_Manager/SaveLoadManager.gd" id="5_dhs1r"]
 [ext_resource type="PackedScene" uid="uid://3fimxshrqrjf" path="res://Assets/Scences/Items/Weapon/Machete/slash_damage.tscn" id="5_vk76a"]
-[ext_resource type="FontFile" uid="uid://dk1ja3jllfjob" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="5_x361y"]
+[ext_resource type="FontFile" uid="uid://37vm87is54ip" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="5_x361y"]
 [ext_resource type="PackedScene" uid="uid://d2kow5kkphlx6" path="res://Assets/Scences/UI/Mission_Log/mission.tscn" id="6_qn67d"]
 [ext_resource type="PackedScene" uid="uid://ljy4srl7uqw4" path="res://Assets/Scences/UI/Wolf_Almanac/Main_Menu/alamanac_main_menu.tscn" id="8_7w300"]
 
@@ -87,6 +87,6 @@ top_level = true
 unique_name_in_owner = true
 script = ExtResource("5_dhs1r")
 
-[connection signal="exit_reached" from="WorldRoot/Taiga_A1_Word_Starter" to="." method="_on_level_exit_reached"]
+[connection signal="exit_reached" from="WorldRoot/Taiga_A1_Word_Starter" to="WorldRoot" method="_on_level_exit_reached"]
 [connection signal="pressed" from="UI/Save" to="." method="_on_save_game"]
 [connection signal="pressed" from="UI/Load" to="." method="_on_load_game"]

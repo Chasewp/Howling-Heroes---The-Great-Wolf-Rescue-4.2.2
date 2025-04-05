@@ -1,14 +1,14 @@
 [gd_scene load_steps=35 format=3 uid="uid://b5a3j5sbcyw3s"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Taiga/Brown_Bear.gd" id="1_eacxl"]
-[ext_resource type="FontFile" uid="uid://bj1q5gmkmip6u" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="3_eimeo"]
-[ext_resource type="SpriteFrames" uid="uid://bv6x06hwtsirk" path="res://Assets/Animate/Chacter/Enemy/Animal/polar_bear.tres" id="3_rxku3"]
-[ext_resource type="AudioStream" uid="uid://tqqynm8jw4x6" path="res://Assets/Music/SFX/Enemy/Animal/Claw Attack Sound Effects - 114 Claw Attack sounds for SFX projects.wav" id="4_7wt3l"]
-[ext_resource type="AudioStream" uid="uid://ch2whpxwv73nu" path="res://Assets/Music/SFX/Enemy/Animal/Brown_Bear_Executed.wav" id="4_l1cde"]
-[ext_resource type="AudioStream" uid="uid://btpuw62osqvd" path="res://Assets/Music/SFX/Enemy/Animal/Brown_Bear_Hit.wav" id="5_t77fh"]
-[ext_resource type="AudioStream" uid="uid://be2v0558p2kyg" path="res://Assets/Music/SFX/Enemy/Animal/Body Fall Grass Sound Effects - 459 Body Fall Grass sounds for SFX projects.wav" id="6_6pfkh"]
-[ext_resource type="AudioStream" uid="uid://srtbr6sps3f7" path="res://Assets/Music/SFX/Enemy/Animal/jump_grass.mp3" id="8_85ne0"]
-[ext_resource type="AudioStream" uid="uid://bhooryuleko4h" path="res://Assets/Music/SFX/Enemy/Animal/Walk_grass.wav" id="9_hs0aj"]
+[ext_resource type="FontFile" uid="uid://dhgp7qgyslj7a" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="3_eimeo"]
+[ext_resource type="SpriteFrames" uid="uid://db7bdnert7pta" path="res://Assets/Animate/Chacter/Enemy/Animal/brown_bear.tres" id="3_yegy6"]
+[ext_resource type="AudioStream" uid="uid://cm7wsk17k2dyc" path="res://Assets/Music/SFX/Enemy/Animal/Claw Attack Sound Effects - 114 Claw Attack sounds for SFX projects.wav" id="4_7wt3l"]
+[ext_resource type="AudioStream" uid="uid://8sigl33bvb58" path="res://Assets/Music/SFX/Enemy/Animal/Brown_Bear_Executed.wav" id="4_l1cde"]
+[ext_resource type="AudioStream" uid="uid://7tio4oieac8d" path="res://Assets/Music/SFX/Enemy/Animal/Brown_Bear_Hit.wav" id="5_t77fh"]
+[ext_resource type="AudioStream" uid="uid://be5kb8kyc742o" path="res://Assets/Music/SFX/Enemy/Animal/Body Fall Grass Sound Effects - 459 Body Fall Grass sounds for SFX projects.wav" id="6_6pfkh"]
+[ext_resource type="AudioStream" uid="uid://bjiffgtcy7r74" path="res://Assets/Music/SFX/Enemy/Animal/jump_grass.mp3" id="8_85ne0"]
+[ext_resource type="AudioStream" uid="uid://caue6c7jtmbob" path="res://Assets/Music/SFX/Enemy/Animal/Walk_grass.wav" id="9_hs0aj"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="10_2dxqw"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hurtbox/Hurt box.gd" id="11_ec0mk"]
 
@@ -1865,8 +1865,8 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_sspd6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
-sprite_frames = ExtResource("3_rxku3")
-animation = &"run"
+sprite_frames = ExtResource("3_yegy6")
+animation = &"attack"
 centered = false
 offset = Vector2(-32, -48)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dacxduhw3cbjc"]
+[gd_scene load_steps=31 format=3 uid="uid://dacxduhw3cbjc"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Stage/Taiga/taiga.gd" id="1_g4hk3"]
 [ext_resource type="PackedScene" uid="uid://ca0nm25t6mv6w" path="res://Assets/Scences/Items/Cammera/camera_Stage.tscn" id="2_00v6u"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b63jenx5a01xy" path="res://Assets/Scences/Items/portal/teleport_a_1.tscn" id="8_imjt6"]
 [ext_resource type="PackedScene" uid="uid://cndqerygqtk6p" path="res://Assets/Scences/Items/Cage/Taiga/pine__cage.tscn" id="9_gbjs0"]
 [ext_resource type="PackedScene" uid="uid://di6bgtu0y432v" path="res://Assets/Scences/Items/Player_Spawner/player_spawner.tscn" id="9_vtvml"]
+[ext_resource type="PackedScene" uid="uid://cbo01n7ccb6dr" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/black_bear.tscn" id="13_eiy3r"]
 [ext_resource type="PackedScene" uid="uid://barjbila0h7xr" path="res://Assets/Scences/Platfrom/Taiga/taiga_platrom.tscn" id="14_5av82"]
 [ext_resource type="PackedScene" uid="uid://b5a3j5sbcyw3s" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/brown_bear.tscn" id="14_wqxwl"]
 
@@ -300,8 +301,13 @@ bus = &"Music"
 
 [node name="Enemy" type="Node" parent="."]
 
-[node name="Brown_Bear" parent="Enemy" instance=ExtResource("14_wqxwl")]
+[node name="Stage_1" type="Node" parent="Enemy"]
+
+[node name="Brown_Bear" parent="Enemy/Stage_1" instance=ExtResource("14_wqxwl")]
 position = Vector2(296, 88)
+
+[node name="Black_Bear" parent="Enemy/Stage_1" instance=ExtResource("13_eiy3r")]
+position = Vector2(98, 263)
 
 [connection signal="cage_unlocked" from="Cages/Eurasiaan_Cage" to="Wolves/Eurasian_Wolf" method="_on_cage_unlocked"]
 
