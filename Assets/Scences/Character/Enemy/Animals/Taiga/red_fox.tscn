@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bha1kd0hiiw4r"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Taiga/red_fox.gd" id="1_ryo0h"]
+
+[node name="Red_fox" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_ryo0h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

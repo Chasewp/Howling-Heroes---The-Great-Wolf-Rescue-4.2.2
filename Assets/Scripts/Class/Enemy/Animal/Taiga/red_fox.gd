@@ -1,0 +1,2 @@
+class_name Red_Fox
+extends Enemy_Main_Class

@@ -13,9 +13,278 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_teleport_stage_1_body_entered(body):
+func _on_teleport_stage_1_to_stage_2_player_body_entered(body):
 	if body.is_in_group("player"):
 		if MissionStatData.enemy_kill == 5 and MissionStatData.boss_kill == 1 :
 			body.set_position(teleported.destination.global_position)
 		else:
 			body.set_position(teleported.destination.global_position)
+
+func _on_teleport_stage_2_to_stage_3_player_body_enter(body):
+	if body.is_in_group("player"):
+		if MissionStatData.enemy_kill == 10 and MissionStatData.boss_kill == 2 :
+			body.set_position(teleported.destination.global_position)
+		else:
+			body.set_position(teleported.destination.global_position)
+
+func _on_teleport_stage_3_to_stage_4_player_body_enter(body):
+	if body.is_in_group("player"):
+		if MissionStatData.enemy_kill == 15 and MissionStatData.boss_kill == 3 :
+			body.set_position(teleported.destination.global_position)
+		else:
+			body.set_position(teleported.destination.global_position)
+
+func _on_teleport_stage_4_to_stage_5_player_body_enter(body):
+	if body.is_in_group("player"):
+		if MissionStatData.enemy_kill == 20 and MissionStatData.boss_kill == 4 :
+			body.set_position(teleported.destination.global_position)
+		else:
+			body.set_position(teleported.destination.global_position)
+
+func _on_teleport_stage_5_to_stage_6_player_body_enter(body):
+	if body.is_in_group("player"):
+		if MissionStatData.enemy_kill == 30 and MissionStatData.boss_kill ==5 :
+			body.set_position(teleported.destination.global_position)
+		else:
+			body.set_position(teleported.destination.global_position)
+
+func _on_teleport_stage_6_to_stage_7_player_body_enter(body):
+	if body.is_in_group("player"):
+		if MissionStatData.enemy_kill == 35 and MissionStatData.boss_kill == 6 :
+			body.set_position(teleported.destination.global_position)
+		else:
+			body.set_position(teleported.destination.global_position)
+
+func _on_teleport_stage_7_to_stage_8_player_body_enter(body):
+	if body.is_in_group("player"):
+		if MissionStatData.enemy_kill == 40 and MissionStatData.boss_kill == 7 :
+			body.set_position(teleported.destination.global_position)
+		else:
+			body.set_position(teleported.destination.global_position)
+
+func _on_teleport_stage_8_to_stage_9_player_body_enter(body):
+	if body.is_in_group("player"):
+		if MissionStatData.enemy_kill == 45 and MissionStatData.boss_kill == 8 :
+			body.set_position(teleported.destination.global_position)
+		else:
+			body.set_position(teleported.destination.global_position)
+
+func _on_teleport_stage_9_to_stage_10_player_body_enter(body):
+	if body.is_in_group("player"):
+		if MissionStatData.enemy_kill == 50 and MissionStatData.boss_kill == 9:
+			body.set_position(teleported.destination.global_position)
+		else:
+			body.set_position(teleported.destination.global_position)
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

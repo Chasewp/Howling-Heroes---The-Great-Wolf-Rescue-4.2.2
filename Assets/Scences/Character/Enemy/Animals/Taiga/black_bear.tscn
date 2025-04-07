@@ -1,15 +1,15 @@
 [gd_scene load_steps=36 format=3 uid="uid://cbo01n7ccb6dr"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Taiga/Black_Bear.gd" id="1_fgq6m"]
-[ext_resource type="FontFile" uid="uid://bj1q5gmkmip6u" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="2_hctij"]
+[ext_resource type="FontFile" uid="uid://dhgp7qgyslj7a" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="2_hctij"]
 [ext_resource type="SpriteFrames" uid="uid://kbv2wxuu5ovr" path="res://Assets/Animate/Chacter/Enemy/Animal/black_bear.tres" id="3_a4jk5"]
-[ext_resource type="AudioStream" uid="uid://tqqynm8jw4x6" path="res://Assets/Music/SFX/Enemy/Animal/Claw Attack Sound Effects - 114 Claw Attack sounds for SFX projects.wav" id="4_273j8"]
-[ext_resource type="AudioStream" uid="uid://dgtr0jnqvflls" path="res://Assets/Music/SFX/Enemy/Animal/Black_Bear_Executed.wav" id="5_sqt51"]
-[ext_resource type="AudioStream" uid="uid://be2v0558p2kyg" path="res://Assets/Music/SFX/Enemy/Animal/Body Fall Grass Sound Effects - 459 Body Fall Grass sounds for SFX projects.wav" id="6_t4b1d"]
-[ext_resource type="AudioStream" uid="uid://btpuw62osqvd" path="res://Assets/Music/SFX/Enemy/Animal/Brown_Bear_Hit.wav" id="7_7v4cn"]
-[ext_resource type="AudioStream" uid="uid://djtgyh44nnlrr" path="res://Assets/Music/SFX/Enemy/Animal/Black_Bear_Hit.wav" id="7_dx2rd"]
-[ext_resource type="AudioStream" uid="uid://srtbr6sps3f7" path="res://Assets/Music/SFX/Enemy/Animal/jump_grass.mp3" id="8_araly"]
-[ext_resource type="AudioStream" uid="uid://bhooryuleko4h" path="res://Assets/Music/SFX/Enemy/Animal/Walk_grass.wav" id="9_yxhji"]
+[ext_resource type="AudioStream" uid="uid://cm7wsk17k2dyc" path="res://Assets/Music/SFX/Enemy/Animal/Claw Attack Sound Effects - 114 Claw Attack sounds for SFX projects.wav" id="4_273j8"]
+[ext_resource type="AudioStream" uid="uid://cxnjdjnsrc1p1" path="res://Assets/Music/SFX/Enemy/Animal/Black_Bear_Executed.wav" id="5_sqt51"]
+[ext_resource type="AudioStream" uid="uid://be5kb8kyc742o" path="res://Assets/Music/SFX/Enemy/Animal/Body Fall Grass Sound Effects - 459 Body Fall Grass sounds for SFX projects.wav" id="6_t4b1d"]
+[ext_resource type="AudioStream" uid="uid://7tio4oieac8d" path="res://Assets/Music/SFX/Enemy/Animal/Brown_Bear_Hit.wav" id="7_7v4cn"]
+[ext_resource type="AudioStream" uid="uid://d2lqd6bq5t1xv" path="res://Assets/Music/SFX/Enemy/Animal/Black_Bear_Hit.wav" id="7_dx2rd"]
+[ext_resource type="AudioStream" uid="uid://bjiffgtcy7r74" path="res://Assets/Music/SFX/Enemy/Animal/jump_grass.mp3" id="8_araly"]
+[ext_resource type="AudioStream" uid="uid://caue6c7jtmbob" path="res://Assets/Music/SFX/Enemy/Animal/Walk_grass.wav" id="9_yxhji"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="10_8n720"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hurtbox/Hurt box.gd" id="11_q6kdo"]
 
@@ -1814,10 +1814,24 @@ size = Vector2(58, 31)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3w1w"]
 size = Vector2(80.5, 63)
 
-[node name="Black_Bear" type="CharacterBody2D"]
+[node name="Black_Bear" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation")]
 collision_layer = 32
 collision_mask = 3
 script = ExtResource("1_fgq6m")
+health_bar = NodePath("Health_Bar")
+armor_bar = NodePath("Armor_Bar")
+hit_box = NodePath("Hit box")
+hurt_box = NodePath("Hurt_Box")
+enemy_sprites = NodePath("AnimatedSprite2D")
+enemy_sprite_animation = NodePath("AnimatedSprite2D/AnimationPlayer")
+hlt = 450.0
+arm = 35.0
+jump = 1
+speed = 300.0
+damage = 16.0
+Acceleration = 15.0
+Jump_velocity = -350.0
+eficient_Armor = 0.2
 
 [node name="CollisionShape Awhole Body" type="CollisionShape2D" parent="."]
 position = Vector2(-22, -40.5)
@@ -1853,7 +1867,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_sspd6")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
 sprite_frames = ExtResource("3_a4jk5")
-animation = &"iddle"
+animation = &"attack"
 centered = false
 offset = Vector2(-32, -48)
 
@@ -1898,6 +1912,4 @@ volume_db = -3.0
 bus = &"Sound_Effect"
 
 [connection signal="value_changed" from="Armor_Bar" to="." method="_on_enemy_armor_changed"]
-[connection signal="area_entered" from="Hit box" to="." method="_on_hit_area_enemy_enter"]
-[connection signal="area_entered" from="Hurt_Box" to="." method="_on_hurt_area_enemy_entered"]
 [connection signal="executed" from="Hurt_Box" to="." method="died"]

@@ -379,6 +379,8 @@ func take_damage(damage:float,is_armor_piercing:bool,AP_dmg :float):
 		
 func died():
 	anim_state = state.DIED
+	animation_player.play()
+	
 	
 func _on_hurt_area_foot_area_entered(area):
 	if area.is_in_group("trap"):

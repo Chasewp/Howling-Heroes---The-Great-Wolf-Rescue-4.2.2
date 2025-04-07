@@ -1824,13 +1824,13 @@ hurt_box = NodePath("Hurt_Box")
 enemy_sprites = NodePath("AnimatedSprite2D")
 enemy_sprite_animation = NodePath("AnimatedSprite2D/AnimationPlayer")
 hlt = 400.0
-arm = 20.0
+arm = 30.0
 jump = 1
 speed = 300.0
 damage = 15.0
 Acceleration = 15.0
 Jump_velocity = -350.0
-eficient_Armor = 0.2
+eficient_Armor = 0.3
 
 [node name="CollisionShape Awhole Body" type="CollisionShape2D" parent="."]
 position = Vector2(-22, -40.5)
