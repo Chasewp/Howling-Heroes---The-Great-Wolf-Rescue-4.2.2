@@ -1,3 +1,37 @@
-[gd_scene format=3 uid="uid://cxe4s4l0kq8fd"]
+[gd_scene load_steps=7 format=3 uid="uid://cxe4s4l0kq8fd"]
+
+[ext_resource type="Texture2D" uid="uid://c3wj485j1t6mx" path="res://Assets/Image/Items/Chest/Chest closed.png" id="1_kpbhs"]
+[ext_resource type="Script" path="res://Assets/Scripts/Item/Chest/chest.gd" id="1_pwxhk"]
+[ext_resource type="Texture2D" uid="uid://cyhomj7owqv7f" path="res://Assets/Image/Items/Chest/Chest Open.png" id="2_qtaq6"]
+[ext_resource type="AudioStream" uid="uid://cqbl7m0eodgnm" path="res://Assets/Music/SFX/Chest/Chest.wav" id="4_1tl8u"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3qji5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_virvc"]
+radius = 147.29
 
 [node name="Chest" type="StaticBody2D"]
+collision_layer = 32768
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_3qji5")
+script = ExtResource("1_pwxhk")
+
+[node name="ChestClosed" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_kpbhs")
+
+[node name="ChestOpen" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_qtaq6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_virvc")
+debug_color = Color(0.90001, 0.241658, 0.506019, 0.42)
+
+[node name="chest_open_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_1tl8u")
+bus = &"Sound_Effect"
+area_mask = 8192
+
+[node name="chest_open2" type="Area2D" parent="."]

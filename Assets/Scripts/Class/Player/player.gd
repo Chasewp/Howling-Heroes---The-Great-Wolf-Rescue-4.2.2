@@ -86,7 +86,8 @@ var data = load(SAVE_DATA)
 var anim_state = state.IDDLE
 var current_health : float
 var current_armor:float
-
+var _game_over_scence = load("res://Assets/Scences/UI/Game over/Game_Over.tscn")
+var _game_over = null
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -380,8 +381,12 @@ func take_damage(damage:float,is_armor_piercing:bool,AP_dmg :float):
 func died():
 	anim_state = state.DIED
 	animation_player.play()
-	
-	
+	#add to save progress & into game over scence
+	var game_over = get_tree().root.get_node("World_Stages/UI/")
+	var save_loader_manager = get_tree().root.get_node("World_Stages/Utilities/Save_Loader")
+	_game_over = _game_over_scence.instantiate()
+	game_over.add_child(_game_over)
+	save_loader_manager.has_method("save_game")
 func _on_hurt_area_foot_area_entered(area):
 	if area.is_in_group("trap"):
 		var _traps = area.get_parent()

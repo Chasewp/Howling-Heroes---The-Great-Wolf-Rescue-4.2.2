@@ -25,8 +25,8 @@ func _ready():
 	# Mulai serangan berkala
 	AttackTimer.wait_time = attack_cooldown
 	AttackTimer.start()
-	left_bounds = self.position + range_left_bound
-	right_bounds = self.position + range_right_bound
+	#left_bounds = self.position + range_left_bound
+	#right_bounds = self.position + range_right_bound
 	
 func _physics_process(delta):
 	handle_gravity(delta)

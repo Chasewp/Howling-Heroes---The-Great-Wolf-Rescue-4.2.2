@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://c0vlo77sdvbgi"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/UI/Wolf_Alamanac_Book/Wolf_Almanac_Book.gd" id="1_5o2tk"]
-[ext_resource type="Texture2D" uid="uid://8lvpv8lhorhe" path="res://Assets/Image/Background/UI/Wolf_Alamac_Book/opened_notebook_isolated_on_background.png" id="2_0arr5"]
-[ext_resource type="FontFile" uid="uid://dk1ja3jllfjob" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="3_6jxqw"]
-[ext_resource type="FontFile" uid="uid://dmorfn4drgakd" path="res://Assets/Fonts/DisposableDroidBB_bldital.ttf" id="4_ngxhc"]
-[ext_resource type="FontFile" uid="uid://bj1q5gmkmip6u" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="5_853po"]
-[ext_resource type="FontFile" uid="uid://c4dpeuiv2xlp4" path="res://Assets/Fonts/DisposableDroidBB_ital.ttf" id="6_oof8w"]
-[ext_resource type="Texture2D" uid="uid://d1bj347xylj36" path="res://Assets/Image/Buttons/right-arrow.png" id="7_x4bvj"]
+[ext_resource type="Texture2D" uid="uid://cjaxxmfegjphe" path="res://Assets/Image/Background/UI/Wolf_Alamac_Book/opened_notebook_isolated_on_background.png" id="2_0arr5"]
+[ext_resource type="FontFile" uid="uid://37vm87is54ip" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="3_6jxqw"]
+[ext_resource type="FontFile" uid="uid://lgqu2qf3l0sp" path="res://Assets/Fonts/DisposableDroidBB_bldital.ttf" id="4_ngxhc"]
+[ext_resource type="FontFile" uid="uid://dhgp7qgyslj7a" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="5_853po"]
+[ext_resource type="FontFile" uid="uid://dsx7kf3esbgjg" path="res://Assets/Fonts/DisposableDroidBB_ital.ttf" id="6_oof8w"]
+[ext_resource type="Texture2D" uid="uid://c6h50ut55x04r" path="res://Assets/Image/Buttons/right-arrow.png" id="7_x4bvj"]
 
 [node name="Alaskan_Tundra_Wolf_Almanac" type="Control"]
 layout_mode = 3
@@ -21,6 +21,7 @@ script = ExtResource("1_5o2tk")
 
 [node name="Book_Texturee" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(1280, 0)
+layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 903.0
 texture = ExtResource("2_0arr5")
@@ -29,6 +30,7 @@ metadata/_edit_lock_ = true
 
 [node name="Wolf_Picture" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(430, 615)
+layout_mode = 0
 offset_left = 156.0
 offset_top = 26.0
 offset_right = 586.0
@@ -61,6 +63,7 @@ text = "SPECIES"
 vertical_alignment = 1
 
 [node name="Species" type="Label" parent="."]
+layout_mode = 0
 offset_left = 841.0
 offset_top = 79.0
 offset_right = 982.0
@@ -72,6 +75,7 @@ text = "Species_Name"
 vertical_alignment = 1
 
 [node name="Height_sizE" type="Label" parent="."]
+layout_mode = 0
 offset_left = 665.0
 offset_top = 127.0
 offset_right = 729.0
@@ -84,6 +88,7 @@ vertical_alignment = 1
 
 [node name="Height_Label" type="Label" parent="."]
 custom_minimum_size = Vector2(175, 25)
+layout_mode = 0
 offset_left = 841.0
 offset_top = 127.0
 offset_right = 1016.0
@@ -145,6 +150,7 @@ text = "LENGHT SIZE"
 vertical_alignment = 1
 
 [node name="CONSERVATION STATUS" type="Label" parent="."]
+layout_mode = 0
 offset_left = 664.0
 offset_top = 260.0
 offset_right = 776.0
@@ -275,6 +281,7 @@ context_menu_enabled = true
 
 [node name="TextureButton" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
 offset_left = 49.0
 offset_top = 643.0
 offset_right = 113.0

@@ -1864,6 +1864,7 @@ theme_override_styles/background = SubResource("StyleBoxEmpty_rc6vi")
 theme_override_styles/fill = SubResource("StyleBoxFlat_sspd6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
 scale = Vector2(4, 4)
 sprite_frames = ExtResource("3_yegy6")
 animation = &"attack"

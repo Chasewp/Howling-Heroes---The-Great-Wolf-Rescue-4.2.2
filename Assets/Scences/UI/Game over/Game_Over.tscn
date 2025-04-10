@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://b8slyshlqv5fw"]
+[gd_scene load_steps=5 format=3 uid="uid://b8slyshlqv5fw"]
+
+[ext_resource type="Texture2D" uid="uid://b7mr55vgkcaoj" path="res://Assets/Image/Background/UI/Game_Over/_05103563-7cfd-43ed-b5bd-2cb1f01de6a0.jpeg" id="1_oclnr"]
+[ext_resource type="Script" path="res://Assets/Scripts/UI/Game_over/Game_Over.gd" id="1_p4uli"]
+[ext_resource type="FontFile" uid="uid://lgqu2qf3l0sp" path="res://Assets/Fonts/DisposableDroidBB_bldital.ttf" id="2_fkrqe"]
+[ext_resource type="StyleBox" uid="uid://rojw4qk833xs" path="res://addons/dialogic/Editor/Events/styles/SimpleButtonNormalGameover.tres" id="3_xvhmt"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -7,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_p4uli")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -15,3 +21,54 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("1_oclnr")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -20.0
+offset_right = 225.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 241
+alignment = 1
+
+[node name="Retry" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0546875, 0.867065, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.211102, 0.204902, 0.775574, 1)
+theme_override_colors/font_hover_color = Color(0.768627, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.78125, 1, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_fkrqe")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("3_xvhmt")
+theme_override_styles/hover = ExtResource("3_xvhmt")
+theme_override_styles/pressed = ExtResource("3_xvhmt")
+theme_override_styles/focus = ExtResource("3_xvhmt")
+text = "RETRY"
+
+[node name="Exit" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0546875, 0.867065, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.211102, 0.204902, 0.775574, 1)
+theme_override_colors/font_hover_color = Color(0.768627, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.78125, 1, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_fkrqe")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("3_xvhmt")
+theme_override_styles/hover = ExtResource("3_xvhmt")
+theme_override_styles/pressed = ExtResource("3_xvhmt")
+theme_override_styles/focus = ExtResource("3_xvhmt")
+text = "QUIT"

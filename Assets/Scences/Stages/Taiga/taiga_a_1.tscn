@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Player_Spawner/Player_Spawner.gd" id="3_evypl"]
 [ext_resource type="PackedScene" uid="uid://wc2k8qdf0h58" path="res://Assets/Scences/Items/Weapon/Brust_garou/Brust_garaou.tscn" id="3_gt164"]
 [ext_resource type="PackedScene" uid="uid://br3y2wminllit" path="res://Assets/Scences/Items/Wolf_Coins/wolf_coin_next_lv.tscn" id="4_wm060"]
-[ext_resource type="AudioStream" uid="uid://bw2b65tw0o6c3" path="res://Assets/Music/SFX/Biomes/Forest Music/Forest.mp3" id="6_hxx5w"]
+[ext_resource type="AudioStream" uid="uid://cijoewb00qfu0" path="res://Assets/Music/SFX/Biomes/Forest Music/Forest.mp3" id="6_hxx5w"]
 
 [node name="Taiga_A1_Word_Starter" type="Node2D" groups=["level"]]
 script = ExtResource("1_3jyu1")

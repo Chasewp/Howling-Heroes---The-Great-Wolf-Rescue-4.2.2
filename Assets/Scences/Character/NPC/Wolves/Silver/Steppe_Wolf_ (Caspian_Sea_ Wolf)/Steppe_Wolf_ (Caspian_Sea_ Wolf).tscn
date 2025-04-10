@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://ddt11og3ywm5j"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/Class/NPC/Wolves/Character/Silver/Steppe_Wolf_ (Caspian_Sea_ Wolf)/Steppe_Wolf_ (Caspian_Sea_ Wolf)Steppe_Wolf_ (Caspian_Sea_ Wolf)Steppe_Wolf_ (Caspian_Sea_ Wolf).gd" id="1_44jml"]
-[ext_resource type="PackedScene" uid="uid://dy1dhg3kvibw4" path="res://Assets/Scences/UI/Wolf_Almanac/Book/Steppe Wolf (Caspian Sea Wolf)/steppe_wolf_(caspian_sea_wolf)_almanac.tscn" id="2_cbyvw"]
+[ext_resource type="Script" path="res://Assets/Scripts/Class/NPC/Wolves/Character/Silver/Steppe_Wolf_ (Caspian_Sea_ Wolf)/Steppe_Wolf_ (Caspian_Sea_ Wolf).gd" id="1_44jml"]
+[ext_resource type="PackedScene" uid="uid://bnta1evqs7w6i" path="res://Assets/Scences/UI/Wolf_Almanac/Book/Steppe Wolf (Caspian Sea Wolf)/steppe_wolf_(caspian_sea_wolf)_almanac.tscn" id="2_cbyvw"]
 [ext_resource type="SpriteFrames" uid="uid://lib3jddbreee" path="res://Assets/Animate/Chacter/NPC/Wolves/Silver_Wolf/silver_wolf.tres" id="3_gr0ne"]
-[ext_resource type="AudioStream" uid="uid://djmu6dscwempy" path="res://Assets/Music/SFX/Howl/Wolf Howl 25.wav" id="4_wjyam"]
-[ext_resource type="AudioStream" uid="uid://b74qkv8adjb87" path="res://Assets/Music/SFX/Get_Wolf/Get_Wolf.wav" id="5_ypc3v"]
+[ext_resource type="AudioStream" uid="uid://c8oexrac2q0hl" path="res://Assets/Music/SFX/Howl/Wolf Howl 25.wav" id="4_wjyam"]
+[ext_resource type="AudioStream" uid="uid://t867kq16bfh7" path="res://Assets/Music/SFX/Get_Wolf/Get_Wolf.wav" id="5_ypc3v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wi3iq"]
 radius = 61.2

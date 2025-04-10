@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://dl0gk0j15tqi5"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/NPC/Wolves/Character/Brown/Iberian_Wolf/Iberian_Wolf.gd" id="1_5ivpg"]
-[ext_resource type="PackedScene" uid="uid://b1qa303myx6qi" path="res://Assets/Scences/UI/Wolf_Almanac/Book/Iberian Wolf/iberian_wolf_almanac.tscn" id="2_ld7nj"]
-[ext_resource type="AudioStream" uid="uid://cxwok4ngh38ji" path="res://Assets/Music/SFX/Howl/Wolf Howl 14.wav" id="3_3uqr6"]
+[ext_resource type="PackedScene" uid="uid://cysp1kinmhhlg" path="res://Assets/Scences/UI/Wolf_Almanac/Book/Iberian Wolf/iberian_wolf_almanac.tscn" id="2_ld7nj"]
+[ext_resource type="AudioStream" uid="uid://unwe1a4iuru6" path="res://Assets/Music/SFX/Howl/Wolf Howl 14.wav" id="3_3uqr6"]
 [ext_resource type="SpriteFrames" uid="uid://dspb8hmvlvqhb" path="res://Assets/Animate/Chacter/NPC/Wolves/Brown_Wolf/brown_wolf.tres" id="3_y7dog"]
-[ext_resource type="AudioStream" uid="uid://b74qkv8adjb87" path="res://Assets/Music/SFX/Get_Wolf/Get_Wolf.wav" id="5_4xf1f"]
+[ext_resource type="AudioStream" uid="uid://t867kq16bfh7" path="res://Assets/Music/SFX/Get_Wolf/Get_Wolf.wav" id="5_4xf1f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wi3iq"]
 radius = 61.2

@@ -1,10 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://dacxduhw3cbjc"]
+[gd_scene load_steps=35 format=3 uid="uid://dacxduhw3cbjc"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Stage/Taiga/taiga.gd" id="1_g4hk3"]
 [ext_resource type="PackedScene" uid="uid://ca0nm25t6mv6w" path="res://Assets/Scences/Items/Cammera/camera_Stage.tscn" id="2_00v6u"]
 [ext_resource type="PackedScene" uid="uid://culrb1suvevtd" path="res://Assets/Scences/Paralex/Taiga/taiga.tscn" id="2_rruxb"]
 [ext_resource type="PackedScene" uid="uid://cuuxigy7yprh4" path="res://Assets/Scences/Paralex/Taiga/taiga_2.tscn" id="2_scon1"]
 [ext_resource type="TileSet" uid="uid://be2o4st0shlrm" path="res://Assets/Tileset/Tileset_Taiga A1.tres" id="3_a6xkp"]
+[ext_resource type="PackedScene" uid="uid://cs3vhxycmjxq1" path="res://Assets/Scences/Items/Keys/pine_key.tscn" id="3_x65nw"]
 [ext_resource type="PackedScene" uid="uid://dcgqy35frqjee" path="res://Assets/Scences/Paralex/Taiga/taiga_a_3.tscn" id="5_uqdba"]
 [ext_resource type="PackedScene" uid="uid://do60jfk40770p" path="res://Assets/Scences/Character/NPC/Wolves/Gray/Eurasian_Wolf/Eurasian_Wolf.tscn" id="7_2xikr"]
 [ext_resource type="PackedScene" uid="uid://b63jenx5a01xy" path="res://Assets/Scences/Items/portal/teleport_a_1.tscn" id="8_imjt6"]
@@ -117,6 +118,11 @@ layer_3/tile_data = PackedInt32Array(2621618, 524288, 10, 2621619, 589824, 10, 2
 libraries = {
 "": SubResource("AnimationLibrary_y85v2")
 }
+
+[node name="Keys" type="Node" parent="."]
+
+[node name="Pine_Key" parent="Keys" instance=ExtResource("3_x65nw")]
+position = Vector2(2866, 630)
 
 [node name="Teleport" type="Node" parent="."]
 

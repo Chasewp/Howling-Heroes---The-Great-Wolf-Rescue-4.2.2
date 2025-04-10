@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://damhkymc1kira"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Item/Cage/Dessert/Dessert.gd" id="1_c43se"]
-[ext_resource type="Texture2D" uid="uid://derfyluf2yxrn" path="res://Assets/Image/Items/Cage/Dessert/sand cage.png" id="2_qud3o"]
-[ext_resource type="AudioStream" uid="uid://cxr4gssdh3h2u" path="res://Assets/Music/SFX/Cage/Cage sfx.wav" id="3_lf75k"]
-[ext_resource type="AudioStream" uid="uid://dhcgnrq2i6i07" path="res://Assets/Music/Dialogues/Cage/Access Denied.mp3" id="4_00mfo"]
+[ext_resource type="Texture2D" uid="uid://djjh0b23pwowj" path="res://Assets/Image/Items/Cage/Dessert/sand cage.png" id="2_qud3o"]
+[ext_resource type="AudioStream" uid="uid://ce0asqe0j0fea" path="res://Assets/Music/SFX/Cage/Cage sfx.wav" id="3_lf75k"]
+[ext_resource type="AudioStream" uid="uid://cjon8tejst44e" path="res://Assets/Music/Dialogues/Cage/Access Denied.mp3" id="4_00mfo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6tgoy"]
 radius = 71.1126

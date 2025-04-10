@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cajkqxvd8efkm"]
+
+[ext_resource type="Script" path="res://Assets/Script/Controller/UI/Settings_Confirmation/settings_confrimation.gd" id="1_f8o3j"]
+[ext_resource type="AudioStream" uid="uid://ty2bg0clrp0t" path="res://Assets/Music/All Button/Quit_Button.mp3" id="1_jggl6"]
+[ext_resource type="AudioStream" uid="uid://c8ygb4nqbs03p" path="res://Assets/Music/Warning/exclamation-101soundboards.mp3" id="1_mqbtp"]
+[ext_resource type="Theme" uid="uid://br2uoqpi38ygc" path="res://Assets/Theme/Dialouge/Exit_Confirmation.tres" id="1_wyah5"]
+
+[node name="Setting_Confirmation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f8o3j")
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+title = ""
+initial_position = 1
+size = Vector2i(813, 175)
+visible = true
+unresizable = true
+borderless = true
+popup_window = true
+min_size = Vector2i(200, 85)
+keep_title_visible = false
+theme = ExtResource("1_wyah5")
+ok_button_text = "Yes"
+dialog_text = "Are You Sure Want Exit From Option Menu?
+All Setting Will be changed to Default"
+dialog_hide_on_ok = false
+dialog_close_on_escape = false
+cancel_button_text = "No"
+
+[node name="buton sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_jggl6")
+bus = &"Sound Effects"
+
+[node name="Warning" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_mqbtp")
+bus = &"Sound Effects"
+
+[connection signal="canceled" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_canceled"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]

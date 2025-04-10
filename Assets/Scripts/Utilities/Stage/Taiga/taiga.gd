@@ -4,6 +4,7 @@ extends Level
 @onready var music = $Music
 @onready var platfrom = $platfrommAnimationPlayer
 var teleported = teleport.new()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	music.play()
