@@ -120,7 +120,7 @@ func handle_movement(delta):
 	move_and_slide()
 
 func update_state():
-		if animate_state == state.HURT: 
+		if animate_state == state.IDDLE: 
 			return
 		if is_on_floor():
 			if velocity == Vector2.ZERO:
@@ -134,6 +134,8 @@ func update_state():
 				animate_state = state.JUMPDOWN
 				
 func update_animation(dir):
+	if not is_instance_valid(enemy_sprites):
+		return
 	# Turn Right
 	if dir > 0 :
 		enemy_sprites.flip_h = false
@@ -193,7 +195,9 @@ func update_animation(dir):
 func _on_enemy_health_changed(percentage:float):
 	health_bar.value = hlt
 	health_bar.set_value_no_signal(percentage)
+	animate_state= state.HURT
 	
 func _on_enemy_armor_changed(percentage:float):
 	armor_bar.value = arm
 	armor_bar.set_value_no_signal(percentage)
+	animate_state= state.HURT

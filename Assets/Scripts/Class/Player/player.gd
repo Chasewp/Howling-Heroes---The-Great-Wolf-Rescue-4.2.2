@@ -228,6 +228,8 @@ func add_health_armor():
 func _physics_process(delta):
 	if DialogueManager.is_dialog_active:
 		return
+	if player_health <=0:
+		died()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -381,12 +383,13 @@ func take_damage(damage:float,is_armor_piercing:bool,AP_dmg :float):
 func died():
 	anim_state = state.DIED
 	animation_player.play()
-	#add to save progress & into game over scence
 	var game_over = get_tree().root.get_node("World_Stages/UI/")
 	var save_loader_manager = get_tree().root.get_node("World_Stages/Utilities/Save_Loader")
 	_game_over = _game_over_scence.instantiate()
 	game_over.add_child(_game_over)
 	save_loader_manager.has_method("save_game")
+	queue_free()
+	
 func _on_hurt_area_foot_area_entered(area):
 	if area.is_in_group("trap"):
 		var _traps = area.get_parent()

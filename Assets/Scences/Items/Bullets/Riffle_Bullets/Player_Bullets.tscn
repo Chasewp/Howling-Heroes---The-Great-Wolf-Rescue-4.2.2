@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bi4hvn314kpgx"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Item/Bullets/Bullets/Player_Bullets.gd" id="1_3i7yn"]
-[ext_resource type="Texture2D" uid="uid://cuue4jblm6bn3" path="res://Assets/Image/Items/Bullets/All_Fire_Bullet_Pixel_16x16_02.png" id="1_4sdnw"]
+[ext_resource type="Texture2D" uid="uid://msxx7uanopiq" path="res://Assets/Image/Items/Bullets/All_Fire_Bullet_Pixel_16x16_02.png" id="1_4sdnw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7lew0"]
 atlas = ExtResource("1_4sdnw")
@@ -76,7 +76,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"explode",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wcr8k"]
@@ -91,7 +91,9 @@ AP_dmg = 0.2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cbmhu")
-frame_progress = 0.285567
+animation = &"explode"
+frame = 4
+frame_progress = 1.0
 offset = Vector2(8, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

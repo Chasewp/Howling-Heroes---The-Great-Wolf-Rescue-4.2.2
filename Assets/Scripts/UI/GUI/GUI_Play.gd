@@ -56,34 +56,13 @@ func _on_player_armor_changed(percentage:float):
 	armor.set_value_no_signal(percentage)
 
 func get_keys():
-	# Keys
-	if (
-		player_singleton_autoload.getter_pine_key() and
-		player_singleton_autoload.getter_ice_key() and
-		player_singleton_autoload.getter_stone_key() and
-		player_singleton_autoload.getter_snow_fang_key() and
-		player_singleton_autoload.getter_frozen_paw_securelock_key() and
-		player_singleton_autoload.getter_grass_key() and
-		player_singleton_autoload.getter_flower_key() and
-		player_singleton_autoload.getter_ground_key() and
-		player_singleton_autoload.getter_dessert_key()
-	):
-		Pine_Key.visible = true
-		ice_key.visible = true
-		stone_key.visible = true
-		snow_fang_key.visible = true
-		frozen_paw_securelock_key.visible = true
-		grass_key.visible = true
-		flower_key.visible = true
-		ground_key.visible = true
-		dessert_key.visible = true
-	else:
-		Pine_Key.visible = false
-		ice_key.visible = false
-		stone_key.visible = false
-		snow_fang_key.visible = false
-		frozen_paw_securelock_key.visible = false
-		grass_key.visible = false
-		flower_key.visible = false
-		ground_key.visible = false
-		dessert_key.visible = false
+	# Set visibility based on each key's availability
+	Pine_Key.visible = player_singleton_autoload.getter_pine_key()
+	ice_key.visible = player_singleton_autoload.getter_ice_key()
+	stone_key.visible = player_singleton_autoload.getter_stone_key()
+	snow_fang_key.visible = player_singleton_autoload.getter_snow_fang_key()
+	frozen_paw_securelock_key.visible = player_singleton_autoload.getter_frozen_paw_securelock_key()
+	grass_key.visible = player_singleton_autoload.getter_grass_key()
+	flower_key.visible = player_singleton_autoload.getter_flower_key()
+	ground_key.visible = player_singleton_autoload.getter_ground_key()
+	dessert_key.visible = player_singleton_autoload.getter_dessert_key()

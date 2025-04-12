@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://3fimxshrqrjf"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Item/Bullets/Bullets/slash_damage.gd" id="1_80rk7"]
-[ext_resource type="Texture2D" uid="uid://cuue4jblm6bn3" path="res://Assets/Image/Items/Bullets/All_Fire_Bullet_Pixel_16x16_02.png" id="2_3bp7g"]
+[ext_resource type="Texture2D" uid="uid://msxx7uanopiq" path="res://Assets/Image/Items/Bullets/All_Fire_Bullet_Pixel_16x16_02.png" id="2_3bp7g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_af5sp"]
 atlas = ExtResource("2_3bp7g")
@@ -58,7 +58,7 @@ _data = {
 }
 
 [node name="Slash_Damage" type="Area2D"]
-collision_layer = 528
+collision_layer = 16
 collision_mask = 65
 script = ExtResource("1_80rk7")
 damage = 12.5

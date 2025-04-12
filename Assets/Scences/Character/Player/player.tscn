@@ -1,8 +1,9 @@
-[gd_scene load_steps=84 format=3 uid="uid://dk0n5e4gmj3p3"]
+[gd_scene load_steps=85 format=3 uid="uid://dk0n5e4gmj3p3"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Player/player.gd" id="1_j1d3s"]
 [ext_resource type="PackedScene" uid="uid://bi4hvn314kpgx" path="res://Assets/Scences/Items/Bullets/Riffle_Bullets/Player_Bullets.tscn" id="2_vc508"]
 [ext_resource type="Texture2D" uid="uid://dd2eopcplo5m7" path="res://Assets/Image/Character/Player/Normal/Iddle/Iddle_2.png" id="3_7e7iu"]
+[ext_resource type="PackedScene" uid="uid://3fimxshrqrjf" path="res://Assets/Scences/Items/Weapon/Machete/slash_damage.tscn" id="3_m86m4"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hurtbox/Hurt box.gd" id="3_o0r77"]
 [ext_resource type="Texture2D" uid="uid://dd2buv8dribaa" path="res://Assets/Image/Items/Weapon/Player/Brust Garou 976 x 134.png" id="4_omgh0"]
 [ext_resource type="Texture2D" uid="uid://c4asss5w1frad" path="res://Assets/Image/Character/Player/Machete/Iddle/Iddle_Machete_1.png" id="5_exqnn"]
@@ -1507,7 +1508,7 @@ tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(108, -32)]
+"values": [Vector2(53, -50)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
@@ -1707,7 +1708,7 @@ tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-108, -32)]
+"values": [Vector2(-53, -50)]
 }
 
 [sub_resource type="Animation" id="Animation_ynsip"]
@@ -2527,6 +2528,7 @@ script = ExtResource("1_j1d3s")
 bullets_caps_lbl = NodePath("Info/Text/Ammo_Label/Bullets_Caps")
 maganize_lbl = NodePath("Info/Text/Ammo_Label/Mag_lbl")
 bullet_scence = ExtResource("2_vc508")
+slash_scences = ExtResource("3_m86m4")
 is_machete_equip = true
 is_burst_garou_equip = true
 player_ammo = 30
@@ -2801,4 +2803,5 @@ metadata/_edit_use_anchors_ = true
 [connection signal="area_entered" from="Hurt_Area_foot" to="." method="_on_hurt_area_foot_area_entered"]
 [connection signal="executed" from="Hurt_Area_foot" to="." method="died"]
 [connection signal="area_entered" from="Hurt_Area_chest" to="." method="_on_hurt_area_chest_area_entered"]
+[connection signal="executed" from="Hurt_Area_chest" to="." method="died"]
 [connection signal="finished" from="SFX/SFXReloading_voice" to="." method="_on_sfx_reloading_voice_finished"]

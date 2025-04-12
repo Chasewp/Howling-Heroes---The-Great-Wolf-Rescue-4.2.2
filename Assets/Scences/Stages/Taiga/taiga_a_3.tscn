@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dacxduhw3cbjc"]
+[gd_scene load_steps=37 format=3 uid="uid://dacxduhw3cbjc"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Stage/Taiga/taiga.gd" id="1_g4hk3"]
 [ext_resource type="PackedScene" uid="uid://ca0nm25t6mv6w" path="res://Assets/Scences/Items/Cammera/camera_Stage.tscn" id="2_00v6u"]
@@ -12,9 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://8sni2y3wclb0" path="res://Assets/Scences/Character/NPC/Wolves/White/Machenzie_River_Wolf/Machenzie_River_Wolf.tscn" id="8_k13xk"]
 [ext_resource type="PackedScene" uid="uid://cndqerygqtk6p" path="res://Assets/Scences/Items/Cage/Taiga/pine__cage.tscn" id="9_gbjs0"]
 [ext_resource type="PackedScene" uid="uid://di6bgtu0y432v" path="res://Assets/Scences/Items/Player_Spawner/player_spawner.tscn" id="9_vtvml"]
+[ext_resource type="PackedScene" uid="uid://coycdiawi84o" path="res://Assets/Scences/Items/portal/teleport_stage.tscn" id="10_aivyi"]
 [ext_resource type="PackedScene" uid="uid://cbo01n7ccb6dr" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/black_bear.tscn" id="13_eiy3r"]
 [ext_resource type="PackedScene" uid="uid://barjbila0h7xr" path="res://Assets/Scences/Platfrom/Taiga/taiga_platrom.tscn" id="14_5av82"]
 [ext_resource type="PackedScene" uid="uid://b5a3j5sbcyw3s" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/brown_bear.tscn" id="14_wqxwl"]
+[ext_resource type="AudioStream" uid="uid://cijoewb00qfu0" path="res://Assets/Music/SFX/Biomes/Forest Music/Forest.mp3" id="16_nktca"]
 
 [sub_resource type="Animation" id="Animation_c7rdu"]
 length = 0.001
@@ -75,7 +77,7 @@ size = Vector2(20, 185)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fgucn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5a1h"]
-size = Vector2(32, 1024)
+size = Vector2(32, 1282)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kd3gx"]
 
@@ -98,7 +100,7 @@ size = Vector2(80, 20)
 [node name="Taiga_A2" type="Node2D" groups=["level"]]
 script = ExtResource("1_g4hk3")
 
-[node name="Taiga" type="TileMap" parent="."]
+[node name="Taiga" type="TileMap" parent="." groups=["Terains"]]
 tile_set = ExtResource("3_a6xkp")
 format = 2
 layer_0/name = "Tileset"
@@ -169,8 +171,9 @@ debug_color = Color(0.12549, 0.862745, 1, 0.419608)
 
 [node name="platfromer" type="Node" parent="Wall_Barrier/Stage_1"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Wall_Barrier/Stage_1/platfromer"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Wall_Barrier/Stage_1/platfromer" groups=["Terains"]]
 position = Vector2(1, 277)
+collision_mask = 50
 physics_material_override = SubResource("PhysicsMaterial_flutf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Barrier/Stage_1/platfromer/StaticBody2D"]
@@ -200,141 +203,29 @@ debug_color = Color(0.720622, 0.631743, 0, 0.42)
 
 [node name="Stage_4" type="Node" parent="Wall_Barrier"]
 
-[node name="Bos_2" type="Node" parent="Wall_Barrier/Stage_4"]
-
-[node name="Bos_3" type="Node" parent="Wall_Barrier/Stage_4"]
-
 [node name="Bos_4" type="Node" parent="Wall_Barrier/Stage_4"]
-
-[node name="Bos_5" type="Node" parent="Wall_Barrier/Stage_4"]
-
-[node name="Bos_6" type="Node" parent="Wall_Barrier/Stage_4"]
-
-[node name="Bos_7" type="Node" parent="Wall_Barrier/Stage_4"]
-
-[node name="Bos_8" type="Node" parent="Wall_Barrier/Stage_4"]
-
-[node name="Bos_9" type="Node" parent="Wall_Barrier/Stage_4"]
-
-[node name="Bos_10" type="Node" parent="Wall_Barrier/Stage_4"]
 
 [node name="Stage_5" type="Node" parent="Wall_Barrier"]
 
-[node name="Bos_2" type="Node" parent="Wall_Barrier/Stage_5"]
-
-[node name="Bos_3" type="Node" parent="Wall_Barrier/Stage_5"]
-
-[node name="Bos_4" type="Node" parent="Wall_Barrier/Stage_5"]
-
 [node name="Bos_5" type="Node" parent="Wall_Barrier/Stage_5"]
-
-[node name="Bos_6" type="Node" parent="Wall_Barrier/Stage_5"]
-
-[node name="Bos_7" type="Node" parent="Wall_Barrier/Stage_5"]
-
-[node name="Bos_8" type="Node" parent="Wall_Barrier/Stage_5"]
-
-[node name="Bos_9" type="Node" parent="Wall_Barrier/Stage_5"]
-
-[node name="Bos_10" type="Node" parent="Wall_Barrier/Stage_5"]
 
 [node name="Stage_6" type="Node" parent="Wall_Barrier"]
 
-[node name="Bos_2" type="Node" parent="Wall_Barrier/Stage_6"]
-
-[node name="Bos_3" type="Node" parent="Wall_Barrier/Stage_6"]
-
-[node name="Bos_4" type="Node" parent="Wall_Barrier/Stage_6"]
-
-[node name="Bos_5" type="Node" parent="Wall_Barrier/Stage_6"]
-
 [node name="Bos_6" type="Node" parent="Wall_Barrier/Stage_6"]
-
-[node name="Bos_7" type="Node" parent="Wall_Barrier/Stage_6"]
-
-[node name="Bos_8" type="Node" parent="Wall_Barrier/Stage_6"]
-
-[node name="Bos_9" type="Node" parent="Wall_Barrier/Stage_6"]
-
-[node name="Bos_10" type="Node" parent="Wall_Barrier/Stage_6"]
 
 [node name="Stage_7" type="Node" parent="Wall_Barrier"]
 
-[node name="Bos_2" type="Node" parent="Wall_Barrier/Stage_7"]
-
-[node name="Bos_3" type="Node" parent="Wall_Barrier/Stage_7"]
-
-[node name="Bos_4" type="Node" parent="Wall_Barrier/Stage_7"]
-
-[node name="Bos_5" type="Node" parent="Wall_Barrier/Stage_7"]
-
-[node name="Bos_6" type="Node" parent="Wall_Barrier/Stage_7"]
-
 [node name="Bos_7" type="Node" parent="Wall_Barrier/Stage_7"]
 
-[node name="Bos_8" type="Node" parent="Wall_Barrier/Stage_7"]
-
-[node name="Bos_9" type="Node" parent="Wall_Barrier/Stage_7"]
-
-[node name="Bos_10" type="Node" parent="Wall_Barrier/Stage_7"]
-
 [node name="Stage_8" type="Node" parent="Wall_Barrier"]
-
-[node name="Bos_2" type="Node" parent="Wall_Barrier/Stage_8"]
-
-[node name="Bos_3" type="Node" parent="Wall_Barrier/Stage_8"]
-
-[node name="Bos_4" type="Node" parent="Wall_Barrier/Stage_8"]
-
-[node name="Bos_5" type="Node" parent="Wall_Barrier/Stage_8"]
-
-[node name="Bos_6" type="Node" parent="Wall_Barrier/Stage_8"]
-
-[node name="Bos_7" type="Node" parent="Wall_Barrier/Stage_8"]
-
-[node name="Bos_8" type="Node" parent="Wall_Barrier/Stage_8"]
-
-[node name="Bos_9" type="Node" parent="Wall_Barrier/Stage_8"]
 
 [node name="Bos_10" type="Node" parent="Wall_Barrier/Stage_8"]
 
 [node name="Stage_9" type="Node" parent="Wall_Barrier"]
 
-[node name="Bos_2" type="Node" parent="Wall_Barrier/Stage_9"]
-
-[node name="Bos_3" type="Node" parent="Wall_Barrier/Stage_9"]
-
-[node name="Bos_4" type="Node" parent="Wall_Barrier/Stage_9"]
-
-[node name="Bos_5" type="Node" parent="Wall_Barrier/Stage_9"]
-
-[node name="Bos_6" type="Node" parent="Wall_Barrier/Stage_9"]
-
-[node name="Bos_7" type="Node" parent="Wall_Barrier/Stage_9"]
-
-[node name="Bos_8" type="Node" parent="Wall_Barrier/Stage_9"]
-
 [node name="Bos_9" type="Node" parent="Wall_Barrier/Stage_9"]
 
-[node name="Bos_10" type="Node" parent="Wall_Barrier/Stage_9"]
-
 [node name="Stage_10" type="Node" parent="Wall_Barrier"]
-
-[node name="Bos_2" type="Node" parent="Wall_Barrier/Stage_10"]
-
-[node name="Bos_3" type="Node" parent="Wall_Barrier/Stage_10"]
-
-[node name="Bos_4" type="Node" parent="Wall_Barrier/Stage_10"]
-
-[node name="Bos_5" type="Node" parent="Wall_Barrier/Stage_10"]
-
-[node name="Bos_6" type="Node" parent="Wall_Barrier/Stage_10"]
-
-[node name="Bos_7" type="Node" parent="Wall_Barrier/Stage_10"]
-
-[node name="Bos_8" type="Node" parent="Wall_Barrier/Stage_10"]
-
-[node name="Bos_9" type="Node" parent="Wall_Barrier/Stage_10"]
 
 [node name="Bos_10" type="Node" parent="Wall_Barrier/Stage_10"]
 
@@ -346,6 +237,7 @@ collision_mask = 34
 physics_material_override = SubResource("PhysicsMaterial_fgucn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Barrier/Walls/Wall_Into_Stage_2"]
+position = Vector2(0, -129)
 shape = SubResource("RectangleShape2D_x5a1h")
 debug_color = Color(0.633917, 0.527869, 0, 0.42)
 
@@ -396,24 +288,31 @@ Cagees = NodePath("../../Cages/Machenzie_River_Cage")
 
 [node name="Bos_Encounter" type="Node" parent="."]
 
+[node name="Teleport_Stage" parent="Bos_Encounter" instance=ExtResource("10_aivyi")]
+position = Vector2(2862, 341)
+
+[node name="destination" parent="Bos_Encounter/Teleport_Stage" index="2"]
+position = Vector2(-893, 300)
+
 [node name="Bos_1" type="Node" parent="Bos_Encounter"]
-
-[node name="Teleport_Bos_1" parent="Bos_Encounter/Bos_1" node_paths=PackedStringArray("destination") instance=ExtResource("8_imjt6")]
-position = Vector2(2877, 334)
-destination = NodePath("../../../Teleport/TeleportStage_2/destination")
-
-[node name="destination" parent="Bos_Encounter/Bos_1/Teleport_Bos_1" index="2"]
-position = Vector2(-910, 314)
 
 [node name="Bos_2" type="Node" parent="Bos_Encounter"]
 
-[node name="Teleport_Bos_2" parent="Bos_Encounter/Bos_2" node_paths=PackedStringArray("destination") instance=ExtResource("8_imjt6")]
-visible = false
-position = Vector2(2914, 161)
-destination = NodePath("../../../Teleport/TeleportStage_2/destination")
+[node name="Bos_3" type="Node" parent="Bos_Encounter"]
 
-[node name="destination" parent="Bos_Encounter/Bos_2/Teleport_Bos_2" index="2"]
-position = Vector2(-948, 488)
+[node name="Bos_4" type="Node" parent="Bos_Encounter"]
+
+[node name="Bos_5" type="Node" parent="Bos_Encounter"]
+
+[node name="Bos_6" type="Node" parent="Bos_Encounter"]
+
+[node name="Bos_7" type="Node" parent="Bos_Encounter"]
+
+[node name="Bos_8" type="Node" parent="Bos_Encounter"]
+
+[node name="Bos_9" type="Node" parent="Bos_Encounter"]
+
+[node name="Bos_10" type="Node" parent="Bos_Encounter"]
 
 [node name="Cages" type="Node" parent="."]
 
@@ -463,24 +362,6 @@ position = Vector2(1037, 462)
 visible = false
 position = Vector2(5359, 127)
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-visible = false
-offset_left = 962.0
-offset_top = 44.0
-offset_right = 1287.0
-offset_bottom = 172.0
-stretch = true
-
-[node name="Minimap" type="SubViewport" parent="SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(325, 128)
-render_target_update_mode = 0
-
-[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/Minimap"]
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-bus = &"Music"
-
 [node name="Enemy" type="Node" parent="."]
 
 [node name="Stage_1" type="Node" parent="Enemy"]
@@ -489,7 +370,7 @@ bus = &"Music"
 position = Vector2(296, 88)
 
 [node name="Black_Bear" parent="Enemy/Stage_1" instance=ExtResource("13_eiy3r")]
-position = Vector2(98, 263)
+position = Vector2(206, 265)
 eficient_Armor = 0.35
 
 [node name="Stage_2" type="Node" parent="Enemy"]
@@ -511,10 +392,14 @@ eficient_Armor = 0.33
 position = Vector2(3422, 13)
 hlt = 517.5
 
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_nktca")
+bus = &"Music"
+area_mask = 16384
+
 [connection signal="body_entered" from="Teleport/TeleportStage_2" to="." method="_on_teleport_stage_1_player_body_entered"]
 [connection signal="cage_unlocked" from="Cages/Eurasiaan_Cage" to="Wolves/Eurasian_Wolf" method="_on_cage_unlocked"]
 [connection signal="cage_unlocked" from="Cages/Machenzie_River_Cage" to="Wolves/Machenzie_River_Wolf" method="_on_cage_unlocked"]
 
 [editable path="Teleport/TeleportStage_2"]
-[editable path="Bos_Encounter/Bos_1/Teleport_Bos_1"]
-[editable path="Bos_Encounter/Bos_2/Teleport_Bos_2"]
+[editable path="Bos_Encounter/Teleport_Stage"]

@@ -31,7 +31,7 @@ func _on_new_game_main_menu_buttons_pressed():
 func _on_continue_main_menu_buttons_pressed():
 	startbtn.play()
 	if save_load.save_file_exist()== true:
-		get_tree().change_scene_to_file("res://Assets/Scences/Stages/Worlds/world_stages.tscn")
+		LoadingScreen.load_scence("res://Assets/Scences/Stages/Worlds/world_stages.tscn")
 	else :
 		print("Failed open stage")
 	

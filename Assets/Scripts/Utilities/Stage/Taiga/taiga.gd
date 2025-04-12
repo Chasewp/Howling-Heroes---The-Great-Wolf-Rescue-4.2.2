@@ -1,7 +1,7 @@
 class_name Taiga_Biome
 extends Level
 
-@onready var music = $Music
+@onready var music = $music
 @onready var platfrom = $platfrommAnimationPlayer
 var teleported = teleport.new()
 
@@ -77,7 +77,6 @@ func _on_teleport_stage_9_to_stage_10_player_body_enter(body):
 		else:
 			body.set_position(teleported.destination.global_position)
 
-			
 
 
 

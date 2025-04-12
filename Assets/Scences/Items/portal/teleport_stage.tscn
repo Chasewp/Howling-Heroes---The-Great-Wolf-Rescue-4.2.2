@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://coycdiawi84o"]
+
+[ext_resource type="Texture2D" uid="uid://db1nk3q76h7ya" path="res://Assets/Image/Items/Teleport/Teleport_Stage.png" id="2_bo1s2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yujkk"]
+radius = 47.05
+
+[node name="Teleport_Stage" type="Area2D"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0484966, 0.0469242)
+texture = ExtResource("2_bo1s2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_yujkk")
+
+[node name="destination" type="Marker2D" parent="."]

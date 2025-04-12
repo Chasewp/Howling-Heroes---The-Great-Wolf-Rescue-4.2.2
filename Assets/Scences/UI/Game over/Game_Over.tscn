@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8slyshlqv5fw"]
+[gd_scene load_steps=7 format=3 uid="uid://b8slyshlqv5fw"]
 
 [ext_resource type="Texture2D" uid="uid://b7mr55vgkcaoj" path="res://Assets/Image/Background/UI/Game_Over/_05103563-7cfd-43ed-b5bd-2cb1f01de6a0.jpeg" id="1_oclnr"]
 [ext_resource type="Script" path="res://Assets/Scripts/UI/Game_over/Game_Over.gd" id="1_p4uli"]
 [ext_resource type="FontFile" uid="uid://lgqu2qf3l0sp" path="res://Assets/Fonts/DisposableDroidBB_bldital.ttf" id="2_fkrqe"]
 [ext_resource type="StyleBox" uid="uid://rojw4qk833xs" path="res://addons/dialogic/Editor/Events/styles/SimpleButtonNormalGameover.tres" id="3_xvhmt"]
+[ext_resource type="AudioStream" uid="uid://dvqtsqnkxmd3c" path="res://Assets/Music/SFX/Normal_Button/Click button.mp3" id="5_wv6lm"]
+[ext_resource type="AudioStream" uid="uid://c5jhpxy7u73vs" path="res://Assets/Music/Dialogues/Game Over/Game Over.mp3" id="5_y76kh"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -72,3 +74,18 @@ theme_override_styles/hover = ExtResource("3_xvhmt")
 theme_override_styles/pressed = ExtResource("3_xvhmt")
 theme_override_styles/focus = ExtResource("3_xvhmt")
 text = "QUIT"
+
+[node name="Mission_Failed" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_y76kh")
+
+[node name="Button_Sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_wv6lm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="mouse_entered" from="HBoxContainer/Retry" to="." method="on_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/Retry" to="." method="on_mouse_exited"]
+[connection signal="pressed" from="HBoxContainer/Retry" to="." method="_retry_game"]
+[connection signal="mouse_entered" from="HBoxContainer/Exit" to="." method="on_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/Exit" to="." method="on_mouse_exited"]
+[connection signal="pressed" from="HBoxContainer/Exit" to="." method="_exit_game"]

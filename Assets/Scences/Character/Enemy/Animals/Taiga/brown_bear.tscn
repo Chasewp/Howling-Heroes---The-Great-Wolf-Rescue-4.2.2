@@ -1813,7 +1813,7 @@ size = Vector2(58, 31)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3w1w"]
 size = Vector2(80.5, 63)
 
-[node name="Brown_Bear" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation")]
+[node name="Brown_Bear" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation") groups=["enemy"]]
 collision_layer = 32
 collision_mask = 3
 script = ExtResource("1_eacxl")

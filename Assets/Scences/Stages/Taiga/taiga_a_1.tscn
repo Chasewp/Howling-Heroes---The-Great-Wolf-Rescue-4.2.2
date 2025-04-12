@@ -23,7 +23,7 @@ position = Vector2(170, 482)
 
 [node name="Taiga_1_Parallax" parent="." instance=ExtResource("1_je7ko")]
 
-[node name="Taiga" type="TileMap" parent="."]
+[node name="Taiga" type="TileMap" parent="." groups=["Terains"]]
 z_index = -1
 tile_set = ExtResource("2_w7ux5")
 format = 2

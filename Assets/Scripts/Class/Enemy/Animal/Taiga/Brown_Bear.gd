@@ -10,4 +10,4 @@ func _process(delta):
 	move(1,speed)
 	move_and_slide()
 	update_state()
-	update_animation(delta)
+	update_animation(direction.x)
