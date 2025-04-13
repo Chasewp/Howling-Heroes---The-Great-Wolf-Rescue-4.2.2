@@ -1832,6 +1832,8 @@ damage = 16.0
 Acceleration = 15.0
 Jump_velocity = -350.0
 eficient_Armor = 0.2
+dis_min = 25
+dis_max = 300
 
 [node name="CollisionShape Awhole Body" type="CollisionShape2D" parent="."]
 position = Vector2(-22, -40.5)

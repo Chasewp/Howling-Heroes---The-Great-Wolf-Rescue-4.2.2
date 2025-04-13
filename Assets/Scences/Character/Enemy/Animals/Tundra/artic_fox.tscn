@@ -24,13 +24,8 @@ size = Vector2(53, 27.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_6kgwd"]
 radius = 33.664
 
-[node name="Artic_fox" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites") groups=["enemy"]]
+[node name="Artic_fox" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_v41w7")
-health_bar = NodePath("")
-armor_bar = NodePath("")
-hit_box = NodePath("")
-hurt_box = NodePath("")
-enemy_sprites = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6, -32)

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d3pufgwhe5ek"
+path="res://.godot/imported/Required 11 enemy.wav-98272e3bba46109b2e1c0f1ce4dadccb.sample"
+
+[deps]
+
+source_file="res://Assets/Music/Dialogues/Executed_enemy/Required 11 enemy.wav"
+dest_files=["res://.godot/imported/Required 11 enemy.wav-98272e3bba46109b2e1c0f1ce4dadccb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

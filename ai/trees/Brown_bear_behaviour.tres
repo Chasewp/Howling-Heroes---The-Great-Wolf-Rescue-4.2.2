@@ -12,7 +12,7 @@ var/dir/hint_string = ""
 [sub_resource type="BTAction" id="BTAction_fgu24"]
 script = ExtResource("1_gvn3c")
 range_min_in_dir = 40.0
-range_max_in_dir = 125.0
+range_max_in_dir = 300.0
 position_var = &"pos"
 dir_var = &"dir"
 

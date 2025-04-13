@@ -33,6 +33,8 @@ var animate_state  = state.IDDLE
 @export var APdmg : float
 @export var eficient_Armor:float
 @export var direction:Vector2
+@export var dis_min : int
+@export var dis_max : int
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var current_health : float
@@ -44,6 +46,8 @@ func _ready():
 	hurt_box.Armors = arm
 	hurt_box.Eficient_Armors = eficient_Armor
 	
+	#target player
+	target_player = get_tree().root.get_node("World_Stages/Player")
 	# Set current values
 	current_armor = arm
 	current_health = hlt
@@ -60,7 +64,7 @@ func _ready():
 	
 	# Find player if not assigned
 	if not target_player:
-		target_player = get_tree().root.get_node("World_Stages/Player")
+		return
 
 func _on_received_damage(_damage: float, _is_ap: bool, _ap_dmg: float):
 	# Update current values from hurtbox
@@ -185,7 +189,7 @@ func update_animation(dir):
 			else:
 				enemy_sprite_animation.play("Died")
 			
-		#Attack Machete
+		#Attack
 		state.ATTACK:
 			if enemy_sprites.flip_h:
 				enemy_sprite_animation.play("Attack_Flip")

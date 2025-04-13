@@ -58,6 +58,7 @@ _data = {
 }
 
 [node name="Slash_Damage" type="Area2D"]
+visible = false
 collision_layer = 16
 collision_mask = 65
 script = ExtResource("1_80rk7")

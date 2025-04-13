@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dyvu2lvpl8ngw"
+path="res://.godot/imported/Access denied Twenty.mp3-e7b03f05aaabb980e8e47adec31aaca9.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Dialogues/Executed_enemy/Access denied Twenty.mp3"
+dest_files=["res://.godot/imported/Access denied Twenty.mp3-e7b03f05aaabb980e8e47adec31aaca9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -7,6 +7,9 @@ func died():
 	MissionStatData.update_enemy_kills()
 
 func _process(delta):
+	# seing in to the player
+	look_at(target_player.position)
+	
 	move(1,speed)
 	move_and_slide()
 	update_state()

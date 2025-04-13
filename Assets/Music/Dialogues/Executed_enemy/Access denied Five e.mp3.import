@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6no0hws1bakl"
+path="res://.godot/imported/Access denied Five e.mp3-9fda96e426c535b5a42e1707d40e8c40.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Dialogues/Executed_enemy/Access denied Five e.mp3"
+dest_files=["res://.godot/imported/Access denied Five e.mp3-9fda96e426c535b5a42e1707d40e8c40.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
