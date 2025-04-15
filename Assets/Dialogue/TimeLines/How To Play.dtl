@@ -1,4 +1,5 @@
 [style name="Pixelize_Visual_Novel"]
+<<<<<<< Updated upstream
 [background arg="res://Assets/Image/images/Background/Info_Intro/Hill.png" fade="0.0"]
 [music path="res://Assets/Music/How_To_Play/Clift.mp3" fade="5.0" volume="0.0"]
 join Mr_Wolf (no_Background) 1 [animation="Slide In Left"]
@@ -23,3 +24,53 @@ leave Mr_Wolf [animation="Fade Out Down" length="0.6" wait="true"]
 [music fade="0.0" volume="0.0"]
 [end_timeline]
 [signal arg="Change_Scence"]
+=======
+[voice path="res://Assets/Music/Dialogues/Narator/Would you prefer to skip  Tutorial.wav" volume="0.0" bus="Voice"]
+Would you prefer to skip the tutorial?
+- Yes
+	[voice path="res://Assets/Music/Dialogues/Narator/Yes Well See ya-.wav" volume="0.0"]
+	Yes. Well See ya
+	[signal arg="Change_Scence"]
+- No
+	[voice path="res://Assets/Music/Dialogues/Narator/No Good Choice-.wav" volume="0.0"]
+	No, Good Choose.
+	[signal arg="Deactive_cursor"]
+	[style name="Pixelize_Visual_Novel"]
+	[background arg="res://Assets/Image/Background/Info_Intro/Hill.png" fade="0.0"]
+	[music path="res://Assets/Music/Music/Backsound/How_To_Play/Clift.mp3" fade="5.0" volume="0.0"]
+	join Character/Mr_Wolf (no_Background) 1 [animation="Slide In Left"]
+	label Intro
+	[voice path="res://Assets/Music/Dialogues/How to Play/How to play 1.mp3" volume="0.0" bus="Voice"]
+	Character/Mr_Wolf (no_Background): Welcome, esteemed adventurers! I am Mr. Wolf, Your esteemed guide. It is my honor to provide an explanation of the intricacies of "Howling Heroes\: The Great Wolf Rescue." Kindly press the [wave amp=45 freq=3][b]Z[/b][/wave] key to [b]move on to the next dialogue or interaction[/b].
+	label Jump
+	[voice path="res://Assets/Music/Dialogues/How to Play/How to Play 2.mp3" volume="0.0" bus="Voice"]
+	Character/Mr_Wolf: To [b]perform a jump[/b], please press the [wave amp=45 freq=3][b]W[/b][/wave] key.
+	label Move Forward
+	[voice path="res://Assets/Music/Dialogues/How to Play/How to Play 3.mp3" volume="0.0" bus="Voice"]
+	Character/Mr_Wolf: To [b]advance forward[/b], utilize the [wave amp=45 freq=3][b]D[/b][/wave] key.
+	label Move Backward
+	[voice path="res://Assets/Music/Dialogues/How to Play/How to Play 4.mp3" volume="0.0" bus="Voice"]
+	Character/Mr_Wolf: Utilize the [wave amp=45 freq=3][b]A[/b][/wave] key to [b]retreat backward[/b].
+	label Wolf_Alamanac
+	[voice path="res://Assets/Music/Dialogues/How to Play/How to Play 6.mp3" volume="0.0" bus="Voice"]
+	Character/Mr_Wolf: To [b]open the Wolf Almanac Menu[/b], press the [wave amp=45 freq=3][b]Q[/b][/wave] key.
+	label Tonggle Mission
+	[voice volume="0.0"]
+	Character/Mr_Wolf: To [b]toggle the mission log[/b], please press the [wave amp=45 freq=3][b]L [/b][/wave]key
+	[voice path="res://Assets/Music/Dialogues/How to Play/How to Play 7.mp3" volume="0.0" bus="Voice"]
+	Mr_Wolf: To [b]Access The Map Region[/b], Please Press The [wave amp=45 freq=3][b]M[/b][/wave] Key.
+	label Shoot
+	[voice path="res://Assets/Music/Dialogues/How to Play/How To sHOOT.mp3" volume="0.0" bus="Voice"]
+	Character/Mr_Wolf: To [b]Shoot[/b], Press [wave amp=45 freq=3][b]Right Button[/b][/wave] On The Mouse
+	label Slash
+	[voice path="res://Assets/Music/Dialogues/How to Play/How to Slash.mp3" volume="0.0" bus="Voice"]
+	Character/Mr_Wolf: To [b]Slash[b], Press [wave amp=45 freq=3][b]Left Button[/b][/wave] On The Mouse
+	label Load Progress
+	label Closing
+	[voice path="res://Assets/Music/Dialogues/How to Play/How to play 8.mp3" volume="0.0"]
+	Character/Mr_Wolf: With this knowledge bestowed upon you, may your quest be successful! Farewell, and good fortune in your endeavors.
+	[voice volume="0.0"]
+	leave Character/Mr_Wolf [animation="Fade Out Down" length="0.6" wait="true"]
+	[music fade="0.0" volume="0.0"]
+	[signal arg="Change_Scence"]
+>>>>>>> Stashed changes
