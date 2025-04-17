@@ -1911,7 +1911,6 @@ collision_mask = 3
 volume_db = -3.0
 bus = &"Sound_Effect"
 
-[connection signal="value_changed" from="Armor_Bar" to="." method="_on_enemy_armor_changed"]
 [connection signal="area_entered" from="Hit box" to="." method="_on_hit_area_enemy_enter"]
 [connection signal="area_entered" from="Hurt_Box" to="." method="_on_hurt_area_enemy_entered"]
 [connection signal="executed" from="Hurt_Box" to="." method="died"]

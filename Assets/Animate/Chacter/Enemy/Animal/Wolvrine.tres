@@ -1,0 +1,92 @@
+[gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://bhbl2dvrgen4i"]
+
+[ext_resource type="Texture2D" uid="uid://cei360e1xo1l6" path="res://Assets/Image/Enemy/Animal/Enemy/Wolvine/Died/Died.png" id="1_oogwd"]
+[ext_resource type="Texture2D" uid="uid://dm8t6mwqpf5wf" path="res://Assets/Image/Enemy/Animal/Enemy/Wolvine/Attack/Attack 1.png" id="1_xa5rd"]
+[ext_resource type="Texture2D" uid="uid://c0cb7a2uotlob" path="res://Assets/Image/Enemy/Animal/Enemy/Wolvine/run/run 1.png" id="2_0oskv"]
+[ext_resource type="Texture2D" uid="uid://bpktpgr7vt75i" path="res://Assets/Image/Enemy/Animal/Enemy/Wolvine/Attack/Attack 2.png" id="2_dltl6"]
+[ext_resource type="Texture2D" uid="uid://0f24g762a6lt" path="res://Assets/Image/Enemy/Animal/Enemy/Wolvine/Attack/Attack 3.png" id="3_57xkl"]
+[ext_resource type="Texture2D" uid="uid://4op4t4jeyv0s" path="res://Assets/Image/Enemy/Animal/Enemy/Wolvine/run/run 2.png" id="3_ur1fc"]
+[ext_resource type="Texture2D" uid="uid://biohgd60fhkkt" path="res://Assets/Image/Enemy/Animal/Enemy/Wolvine/Fall/Fall 1.png" id="5_c13ph"]
+[ext_resource type="Texture2D" uid="uid://dapcidtvybge8" path="res://Assets/Image/Enemy/Animal/Enemy/Wolvine/Fall/Fall 2.png" id="6_vxcpd"]
+[ext_resource type="Texture2D" uid="uid://m7crcj4qco8v" path="res://Assets/Image/Enemy/Animal/Enemy/Wolvine/Hurt/Hurt 2.png" id="7_ljsnb"]
+[ext_resource type="Texture2D" uid="uid://db81ijeavo4h0" path="res://Assets/Image/Enemy/Animal/Enemy/Wolvine/Hurt/Hurt 3.png" id="8_x4ng2"]
+[ext_resource type="Texture2D" uid="uid://douoleninmma0" path="res://Assets/Image/Enemy/Animal/Enemy/Wolvine/Iddle/Iddle-1.png" id="9_c3345"]
+[ext_resource type="Texture2D" uid="uid://b02avnvrsms27" path="res://Assets/Image/Enemy/Animal/Enemy/Wolvine/jump/jump 1.png" id="9_gqmmb"]
+[ext_resource type="Texture2D" uid="uid://katrtkcmokta" path="res://Assets/Image/Enemy/Animal/Enemy/Wolvine/jump/jump 2.png" id="10_6gyac"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xa5rd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dltl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_57xkl")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_oogwd")
+}],
+"loop": false,
+"name": &"died",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_c13ph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vxcpd")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ljsnb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x4ng2")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_c3345")
+}],
+"loop": false,
+"name": &"iddle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_gqmmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6gyac")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0oskv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ur1fc")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]

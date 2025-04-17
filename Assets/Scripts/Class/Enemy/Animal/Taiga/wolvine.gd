@@ -1,0 +1,2 @@
+class_name Wolvrine
+extends Enemy_Main_Class
