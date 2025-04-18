@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Scripts/Splash/Splash_1/Splash_Screen_1.gd" id="1_5jg83"]
 [ext_resource type="Texture2D" uid="uid://cxdcc8vt7kwjm" path="res://Assets/Image/Keyboard and Mouse/—Pngtree—flat wind keyboard mouse vector_5458958.png" id="2_65rb8"]
-[ext_resource type="FontFile" uid="uid://37vm87is54ip" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="2_p3k8t"]
+[ext_resource type="FontFile" uid="uid://bv6xsykw7vcai" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="2_p3k8t"]
 
 [sub_resource type="Animation" id="Animation_dtfix"]
 resource_name = "Fade_In"

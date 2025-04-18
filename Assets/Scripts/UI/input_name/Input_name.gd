@@ -23,8 +23,6 @@ func _on_player_name_text_submitted(new_text):
 	player_singleton_autoload.setter_health(100.0)
 	player_singleton_autoload.setter_ammo_bullet(30)
 	player_singleton_autoload.setter_magazine_stock(150)
-	player_singleton_autoload.setter_brust_garou_equip(true)
-	player_singleton_autoload.setter_machete_equip(true)
 	# save data into the file
 	var data = Data_Progress.new()
 	data.player_name = player_singleton_autoload.getter_name()

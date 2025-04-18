@@ -4,9 +4,11 @@
 "_translation_id": "",
 "color": Color(0, 1, 0.0392157, 1),
 "custom_info": {
+"prefix": "",
 "sound_mood_default": "",
 "sound_moods": {},
-"style": "Pixelize_Visual_Novel"
+"style": "Pixelize_Visual_Novel",
+"suffix": ""
 },
 "default_portrait": "Normal",
 "description": "",

@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://c5oh08utk31s2"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/UI/input_name/Input_name.gd" id="1_fygib"]
-[ext_resource type="FontFile" uid="uid://dk1ja3jllfjob" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="1_vi86i"]
+[ext_resource type="FontFile" uid="uid://bv6xsykw7vcai" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="1_vi86i"]
 [ext_resource type="Theme" uid="uid://cya18eaoptu42" path="res://Assets/Theme/Player_Name/Player_Name.tres" id="2_jj1ar"]
-[ext_resource type="Texture2D" uid="uid://dois5gpimqunh" path="res://Assets/Image/Background/UI/Character Selector/wolf-den-cave-taiga-forest 800x 600.png" id="3_prlmh"]
-[ext_resource type="FontFile" uid="uid://bj1q5gmkmip6u" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="4_ru70u"]
+[ext_resource type="Texture2D" uid="uid://un6m6vi5ig1m" path="res://Assets/Image/Background/UI/Character Selector/wolf-den-cave-taiga-forest 800x 600.png" id="3_prlmh"]
+[ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="4_ru70u"]
 
 [node name="PlayerName" type="Control" groups=["level"]]
 layout_mode = 3

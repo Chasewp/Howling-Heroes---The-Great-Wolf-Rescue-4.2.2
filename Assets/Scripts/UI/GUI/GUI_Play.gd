@@ -2,8 +2,6 @@ extends Control
 
 @onready var character_name = $Character_Name
 @onready var biome_location = $Biome_Location
-@onready var health = $Health_Bar
-@onready var armor = $Armor_Bar
 @onready var Pine_Key  = %Pine_Keys
 @onready var ice_key = %Ice_Key
 @onready var stone_key = %Stone_Key
@@ -34,12 +32,9 @@ func _ready():
 			player_singleton_autoload.setter_armor(save.player_armor)
 			player_singleton_autoload.setter_health(save.player_health)
 			player_singleton_autoload.setter_location(save.player_biome_location)
-
 			# Update UI
 			character_name.set_text(player_singleton_autoload.getter_name())
 			biome_location.set_text("Location : " + player_singleton_autoload.getter_location())
-			health.set_value_no_signal(player_singleton_autoload.getter_health())
-			armor.set_value_no_signal(player_singleton_autoload.getter_armor())
 		else:
 			print("Failed to load resource data.")
 	else:
@@ -47,13 +42,8 @@ func _ready():
 
 	# Update keys visibility
 	get_keys()
-
-
-func _on_player_health_changed(percentage:float):
-	health.set_value_no_signal(percentage)
 	
-func _on_player_armor_changed(percentage:float):
-	armor.set_value_no_signal(percentage)
+
 
 func get_keys():
 	# Set visibility based on each key's availability

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bhwlhgwnhwc3k"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Splash/Splash_2/Splash_Screen_2.gd" id="1_rgymi"]
-[ext_resource type="Texture2D" uid="uid://cglapufeuqx43" path="res://Assets/Image/Background/Splash_Screen/Splash 2/Splash Screen.png" id="2_ha37g"]
+[ext_resource type="Texture2D" uid="uid://dxat40f1jvkxo" path="res://Assets/Image/Background/Splash_Screen/Splash 2/Splash Screen.png" id="2_ha37g"]
 
 [sub_resource type="Animation" id="Animation_rejm7"]
 resource_name = "Fade_In"

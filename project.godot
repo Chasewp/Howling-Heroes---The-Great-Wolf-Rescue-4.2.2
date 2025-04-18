@@ -52,7 +52,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Finish-Mission": "res://Assets/Dialogue/TimeLines/Finish-Mission.dtl",
-"How To Play": "res://Assets/Dialogue/TimeLines/How To Play.dtl",
+"How_to_play": "res://Assets/Dialogue/TimeLines/How_to_play.dtl",
 "Intro": "res://Assets/Dialogue/TimeLines/Intro.dtl",
 "Intro_Player": "res://Assets/Dialogue/TimeLines/Mission_Breffing.dtl",
 "Player": "res://Assets/Dialogue/TimeLines/Player.dtl"

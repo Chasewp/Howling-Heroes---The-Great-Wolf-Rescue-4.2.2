@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://dk0n5e4gmj3p3"]
+[gd_scene load_steps=86 format=3 uid="uid://dk0n5e4gmj3p3"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Player/player.gd" id="1_j1d3s"]
 [ext_resource type="PackedScene" uid="uid://bi4hvn314kpgx" path="res://Assets/Scences/Items/Bullets/Riffle_Bullets/Player_Bullets.tscn" id="2_vc508"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://mtv7d03fbj0v" path="res://Assets/Image/Character/Player/Normal/Iddle/Iddle_1.png" id="6_1rekn"]
 [ext_resource type="Texture2D" uid="uid://croc8yqj5um7j" path="res://Assets/Image/Character/Player/Normal/Iddle/Iddle_3.png" id="8_d06n4"]
 [ext_resource type="Texture2D" uid="uid://j3cijrjcw6qx" path="res://Assets/Image/Character/Player/Normal/Iddle/Iddle_4.png" id="9_7topd"]
-[ext_resource type="FontFile" uid="uid://dhgp7qgyslj7a" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="10_7w2x7"]
+[ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="10_7w2x7"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Text_Info_Player/Text_Info_Player.gd" id="10_d46b5"]
 [ext_resource type="Texture2D" uid="uid://crpvdjaw63lkx" path="res://Assets/Image/Character/Player/Normal/Iddle/Iddle_5.png" id="10_sm0kp"]
 [ext_resource type="Texture2D" uid="uid://bigimj3smgdvl" path="res://Assets/Image/Character/Player/Normal/Iddle/Iddle_6.png" id="11_bk0k5"]
@@ -65,11 +65,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lckb"]
 size = Vector2(77, 126)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4no1"]
-size = Vector2(57, 21)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uhaw"]
-size = Vector2(20, 24)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n73pg"]
+radius = 36.003
+height = 176.003
 
 [sub_resource type="Animation" id="Animation_fgu1k"]
 resource_name = "Died"
@@ -165,34 +163,22 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../Hurt_Area_foot:position")
-tracks/7/interp = 1
+tracks/7/path = NodePath("../Hurt_Area_chest:rotation")
+tracks/7/interp = 0
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-6, -10)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../Hurt_Area_chest:rotation")
-tracks/8/interp = 0
-tracks/8/loop_wrap = true
-tracks/8/keys = {
 "times": PackedFloat32Array(0, 0.4, 0.8, 1.1, 1.4, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.602509, 1.2377, 1.40425, 1.5708, 1.5708]
 }
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Total_Sprites:flip_h")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Total_Sprites:flip_h")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -293,34 +279,22 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../Hurt_Area_foot:position")
-tracks/7/interp = 1
+tracks/7/path = NodePath("../Hurt_Area_chest:rotation")
+tracks/7/interp = 0
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-6, -10), Vector2(5, -10)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../Hurt_Area_chest:rotation")
-tracks/8/interp = 0
-tracks/8/loop_wrap = true
-tracks/8/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.8, 1.1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.228638, -0.738274, -1.20602, 1.5708]
 }
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Total_Sprites:flip_h")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Total_Sprites:flip_h")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -397,70 +371,58 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Hurt_Area_foot:position")
+tracks/5/path = NodePath("../Hurt_Area_chest:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, -13)]
+"values": [Vector2(-3, -44)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../Hurt_Area_chest:position")
+tracks/6/path = NodePath("BrustGarou:flip_h")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-3, -44)]
+"update": 1,
+"values": [false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("BrustGarou:flip_h")
+tracks/7/path = NodePath("Total_Sprites:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(-40, -125)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Total_Sprites:position")
+tracks/8/path = NodePath("Total_Sprites:flip_h")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-40, -125)]
+"update": 1,
+"values": [false]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Total_Sprites:flip_h")
+tracks/9/path = NodePath("../Hurt_Area_chest:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../Hurt_Area_chest:rotation")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -537,46 +499,34 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Hurt_Area_foot:position")
+tracks/5/path = NodePath("../Hurt_Area_chest:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, -13)]
+"values": [Vector2(1, -44)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../Hurt_Area_chest:position")
+tracks/6/path = NodePath("Total_Sprites:flip_h")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, -44)]
+"update": 1,
+"values": [true]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Total_Sprites:flip_h")
+tracks/7/path = NodePath("Total_Sprites:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Total_Sprites:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -665,46 +615,34 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../Hurt_Area_foot:position")
+tracks/6/path = NodePath("../Hurt_Area_chest:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-4, -16)]
+"values": [Vector2(-8, -56)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../Hurt_Area_chest:position")
+tracks/7/path = NodePath("Total_Sprites:flip_h")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-8, -56)]
+"update": 1,
+"values": [false]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Total_Sprites:flip_h")
+tracks/8/path = NodePath("../Hurt_Area_chest:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../Hurt_Area_chest:rotation")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -793,46 +731,34 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../Hurt_Area_foot:position")
+tracks/6/path = NodePath("../Hurt_Area_chest:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(5, -16)]
+"values": [Vector2(7, -58)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../Hurt_Area_chest:position")
+tracks/7/path = NodePath("Total_Sprites:flip_h")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(7, -58)]
+"update": 1,
+"values": [true]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Total_Sprites:flip_h")
+tracks/8/path = NodePath("../Hurt_Area_chest:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../Hurt_Area_chest:rotation")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -907,46 +833,34 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Hurt_Area_foot:position")
+tracks/5/path = NodePath("../Hurt_Area_chest:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, -13)]
+"values": [Vector2(1, -51)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../Hurt_Area_chest:position")
+tracks/6/path = NodePath("../Hurt_Area_chest:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, -51)]
+"values": [0.0]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../Hurt_Area_chest:rotation")
+tracks/7/path = NodePath("Total_Sprites:flip_h")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Total_Sprites:flip_h")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -1033,34 +947,22 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../Hurt_Area_foot:position")
+tracks/6/path = NodePath("../Hurt_Area_chest:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-4, -13)]
+"values": [Vector2(-4, -50)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../Hurt_Area_chest:position")
+tracks/7/path = NodePath("../Hurt_Area_chest:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-4, -50)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../Hurt_Area_chest:rotation")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -1137,58 +1039,46 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Hurt_Area_foot:position")
+tracks/5/path = NodePath("../Hurt_Area_chest:position")
 tracks/5/interp = 0
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, -13), Vector2(-4, -10), Vector2(-4, -10), Vector2(-4, -10), Vector2(-4, -10)]
+"values": [Vector2(3, -40), Vector2(2.38419e-07, -41), Vector2(-4, -42), Vector2(-4, -44), Vector2(-4, -44)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../Hurt_Area_chest:position")
+tracks/6/path = NodePath("../Hurt_Area_chest:rotation")
 tracks/6/interp = 0
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(3, -40), Vector2(2.38419e-07, -41), Vector2(-4, -42), Vector2(-4, -44), Vector2(-4, -44)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../Hurt_Area_chest:rotation")
-tracks/7/interp = 0
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.333252, 0.00151747]
 }
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Total_Sprites:flip_h")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Total_Sprites:flip_h")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Total_Sprites:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Total_Sprites:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -1265,58 +1155,46 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Hurt_Area_foot:position")
+tracks/5/path = NodePath("../Hurt_Area_chest:position")
 tracks/5/interp = 0
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2, -10), Vector2(-4, -10)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Hurt_Area_chest:position")
-tracks/6/interp = 0
-tracks/6/loop_wrap = true
-tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-6, -41), Vector2(2.38419e-07, -41), Vector2(1, -44), Vector2(0.999999, -44), Vector2(2, -44)]
 }
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../Hurt_Area_chest:rotation")
-tracks/7/interp = 0
-tracks/7/loop_wrap = true
-tracks/7/keys = {
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Hurt_Area_chest:rotation")
+tracks/6/interp = 0
+tracks/6/loop_wrap = true
+tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [-0.368934, 0.0, 0.107877, 0.107877]
 }
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Total_Sprites:flip_h")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Total_Sprites:flip_h")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Total_Sprites:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Total_Sprites:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -1417,55 +1295,55 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../Hurt_Area_foot:position")
+tracks/7/path = NodePath("../Hurt_Area_chest:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, -13)]
+"values": [Vector2(1, -51)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../Hurt_Area_chest:position")
+tracks/8/path = NodePath("Machete:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, -51)]
+"values": [Vector2(7, -29)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Machete:position")
+tracks/9/path = NodePath("Machete:offset")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(7, -29)]
+"values": [Vector2(0, -70)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Machete:offset")
+tracks/10/path = NodePath("Total_Sprites:flip_h")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -70)]
+"update": 1,
+"values": [false]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Total_Sprites:flip_h")
+tracks/11/path = NodePath("Machete:flip_h")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -1477,46 +1355,34 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Machete:flip_h")
+tracks/12/path = NodePath("../Hurt_Area_chest:rotation")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [0.0]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("../Hurt_Area_chest:rotation")
+tracks/13/path = NodePath("Slash_Effect:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Vector2(53, -50)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Slash_Effect:position")
+tracks/14/path = NodePath("Slash_Effect:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(53, -50)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("Slash_Effect:visible")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -1617,55 +1483,55 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../Hurt_Area_foot:position")
+tracks/7/path = NodePath("../Hurt_Area_chest:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, -13)]
+"values": [Vector2(1, -51)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../Hurt_Area_chest:position")
+tracks/8/path = NodePath("Machete:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, -51)]
+"values": [Vector2(-12, -29)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Machete:position")
+tracks/9/path = NodePath("Machete:offset")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-12, -29)]
+"values": [Vector2(-974, -65)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Machete:offset")
+tracks/10/path = NodePath("Total_Sprites:flip_h")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-974, -65)]
+"update": 1,
+"values": [true]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Total_Sprites:flip_h")
+tracks/11/path = NodePath("Machete:flip_h")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -1677,34 +1543,22 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Machete:flip_h")
+tracks/12/path = NodePath("../Hurt_Area_chest:rotation")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [0.0]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("../Hurt_Area_chest:rotation")
+tracks/13/path = NodePath("Slash_Effect:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Slash_Effect:position")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -1812,43 +1666,43 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../Hurt_Area_foot:position")
+tracks/8/path = NodePath("../Hurt_Area_chest:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-4, -10)]
+"values": [0.00151747]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../Hurt_Area_chest:rotation")
+tracks/9/path = NodePath("../Hurt_Area_chest:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.00151747]
+"values": [Vector2(2.38419e-07, -41)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../Hurt_Area_chest:position")
+tracks/10/path = NodePath("BrustGarou:flip_h")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2.38419e-07, -41)]
+"update": 1,
+"values": [false]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("BrustGarou:flip_h")
+tracks/11/path = NodePath("Total_Sprites:flip_h")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -1860,70 +1714,58 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Total_Sprites:flip_h")
+tracks/12/path = NodePath("Machete:offset")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(-975, -70)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Machete:offset")
+tracks/13/path = NodePath("Machete:flip_h")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-975, -70)]
+"update": 1,
+"values": [false]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Machete:flip_h")
+tracks/14/path = NodePath("Machete:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(-11, -38)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Machete:position")
+tracks/15/path = NodePath("Slash_Effect:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-11, -38)]
+"values": [Vector2(108, -32)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Slash_Effect:position")
+tracks/16/path = NodePath("Slash_Effect:visible")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(108, -32)]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("Slash_Effect:visible")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -2037,22 +1879,10 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../Hurt_Area_foot:position")
+tracks/8/path = NodePath("Total_Sprites:flip_h")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-4, -13)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Total_Sprites:flip_h")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -2166,22 +1996,10 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../Hurt_Area_foot:position")
+tracks/8/path = NodePath("Total_Sprites:flip_h")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(9, -14)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Total_Sprites:flip_h")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -2315,22 +2133,10 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../Hurt_Area_foot:position")
+tracks/10/path = NodePath("BrustGarou:flip_h")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, -13)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("BrustGarou:flip_h")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -2464,22 +2270,10 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../Hurt_Area_foot:position")
+tracks/10/path = NodePath("BrustGarou:flip_h")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, -13)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("BrustGarou:flip_h")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -2519,7 +2313,13 @@ skew = Vector2(1, 0)
 corner_radius_top_left = 25
 corner_radius_bottom_right = 15
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("bullets_caps_lbl", "maganize_lbl") groups=["camera_target", "player"]]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u2ru5"]
+bg_color = Color(0, 0.392157, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhdec"]
+bg_color = Color(0, 1, 1, 1)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("bullets_caps_lbl", "maganize_lbl", "health_bar", "armor_bar") groups=["camera_target", "player"]]
 process_mode = 1
 y_sort_enabled = true
 collision_layer = 2
@@ -2527,28 +2327,37 @@ collision_mask = 1057
 script = ExtResource("1_j1d3s")
 bullets_caps_lbl = NodePath("Info/Text/Ammo_Label/Bullets_Caps")
 maganize_lbl = NodePath("Info/Text/Ammo_Label/Mag_lbl")
+speed = null
+jump_velocity = null
+acceleration = null
+jump = null
 bullet_scence = ExtResource("2_vc508")
 slash_scences = ExtResource("3_m86m4")
-is_machete_equip = true
-is_burst_garou_equip = true
+player_name = null
+player_health = 100.0
+player_armor = 100.0
+player_biome = null
+world_root = null
+is_machete_equip = null
+is_burst_garou_equip = null
+health_bar = NodePath("Progress bar/Health_Bar")
+armor_bar = NodePath("Progress bar/Armor_Bar")
 player_ammo = 30
 player_mag = 150
+pine_key = null
+ice_key = null
+stone_key = null
+snow_fang_key = null
+frozen_paw_securelock_key = null
+grass_key = null
+flower_key = null
+ground_key = null
+dessert_key = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -62)
 shape = SubResource("RectangleShape2D_5lckb")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
-
-[node name="Hurt_Area_foot" type="Area2D" parent="." groups=["player_hurtbox"]]
-unique_name_in_owner = true
-position = Vector2(-4, -10)
-collision_layer = 8
-collision_mask = 7168
-script = ExtResource("3_o0r77")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt_Area_foot"]
-shape = SubResource("RectangleShape2D_s4no1")
-debug_color = Color(0.917647, 0.694118, 0, 0.419608)
 
 [node name="Hurt_Area_chest" type="Area2D" parent="." groups=["player_hurtbox"]]
 unique_name_in_owner = true
@@ -2556,10 +2365,15 @@ position = Vector2(2.38419e-07, -41)
 rotation = 0.00151747
 collision_layer = 8
 collision_mask = 1152
+priority = 1
 script = ExtResource("3_o0r77")
+Healths = 100.0
+Armors = 100.0
+Eficient_Armors = 0.15
 
 [node name="Hurt_Area_CollisionShape2D" type="CollisionShape2D" parent="Hurt_Area_chest"]
-shape = SubResource("RectangleShape2D_5uhaw")
+position = Vector2(-0.0546291, -36)
+shape = SubResource("CapsuleShape2D_n73pg")
 debug_color = Color(1, 0.843137, 0, 0.521569)
 
 [node name="Info" type="CanvasLayer" parent="."]
@@ -2680,27 +2494,22 @@ autoplay = "Iddle"
 [node name="SFX" type="Node" parent="."]
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="SFX"]
-bus = &"Sound_Effect"
 area_mask = 8194
 
 [node name="SFX_Ammo_Empty" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("15_ajvbt")
-bus = &"Sound_Effect"
 area_mask = 8194
 
 [node name="SFXReloading_voice" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("57_hfda1")
-bus = &"Sound_Effect"
 area_mask = 8194
 
 [node name="SFXReloading_rifle" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("15_qdbas")
-bus = &"Sound_Effect"
 area_mask = 8194
 
 [node name="SFXShoot" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource("58_tdifi")
-bus = &"Sound_Effect"
 area_mask = 8194
 
 [node name="coliding" type="RayCast2D" parent="."]
@@ -2762,9 +2571,9 @@ one_shot = true
 
 [node name="machete_timer" type="Timer" parent="Timer"]
 wait_time = 4.0
+one_shot = true
 
 [node name="InteractUiPanel" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="InteractUiPanel"]
 custom_minimum_size = Vector2(300, 50)
@@ -2796,12 +2605,33 @@ theme_override_font_sizes/font_size = 18
 text = "Press \"Z\" to Pickup"
 metadata/_edit_use_anchors_ = true
 
+[node name="Progress bar" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Health_Bar" type="ProgressBar" parent="Progress bar"]
+custom_minimum_size = Vector2(250, 27)
+offset_left = 143.0
+offset_top = 26.0
+offset_right = 393.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("10_7w2x7")
+theme_override_styles/fill = SubResource("StyleBoxFlat_u2ru5")
+
+[node name="Armor_Bar" type="ProgressBar" parent="Progress bar"]
+custom_minimum_size = Vector2(250, 27)
+offset_left = 144.0
+offset_top = 59.0
+offset_right = 394.0
+offset_bottom = 86.0
+theme_override_fonts/font = ExtResource("10_7w2x7")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hhdec")
+
 [connection signal="executed" from="." to="." method="died"]
 [connection signal="take_item" from="." to="." method="_on_take_item"]
 [connection signal="update_ammo" from="." to="Info/Text" method="_on_player_update_ammo"]
 [connection signal="update_coordinate" from="." to="Info/Text" method="_on_player_update_coordinate"]
-[connection signal="area_entered" from="Hurt_Area_foot" to="." method="_on_hurt_area_foot_area_entered"]
-[connection signal="executed" from="Hurt_Area_foot" to="." method="died"]
-[connection signal="area_entered" from="Hurt_Area_chest" to="." method="_on_hurt_area_chest_area_entered"]
 [connection signal="executed" from="Hurt_Area_chest" to="." method="died"]
 [connection signal="finished" from="SFX/SFXReloading_voice" to="." method="_on_sfx_reloading_voice_finished"]
+[connection signal="timeout" from="Timer/reloading_timer" to="." method="refill_ammo"]
+[connection signal="value_changed" from="Progress bar/Health_Bar" to="." method="_on_player_health_changed"]
+[connection signal="value_changed" from="Progress bar/Armor_Bar" to="." method="_on_player_armor_changed"]

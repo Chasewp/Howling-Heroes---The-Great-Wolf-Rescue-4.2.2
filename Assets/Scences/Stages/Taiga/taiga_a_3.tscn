@@ -329,7 +329,7 @@ limit_top = -650
 limit_bottom = 720
 
 [node name="Player_Spawner" parent="." instance=ExtResource("9_vtvml")]
-position = Vector2(43, 89)
+position = Vector2(417, 81)
 
 [node name="Dead_zones" type="Node" parent="."]
 
@@ -358,6 +358,9 @@ debug_color = Color(0, 0.772549, 0.898039, 0.419608)
 [node name="Taiga_Platrom" parent="Elevator" instance=ExtResource("14_5av82")]
 position = Vector2(1037, 462)
 
+[node name="Taiga_Platrom3" parent="Elevator" instance=ExtResource("14_5av82")]
+position = Vector2(1745, 383)
+
 [node name="Taiga_Platrom2" parent="Elevator" instance=ExtResource("14_5av82")]
 visible = false
 position = Vector2(5359, 127)
@@ -367,10 +370,54 @@ position = Vector2(5359, 127)
 [node name="Stage_1" type="Node" parent="Enemy"]
 
 [node name="Brown_Bear" parent="Enemy/Stage_1" instance=ExtResource("14_wqxwl")]
-position = Vector2(296, 88)
+position = Vector2(123, 87)
+
+[node name="Brown_Bear2" parent="Enemy/Stage_1" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") instance=ExtResource("14_wqxwl")]
+position = Vector2(138, 492)
+health_bar = NodePath("../Brown_Bear/Health_Bar")
+armor_bar = NodePath("../Brown_Bear/Armor_Bar")
+hit_box = NodePath("../Brown_Bear/Hit box")
+hurt_box = NodePath("../Brown_Bear/Hurt_Box")
+enemy_sprites = NodePath("../Brown_Bear/AnimatedSprite2D")
+enemy_sprite_animation = NodePath("../Brown_Bear/AnimatedSprite2D/AnimationPlayer")
+enemy_raycast = NodePath("../Brown_Bear/RayCast2D")
+timers = NodePath("../Brown_Bear/Timer")
+
+[node name="Brown_Bear3" parent="Enemy/Stage_1" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") instance=ExtResource("14_wqxwl")]
+position = Vector2(2401, 87)
+health_bar = NodePath("../Brown_Bear/Health_Bar")
+armor_bar = NodePath("../Brown_Bear/Armor_Bar")
+hit_box = NodePath("../Brown_Bear/Hit box")
+hurt_box = NodePath("../Brown_Bear/Hurt_Box")
+enemy_sprites = NodePath("../Brown_Bear/AnimatedSprite2D")
+enemy_sprite_animation = NodePath("../Brown_Bear/AnimatedSprite2D/AnimationPlayer")
+enemy_raycast = NodePath("../Brown_Bear/RayCast2D")
+timers = NodePath("../Brown_Bear/Timer")
 
 [node name="Black_Bear" parent="Enemy/Stage_1" instance=ExtResource("13_eiy3r")]
-position = Vector2(206, 265)
+position = Vector2(132, 265)
+eficient_Armor = 0.35
+
+[node name="Black_Bear2" parent="Enemy/Stage_1" node_paths=PackedStringArray("health_bar", "armor_bar", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") instance=ExtResource("13_eiy3r")]
+position = Vector2(2861, 25)
+health_bar = NodePath("../Black_Bear/Health_Bar")
+armor_bar = NodePath("../Black_Bear/Armor_Bar")
+hurt_box = NodePath("../Black_Bear/Hurt_Box")
+enemy_sprites = NodePath("../Black_Bear/Black_Bear_Animation")
+enemy_sprite_animation = NodePath("../Black_Bear/Black_Bear_Animation/AnimationPlayer")
+enemy_raycast = NodePath("../Black_Bear/RayCast2D")
+timers = NodePath("../Black_Bear/Timer")
+eficient_Armor = 0.35
+
+[node name="Black_Bear3" parent="Enemy/Stage_1" node_paths=PackedStringArray("health_bar", "armor_bar", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") instance=ExtResource("13_eiy3r")]
+position = Vector2(2861, 25)
+health_bar = NodePath("../Black_Bear/Health_Bar")
+armor_bar = NodePath("../Black_Bear/Armor_Bar")
+hurt_box = NodePath("../Black_Bear/Hurt_Box")
+enemy_sprites = NodePath("../Black_Bear/Black_Bear_Animation")
+enemy_sprite_animation = NodePath("../Black_Bear/Black_Bear_Animation/AnimationPlayer")
+enemy_raycast = NodePath("../Black_Bear/RayCast2D")
+timers = NodePath("../Black_Bear/Timer")
 eficient_Armor = 0.35
 
 [node name="Stage_2" type="Node" parent="Enemy"]

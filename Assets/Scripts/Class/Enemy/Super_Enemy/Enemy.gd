@@ -20,6 +20,8 @@ var animate_state  = state.IDDLE
 @export var target_player:CharacterBody2D 
 @export var enemy_sprites : AnimatedSprite2D
 @export var enemy_sprite_animation : AnimationPlayer
+@export var enemy_raycast : RayCast2D
+@export var timers : Timer
 
 @export_category("Enemy Class Variable")
 @export var hlt : float
@@ -35,19 +37,25 @@ var animate_state  = state.IDDLE
 @export var direction:Vector2
 @export var dis_min : int
 @export var dis_max : int
+@export var left_bounds : Vector2
+@export var right_bounds : Vector2
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var current_health : float
 var current_armor : float
 
 func _ready():
+	print(get_tree().root.get_node("World_Stages/Player"))  # Harus return valid node
 	# Initialize hurtbox values
 	hurt_box.Healths = hlt
 	hurt_box.Armors = arm
 	hurt_box.Eficient_Armors = eficient_Armor
 	
 	#target player
-	target_player = get_tree().root.get_node("World_Stages/Player")
+	if not target_player:
+		target_player = get_tree().get_first_node_in_group("player")
+		push_warning("Player node not found! Enemies will not function.")
 	# Set current values
 	current_armor = arm
 	current_health = hlt
@@ -59,14 +67,16 @@ func _ready():
 	armor_bar.value = current_armor
 	
 	# Connect damage signals
-	hurt_box.received_damage.connect(_on_received_damage)
-	hurt_box.executed.connect(_on_enemy_died)
-	
-	# Find player if not assigned
-	if not target_player:
-		return
+	hurt_box.received_damage.connect(take_damage)
+	if target_player:
+		target_player.tree_exiting.connect(_on_player_freed)
 
-func _on_received_damage(_damage: float, _is_ap: bool, _ap_dmg: float):
+func _on_player_freed():
+	target_player = null
+	animate_state = state.IDDLE
+
+
+func take_damage(_damage: float, _is_ap: bool, _ap_dmg: float):
 	# Update current values from hurtbox
 	current_health = hurt_box.Healths
 	current_armor = hurt_box.Armors
@@ -80,15 +90,8 @@ func _on_received_damage(_damage: float, _is_ap: bool, _ap_dmg: float):
 		animate_state = state.HURT
 		enemy_sprite_animation.play()
 		update_animation(direction.x)
-		
 	# Debug print
-	print("Damage Received - Health: ", current_health, " Armor: ", current_armor)
-
-func _on_enemy_died():
-	animate_state = state.DIED
-	update_animation(direction.x)
-	# Add any death handling logic here
-	set_physics_process(false) # Disable physics processing
+	print("Damage Received ", damage, "Health: ", current_health, " Armor: ", current_armor)
 	
 func move(dir,spd):
 	spd = speed
@@ -118,9 +121,11 @@ func handle_gravity(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-func handle_movement(delta):
+func handle_movement(delta:float):
 	if animate_state == state.RUNNING:
 		velocity = velocity.move_toward(direction * speed, Acceleration * delta)
+	else :
+		velocity = velocity.move_toward(direction*speed, Acceleration*delta)
 	move_and_slide()
 
 func update_state():
@@ -205,3 +210,38 @@ func _on_enemy_armor_changed(percentage:float):
 	armor_bar.value = arm
 	armor_bar.set_value_no_signal(percentage)
 	animate_state= state.HURT
+
+func look_for_player():
+	if enemy_raycast.is_colliding():
+		var collider = enemy_raycast.get_collider()
+		if collider == target_player:
+			chase_player()
+		elif animate_state == state.RUNNING:
+			stop_chase()
+	elif  animate_state == state.RUNNING:
+		stop_chase()
+		
+func chase_player():
+	timers.stop()
+	animate_state = state.RUNNING
+	
+func stop_chase():
+	if timers.time_left<= 0:
+		timers.start()
+
+func on_hurt_area_enemy(area):
+	if not is_instance_valid(target_player):  # Pastikan player masih ada
+		return
+		
+	if area.is_in_group("enemy_hitbox"):
+		var enemy = area.get_parent()
+		if is_instance_valid(enemy) and is_instance_valid(target_player):
+			target_player.take_damage(enemy.damage, enemy.AP, enemy.APdmg)
+func _safe_set_flip_h(value: bool):
+	if is_instance_valid(enemy_sprites):
+		enemy_sprites.call_deferred("set_flip_h", value)
+		
+func _process(delta):
+	print("Sprite valid:", is_instance_valid(enemy_sprites), 
+		  " | Raycast valid:", is_instance_valid(enemy_raycast),
+		  " | State:", animate_state)

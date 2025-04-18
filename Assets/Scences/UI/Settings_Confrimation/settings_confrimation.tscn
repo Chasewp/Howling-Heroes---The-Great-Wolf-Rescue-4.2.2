@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cajkqxvd8efkm"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/UI/Reset_Settings/Reset_Settings.gd" id="1_f8o3j"]
-[ext_resource type="AudioStream" uid="uid://buingk0gc73hs" path="res://Assets/Music/SFX/Start_Buton_Sound/Start_Buton_Sound.mp3" id="1_jggl6"]
-[ext_resource type="AudioStream" uid="uid://7v4jg7kg5ejm" path="res://Assets/Music/SFX/Warning/Alert.mp3" id="1_mqbtp"]
+[ext_resource type="Script" path="res://Assets/Script/Controller/UI/Settings_Confirmation/settings_confrimation.gd" id="1_f8o3j"]
+[ext_resource type="AudioStream" uid="uid://ty2bg0clrp0t" path="res://Assets/Music/All Button/Quit_Button.mp3" id="1_jggl6"]
+[ext_resource type="AudioStream" uid="uid://c8ygb4nqbs03p" path="res://Assets/Music/Warning/exclamation-101soundboards.mp3" id="1_mqbtp"]
 [ext_resource type="Theme" uid="uid://br2uoqpi38ygc" path="res://Assets/Theme/Dialouge/Exit_Confirmation.tres" id="1_wyah5"]
 
 [node name="Setting_Confirmation" type="Control"]
@@ -33,11 +33,11 @@ cancel_button_text = "No"
 
 [node name="buton sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_jggl6")
+bus = &"Sound Effects"
 
 [node name="Warning" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_mqbtp")
+bus = &"Sound Effects"
 
 [connection signal="canceled" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_canceled"]
 [connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]
-[connection signal="mouse_entered" from="ConfirmationDialog" to="." method="on_mouse_entered"]
-[connection signal="mouse_exited" from="ConfirmationDialog" to="." method="on_mouse_exited"]

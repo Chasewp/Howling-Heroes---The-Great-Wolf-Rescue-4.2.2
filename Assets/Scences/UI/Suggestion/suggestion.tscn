@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://c3njdo2andycu"]
 
-[ext_resource type="FontFile" uid="uid://dk1ja3jllfjob" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="1_au0k6"]
+[ext_resource type="FontFile" uid="uid://bv6xsykw7vcai" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="1_au0k6"]
 [ext_resource type="Script" path="res://Assets/Scripts/UI/Sugestion/Sugestion.gd" id="1_kpp4h"]
-[ext_resource type="AudioStream" uid="uid://dyn48plg4pi64" path="res://Assets/Music/Dialogues/recomentations/Recommendation never_01.wav" id="3_oinv8"]
+[ext_resource type="AudioStream" uid="uid://6j02fqhotmof" path="res://Assets/Music/Dialogues/recomentations/Recommendation never_01.wav" id="3_oinv8"]
 
 [sub_resource type="Animation" id="Animation_05ywq"]
 resource_name = "Fade_in"

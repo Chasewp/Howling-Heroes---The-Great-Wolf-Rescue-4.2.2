@@ -1,4 +1,4 @@
-class_name Main_Menu
+class_name Main_Menus
 extends Control
 
 @onready var backsound = $Back_Sound

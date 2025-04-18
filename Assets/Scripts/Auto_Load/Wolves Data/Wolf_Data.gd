@@ -1745,7 +1745,7 @@ func reset_Wolf_Rescue_data():
 	Data_Wolves["Labrador Wolf"]["Rescued"] = false
 	Data_Wolves["Mackenzie River Wolf"]["Rescued"] = false
 	Data_Wolves["Mexican Wolf"]["Rescued"] = false
-	Data_Wolves["Mongoliann Wolf"]["Rescued"] = false
+	Data_Wolves["Mongolian Wolf"]["Rescued"] = false
 	Data_Wolves["Northern Rocky Mountain Wolf"]["Rescued"] = false
 	Data_Wolves["Northwestern Wolf"]["Rescued"] = false
 	Data_Wolves ["Red Wolf"]["Rescued"] = false

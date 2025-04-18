@@ -9,8 +9,7 @@ signal take_item(item :Node2D)
 
 @export_category("Node Variables")
 @onready var animation_player = $Sprites/Sprite_Animation
-@onready var hurt_area_chest = %Hurt_Area_foot
-@onready var hurt_area_foot = %Hurt_Area_foot
+@onready var hurt_area_chest = %Hurt_Area_chest
 @onready var player_Sprites = $Sprites/Total_Sprites
 @onready var player_collading = $coliding
 
@@ -51,22 +50,23 @@ signal take_item(item :Node2D)
 @export var world_root:NodePath
 @export var is_machete_equip : bool
 @export var is_burst_garou_equip : bool
-
+@export var health_bar :ProgressBar
+@export var armor_bar : ProgressBar
 
 @export_category("Bullets")
 @export var player_ammo : int : set = set_max_ammo
 @export var player_mag : int : set = set_max_reserved_ammo
 
 @export_category(" Keys")
-@export var pine_key :bool
-@export var ice_key :bool
-@export var stone_key : bool
-@export var snow_fang_key : bool
+@export var pine_keys :bool
+@export var ice_keys :bool
+@export var stone_keys : bool
+@export var snow_fang_keys : bool
 @export var frozen_paw_securelock_key : bool
-@export var grass_key : bool
-@export var flower_key : bool
-@export var ground_key : bool
-@export var dessert_key : bool
+@export var grass_keys : bool
+@export var flower_keys : bool
+@export var ground_keys : bool
+@export var dessert_keys : bool
 
 enum state {
 	IDDLE, 
@@ -79,7 +79,7 @@ enum state {
 	SHOOT}
 
 var coordinate = Data_Progress.new()
-var current_ammo = player_ammo
+@export var current_ammo = player_ammo
 var _reload_time := 3.5 : set = set_reload_time
 var _fire_rate := 0.13 : set = set_fire_rate
 var data = load(SAVE_DATA)
@@ -95,15 +95,19 @@ func _init():
 	is_machete_equip = player_singleton_autoload.is_machete_equip
 	is_burst_garou_equip = player_singleton_autoload.is_burst_garou_equip
 
-	
 func _ready():
 	machete_sprite.visible = false
 	brust_garou_sprite.visible = false
 	slash_effect.visible = false
 	interact_panel.visible = false
-	hurt_area_chest.Eficient_Armors = 0.15
-	hurt_area_foot.Eficient_Armors = 0.15
 	
+	# Initialize hurtbox values
+	hurt_area_chest.Eficient_Armors = 0.15
+	# Connect damage signals
+	hurt_area_chest.Healths = player_health
+	hurt_area_chest.Armors = player_armor
+	hurt_area_chest.received_damage.connect(_on_received_damage)
+
 	if data is Data_Progress : 
 		player_singleton_autoload.setter_name(data.player_name)
 		player_singleton_autoload.setter_health(data.player_health)
@@ -117,28 +121,37 @@ func _ready():
 		player_biome = player_singleton_autoload.location
 		player_ammo = player_singleton_autoload.ammo_bullets
 		player_mag = player_singleton_autoload.magazine_stock
-		pine_key = player_singleton_autoload.is_have_pine_key
-		ice_key = player_singleton_autoload.is_have_ice_key
-		stone_key = player_singleton_autoload.is_have_stone_key
-		snow_fang_key = player_singleton_autoload.is_have_snow_fang_key
-		frozen_paw_securelock_key = player_singleton_autoload.is_have_frozen_paw_securelook_key
-		grass_key = player_singleton_autoload.is_have_grass_key
-		flower_key = player_singleton_autoload.is_have_flower_key
-		ground_key = player_singleton_autoload.is_have_ground_key
-		dessert_key = player_singleton_autoload.is_have_dessert_key
+		pine_keys = player_singleton_autoload.is_have_pine_key
+		ice_keys = player_singleton_autoload.is_have_ice_key
+		stone_keys = player_singleton_autoload.is_have_stone_key
+		snow_fang_keys = player_singleton_autoload.is_have_snow_fang_key
+		frozen_paw_securelock_keys = player_singleton_autoload.is_have_frozen_paw_securelook_key
+		grass_keys = player_singleton_autoload.is_have_grass_key
+		flower_keys = player_singleton_autoload.is_have_flower_key
+		ground_keys = player_singleton_autoload.is_have_ground_key
+		dessert_keys = player_singleton_autoload.is_have_dessert_key
 		maganize_lbl.text=str(player_mag)
 		bullets_caps_lbl.text = str(current_ammo)
 		hurt_area_chest.Healths = player_health
 		hurt_area_chest.Armors = player_armor
-		hurt_area_foot.Healths = player_health
-		hurt_area_foot.Armors= player_armor
+			# Set current values
+		current_armor = player_armor
+		current_health = player_health
+	
+		# Setup UI bars
+		health_bar.max_value = player_health
+		health_bar.value = current_health
+		armor_bar.max_value = player_armor
+		armor_bar.value = current_armor
 	else:
 		print("Failed to load resource data.")
 
 	if is_burst_garou_equip == true:
-		reloading_timer.connect("timeout",Callable(self,"refill_ammo"))	
+		# Pastikan ammo diinisialisasi dengan benar
+		current_ammo = player_ammo  # <-- Tambahkan ini
+		reloading_timer.connect("timeout",Callable(self,"refill_ammo"))    
 		refill_ammo()
-		maganize_lbl.text=str(player_mag)
+		maganize_lbl.text = str(player_mag)
 		bullets_caps_lbl.text = str(current_ammo)
 
 func update_state():
@@ -226,33 +239,53 @@ func add_health_armor():
 		print("Your Health and Armor was Max Capacity")
 			
 func _physics_process(delta):
-	if DialogueManager.is_dialog_active:
+	if DialogueManager.is_dialog_active or anim_state == state.DIED:
 		return
-	if player_health <=0:
-		died()
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
 		
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_velocity
-
-	if anim_state == state.HURT: return
-		
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("move_left", "move_right")
-	if direction:
-		velocity.x =  move_toward(velocity.x, direction * speed, acceleration)
-	else:
-		velocity.x =  move_toward(velocity.x,0, acceleration/2)
+	# Handle movement hanya jika tidak sedang HURT
+	if anim_state != state.HURT:
+		# Handle gravity
+		if not is_on_floor():
+			velocity.y += gravity * delta
+			
+		# Handle jump
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = jump_velocity
+			
+		# Handle movement
+		var direction = Input.get_axis("move_left", "move_right")
+		if direction:
+			velocity.x = move_toward(velocity.x, direction * speed, acceleration)
+		else:
+			velocity.x = move_toward(velocity.x, 0, acceleration/2)
 	
+	move_and_slide()
+	update_state()
+	update_animation(Input.get_axis("move_left", "move_right"))
+	#if DialogueManager.is_dialog_active:
+		#return
+	#if player_health <=0:
+		#died()
+	## Add the gravity.
+	#if not is_on_floor():
+		#velocity.y += gravity * delta
+		#
+	## Handle jump.
+	#if Input.is_action_just_pressed("jump") and is_on_floor():
+		#velocity.y = jump_velocity
+#
+	#if anim_state == state.HURT: return
+		#
+	## Get the input direction and handle the movement/deceleration.
+	## As good practice, you should replace UI actions with custom gameplay actions.
+	#var direction = Input.get_axis("move_left", "move_right")
+	#if direction:
+		#velocity.x =  move_toward(velocity.x, direction * speed, acceleration)
+	#else:
+		#velocity.x =  move_toward(velocity.x,0, acceleration/2)
+	#
 	coordinate.UpdatePos(self.position)
 	emit_signal("update_coordinate",self.position)
-	update_animation(direction)
-	update_state()
-	move_and_slide()
 
 	var mouse_position = get_global_mouse_position()
 	projectile.look_at(mouse_position)
@@ -261,7 +294,7 @@ func _physics_process(delta):
 	if not reloading_timer.is_stopped():
 		return
 		
-	if Input.is_action_just_pressed("shoot_brust_garou") and is_burst_garou_equip ==true:
+	if Input.is_action_just_pressed("shoot_brust_garou") == true:
 		if current_ammo > 0:
 			anim_state = state.SHOOT
 			animation_player.play()
@@ -269,7 +302,7 @@ func _physics_process(delta):
 		else: 
 			ammo_empty_sfx.play()
 	
-	if Input.is_action_just_pressed("reloading") and current_ammo < player_mag and is_burst_garou_equip==true:
+	if Input.is_action_just_pressed("reloading") or current_ammo < player_mag and is_burst_garou_equip==true:
 		reloading()
 		
 	if Input.is_action_just_pressed("slash_machete") and  player_singleton_autoload.is_machete_equip == true:
@@ -283,7 +316,7 @@ func _physics_process(delta):
 		
 	
 	if Input.is_action_just_pressed("interaction"):
-		var Wolves = hurt_area_foot.get_overlapping_bodies()
+		var Wolves = hurt_area_chest.get_overlapping_bodies()
 		for wolf in Wolves :
 			if wolf.is_in_group("Wolves"):
 				wolf.rescue()
@@ -294,13 +327,16 @@ func _physics_process(delta):
 		#for item in Items:
 			#if item.is_in_group("item"):
 				#print("Item picked up: ", item.name)
+				
+	if player_health <=0:
+		died()	
 			
 func shoot():
-	if not shooting_timer.is_stopped():
+	if not shooting_timer.is_stopped() or current_ammo <= 0:
 		return
 		
 	current_ammo -= 1
-	bullets_caps_lbl.text = str(player_ammo)
+	bullets_caps_lbl.text = str(current_ammo)
 		
 	var bullet_instance = bullet_scence.instantiate()
 	bullet_instance.rotation = projectile.rotation
@@ -360,24 +396,50 @@ func set_reload_time(value: float)-> void:
 func set_fire_rate(value: float)-> void :
 	_fire_rate = value
 
+func _on_received_damage(_damage: float, _is_ap: bool, _ap_dmg: float):
+	# Update current values from hurtbox
+	current_health = hurt_area_chest.Healths
+	current_armor = hurt_area_chest.Armors
+	
+	# Update health and armor bars
+	health_bar.value = current_health
+	armor_bar.value = current_armor
+	
+	# Play hurt animation if not dead
+	if current_health > 0:
+		anim_state = state.HURT
+		animation_player.play()
+		update_animation(0)
+	# Debug print
+	print("Damage Received - Health: ", current_health, " Armor: ", current_armor)
 func take_damage(damage:float,is_armor_piercing:bool,AP_dmg :float):
-	var get_damages :  float
+	var prev_health = player_health
+	var prev_armor = player_armor
 	
-	#Armor_pricing Damage
+	# Hitung damage ke armor dan health
 	if is_armor_piercing:
-		get_damages = damage
-		player_armor = max(((damage * AP_dmg) * 0.15) - player_armor)
-	
-	# non Armor_pricing Damage
-	else:
-		get_damages = max(damage - player_armor,0)
-		player_health -= get_damages
+		var armor_damage = (damage * AP_dmg) * 0.15  # Efisiensi armor 15%
+		var health_damage = damage * (1.0 - AP_dmg)
 		
-	# hurt Animation
-	anim_state=state.HURT
-	update_animation(0)
+		player_armor = max(player_armor - armor_damage, 0)
+		player_health -= health_damage
+	else:
+		player_health -= max(damage - player_armor, 0)
 	
-	if player_health <=0:
+	# Update hurtboxes
+	hurt_area_chest.Healths = player_health
+	hurt_area_chest.Armors = player_armor
+	
+	# Update UI
+	health_bar.value = player_health
+	armor_bar.value = player_armor
+	
+	# Trigger hurt animation jika ada damage
+	if player_health < prev_health or player_armor < prev_armor:
+		anim_state = state.HURT
+		update_animation(0)
+	
+	if player_health <= 0:
 		died()
 		
 func died():
@@ -390,20 +452,32 @@ func died():
 	save_loader_manager.has_method("save_game")
 	queue_free()
 	
-func _on_hurt_area_foot_area_entered(area):
-	if area.is_in_group("trap"):
-		var _traps = area.get_parent()
-		take_damage(_traps.damage, _traps.is_have_AP_dmg, _traps.penetrate)
-
-func _on_hurt_area_chest_area_entered(area):
-	if area.is_in_group("enemy_hitbox"):
-		var enemy = area.get_parent()
-		print(take_damage(enemy.damage, enemy.AP, enemy.APdmg))
-		take_damage(enemy.damage, enemy.AP, enemy.APdmg)
-
-	if area.is_in_group("trap"):
-		var _traps = area.get_parent()
-		take_damage(_traps.damage, _traps._is_have_AP_dmg, _traps.penetrate)
+#func died():
+	#anim_state = state.DIED
+	#animation_player.play("Died")  # Pastikan nama animasi sesuai
+	#set_physics_process(false)  # Matikan physics selama animasi
+	#await animation_player.animation_finished  # Tunggu animasi selesai
+	#
+	#var game_over = get_tree().root.get_node("World_Stages/UI/")
+	#var save_loader_manager = get_tree().root.get_node("World_Stages/Utilities/Save_Loader")
+	#_game_over = _game_over_scence.instantiate()
+	#game_over.add_child(_game_over)
+	#save_loader_manager.has_method("save_game")
+	#
+#func _on_hurt_area_foot_area_entered(area):
+	#if area.is_in_group("trap"):
+		#var _traps = area.get_parent()
+		#take_damage(_traps.damage, _traps.is_have_AP_dmg, _traps.penetrate)
+#
+#func _on_hurt_area_chest_area_entered(area):
+	#if area.is_in_group("enemy_hitbox"):
+		#var enemy = area.get_parent()
+		#print(take_damage(enemy.damage, enemy.AP, enemy.APdmg))
+		#take_damage(enemy.damage, enemy.AP, enemy.APdmg)
+#
+	#if area.is_in_group("trap"):
+		#var _traps = area.get_parent()
+		#take_damage(_traps.damage, _traps._is_have_AP_dmg, _traps.penetrate)
 		
 func _on_animation_player_finished(anim_name):
 	if anim_name == "Hurt":
@@ -421,3 +495,27 @@ func _on_take_item(item: Node2D):
 
 func _on_sfx_reloading_voice_finished():
 	reloading_riffle_sfx.play()
+
+func _on_player_health_changed(percentage:float):
+	if data is Data_Progress : 
+		player_singleton_autoload.setter_health(data.player_health)
+		player_health = player_singleton_autoload.health
+		health_bar.value = player_health
+		health_bar.set_value_no_signal(percentage)
+	else:
+		print("Failed to load resource data.")
+		## Hanya set hurt jika damage signifikan
+		#if percentage < health_bar.value:
+			#anim_state = state.HURT
+
+func _on_player_armor_changed(percentage:float):
+	if data is Data_Progress : 
+		player_singleton_autoload.setter_armor(data.player_armor)
+		player_armor = player_singleton_autoload.armor
+		armor_bar.value = player_armor
+		armor_bar.set_value_no_signal(percentage)
+	else:
+		print("Failed to load resource data.")
+	## Hanya set hurt jika armor berkurang
+	#if percentage < armor_bar.value:
+		#anim_state = state.HURT

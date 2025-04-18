@@ -2,9 +2,9 @@
 class_name Mision_Data_Stats_Singleton
 extends Node
 
-var _mission_UI_lbl_wolf_rescued : Label
-var _mission_UI_lbl_enemy_killed : Label
-var _mission_UI_lbl_boss_killed : Label
+@export var _mission_UI_lbl_wolf_rescued : Label
+@export var _mission_UI_lbl_enemy_killed : Label
+@export var _mission_UI_lbl_boss_killed : Label
 
 @export var wolf_rescued:int = 0
 @export var enemy_kill:int = 0

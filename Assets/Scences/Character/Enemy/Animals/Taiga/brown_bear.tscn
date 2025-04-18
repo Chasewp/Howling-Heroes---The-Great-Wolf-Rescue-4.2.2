@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=3 uid="uid://b5a3j5sbcyw3s"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Taiga/Brown_Bear.gd" id="1_eacxl"]
-[ext_resource type="FontFile" uid="uid://dhgp7qgyslj7a" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="3_eimeo"]
+[ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="3_eimeo"]
 [ext_resource type="SpriteFrames" uid="uid://db7bdnert7pta" path="res://Assets/Animate/Chacter/Enemy/Animal/brown_bear.tres" id="3_yegy6"]
 [ext_resource type="AudioStream" uid="uid://cm7wsk17k2dyc" path="res://Assets/Music/SFX/Enemy/Animal/Claw Attack Sound Effects - 114 Claw Attack sounds for SFX projects.wav" id="4_7wt3l"]
 [ext_resource type="AudioStream" uid="uid://8sigl33bvb58" path="res://Assets/Music/SFX/Enemy/Animal/Brown_Bear_Executed.wav" id="4_l1cde"]
@@ -150,6 +150,18 @@ tracks/9/keys = {
 "update": 0,
 "values": [Vector2(22, -40.5)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Hit box/CollisionShape2D:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-34, -27)]
+}
 
 [sub_resource type="Animation" id="Animation_m8nbv"]
 resource_name = "Attack_Flip"
@@ -276,6 +288,18 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-22, -40.5)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Hit box/CollisionShape2D:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, -27)]
 }
 
 [sub_resource type="Animation" id="Animation_uqx3t"]
@@ -885,6 +909,18 @@ tracks/9/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Hit box/CollisionShape2D:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-35, -27)]
+}
 
 [sub_resource type="Animation" id="Animation_18j25"]
 resource_name = "hurt_flip"
@@ -1012,6 +1048,18 @@ tracks/9/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Hit box/CollisionShape2D:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(35, -28)]
+}
 
 [sub_resource type="Animation" id="Animation_4ovtu"]
 resource_name = "iddle"
@@ -1113,6 +1161,18 @@ tracks/7/keys = {
 "update": 0,
 "values": [Vector2(125, 0)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Hit box/CollisionShape2D:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-30, -27)]
+}
 
 [sub_resource type="Animation" id="Animation_0xt7e"]
 resource_name = "iddle_flip"
@@ -1213,6 +1273,18 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-125, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Hit box/CollisionShape2D:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, -28)]
 }
 
 [sub_resource type="Animation" id="Animation_wdud0"]
@@ -1555,6 +1627,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector2(-22, -40.5)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Hit box/CollisionShape2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, -27)]
+}
 
 [sub_resource type="Animation" id="Animation_4r8vy"]
 resource_name = "run"
@@ -1807,13 +1891,13 @@ _data = {
 "Run_Flip": SubResource("Animation_aqlkj")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m86av"]
-size = Vector2(58, 31)
+[sub_resource type="CircleShape2D" id="CircleShape2D_84jpt"]
+radius = 95.6347
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3w1w"]
 size = Vector2(80.5, 63)
 
-[node name="Brown_Bear" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation") groups=["enemy"]]
+[node name="Brown_Bear" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") groups=["enemy"]]
 collision_layer = 32
 collision_mask = 3
 script = ExtResource("1_eacxl")
@@ -1823,6 +1907,8 @@ hit_box = NodePath("Hit box")
 hurt_box = NodePath("Hurt_Box")
 enemy_sprites = NodePath("AnimatedSprite2D")
 enemy_sprite_animation = NodePath("AnimatedSprite2D/AnimationPlayer")
+enemy_raycast = NodePath("RayCast2D")
+timers = NodePath("Timer")
 hlt = 400.0
 arm = 30.0
 jump = 1
@@ -1831,6 +1917,8 @@ damage = 15.0
 Acceleration = 15.0
 Jump_velocity = -350.0
 eficient_Armor = 0.3
+dis_min = 45
+dis_max = 300
 
 [node name="CollisionShape Awhole Body" type="CollisionShape2D" parent="."]
 position = Vector2(-22, -40.5)
@@ -1867,7 +1955,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_sspd6")
 position = Vector2(1, 0)
 scale = Vector2(4, 4)
 sprite_frames = ExtResource("3_yegy6")
-animation = &"attack"
+animation = &"iddle"
 centered = false
 offset = Vector2(-32, -48)
 
@@ -1882,13 +1970,14 @@ autoplay = "Iddle"
 unique_name_in_owner = true
 position = Vector2(30, -21)
 collision_layer = 128
-collision_mask = 8
+collision_mask = 10
 script = ExtResource("10_2dxqw")
+damage = 15.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hit box"]
-shape = SubResource("RectangleShape2D_m86av")
+position = Vector2(34, -27)
+shape = SubResource("CircleShape2D_84jpt")
 debug_color = Color(0.851093, 0.372035, 5.77569e-07, 0.42)
-metadata/_edit_lock_ = true
 
 [node name="Hurt_Box" type="Area2D" parent="." groups=["enemy_hurtbox"]]
 unique_name_in_owner = true
@@ -1896,6 +1985,9 @@ position = Vector2(-10, -63)
 collision_layer = 64
 collision_mask = 16
 script = ExtResource("11_ec0mk")
+Healths = 400.0
+Armors = 30.0
+Eficient_Armors = 0.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt_Box"]
 shape = SubResource("RectangleShape2D_a3w1w")
@@ -1909,8 +2001,13 @@ collision_mask = 3
 
 [node name="sfx" type="AudioStreamPlayer" parent="."]
 volume_db = -3.0
-bus = &"Sound_Effect"
 
-[connection signal="area_entered" from="Hit box" to="." method="_on_hit_area_enemy_enter"]
-[connection signal="area_entered" from="Hurt_Box" to="." method="_on_hurt_area_enemy_entered"]
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="value_changed" from="Health_Bar" to="." method="_on_enemy_health_changed"]
+[connection signal="value_changed" from="Armor_Bar" to="." method="_on_enemy_armor_changed"]
+[connection signal="area_entered" from="Hurt_Box" to="." method="on_hurt_area_enemy"]
 [connection signal="executed" from="Hurt_Box" to="." method="died"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

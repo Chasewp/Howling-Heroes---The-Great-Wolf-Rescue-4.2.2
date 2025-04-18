@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Taiga/red_fox.gd" id="1_ryo0h"]
 [ext_resource type="SpriteFrames" uid="uid://cx2nt26sgqqbg" path="res://Assets/Animate/Chacter/Enemy/Animal/red_fox.tres" id="2_fe0kb"]
 [ext_resource type="AudioStream" uid="uid://nyawlq3baxf2" path="res://Assets/Music/SFX/Enemy/Animal/monster-bite-44538.mp3" id="3_bh0e7"]
-[ext_resource type="FontFile" uid="uid://dhgp7qgyslj7a" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="3_pagxi"]
+[ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="3_pagxi"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="4_1tc3g"]
 [ext_resource type="AudioStream" uid="uid://bjiffgtcy7r74" path="res://Assets/Music/SFX/Enemy/Animal/jump_grass.mp3" id="4_xy5rv"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hurtbox/Hurt box.gd" id="5_27y1e"]
@@ -283,13 +283,16 @@ size = Vector2(53, 27.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_6kgwd"]
 radius = 33.664
 
-[node name="Red_fox" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites") groups=["enemy"]]
+[node name="Red_fox" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") groups=["enemy"]]
 script = ExtResource("1_ryo0h")
 health_bar = NodePath("Health_Bar")
 armor_bar = NodePath("Armor_Bar")
 hit_box = NodePath("Hit box")
 hurt_box = NodePath("Hurt_Box")
 enemy_sprites = NodePath("AnimatedSprite2D")
+enemy_sprite_animation = NodePath("AnimatedSprite2D/AnimationPlayer")
+enemy_raycast = NodePath("RayCast2D")
+timers = NodePath("Timer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6, -32)
@@ -343,7 +346,6 @@ collide_with_areas = true
 
 [node name="sfx" type="AudioStreamPlayer" parent="."]
 volume_db = -3.0
-bus = &"Sound_Effect"
 
 [node name="Hit box" type="Area2D" parent="." groups=["enemy_hitbox"]]
 unique_name_in_owner = true
@@ -368,5 +370,7 @@ script = ExtResource("5_27y1e")
 position = Vector2(20.875, 31)
 shape = SubResource("CircleShape2D_6kgwd")
 debug_color = Color(0.576471, 0.00392157, 0.576471, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="executed" from="Hurt_Box" to="." method="died"]

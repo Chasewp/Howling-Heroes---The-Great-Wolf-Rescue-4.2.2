@@ -6,7 +6,7 @@ func _ready():
 	
 func start_dialog():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
-	Dialogic.start("How To Play")
+	Dialogic.start("How_to_play")
 
 func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)

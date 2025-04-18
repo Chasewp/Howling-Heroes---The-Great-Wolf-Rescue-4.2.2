@@ -22,9 +22,13 @@ func _ready():
 #New Game Button
 func _on_new_game_main_menu_buttons_pressed():
 	if save_load.save_file_exist() == true:
+		startbtn.play()
 		_continue_button.disabled = true
-	notification_panel.visible = true
-	alertsound.play()
+		notification_panel.visible = true
+		alertsound.play()
+	else:
+		startbtn.play()
+		LoadingScreen.load_scence("res://Assets/Scences/UI/Suggestion/suggestion.tscn")
 	
 
 #Continue Game Button

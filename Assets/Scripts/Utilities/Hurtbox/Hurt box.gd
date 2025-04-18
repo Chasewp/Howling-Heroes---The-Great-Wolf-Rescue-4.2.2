@@ -12,6 +12,10 @@ func _ready():
 
 func _on_take_damage(hitbox: Hitboxes) -> void:
 	if hitbox != null:
+		## Forward damage ke parent player
+		#if get_parent().has_method("take_damage"):
+			#get_parent().take_damage(hitbox.damage, hitbox.is_armor_piercing, hitbox.AP_dmg)
+			
 		var damage = hitbox.damage
 		
 		if hitbox.is_armor_piercing:

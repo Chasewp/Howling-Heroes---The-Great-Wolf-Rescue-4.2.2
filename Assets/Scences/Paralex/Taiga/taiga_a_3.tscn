@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dcgqy35frqjee"]
 
-[ext_resource type="Texture2D" uid="uid://crun4fxtr4p4l" path="res://Assets/Image/Background/Stage/Taiga/pixel art taiga forest parallax background, side scroller, landscape 6k.png" id="1_2128l"]
+[ext_resource type="Texture2D" uid="uid://lmlgi8lmb4x0" path="res://Assets/Image/Background/Stage/Taiga/pixel art taiga forest parallax background, side scroller, landscape 6k.png" id="1_2128l"]
 [ext_resource type="Shader" path="res://Assets/Shaders/sand_stromdessert.gdshader" id="2_h20y6"]
 
 [sub_resource type="Gradient" id="Gradient_lbd6v"]

@@ -4,6 +4,7 @@
 "_translation_id": "",
 "color": Color(0.0392157, 0.823529, 0.952941, 1),
 "custom_info": {
+"prefix": "",
 "sound_mood_default": "",
 "sound_moods": {
 "Mood 1": {
@@ -17,9 +18,10 @@
 "volume_variance": 0.0
 }
 },
-"style": "Pixelize_Visual_Novel"
+"style": "Pixelize_Visual_Novel",
+"suffix": ""
 },
-"default_portrait": "Default",
+"default_portrait": "no_Background",
 "description": "Narator",
 "display_name": "Mr Wolf",
 "mirror": false,
@@ -27,9 +29,6 @@
 "offset": Vector2(0, 0),
 "portraits": {
 "Default": {
-"export_overrides": {
-"image": "\"res://Assets/Image/Character/NPC/Mr_Wolf/Firefly_anthro_male_wolf_metalic_armor__fullbody__night_fullmoon_65732-transformed.png\""
-},
 "ignore_char_scale": true,
 "image": "res://Assets/Image/Character/Mr_Wolf/Firefly_anthro_male_wolf_metalic_armor__fullbody__night_fullmoon_65732-transformed.png",
 "mirror": false,
@@ -39,10 +38,7 @@
 "sound_mood": "Mood 1"
 },
 "no_Background": {
-"export_overrides": {
-"image": "\"res://Assets/Image/Character/NPC/Mr_Wolf/Firefly_anthro_male_wolf_metalic_armor__fullbody__night_fullmoon_65732-transformed no background.png\""
-},
-"ignore_char_scale": false,
+"ignore_char_scale": true,
 "image": "res://Assets/Image/Character/Mr_Wolf/Firefly_anthro_male_wolf_metalic_armor__fullbody__night_fullmoon_65732-transformed no background.png",
 "mirror": false,
 "offset": Vector2(-75, 0),
