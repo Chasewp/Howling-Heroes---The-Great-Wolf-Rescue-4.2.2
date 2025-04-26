@@ -1,6 +1,7 @@
 [gd_scene load_steps=36 format=3 uid="uid://cbo01n7ccb6dr"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Taiga/Black_Bear.gd" id="1_fgq6m"]
+[ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="2_ftrt3"]
 [ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="2_hctij"]
 [ext_resource type="SpriteFrames" uid="uid://kbv2wxuu5ovr" path="res://Assets/Animate/Chacter/Enemy/Animal/black_bear.tres" id="3_a4jk5"]
 [ext_resource type="AudioStream" uid="uid://cm7wsk17k2dyc" path="res://Assets/Music/SFX/Enemy/Animal/Claw Attack Sound Effects - 114 Claw Attack sounds for SFX projects.wav" id="4_273j8"]
@@ -10,14 +11,13 @@
 [ext_resource type="AudioStream" uid="uid://d2lqd6bq5t1xv" path="res://Assets/Music/SFX/Enemy/Animal/Black_Bear_Hit.wav" id="7_dx2rd"]
 [ext_resource type="AudioStream" uid="uid://bjiffgtcy7r74" path="res://Assets/Music/SFX/Enemy/Animal/jump_grass.mp3" id="8_araly"]
 [ext_resource type="AudioStream" uid="uid://caue6c7jtmbob" path="res://Assets/Music/SFX/Enemy/Animal/Walk_grass.wav" id="9_yxhji"]
-[ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="10_8n720"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hurtbox/Hurt box.gd" id="11_q6kdo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_is84u"]
 size = Vector2(148, 101)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rs8pk"]
-radius = 93.086
+radius = 86.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kk3t4"]
 
@@ -1654,7 +1654,7 @@ Acceleration = 15.0
 Jump_velocity = -350.0
 eficient_Armor = 0.2
 dis_min = 25
-dis_max = 300
+dis_max = 500
 
 [node name="CollisionShape Awhole Body" type="CollisionShape2D" parent="."]
 position = Vector2(-22, -40.5)
@@ -1666,7 +1666,7 @@ unique_name_in_owner = true
 position = Vector2(-49, -16)
 collision_layer = 128
 collision_mask = 10
-script = ExtResource("10_8n720")
+script = ExtResource("2_ftrt3")
 damage = 16.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hit box"]
@@ -1703,8 +1703,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_sspd6")
 [node name="Black_Bear_Animation" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
 sprite_frames = ExtResource("3_a4jk5")
-animation = &"died"
-frame = 3
+animation = &"attack"
 centered = false
 offset = Vector2(-32, -48)
 
@@ -1715,7 +1714,7 @@ libraries = {
 }
 autoplay = "Iddle"
 
-[node name="Hurt_Box" type="Area2D" parent="." groups=["enemy_hurtbox"]]
+[node name="Hurt_Box" type="Area2D" parent="." groups=["enemy_hurtbox", "hurt_box"]]
 unique_name_in_owner = true
 position = Vector2(-10, -63)
 collision_layer = 64

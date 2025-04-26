@@ -6,8 +6,7 @@ extends Area2D
 @export var is_armor_piercing : bool: set= set_AP, get = get_AP
 @export var AP_dmg : float : set = set_AP_dmg, get = get_AP_dmg
 
-func _ready():
-	print(damage, " ", is_armor_piercing," ", AP_dmg)
+
 	
 func set_damage(dmg : float):
 	damage = max(dmg,0.0)
@@ -26,3 +25,9 @@ func set_AP_dmg(ap_dmg:float):
 	
 func get_AP_dmg():
 	return AP_dmg
+
+func _physics_process(delta):
+	var colliding = self.get_overlapping_areas()
+	for hitboxs in colliding:
+		if hitboxs.is_in_group("hurt_box"):
+			print("Attack : ",damage, " ", is_armor_piercing," ", AP_dmg)

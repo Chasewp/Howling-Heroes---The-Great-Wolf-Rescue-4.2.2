@@ -1,0 +1,295 @@
+[gd_scene load_steps=29 format=3 uid="uid://ve6g864losvt"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Taiga/Golden_Eagle.gd" id="1_2q5fs"]
+[ext_resource type="Texture2D" uid="uid://bnrcbdwqvfppc" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/jump/Jump.png" id="2_k1ufa"]
+[ext_resource type="Texture2D" uid="uid://bqbo3vpsv485d" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Run/Run 1.png" id="3_i42x1"]
+[ext_resource type="Texture2D" uid="uid://dd0bwsy45smkn" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Run/Run 2.png" id="4_5rbx0"]
+[ext_resource type="Texture2D" uid="uid://c3lmoqt1yci2y" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Run/Run 3.png" id="5_jx2kp"]
+[ext_resource type="Texture2D" uid="uid://ekbqr7sa8ibj" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Run/Run 4.png" id="6_pcgg0"]
+[ext_resource type="Texture2D" uid="uid://cq7ojpbcm1hn" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Attack/Attack 1.png" id="7_wuk4c"]
+[ext_resource type="Texture2D" uid="uid://bw8jq17n1en5j" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Attack/Attack 2.png" id="8_todrh"]
+[ext_resource type="Texture2D" uid="uid://kkdgt28rnrq" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Attack/Attack 3.png" id="9_closm"]
+[ext_resource type="Texture2D" uid="uid://nk5xvgn0ityr" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Iddle/Iddle 1.png" id="10_ebvyv"]
+[ext_resource type="Texture2D" uid="uid://4rscv1cfpibp" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Iddle/Iddle 2.png" id="11_gaabc"]
+[ext_resource type="Texture2D" uid="uid://bk6g2cjg1ulgi" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Iddle/Iddle 3.png" id="12_3yy0f"]
+[ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hurtbox/Hurt box.gd" id="13_ol3by"]
+[ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="14_gbshe"]
+[ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="15_mmmuq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v15re"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_i42x1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5rbx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jx2kp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pcgg0")
+}],
+"loop": true,
+"name": &"Cirle_Player",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_wuk4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_todrh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_closm")
+}],
+"loop": false,
+"name": &"Dive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k1ufa")
+}],
+"loop": false,
+"name": &"Flap",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_i42x1")
+}],
+"loop": false,
+"name": &"Glide",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ebvyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gaabc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3yy0f")
+}],
+"loop": true,
+"name": &"Hovering",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_8kb2x"]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Ascending"]
+}
+
+[sub_resource type="Animation" id="Animation_g650w"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Cirle_Player"]
+}
+
+[sub_resource type="Animation" id="Animation_tga8i"]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Diving"]
+}
+
+[sub_resource type="Animation" id="Animation_20nrp"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Hovering"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1wav2"]
+_data = {
+"Ascending": SubResource("Animation_8kb2x"),
+"Cirle_Player": SubResource("Animation_g650w"),
+"Diving": SubResource("Animation_tga8i"),
+"Hovering": SubResource("Animation_20nrp")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_elaqf"]
+radius = 78.7464
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ahsm8"]
+radius = 64.2573
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6dpau"]
+radius = 76.5572
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_es05s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_saldy"]
+bg_color = Color(1, 0, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tlbk0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddpp1"]
+
+[node name="Golden_Eagle" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") groups=["enemy"]]
+collision_layer = 33
+collision_mask = 2
+motion_mode = 1
+platform_floor_layers = 4294836224
+safe_margin = 1.0
+script = ExtResource("1_2q5fs")
+health_bar = NodePath("Health_Bar")
+armor_bar = NodePath("Armor_Bar")
+hit_box = NodePath("Hitboxes")
+hurt_box = NodePath("Hurtboxes")
+enemy_sprites = NodePath("AnimatedSprite2D")
+enemy_sprite_animation = NodePath("AnimatedSprite2D/AnimationPlayer")
+enemy_raycast = NodePath("RayCast2D")
+timers = NodePath("Timer")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v15re")
+animation = &"Cirle_Player"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_1wav2")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_elaqf")
+debug_color = Color(0.47468, 0.574594, 0.374097, 0.42)
+
+[node name="Hurtboxes" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 16
+script = ExtResource("13_ol3by")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtboxes"]
+shape = SubResource("CircleShape2D_ahsm8")
+
+[node name="Hitboxes" type="Area2D" parent="."]
+script = ExtResource("14_gbshe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitboxes"]
+shape = SubResource("CircleShape2D_6dpau")
+debug_color = Color(0.126521, 0.646847, 0, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-34, -31)
+target_position = Vector2(-300, 0)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="Health_Bar" type="ProgressBar" parent="."]
+offset_left = -19.0
+offset_top = -158.0
+offset_right = 21.0
+offset_bottom = -131.0
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("15_mmmuq")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/background = SubResource("StyleBoxEmpty_es05s")
+theme_override_styles/fill = SubResource("StyleBoxFlat_saldy")
+
+[node name="Armor_Bar" type="ProgressBar" parent="."]
+offset_left = -19.0
+offset_top = -131.0
+offset_right = 21.0
+offset_bottom = -104.0
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("15_mmmuq")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/background = SubResource("StyleBoxEmpty_tlbk0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ddpp1")

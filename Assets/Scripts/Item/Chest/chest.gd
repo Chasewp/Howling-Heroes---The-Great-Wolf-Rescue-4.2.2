@@ -1,22 +1,40 @@
 class_name Chest
 extends StaticBody2D
 
-signal bos_executed
-
-@export var is_bos_executed : bool = false
-@onready var chest = $"."
-@onready var chest_open = $ChestOpen
-@onready var chest_closed = $ChestClosed
-@onready var chest_open_sfx = $chest_open_sfx
+@export var key_scene : PackedScene  # Assign scene key di inspector
+@onready var animation_player = $AnimationPlayer
+@onready var closed_sprite = $ChestClosed
+@onready var open_sprite = $ChestOpen
+var is_opened := false
 
 func _ready():
-		chest.visible = false
+	closed_sprite.visible = false
+	open_sprite.visible = false
+	# Chest awalnya tersembunyi
+
+func boss_defeated():
+	# Munculkan chest setelah boss mati
+	closed_sprite.visible = true
+	animation_player.play("appear")  # Animasi muncul
 	
-func _on_boss_executed(body):
-	if body.is_in_group("player") and is_bos_executed == true:
-		bos_executed.emit()
-		chest.visible = true
-		chest_open.visible = true
-		chest_closed.visible = false
-		chest_open_sfx.play()
-		queue_free()
+	# Tunggu animasi selesai sebelum bisa dibuka
+	await animation_player.animation_finished
+	set_collision_layer_value(1, true)  # Aktifkan collision
+
+func _on_body_entered(body):
+	if body.is_in_group("player") and not is_opened:
+		open_chest()
+
+func open_chest():
+	is_opened = true
+	animation_player.play("open")
+	$ChestOpenSFX.play()
+	
+	await animation_player.animation_finished
+	spawn_key()
+	queue_free()
+
+func spawn_key():
+	var key = key_scene.instantiate()
+	key.position = position + Vector2(0, -20)  # Posisi di atas chest
+	get_parent().add_child(key)

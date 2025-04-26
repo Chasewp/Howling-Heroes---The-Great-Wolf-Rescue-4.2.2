@@ -21,32 +21,39 @@ func _on_timer_timeout():
 	animate_state = state.IDDLE
 
 func change_direction() -> void:
+	if not is_instance_valid(target_player):
+		return  # Skip if player is missing
+	# Pastikan semua node masih valid
+	if not is_instance_valid(enemy_sprites) or not is_instance_valid(enemy_raycast):
+		return
+	
 	if animate_state == state.IDDLE:
 		if enemy_sprites.flip_h:
-			# moving right
 			if self.position.x <= right_bounds.x:
 				direction = Vector2(1, 0)
 			else:
-				# flip to moving left
 				enemy_sprites.flip_h = false
-				enemy_raycast.target_position = Vector2(-300, 0)
+				if is_instance_valid(enemy_raycast):
+					enemy_raycast.target_position = Vector2(-300, 0)
 		else:
-			# moving left
 			if self.position.x >= left_bounds.x:
 				direction = Vector2(-1, 0)
 			else:
-				# flip to moving right
 				enemy_sprites.flip_h = true
-				enemy_raycast.target_position = Vector2(300, 0)
+				if is_instance_valid(enemy_raycast):
+					enemy_raycast.target_position = Vector2(300, 0)
 	else:
-		# Chase state. Follow player
-		direction = (target_player.position - self.position).normalized()
+		if not is_instance_valid(target_player):
+			animate_state = state.IDDLE
+			return
+			
+		direction = (target_player.global_position - self.global_position).normalized()
 		direction = sign(direction)
 		if direction.x == 1:
-			# flip to moving right
 			enemy_sprites.flip_h = true
-			enemy_raycast.target_position = Vector2(300, 0)
+			if is_instance_valid(enemy_raycast):
+				enemy_raycast.target_position = Vector2(300, 0)
 		else:
-			# flip moving to left
 			enemy_sprites.flip_h = false
-			enemy_raycast.target_position = Vector2(-300, 0)
+			if is_instance_valid(enemy_raycast):
+				enemy_raycast.target_position = Vector2(-300, 0)

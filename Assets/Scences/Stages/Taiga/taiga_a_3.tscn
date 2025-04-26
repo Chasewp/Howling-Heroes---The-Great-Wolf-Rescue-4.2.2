@@ -1,11 +1,10 @@
-[gd_scene load_steps=37 format=3 uid="uid://dacxduhw3cbjc"]
+[gd_scene load_steps=44 format=3 uid="uid://dacxduhw3cbjc"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Stage/Taiga/taiga.gd" id="1_g4hk3"]
 [ext_resource type="PackedScene" uid="uid://ca0nm25t6mv6w" path="res://Assets/Scences/Items/Cammera/camera_Stage.tscn" id="2_00v6u"]
 [ext_resource type="PackedScene" uid="uid://culrb1suvevtd" path="res://Assets/Scences/Paralex/Taiga/taiga.tscn" id="2_rruxb"]
 [ext_resource type="PackedScene" uid="uid://cuuxigy7yprh4" path="res://Assets/Scences/Paralex/Taiga/taiga_2.tscn" id="2_scon1"]
 [ext_resource type="TileSet" uid="uid://be2o4st0shlrm" path="res://Assets/Tileset/Tileset_Taiga A1.tres" id="3_a6xkp"]
-[ext_resource type="PackedScene" uid="uid://cs3vhxycmjxq1" path="res://Assets/Scences/Items/Keys/pine_key.tscn" id="3_x65nw"]
 [ext_resource type="PackedScene" uid="uid://dcgqy35frqjee" path="res://Assets/Scences/Paralex/Taiga/taiga_a_3.tscn" id="5_uqdba"]
 [ext_resource type="PackedScene" uid="uid://do60jfk40770p" path="res://Assets/Scences/Character/NPC/Wolves/Gray/Eurasian_Wolf/Eurasian_Wolf.tscn" id="7_2xikr"]
 [ext_resource type="PackedScene" uid="uid://b63jenx5a01xy" path="res://Assets/Scences/Items/portal/teleport_a_1.tscn" id="8_imjt6"]
@@ -13,17 +12,22 @@
 [ext_resource type="PackedScene" uid="uid://cndqerygqtk6p" path="res://Assets/Scences/Items/Cage/Taiga/pine__cage.tscn" id="9_gbjs0"]
 [ext_resource type="PackedScene" uid="uid://di6bgtu0y432v" path="res://Assets/Scences/Items/Player_Spawner/player_spawner.tscn" id="9_vtvml"]
 [ext_resource type="PackedScene" uid="uid://coycdiawi84o" path="res://Assets/Scences/Items/portal/teleport_stage.tscn" id="10_aivyi"]
+[ext_resource type="AudioStream" uid="uid://ddvjw3yd3jpcc" path="res://Assets/Music/Dialogues/Executed_enemy/Required 5 enemy.wav" id="11_qm1w7"]
+[ext_resource type="FontFile" uid="uid://ccpiomxr4hnwi" path="res://Assets/Fonts/DisposableDroidBB_bldital.ttf" id="12_qptcy"]
+[ext_resource type="PackedScene" uid="uid://d3lpwm66i3h54" path="res://Assets/Scences/Character/Enemy/Humanoid/Taiga/hunter_mk_i.tscn" id="13_8w5b2"]
 [ext_resource type="PackedScene" uid="uid://cbo01n7ccb6dr" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/black_bear.tscn" id="13_eiy3r"]
 [ext_resource type="PackedScene" uid="uid://barjbila0h7xr" path="res://Assets/Scences/Platfrom/Taiga/taiga_platrom.tscn" id="14_5av82"]
 [ext_resource type="PackedScene" uid="uid://b5a3j5sbcyw3s" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/brown_bear.tscn" id="14_wqxwl"]
 [ext_resource type="AudioStream" uid="uid://cijoewb00qfu0" path="res://Assets/Music/SFX/Biomes/Forest Music/Forest.mp3" id="16_nktca"]
+[ext_resource type="PackedScene" uid="uid://ve6g864losvt" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/golden_eagle.tscn" id="19_8fc52"]
+[ext_resource type="PackedScene" uid="uid://bha1kd0hiiw4r" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/red_fox.tscn" id="19_m4b03"]
 
 [sub_resource type="Animation" id="Animation_c7rdu"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Elevator/Taiga_Platrom:position")
+tracks/0/path = NodePath("Elevator/Stage 1/Taiga_Platrom:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -31,6 +35,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1037, 462)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Elevator/Stage 1/Taiga_Platrom3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1753, 419)]
 }
 
 [sub_resource type="Animation" id="Animation_obpt6"]
@@ -40,7 +56,7 @@ loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Elevator/Taiga_Platrom:position")
+tracks/0/path = NodePath("Elevator/Stage 1/Taiga_Platrom:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -48,6 +64,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1037, 462), Vector2(1035, 294), Vector2(911, 284)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Elevator/Stage 1/Taiga_Platrom3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.1, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1753, 419), Vector2(1778, 319), Vector2(1763, 108)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y85v2"]
@@ -67,7 +95,7 @@ size = Vector2(49, 20)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_flutf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgt5w"]
-size = Vector2(46, 273)
+size = Vector2(46, 547)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4w6h2"]
 
@@ -90,6 +118,17 @@ size = Vector2(20, 1006)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkvj7"]
 size = Vector2(20, 92)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vfaeh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npte3"]
+size = Vector2(650000, 165)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqxwu"]
+bg_color = Color(0.995171, 0.686606, 0.339533, 1)
+corner_detail = 10
+shadow_color = Color(0, 0, 0, 0.772549)
+shadow_size = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x02lu"]
 size = Vector2(99, 66)
@@ -120,11 +159,6 @@ layer_3/tile_data = PackedInt32Array(2621618, 524288, 10, 2621619, 589824, 10, 2
 libraries = {
 "": SubResource("AnimationLibrary_y85v2")
 }
-
-[node name="Keys" type="Node" parent="."]
-
-[node name="Pine_Key" parent="Keys" instance=ExtResource("3_x65nw")]
-position = Vector2(2866, 630)
 
 [node name="Teleport" type="Node" parent="."]
 
@@ -177,7 +211,7 @@ collision_mask = 50
 physics_material_override = SubResource("PhysicsMaterial_flutf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Barrier/Stage_1/platfromer/StaticBody2D"]
-position = Vector2(7, -138.5)
+position = Vector2(7, -275.5)
 shape = SubResource("RectangleShape2D_jgt5w")
 debug_color = Color(0.713244, 0.472633, 0.294635, 0.42)
 
@@ -274,6 +308,26 @@ physics_material_override = SubResource("PhysicsMaterial_sr2g0")
 position = Vector2(0, 36)
 shape = SubResource("RectangleShape2D_bkvj7")
 
+[node name="Entry Wall" type="Node" parent="Wall_Barrier"]
+
+[node name="Top_Side" type="StaticBody2D" parent="Wall_Barrier/Entry Wall"]
+position = Vector2(2, -178)
+collision_mask = 34
+physics_material_override = SubResource("PhysicsMaterial_vfaeh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Barrier/Entry Wall/Top_Side"]
+position = Vector2(324988, -179)
+shape = SubResource("RectangleShape2D_npte3")
+
+[node name="Buttom_Side" type="StaticBody2D" parent="Wall_Barrier/Entry Wall"]
+position = Vector2(11, 1305)
+collision_mask = 34
+physics_material_override = SubResource("PhysicsMaterial_vfaeh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Barrier/Entry Wall/Buttom_Side"]
+position = Vector2(324988, -179)
+shape = SubResource("RectangleShape2D_npte3")
+
 [node name="Wolves" type="Node" parent="."]
 
 [node name="Eurasian_Wolf" parent="Wolves" node_paths=PackedStringArray("Cagees") instance=ExtResource("7_2xikr")]
@@ -288,13 +342,45 @@ Cagees = NodePath("../../Cages/Machenzie_River_Cage")
 
 [node name="Bos_Encounter" type="Node" parent="."]
 
-[node name="Teleport_Stage" parent="Bos_Encounter" instance=ExtResource("10_aivyi")]
+[node name="Bos_1" type="Node" parent="Bos_Encounter"]
+
+[node name="Teleport_Stage" parent="Bos_Encounter/Bos_1" instance=ExtResource("10_aivyi")]
 position = Vector2(2862, 341)
 
-[node name="destination" parent="Bos_Encounter/Teleport_Stage" index="2"]
-position = Vector2(-893, 300)
+[node name="CollisionShape2D" parent="Bos_Encounter/Bos_1/Teleport_Stage" index="1"]
+visible = true
 
-[node name="Bos_1" type="Node" parent="Bos_Encounter"]
+[node name="destination" parent="Bos_Encounter/Bos_1/Teleport_Stage" index="2"]
+position = Vector2(12, 308)
+
+[node name="Required 5 enemy executed" type="AudioStreamPlayer2D" parent="Bos_Encounter/Bos_1"]
+position = Vector2(2862, 341)
+stream = ExtResource("11_qm1w7")
+bus = &"Voices"
+
+[node name="Panel 5 required enemy" type="Label" parent="Bos_Encounter/Bos_1"]
+visible = false
+offset_left = 2740.0
+offset_top = 251.0
+offset_right = 2971.0
+offset_bottom = 290.0
+theme_override_colors/font_color = Color(0, 0.0131466, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.545882, 0.686847, 0.798062, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_constants/line_spacing = 1
+theme_override_fonts/font = ExtResource("12_qptcy")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_pqxwu")
+text = "Access Denied. 
+5 Enemies Executed Required!!!"
+horizontal_alignment = 1
+
+[node name="Hunter_MK_I" parent="Bos_Encounter/Bos_1" instance=ExtResource("13_8w5b2")]
+position = Vector2(2040, 576)
 
 [node name="Bos_2" type="Node" parent="Bos_Encounter"]
 
@@ -355,14 +441,15 @@ debug_color = Color(0, 0.772549, 0.898039, 0.419608)
 
 [node name="Elevator" type="Node" parent="."]
 
-[node name="Taiga_Platrom" parent="Elevator" instance=ExtResource("14_5av82")]
+[node name="Stage 1" type="Node" parent="Elevator"]
+
+[node name="Taiga_Platrom" parent="Elevator/Stage 1" instance=ExtResource("14_5av82")]
 position = Vector2(1037, 462)
 
-[node name="Taiga_Platrom3" parent="Elevator" instance=ExtResource("14_5av82")]
-position = Vector2(1745, 383)
+[node name="Taiga_Platrom3" parent="Elevator/Stage 1" instance=ExtResource("14_5av82")]
+position = Vector2(1753, 419)
 
 [node name="Taiga_Platrom2" parent="Elevator" instance=ExtResource("14_5av82")]
-visible = false
 position = Vector2(5359, 127)
 
 [node name="Enemy" type="Node" parent="."]
@@ -372,53 +459,26 @@ position = Vector2(5359, 127)
 [node name="Brown_Bear" parent="Enemy/Stage_1" instance=ExtResource("14_wqxwl")]
 position = Vector2(123, 87)
 
-[node name="Brown_Bear2" parent="Enemy/Stage_1" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") instance=ExtResource("14_wqxwl")]
-position = Vector2(138, 492)
-health_bar = NodePath("../Brown_Bear/Health_Bar")
-armor_bar = NodePath("../Brown_Bear/Armor_Bar")
-hit_box = NodePath("../Brown_Bear/Hit box")
-hurt_box = NodePath("../Brown_Bear/Hurt_Box")
-enemy_sprites = NodePath("../Brown_Bear/AnimatedSprite2D")
-enemy_sprite_animation = NodePath("../Brown_Bear/AnimatedSprite2D/AnimationPlayer")
-enemy_raycast = NodePath("../Brown_Bear/RayCast2D")
-timers = NodePath("../Brown_Bear/Timer")
-
-[node name="Brown_Bear3" parent="Enemy/Stage_1" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") instance=ExtResource("14_wqxwl")]
-position = Vector2(2401, 87)
-health_bar = NodePath("../Brown_Bear/Health_Bar")
-armor_bar = NodePath("../Brown_Bear/Armor_Bar")
-hit_box = NodePath("../Brown_Bear/Hit box")
-hurt_box = NodePath("../Brown_Bear/Hurt_Box")
-enemy_sprites = NodePath("../Brown_Bear/AnimatedSprite2D")
-enemy_sprite_animation = NodePath("../Brown_Bear/AnimatedSprite2D/AnimationPlayer")
-enemy_raycast = NodePath("../Brown_Bear/RayCast2D")
-timers = NodePath("../Brown_Bear/Timer")
-
 [node name="Black_Bear" parent="Enemy/Stage_1" instance=ExtResource("13_eiy3r")]
 position = Vector2(132, 265)
 eficient_Armor = 0.35
 
-[node name="Black_Bear2" parent="Enemy/Stage_1" node_paths=PackedStringArray("health_bar", "armor_bar", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") instance=ExtResource("13_eiy3r")]
-position = Vector2(2861, 25)
-health_bar = NodePath("../Black_Bear/Health_Bar")
-armor_bar = NodePath("../Black_Bear/Armor_Bar")
-hurt_box = NodePath("../Black_Bear/Hurt_Box")
-enemy_sprites = NodePath("../Black_Bear/Black_Bear_Animation")
-enemy_sprite_animation = NodePath("../Black_Bear/Black_Bear_Animation/AnimationPlayer")
-enemy_raycast = NodePath("../Black_Bear/RayCast2D")
-timers = NodePath("../Black_Bear/Timer")
-eficient_Armor = 0.35
+[node name="Golden_Eagle" parent="Enemy/Stage_1" instance=ExtResource("19_8fc52")]
+position = Vector2(1851, 219)
 
-[node name="Black_Bear3" parent="Enemy/Stage_1" node_paths=PackedStringArray("health_bar", "armor_bar", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") instance=ExtResource("13_eiy3r")]
-position = Vector2(2861, 25)
-health_bar = NodePath("../Black_Bear/Health_Bar")
-armor_bar = NodePath("../Black_Bear/Armor_Bar")
-hurt_box = NodePath("../Black_Bear/Hurt_Box")
-enemy_sprites = NodePath("../Black_Bear/Black_Bear_Animation")
-enemy_sprite_animation = NodePath("../Black_Bear/Black_Bear_Animation/AnimationPlayer")
-enemy_raycast = NodePath("../Black_Bear/RayCast2D")
-timers = NodePath("../Black_Bear/Timer")
-eficient_Armor = 0.35
+[node name="Red_fox" parent="Enemy/Stage_1" instance=ExtResource("19_m4b03")]
+position = Vector2(2435, 92)
+
+[node name="Red_fox2" parent="Enemy/Stage_1" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") instance=ExtResource("19_m4b03")]
+position = Vector2(2886, 36)
+health_bar = NodePath("../Red_fox/Health_Bar")
+armor_bar = NodePath("../Red_fox/Armor_Bar")
+hit_box = NodePath("../Red_fox/Hit box")
+hurt_box = NodePath("../Red_fox/Hurt_Box")
+enemy_sprites = NodePath("../Red_fox/AnimatedSprite2D")
+enemy_sprite_animation = NodePath("../Red_fox/AnimatedSprite2D/AnimationPlayer")
+enemy_raycast = NodePath("../Red_fox/RayCast2D")
+timers = NodePath("../Red_fox/Timer")
 
 [node name="Stage_2" type="Node" parent="Enemy"]
 
@@ -440,13 +500,16 @@ position = Vector2(3422, 13)
 hlt = 517.5
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -34)
 stream = ExtResource("16_nktca")
 bus = &"Music"
 area_mask = 16384
 
 [connection signal="body_entered" from="Teleport/TeleportStage_2" to="." method="_on_teleport_stage_1_player_body_entered"]
+[connection signal="body_entered" from="Bos_Encounter/Bos_1/Teleport_Stage" to="." method="_on_teleport_stage_body_entered"]
+[connection signal="body_exited" from="Bos_Encounter/Bos_1/Teleport_Stage" to="." method="_on_teleport_stage_body_exited"]
 [connection signal="cage_unlocked" from="Cages/Eurasiaan_Cage" to="Wolves/Eurasian_Wolf" method="_on_cage_unlocked"]
 [connection signal="cage_unlocked" from="Cages/Machenzie_River_Cage" to="Wolves/Machenzie_River_Wolf" method="_on_cage_unlocked"]
 
 [editable path="Teleport/TeleportStage_2"]
-[editable path="Bos_Encounter/Teleport_Stage"]
+[editable path="Bos_Encounter/Bos_1/Teleport_Stage"]

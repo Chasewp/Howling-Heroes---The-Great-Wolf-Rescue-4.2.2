@@ -29,6 +29,7 @@ next_level = "res://Assets/Scences/Stages/Taiga/taiga_a_3.tscn"
 [node name="Player" parent="." instance=ExtResource("3_xb5hv")]
 unique_name_in_owner = true
 world_root = NodePath("../WorldRoot")
+player_mag = 180
 
 [node name="UI" type="CanvasLayer" parent="."]
 process_mode = 3

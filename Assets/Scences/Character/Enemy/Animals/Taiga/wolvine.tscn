@@ -1,11 +1,63 @@
-[gd_scene load_steps=22 format=3 uid="uid://dm2f35rrowtqx"]
+[gd_scene load_steps=24 format=3 uid="uid://dm2f35rrowtqx"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Taiga/wolvine.gd" id="1_7a2mn"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hurtbox/Hurt box.gd" id="2_rmk5a"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="3_2luoo"]
+[ext_resource type="AudioStream" uid="uid://cm7wsk17k2dyc" path="res://Assets/Music/SFX/Enemy/Animal/Claw Attack Sound Effects - 114 Claw Attack sounds for SFX projects.wav" id="3_t7jnh"]
 [ext_resource type="AudioStream" uid="uid://bjiffgtcy7r74" path="res://Assets/Music/SFX/Enemy/Animal/jump_grass.mp3" id="3_x2oby"]
 [ext_resource type="SpriteFrames" uid="uid://bhbl2dvrgen4i" path="res://Assets/Animate/Chacter/Enemy/Animal/Wolvrine.tres" id="4_8l2ge"]
-[ext_resource type="FontFile" uid="uid://dhgp7qgyslj7a" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="5_ehdvy"]
+[ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="5_ehdvy"]
+
+[sub_resource type="Animation" id="Animation_qu8q5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hitboxes:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RayCast2D:target_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-300, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RayCast2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-49, -15)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_bd3vl"]
 length = 0.6
@@ -33,6 +85,69 @@ tracks/1/keys = {
 "update": 1,
 "values": ["attack"]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hitboxes:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RayCast2D:target_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.05),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-300, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RayCast2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.05),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-49, -15)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimatedSprite2D:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.05),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sfx")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_t7jnh")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/6/use_blend = true
 
 [sub_resource type="Animation" id="Animation_tof6w"]
 length = 0.2
@@ -214,6 +329,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2wphc"]
 _data = {
+"RESET": SubResource("Animation_qu8q5"),
 "attack": SubResource("Animation_bd3vl"),
 "died": SubResource("Animation_tof6w"),
 "fall": SubResource("Animation_bsvjy"),
@@ -226,11 +342,11 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2k56v"]
 size = Vector2(158, 63)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovuea"]
-size = Vector2(68, 60)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ypefa"]
+radius = 40.025
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ouuj4"]
-size = Vector2(54, 64)
+[sub_resource type="CircleShape2D" id="CircleShape2D_jxp6f"]
+radius = 52.3927
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_121ic"]
 
@@ -241,19 +357,30 @@ bg_color = Color(1, 0, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6cv60"]
 
-[node name="Wolvine" type="CharacterBody2D" node_paths=PackedStringArray("hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation")]
+[node name="Wolvine" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") groups=["enemy"]]
 collision_layer = 32
 collision_mask = 3
 script = ExtResource("1_7a2mn")
+health_bar = NodePath("Health_Bar")
+armor_bar = NodePath("Armor_Bar")
 hit_box = NodePath("Hitboxes")
 hurt_box = NodePath("Hurtboxes")
 enemy_sprites = NodePath("AnimatedSprite2D")
 enemy_sprite_animation = NodePath("AnimatedSprite2D/AnimationPlayer")
+enemy_raycast = NodePath("RayCast2D")
+timers = NodePath("Timer")
+hlt = 350.0
+arm = 40.0
+jump = 2
+speed = 300.0
+damage = 18.0
+Acceleration = 15.0
+Jump_velocity = -350.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.35, 0.35)
 sprite_frames = ExtResource("4_8l2ge")
-animation = &"jump"
+animation = &"died"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 root_node = NodePath("../..")
@@ -266,24 +393,28 @@ position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_2k56v")
 debug_color = Color(0.256552, 0.000823902, 0.496812, 0.42)
 
-[node name="Hurtboxes" type="Area2D" parent="."]
+[node name="Hurtboxes" type="Area2D" parent="." groups=["enemy_hurtbox"]]
 collision_layer = 64
 collision_mask = 16
 script = ExtResource("2_rmk5a")
+Healths = 350.0
+Armors = 40.0
+Eficient_Armors = 0.4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtboxes"]
-position = Vector2(-17, 0)
-shape = SubResource("RectangleShape2D_ovuea")
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_ypefa")
 debug_color = Color(0.701435, 0.490323, 0.0750877, 0.42)
 
-[node name="Hitboxes" type="Area2D" parent="."]
+[node name="Hitboxes" type="Area2D" parent="." groups=["enemy_hitbox"]]
 collision_layer = 128
 collision_mask = 8
 script = ExtResource("3_2luoo")
+damage = 18.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitboxes"]
-position = Vector2(45, 0)
-shape = SubResource("RectangleShape2D_ouuj4")
+position = Vector2(-53, -4)
+shape = SubResource("CircleShape2D_jxp6f")
 debug_color = Color(0.862266, 0.359736, 3.85046e-07, 0.42)
 
 [node name="Health_Bar" type="ProgressBar" parent="."]
@@ -313,7 +444,14 @@ theme_override_styles/background = SubResource("StyleBoxEmpty_8gnfa")
 theme_override_styles/fill = SubResource("StyleBoxFlat_6cv60")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(55, -6)
-target_position = Vector2(300, 0)
+position = Vector2(-49, -15)
+target_position = Vector2(-300, 0)
+collision_mask = 2
 
 [node name="Sfx" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="executed" from="Hurtboxes" to="." method="died"]

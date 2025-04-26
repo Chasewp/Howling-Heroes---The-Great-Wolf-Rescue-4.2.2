@@ -35,6 +35,7 @@ signal take_item(item :Node2D)
 #Machete
 @onready var machete_sprite = $Sprites/Machete
 @onready var slash_effect = $Sprites/Slash_Effect
+@onready var machete_timer = $Timer/machete_timer
 
 @export_category("Variable Class")
 @export var speed = 300
@@ -45,7 +46,7 @@ signal take_item(item :Node2D)
 @export var slash_scences : PackedScene
 @export var player_name: String
 @export var player_health : float
-@export var player_armor : float
+@export var player_armor : float 
 @export var player_biome : String
 @export var world_root:NodePath
 @export var is_machete_equip : bool
@@ -62,7 +63,7 @@ signal take_item(item :Node2D)
 @export var ice_keys :bool
 @export var stone_keys : bool
 @export var snow_fang_keys : bool
-@export var frozen_paw_securelock_key : bool
+@export var frozen_paw_securelock_keys : bool
 @export var grass_keys : bool
 @export var flower_keys : bool
 @export var ground_keys : bool
@@ -87,7 +88,6 @@ var anim_state = state.IDDLE
 var current_health : float
 var current_armor:float
 var _game_over_scence = load("res://Assets/Scences/UI/Game over/Game_Over.tscn")
-var _game_over = null
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -100,7 +100,8 @@ func _ready():
 	brust_garou_sprite.visible = false
 	slash_effect.visible = false
 	interact_panel.visible = false
-	
+	player_ammo = 30
+	player_mag = 150
 	# Initialize hurtbox values
 	hurt_area_chest.Eficient_Armors = 0.15
 	# Connect damage signals
@@ -262,28 +263,6 @@ func _physics_process(delta):
 	move_and_slide()
 	update_state()
 	update_animation(Input.get_axis("move_left", "move_right"))
-	#if DialogueManager.is_dialog_active:
-		#return
-	#if player_health <=0:
-		#died()
-	## Add the gravity.
-	#if not is_on_floor():
-		#velocity.y += gravity * delta
-		#
-	## Handle jump.
-	#if Input.is_action_just_pressed("jump") and is_on_floor():
-		#velocity.y = jump_velocity
-#
-	#if anim_state == state.HURT: return
-		#
-	## Get the input direction and handle the movement/deceleration.
-	## As good practice, you should replace UI actions with custom gameplay actions.
-	#var direction = Input.get_axis("move_left", "move_right")
-	#if direction:
-		#velocity.x =  move_toward(velocity.x, direction * speed, acceleration)
-	#else:
-		#velocity.x =  move_toward(velocity.x,0, acceleration/2)
-	#
 	coordinate.UpdatePos(self.position)
 	emit_signal("update_coordinate",self.position)
 
@@ -302,10 +281,14 @@ func _physics_process(delta):
 		else: 
 			ammo_empty_sfx.play()
 	
-	if Input.is_action_just_pressed("reloading") or current_ammo < player_mag and is_burst_garou_equip==true:
-		reloading()
+	if Input.is_action_just_pressed("reloading") and is_burst_garou_equip:
+		if current_ammo < player_ammo and player_mag > 0:
+			reloading()
 		
 	if Input.is_action_just_pressed("slash_machete") and  player_singleton_autoload.is_machete_equip == true:
+		if not machete_timer.is_stopped():
+			return
+			
 		anim_state = state.ATTACKMACHETE		
 		animation_player.play()
 		var slash_instance = slash_scences.instantiate()
@@ -372,11 +355,12 @@ func refill_ammo():
 	if player_mag >= ammo_missing:
 		#reloading_voice_sfx.play()
 		set_max_reserved_ammo(player_mag - ammo_missing)
+		maganize_lbl.text = str(player_mag)
 		current_ammo = player_ammo
 	else:
 		current_ammo += player_mag
 		set_max_reserved_ammo(0)	
-		
+		maganize_lbl.text = str(0)
 	reloading_progress_display.visible = false
 	bullets_caps_lbl.text = str(current_ammo)
 
@@ -445,39 +429,10 @@ func take_damage(damage:float,is_armor_piercing:bool,AP_dmg :float):
 func died():
 	anim_state = state.DIED
 	animation_player.play()
-	var game_over = get_tree().root.get_node("World_Stages/UI/")
-	var save_loader_manager = get_tree().root.get_node("World_Stages/Utilities/Save_Loader")
-	_game_over = _game_over_scence.instantiate()
-	game_over.add_child(_game_over)
-	save_loader_manager.has_method("save_game")
+	LoadingScreen.load_scence(_game_over_scence)
 	queue_free()
 	
-#func died():
-	#anim_state = state.DIED
-	#animation_player.play("Died")  # Pastikan nama animasi sesuai
-	#set_physics_process(false)  # Matikan physics selama animasi
-	#await animation_player.animation_finished  # Tunggu animasi selesai
-	#
-	#var game_over = get_tree().root.get_node("World_Stages/UI/")
-	#var save_loader_manager = get_tree().root.get_node("World_Stages/Utilities/Save_Loader")
-	#_game_over = _game_over_scence.instantiate()
-	#game_over.add_child(_game_over)
-	#save_loader_manager.has_method("save_game")
-	#
-#func _on_hurt_area_foot_area_entered(area):
-	#if area.is_in_group("trap"):
-		#var _traps = area.get_parent()
-		#take_damage(_traps.damage, _traps.is_have_AP_dmg, _traps.penetrate)
-#
-#func _on_hurt_area_chest_area_entered(area):
-	#if area.is_in_group("enemy_hitbox"):
-		#var enemy = area.get_parent()
-		#print(take_damage(enemy.damage, enemy.AP, enemy.APdmg))
-		#take_damage(enemy.damage, enemy.AP, enemy.APdmg)
-#
-	#if area.is_in_group("trap"):
-		#var _traps = area.get_parent()
-		#take_damage(_traps.damage, _traps._is_have_AP_dmg, _traps.penetrate)
+
 		
 func _on_animation_player_finished(anim_name):
 	if anim_name == "Hurt":

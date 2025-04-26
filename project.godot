@@ -54,7 +54,7 @@ directories/dtl_directory={
 "Finish-Mission": "res://Assets/Dialogue/TimeLines/Finish-Mission.dtl",
 "How_to_play": "res://Assets/Dialogue/TimeLines/How_to_play.dtl",
 "Intro": "res://Assets/Dialogue/TimeLines/Intro.dtl",
-"Intro_Player": "res://Assets/Dialogue/TimeLines/Mission_Breffing.dtl",
+"Mission_Breffing": "res://Assets/Dialogue/TimeLines/Mission_Breffing.dtl",
 "Player": "res://Assets/Dialogue/TimeLines/Player.dtl"
 }
 glossary/default_case_sensitive=true
@@ -225,11 +225,13 @@ mission_log={
 2d_physics/layer_16="Chest"
 2d_physics/layer_17="boss_encounter"
 
+[physics]
+
+2d/default_gravity=1500.0
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
 lights_and_shadows/use_physical_light_units=true
 global_illumination/voxel_gi/quality=1
 camera/depth_of_field/depth_of_field_bokeh_quality=3
@@ -238,5 +240,8 @@ environment/ssil/quality=4
 environment/glow/upscale_mode=0
 environment/screen_space_reflection/roughness_quality=3
 environment/subsurface_scattering/subsurface_scattering_quality=3
+anti_aliasing/quality/msaa_2d=3
+anti_aliasing/quality/msaa_3d=3
 viewport/transparent_background=true
 viewport/hdr_2d=true
+anti_aliasing/quality/screen_space_aa=1

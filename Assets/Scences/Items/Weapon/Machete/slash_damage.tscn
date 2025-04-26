@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://3fimxshrqrjf"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/Item/Bullets/Bullets/slash_damage.gd" id="1_80rk7"]
+[ext_resource type="Script" path="res://Assets/Scripts/Item/Bullets/Slash/slash_damage.gd" id="1_80rk7"]
 [ext_resource type="Texture2D" uid="uid://msxx7uanopiq" path="res://Assets/Image/Items/Bullets/All_Fire_Bullet_Pixel_16x16_02.png" id="2_3bp7g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_af5sp"]

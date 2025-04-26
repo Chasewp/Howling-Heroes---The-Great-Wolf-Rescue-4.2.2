@@ -5,10 +5,10 @@
 [ext_resource type="SpriteFrames" uid="uid://bffgc3433k67k" path="res://Assets/Scences/Character/Enemy/Humanoid/Taiga/Sprites/hunter_arrow.tres" id="2_n7dox"]
 [ext_resource type="AudioStream" uid="uid://xpmjkrowms87" path="res://Assets/Music/SFX/Enemy/Humanoid/Dead_2-male.wav" id="3_kyw3s"]
 [ext_resource type="AudioStream" uid="uid://bouohnr0sxhtm" path="res://Assets/Music/SFX/Enemy/Humanoid/Hunter_Bow-hurt.mp3" id="3_nd6qd"]
-[ext_resource type="Texture2D" uid="uid://chr2v8xgh4dhm" path="res://addons/dialogic/Editor/Images/Pieces/warning.svg" id="4_d4gse"]
+[ext_resource type="Texture2D" uid="uid://d4n3j4lvatwxb" path="res://addons/dialogic/Editor/Images/Pieces/warning.svg" id="4_d4gse"]
 [ext_resource type="AudioStream" uid="uid://2napfmk01gql" path="res://Assets/Music/SFX/Enemy/Humanoid/jump.wav" id="4_w2rfm"]
 [ext_resource type="AudioStream" uid="uid://bod5ubvlpubn8" path="res://Assets/Music/SFX/Enemy/Humanoid/walk.wav" id="5_iilb8"]
-[ext_resource type="FontFile" uid="uid://dhgp7qgyslj7a" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="5_uoiem"]
+[ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="5_uoiem"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ru1t0"]
 radius = 42.0

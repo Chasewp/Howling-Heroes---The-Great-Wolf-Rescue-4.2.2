@@ -1,10 +1,10 @@
 [gd_scene load_steps=27 format=3 uid="uid://c7v6u1y4p5djc"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Humanoid/Grassland/Hunter_MKII.gd" id="1_4u5wd"]
-[ext_resource type="Texture2D" uid="uid://dixg1egm733al" path="res://Assets/Image/Enemy/Humanoid/Taiga/Hunter riffle/Hunter-SpriteSheet/MC-Dodge-SpriteSheet.png" id="1_cb8uy"]
-[ext_resource type="Texture2D" uid="uid://c0flt8gtfijt1" path="res://Assets/Image/Enemy/Humanoid/Taiga/Hunter riffle/Hunter-SpriteSheet/MC-Idle-SpriteSheet.png" id="1_hi11s"]
-[ext_resource type="Texture2D" uid="uid://g5ac23wuelal" path="res://Assets/Image/Enemy/Humanoid/Taiga/Hunter riffle/Hunter-SpriteSheet/MC-Running(with Rifle)-SpriteSheet.png" id="1_u73py"]
-[ext_resource type="Texture2D" uid="uid://crmrb1nm8k8gv" path="res://Assets/Image/Enemy/Humanoid/Taiga/Hunter riffle/Hunter-SpriteSheet/MC-hurt-SpriteSheet.png" id="2_1egtv"]
+[ext_resource type="Texture2D" uid="uid://b6ollhgsur2sq" path="res://Assets/Image/Enemy/Humanoid/Taiga/Hunter riffle/Hunter-SpriteSheet/MC-Dodge-SpriteSheet.png" id="1_cb8uy"]
+[ext_resource type="Texture2D" uid="uid://b6uktpw3xx6hx" path="res://Assets/Image/Enemy/Humanoid/Taiga/Hunter riffle/Hunter-SpriteSheet/MC-Idle-SpriteSheet.png" id="1_hi11s"]
+[ext_resource type="Texture2D" uid="uid://ca107f41ur7mc" path="res://Assets/Image/Enemy/Humanoid/Taiga/Hunter riffle/Hunter-SpriteSheet/MC-Running(with Rifle)-SpriteSheet.png" id="1_u73py"]
+[ext_resource type="Texture2D" uid="uid://uxjxnaauhrc6" path="res://Assets/Image/Enemy/Humanoid/Taiga/Hunter riffle/Hunter-SpriteSheet/MC-hurt-SpriteSheet.png" id="2_1egtv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jo3qo"]
 size = Vector2(150, 125.5)
@@ -155,8 +155,6 @@ size = Vector2(39, 50)
 [node name="Hunter_MK II" type="CharacterBody2D" groups=["Boss"]]
 collision_layer = 32
 script = ExtResource("1_4u5wd")
-health = 550.0
-armor = 60.0
 jump = 1
 speed = 300.0
 damage = 25.0
@@ -188,7 +186,6 @@ root_node = NodePath("../..")
 position = Vector2(17, -59)
 collision_layer = 128
 collision_mask = 0
-audio_bus_name = &"Sound_Effect"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(5, 0)
@@ -200,7 +197,6 @@ metadata/_edit_lock_ = true
 position = Vector2(2, -57)
 collision_layer = 64
 collision_mask = 0
-audio_bus_name = &"Sound_Effect"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("RectangleShape2D_ha823")

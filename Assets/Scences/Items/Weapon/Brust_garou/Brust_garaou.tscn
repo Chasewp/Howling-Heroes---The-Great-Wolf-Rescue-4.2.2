@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://wc2k8qdf0h58"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Item/Weapon/Burst_Garou/Brust__garou.gd" id="1_s7cx7"]
-[ext_resource type="Texture2D" uid="uid://bvkdmf0q41fua" path="res://Assets/Image/Items/Weapon/Player/Brust Garou 976 x 134.png" id="2_8jnbc"]
-[ext_resource type="AudioStream" uid="uid://dm56n5okkt0sx" path="res://Assets/Music/SFX/Weapon/Reload/Reload.mp3" id="3_t5wao"]
+[ext_resource type="Texture2D" uid="uid://dd2buv8dribaa" path="res://Assets/Image/Items/Weapon/Player/Brust Garou 976 x 134.png" id="2_8jnbc"]
+[ext_resource type="AudioStream" uid="uid://cs5wo8mquwcao" path="res://Assets/Music/SFX/Weapon/Reload/Reload.mp3" id="3_t5wao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kltcw"]
 size = Vector2(97, 14)

@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://be5kb8kyc742o" path="res://Assets/Music/SFX/Enemy/Animal/Body Fall Grass Sound Effects - 459 Body Fall Grass sounds for SFX projects.wav" id="6_6pfkh"]
 [ext_resource type="AudioStream" uid="uid://bjiffgtcy7r74" path="res://Assets/Music/SFX/Enemy/Animal/jump_grass.mp3" id="8_85ne0"]
 [ext_resource type="AudioStream" uid="uid://caue6c7jtmbob" path="res://Assets/Music/SFX/Enemy/Animal/Walk_grass.wav" id="9_hs0aj"]
-[ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="10_2dxqw"]
+[ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="10_pdpkm"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hurtbox/Hurt box.gd" id="11_ec0mk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_is84u"]
@@ -1892,7 +1892,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_84jpt"]
-radius = 95.6347
+radius = 64.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3w1w"]
 size = Vector2(80.5, 63)
@@ -1918,7 +1918,7 @@ Acceleration = 15.0
 Jump_velocity = -350.0
 eficient_Armor = 0.3
 dis_min = 45
-dis_max = 300
+dis_max = 500
 
 [node name="CollisionShape Awhole Body" type="CollisionShape2D" parent="."]
 position = Vector2(-22, -40.5)
@@ -1955,7 +1955,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_sspd6")
 position = Vector2(1, 0)
 scale = Vector2(4, 4)
 sprite_frames = ExtResource("3_yegy6")
-animation = &"iddle"
+animation = &"attack"
 centered = false
 offset = Vector2(-32, -48)
 
@@ -1971,7 +1971,7 @@ unique_name_in_owner = true
 position = Vector2(30, -21)
 collision_layer = 128
 collision_mask = 10
-script = ExtResource("10_2dxqw")
+script = ExtResource("10_pdpkm")
 damage = 15.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hit box"]

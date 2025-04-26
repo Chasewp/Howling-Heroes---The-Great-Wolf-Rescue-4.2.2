@@ -39,6 +39,7 @@ var animate_state  = state.IDDLE
 @export var dis_max : int
 @export var left_bounds : Vector2
 @export var right_bounds : Vector2
+@export var is_flying: bool = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -52,9 +53,13 @@ func _ready():
 	hurt_box.Armors = arm
 	hurt_box.Eficient_Armors = eficient_Armor
 	
+	# Pastikan timer terhubung
+	if timers:
+		timers.connect("timeout", Callable(self, "_on_timer_timeout"))
+	
 	#target player
 	if not target_player:
-		target_player = get_tree().get_first_node_in_group("player")
+		target_player = get_tree().root.get_node("World_Stages/Player")
 		push_warning("Player node not found! Enemies will not function.")
 	# Set current values
 	current_armor = arm
@@ -74,7 +79,6 @@ func _ready():
 func _on_player_freed():
 	target_player = null
 	animate_state = state.IDDLE
-
 
 func take_damage(_damage: float, _is_ap: bool, _ap_dmg: float):
 	# Update current values from hurtbox
@@ -118,6 +122,8 @@ func update_armor_bar():
 	armor_bar.value = current_armor
 	
 func handle_gravity(delta):
+	if is_flying:
+		return # Burung gak perlu gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
@@ -129,15 +135,24 @@ func handle_movement(delta:float):
 	move_and_slide()
 
 func update_state():
-		if animate_state == state.IDDLE: 
-			return
+	if animate_state == state.DIED:
+		return
+
+	if is_flying:
+		# Burung cukup antara IDDLE dan RUNNING (mungkin tambah ATTACK)
+		if velocity.length() < 5:
+			animate_state = state.IDDLE
+		else:
+			animate_state = state.RUNNING
+	else:
+		# Ground enemy logic
 		if is_on_floor():
 			if velocity == Vector2.ZERO:
 				animate_state = state.IDDLE
 			elif  velocity.x != 0:
 				animate_state = state.RUNNING
 		else: 
-			if velocity.y <0 :
+			if velocity.y < 0:
 				animate_state = state.JUMPUP
 			else:
 				animate_state = state.JUMPDOWN
@@ -210,15 +225,31 @@ func _on_enemy_armor_changed(percentage:float):
 	armor_bar.value = arm
 	armor_bar.set_value_no_signal(percentage)
 	animate_state= state.HURT
+	
+func handle_flying_movement(delta):
+	if not is_flying:
+		return
+
+	# Contoh: gerak ke player
+	var dir = (target_player.global_position - global_position).normalized()
+	velocity = dir * speed
+	move_and_slide()
 
 func look_for_player():
+	if not is_instance_valid(enemy_raycast) or not is_instance_valid(target_player):
+		return
+	
+	# Update raycast direction
+	var player_dir = (target_player.global_position - global_position).normalized()
+	enemy_raycast.target_position = player_dir * 300
+	
 	if enemy_raycast.is_colliding():
 		var collider = enemy_raycast.get_collider()
 		if collider == target_player:
 			chase_player()
-		elif animate_state == state.RUNNING:
+		else:
 			stop_chase()
-	elif  animate_state == state.RUNNING:
+	else:
 		stop_chase()
 		
 func chase_player():
@@ -245,3 +276,10 @@ func _process(delta):
 	print("Sprite valid:", is_instance_valid(enemy_sprites), 
 		  " | Raycast valid:", is_instance_valid(enemy_raycast),
 		  " | State:", animate_state)
+		
+func _physics_process(delta):
+	if is_flying:
+		handle_flying_movement(delta)
+	else:
+		handle_movement(delta)
+

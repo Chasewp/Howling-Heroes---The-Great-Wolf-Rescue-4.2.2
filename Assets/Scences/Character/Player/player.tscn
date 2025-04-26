@@ -66,8 +66,8 @@
 size = Vector2(77, 126)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n73pg"]
-radius = 36.003
-height = 176.003
+radius = 40.0
+height = 131.0
 
 [sub_resource type="Animation" id="Animation_fgu1k"]
 resource_name = "Died"
@@ -1374,7 +1374,7 @@ tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(53, -50)]
+"values": [Vector2(57, -65)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -2322,44 +2322,25 @@ bg_color = Color(0, 1, 1, 1)
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("bullets_caps_lbl", "maganize_lbl", "health_bar", "armor_bar") groups=["camera_target", "player"]]
 process_mode = 1
 y_sort_enabled = true
+position = Vector2(45, 0)
 collision_layer = 2
 collision_mask = 1057
 script = ExtResource("1_j1d3s")
 bullets_caps_lbl = NodePath("Info/Text/Ammo_Label/Bullets_Caps")
 maganize_lbl = NodePath("Info/Text/Ammo_Label/Mag_lbl")
-speed = null
-jump_velocity = null
-acceleration = null
-jump = null
 bullet_scence = ExtResource("2_vc508")
 slash_scences = ExtResource("3_m86m4")
-player_name = null
-player_health = 100.0
-player_armor = 100.0
-player_biome = null
-world_root = null
-is_machete_equip = null
-is_burst_garou_equip = null
 health_bar = NodePath("Progress bar/Health_Bar")
 armor_bar = NodePath("Progress bar/Armor_Bar")
 player_ammo = 30
 player_mag = 150
-pine_key = null
-ice_key = null
-stone_key = null
-snow_fang_key = null
-frozen_paw_securelock_key = null
-grass_key = null
-flower_key = null
-ground_key = null
-dessert_key = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -62)
 shape = SubResource("RectangleShape2D_5lckb")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
-[node name="Hurt_Area_chest" type="Area2D" parent="." groups=["player_hurtbox"]]
+[node name="Hurt_Area_chest" type="Area2D" parent="." groups=["hurt_box", "player_hurtbox"]]
 unique_name_in_owner = true
 position = Vector2(2.38419e-07, -41)
 rotation = 0.00151747
@@ -2372,7 +2353,7 @@ Armors = 100.0
 Eficient_Armors = 0.15
 
 [node name="Hurt_Area_CollisionShape2D" type="CollisionShape2D" parent="Hurt_Area_chest"]
-position = Vector2(-0.0546291, -36)
+position = Vector2(-1.03187, -20.9985)
 shape = SubResource("CapsuleShape2D_n73pg")
 debug_color = Color(1, 0.843137, 0, 0.521569)
 
@@ -2571,6 +2552,9 @@ one_shot = true
 
 [node name="machete_timer" type="Timer" parent="Timer"]
 wait_time = 4.0
+one_shot = true
+
+[node name="HurtTimer" type="Timer" parent="Timer"]
 one_shot = true
 
 [node name="InteractUiPanel" type="CanvasLayer" parent="."]
