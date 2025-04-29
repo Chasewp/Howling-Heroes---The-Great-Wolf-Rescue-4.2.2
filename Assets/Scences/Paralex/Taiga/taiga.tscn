@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://culrb1suvevtd"]
 
 [ext_resource type="Shader" path="res://Assets/Shaders/sand_stromdessert.gdshader" id="1_j48ol"]
-[ext_resource type="Texture2D" uid="uid://duv0jmrs6dhhb" path="res://Assets/Image/Background/Stage/Taiga/pixel_art_A_breathtaking_scene.jpeg" id="1_phg6a"]
+[ext_resource type="Texture2D" uid="uid://b3xmhefq67wan" path="res://Assets/Image/Background/Stage/Taiga/pixel_art_A_breathtaking_scene.jpeg" id="1_phg6a"]
 
 [sub_resource type="Gradient" id="Gradient_ux1ey"]
 

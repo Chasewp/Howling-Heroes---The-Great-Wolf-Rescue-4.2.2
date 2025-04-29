@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cbo01n7ccb6dr"]
+[gd_scene load_steps=37 format=3 uid="uid://cbo01n7ccb6dr"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Taiga/Black_Bear.gd" id="1_fgq6m"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="2_ftrt3"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bjiffgtcy7r74" path="res://Assets/Music/SFX/Enemy/Animal/jump_grass.mp3" id="8_araly"]
 [ext_resource type="AudioStream" uid="uid://caue6c7jtmbob" path="res://Assets/Music/SFX/Enemy/Animal/Walk_grass.wav" id="9_yxhji"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hurtbox/Hurt box.gd" id="11_q6kdo"]
+[ext_resource type="Theme" uid="uid://dc1ctcksywkhs" path="res://Assets/Theme/Credit/Label Details.tres" id="13_5vrqu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_is84u"]
 size = Vector2(148, 101)
@@ -1738,6 +1739,15 @@ volume_db = -3.0
 wait_time = 2.0
 one_shot = true
 
+[node name="Enemy_Name_Label" type="Label" parent="."]
+offset_left = -31.0
+offset_top = -178.0
+offset_right = 26.0
+offset_bottom = -155.0
+theme = ExtResource("13_5vrqu")
+text = "Black Bear"
+
 [connection signal="value_changed" from="Health_Bar" to="." method="_on_enemy_health_changed"]
 [connection signal="value_changed" from="Armor_Bar" to="." method="_on_enemy_armor_changed"]
 [connection signal="executed" from="Hurt_Box" to="." method="died"]
+[connection signal="timeout" from="Timer" to="." method="_on_attack_cooldown_timeout"]

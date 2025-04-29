@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cs5wo8mquwcao" path="res://Assets/Music/SFX/Weapon/Reload/Reload.mp3" id="3_t5wao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kltcw"]
-size = Vector2(97, 14)
+size = Vector2(112, 26)
 
 [sub_resource type="Animation" id="Animation_0u05e"]
 resource_name = "Pick_up"
@@ -147,15 +147,13 @@ _data = {
 "iddle": SubResource("Animation_jjfw2")
 }
 
-[node name="Brust__garaou" type="Area2D" groups=["item", "machete"]]
+[node name="Brust_garaou" type="Area2D" groups=["item"]]
 collision_layer = 4
 collision_mask = 2
-monitoring = false
-monitorable = false
 script = ExtResource("1_s7cx7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(48.5, 0)
+position = Vector2(56, 6)
 shape = SubResource("RectangleShape2D_kltcw")
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]

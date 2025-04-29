@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://kiogdnn1wmau"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Item/Weapon/Machete/machete.gd" id="1_5kjv4"]
-[ext_resource type="Texture2D" uid="uid://crsn2crb72ha" path="res://Assets/Image/Items/Weapon/Player/machete.png" id="1_ipkqx"]
-[ext_resource type="AudioStream" uid="uid://c6mfuyehbesav" path="res://Assets/Music/SFX/Pick_Up_Item/item-pick-up-38258.mp3" id="3_67mla"]
+[ext_resource type="Texture2D" uid="uid://ddx8daehuk4xo" path="res://Assets/Image/Items/Weapon/Player/machete.png" id="1_ipkqx"]
+[ext_resource type="AudioStream" uid="uid://0b4wvmwxduce" path="res://Assets/Music/SFX/Pick_Up_Item/item-pick-up-38258.mp3" id="3_67mla"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kltcw"]
 size = Vector2(97, 14)
@@ -147,7 +147,7 @@ _data = {
 "iddle": SubResource("Animation_jjfw2")
 }
 
-[node name="Machete" type="Area2D" groups=["item", "machete"]]
+[node name="Machete" type="Area2D" groups=["item"]]
 collision_layer = 4
 collision_mask = 2
 monitoring = false

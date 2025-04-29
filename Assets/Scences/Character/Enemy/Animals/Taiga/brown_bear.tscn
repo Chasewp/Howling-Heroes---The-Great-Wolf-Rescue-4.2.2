@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://b5a3j5sbcyw3s"]
+[gd_scene load_steps=36 format=3 uid="uid://b5a3j5sbcyw3s"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Taiga/Brown_Bear.gd" id="1_eacxl"]
 [ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="3_eimeo"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://caue6c7jtmbob" path="res://Assets/Music/SFX/Enemy/Animal/Walk_grass.wav" id="9_hs0aj"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="10_pdpkm"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hurtbox/Hurt box.gd" id="11_ec0mk"]
+[ext_resource type="Theme" uid="uid://dc1ctcksywkhs" path="res://Assets/Theme/Credit/Label Details.tres" id="12_vses7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_is84u"]
 size = Vector2(148, 101)
@@ -2006,8 +2007,16 @@ volume_db = -3.0
 wait_time = 2.0
 one_shot = true
 
+[node name="Enemy_Name_Label" type="Label" parent="."]
+offset_left = -31.0
+offset_top = -178.0
+offset_right = 26.0
+offset_bottom = -155.0
+theme = ExtResource("12_vses7")
+text = "Brown Bear"
+
 [connection signal="value_changed" from="Health_Bar" to="." method="_on_enemy_health_changed"]
 [connection signal="value_changed" from="Armor_Bar" to="." method="_on_enemy_armor_changed"]
 [connection signal="area_entered" from="Hurt_Box" to="." method="on_hurt_area_enemy"]
 [connection signal="executed" from="Hurt_Box" to="." method="died"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_attack_cooldown_timeout"]

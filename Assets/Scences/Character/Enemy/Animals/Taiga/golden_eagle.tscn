@@ -1,10 +1,14 @@
-[gd_scene load_steps=29 format=3 uid="uid://ve6g864losvt"]
+[gd_scene load_steps=39 format=3 uid="uid://ve6g864losvt"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Taiga/Golden_Eagle.gd" id="1_2q5fs"]
+[ext_resource type="Texture2D" uid="uid://dsyhklm8qhvw0" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Hurt/Hurt 1.png" id="2_av3ox"]
 [ext_resource type="Texture2D" uid="uid://bnrcbdwqvfppc" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/jump/Jump.png" id="2_k1ufa"]
+[ext_resource type="Texture2D" uid="uid://b8hjlw58me2nm" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Hurt/Hurt 2.png" id="3_emqe1"]
 [ext_resource type="Texture2D" uid="uid://bqbo3vpsv485d" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Run/Run 1.png" id="3_i42x1"]
 [ext_resource type="Texture2D" uid="uid://dd0bwsy45smkn" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Run/Run 2.png" id="4_5rbx0"]
 [ext_resource type="Texture2D" uid="uid://c3lmoqt1yci2y" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Run/Run 3.png" id="5_jx2kp"]
+[ext_resource type="Texture2D" uid="uid://dfp6lfldpfiix" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Died/Died.png" id="5_nrm7k"]
+[ext_resource type="Texture2D" uid="uid://coarpky64kwv6" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Fall/Fall.png" id="6_p0651"]
 [ext_resource type="Texture2D" uid="uid://ekbqr7sa8ibj" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Run/Run 4.png" id="6_pcgg0"]
 [ext_resource type="Texture2D" uid="uid://cq7ojpbcm1hn" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Attack/Attack 1.png" id="7_wuk4c"]
 [ext_resource type="Texture2D" uid="uid://bw8jq17n1en5j" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Attack/Attack 2.png" id="8_todrh"]
@@ -15,9 +19,73 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hurtbox/Hurt box.gd" id="13_ol3by"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="14_gbshe"]
 [ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="15_mmmuq"]
+[ext_resource type="Theme" uid="uid://dc1ctcksywkhs" path="res://Assets/Theme/Credit/Label Details.tres" id="20_alg21"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v15re"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_wuk4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_todrh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_closm")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_nrm7k")
+}],
+"loop": false,
+"name": &"died",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_p0651")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_av3ox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_emqe1")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ebvyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gaabc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3yy0f")
+}],
+"loop": true,
+"name": &"iddle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k1ufa")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_i42x1")
@@ -32,55 +100,113 @@ animations = [{
 "texture": ExtResource("6_pcgg0")
 }],
 "loop": true,
-"name": &"Cirle_Player",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_wuk4c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_todrh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_closm")
-}],
-"loop": false,
-"name": &"Dive",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_k1ufa")
-}],
-"loop": false,
-"name": &"Flap",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_i42x1")
-}],
-"loop": false,
-"name": &"Glide",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_ebvyv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_gaabc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_3yy0f")
-}],
-"loop": true,
-"name": &"Hovering",
+"name": &"run",
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_8kb2x"]
+[sub_resource type="Animation" id="Animation_qxsbn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../RayCast2D:target_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-300, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../RayCast2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-34, -31)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_elldc"]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["attack"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../RayCast2D:target_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-300, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../RayCast2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-34, -31)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_bv77i"]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -104,10 +230,179 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Ascending"]
+"values": ["died"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../RayCast2D:target_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-300, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_g650w"]
+[sub_resource type="Animation" id="Animation_sdbxj"]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["fall"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../RayCast2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-34, -31)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../RayCast2D:target_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-300, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yuqqf"]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["hurt"]
+}
+
+[sub_resource type="Animation" id="Animation_4ar8v"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["iddle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../RayCast2D:target_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-300, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../RayCast2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-34, -31)]
+}
+
+[sub_resource type="Animation" id="Animation_xkinp"]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["jump"]
+}
+
+[sub_resource type="Animation" id="Animation_egsb2"]
 length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
@@ -132,10 +427,11 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Cirle_Player"]
+"values": ["run"]
 }
 
-[sub_resource type="Animation" id="Animation_tga8i"]
+[sub_resource type="Animation" id="Animation_b2bwx"]
+resource_name = "attack_flip"
 length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -159,43 +455,56 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Diving"]
+"values": ["attack"]
 }
-
-[sub_resource type="Animation" id="Animation_20nrp"]
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../RayCast2D:target_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(300, 0)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../RayCast2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, -31)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["Hovering"]
+"values": [true]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1wav2"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ktrs"]
 _data = {
-"Ascending": SubResource("Animation_8kb2x"),
-"Cirle_Player": SubResource("Animation_g650w"),
-"Diving": SubResource("Animation_tga8i"),
-"Hovering": SubResource("Animation_20nrp")
+"RESET": SubResource("Animation_qxsbn"),
+"attack": SubResource("Animation_elldc"),
+"attack_flip": SubResource("Animation_b2bwx"),
+"died": SubResource("Animation_bv77i"),
+"fall": SubResource("Animation_sdbxj"),
+"hurt": SubResource("Animation_yuqqf"),
+"iddle": SubResource("Animation_4ar8v"),
+"jump": SubResource("Animation_xkinp"),
+"run": SubResource("Animation_egsb2")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_elaqf"]
@@ -216,7 +525,7 @@ bg_color = Color(1, 0, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddpp1"]
 
-[node name="Golden_Eagle" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") groups=["enemy"]]
+[node name="Golden_Eagle" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_raycast", "timers") groups=["enemy"]]
 collision_layer = 33
 collision_mask = 2
 motion_mode = 1
@@ -227,18 +536,16 @@ health_bar = NodePath("Health_Bar")
 armor_bar = NodePath("Armor_Bar")
 hit_box = NodePath("Hitboxes")
 hurt_box = NodePath("Hurtboxes")
-enemy_sprites = NodePath("AnimatedSprite2D")
-enemy_sprite_animation = NodePath("AnimatedSprite2D/AnimationPlayer")
 enemy_raycast = NodePath("RayCast2D")
 timers = NodePath("Timer")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v15re")
-animation = &"Cirle_Player"
+animation = &"attack"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
-"": SubResource("AnimationLibrary_1wav2")
+"": SubResource("AnimationLibrary_2ktrs")
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -293,3 +600,15 @@ theme_override_fonts/font = ExtResource("15_mmmuq")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/background = SubResource("StyleBoxEmpty_tlbk0")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ddpp1")
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="."]
+bus = &"Sound Effects"
+area_mask = 8192
+
+[node name="Enemy_Name_Label" type="Label" parent="."]
+offset_left = -31.0
+offset_top = -178.0
+offset_right = 26.0
+offset_bottom = -155.0
+theme = ExtResource("20_alg21")
+text = "Golden Eagle"

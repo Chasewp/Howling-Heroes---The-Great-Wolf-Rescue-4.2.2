@@ -1,10 +1,12 @@
-[gd_scene load_steps=27 format=3 uid="uid://c7v6u1y4p5djc"]
+[gd_scene load_steps=40 format=3 uid="uid://c7v6u1y4p5djc"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Humanoid/Grassland/Hunter_MKII.gd" id="1_4u5wd"]
 [ext_resource type="Texture2D" uid="uid://b6ollhgsur2sq" path="res://Assets/Image/Enemy/Humanoid/Taiga/Hunter riffle/Hunter-SpriteSheet/MC-Dodge-SpriteSheet.png" id="1_cb8uy"]
 [ext_resource type="Texture2D" uid="uid://b6uktpw3xx6hx" path="res://Assets/Image/Enemy/Humanoid/Taiga/Hunter riffle/Hunter-SpriteSheet/MC-Idle-SpriteSheet.png" id="1_hi11s"]
 [ext_resource type="Texture2D" uid="uid://ca107f41ur7mc" path="res://Assets/Image/Enemy/Humanoid/Taiga/Hunter riffle/Hunter-SpriteSheet/MC-Running(with Rifle)-SpriteSheet.png" id="1_u73py"]
 [ext_resource type="Texture2D" uid="uid://uxjxnaauhrc6" path="res://Assets/Image/Enemy/Humanoid/Taiga/Hunter riffle/Hunter-SpriteSheet/MC-hurt-SpriteSheet.png" id="2_1egtv"]
+[ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="6_uc2jk"]
+[ext_resource type="Theme" uid="uid://dc1ctcksywkhs" path="res://Assets/Theme/Credit/Label Details.tres" id="7_feha0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jo3qo"]
 size = Vector2(150, 125.5)
@@ -49,6 +51,30 @@ region = Rect2(128, 0, 32, 32)
 atlas = ExtResource("1_cb8uy")
 region = Rect2(160, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5ogq"]
+atlas = ExtResource("1_cb8uy")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hliy3"]
+atlas = ExtResource("1_cb8uy")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24xdb"]
+atlas = ExtResource("1_cb8uy")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtp1d"]
+atlas = ExtResource("1_cb8uy")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fnog"]
+atlas = ExtResource("1_cb8uy")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc6ct"]
+atlas = ExtResource("1_hi11s")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_af11v"]
 atlas = ExtResource("2_1egtv")
 region = Rect2(0, 0, 28, 24)
@@ -71,6 +97,22 @@ region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_142pn"]
 atlas = ExtResource("1_hi11s")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1vca"]
+atlas = ExtResource("1_cb8uy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m4y0"]
+atlas = ExtResource("1_cb8uy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u61m2"]
+atlas = ExtResource("1_cb8uy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvlbm"]
+atlas = ExtResource("1_cb8uy")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1pgl3"]
@@ -97,7 +139,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kw2x7")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -113,6 +155,29 @@ animations = [{
 }],
 "loop": false,
 "name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5ogq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hliy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24xdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtp1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fnog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc6ct")
+}],
+"loop": false,
+"name": &"fall",
 "speed": 5.0
 }, {
 "frames": [{
@@ -142,19 +207,43 @@ animations = [{
 "loop": true,
 "name": &"iddle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1vca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2m4y0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u61m2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvlbm")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j230y"]
-size = Vector2(112, 27)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oxj51"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha823"]
-size = Vector2(39, 50)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8vvq7"]
+bg_color = Color(1, 0, 1, 1)
 
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_vot8h"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fkytk"]
 
-[node name="Hunter_MK II" type="CharacterBody2D" groups=["Boss"]]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63yay"]
+
+[node name="Hunter_MK II" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") groups=["Boss"]]
 collision_layer = 32
 script = ExtResource("1_4u5wd")
+health_bar = NodePath("Health_Bar")
+armor_bar = NodePath("Armor_Bar")
+enemy_sprites = NodePath("AnimatedSprite2D")
+enemy_sprite_animation = NodePath("AnimatedSprite2D/AnimationPlayer")
+enemy_raycast = NodePath("RayCast2D")
+timers = NodePath("Timer")
 jump = 1
 speed = 300.0
 damage = 25.0
@@ -174,41 +263,72 @@ position = Vector2(2, -10)
 scale = Vector2(4.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_1pgl3")
 animation = &"attack"
+autoplay = "iddle"
 frame = 6
-frame_progress = 0.929627
+frame_progress = 1.0
 centered = false
 offset = Vector2(-19, -33)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 root_node = NodePath("../..")
 
-[node name="HitBox" type="Area2D" parent="." groups=["enemy_hurtbox"]]
-position = Vector2(17, -59)
-collision_layer = 128
-collision_mask = 0
+[node name="Projectiles" type="Node" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(5, 0)
-shape = SubResource("RectangleShape2D_j230y")
-debug_color = Color(1, 0.160784, 0.392157, 0.419608)
-metadata/_edit_lock_ = true
+[node name="Projectile" type="Marker2D" parent="Projectiles"]
+position = Vector2(78, -68)
+gizmo_extents = 1.0
 
-[node name="HurtBox" type="Area2D" parent="." groups=["enemy_hurtbox"]]
-position = Vector2(2, -57)
-collision_layer = 64
-collision_mask = 0
+[node name="Projectile2" type="Marker2D" parent="Projectiles"]
+position = Vector2(74, -64)
+gizmo_extents = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-shape = SubResource("RectangleShape2D_ha823")
-debug_color = Color(1, 0.548312, 0.155148, 0.42)
-metadata/_edit_lock_ = true
+[node name="Projectile3" type="Marker2D" parent="Projectiles"]
+position = Vector2(78, -55)
+gizmo_extents = 1.0
 
-[node name="Projectile" type="Marker2D" parent="."]
-position = Vector2(78, -62)
+[node name="Projectile4" type="Marker2D" parent="Projectiles"]
+position = Vector2(74, -59)
+gizmo_extents = 1.0
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(4, -93)
-target_position = Vector2(125, 0)
+target_position = Vector2(300, 0)
+collision_mask = 2
 
-[node name="BTPlayer" type="BTPlayer" parent="."]
-blackboard_plan = SubResource("BlackboardPlan_vot8h")
+[node name="Health_Bar" type="ProgressBar" parent="."]
+offset_left = -17.0
+offset_top = -182.0
+offset_right = 23.0
+offset_bottom = -155.0
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("6_uc2jk")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/background = SubResource("StyleBoxEmpty_oxj51")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8vvq7")
+
+[node name="Armor_Bar" type="ProgressBar" parent="."]
+offset_left = -17.0
+offset_top = -155.0
+offset_right = 23.0
+offset_bottom = -128.0
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("6_uc2jk")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/background = SubResource("StyleBoxEmpty_fkytk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_63yay")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Enemy_Name_Label" type="Label" parent="."]
+offset_left = -31.0
+offset_top = -178.0
+offset_right = 26.0
+offset_bottom = -155.0
+theme = ExtResource("7_feha0")
+text = "Hunter MK II"

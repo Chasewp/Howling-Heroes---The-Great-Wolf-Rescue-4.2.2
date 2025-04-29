@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://d3lpwm66i3h54"]
+[gd_scene load_steps=57 format=3 uid="uid://d3lpwm66i3h54"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Humanoid/Taiga/Hunter_MK I/Bos_MK_I.gd" id="1_yctoh"]
 [ext_resource type="Texture2D" uid="uid://b5lb4x7dgs2q5" path="res://Assets/Image/Enemy/Humanoid/Taiga/Hunter MK I/Attack/Attack 1.png" id="2_0g6qi"]
@@ -38,7 +38,8 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hurtbox/Hurt box.gd" id="30_xcy3n"]
 [ext_resource type="AudioStream" uid="uid://cvxss2oy66wvl" path="res://Assets/Music/SFX/Weapon/Pistol/Pistol.mp3" id="34_myxeu"]
 [ext_resource type="PackedScene" uid="uid://cxe4s4l0kq8fd" path="res://Assets/Scences/Items/Chest/chest.tscn" id="37_khdhi"]
-[ext_resource type="PackedScene" uid="uid://cs3vhxycmjxq1" path="res://Assets/Scences/Items/Keys/pine_key.tscn" id="39_ilxlq"]
+[ext_resource type="PackedScene" uid="uid://cs3vhxycmjxq1" path="res://Assets/Scences/Items/Keys/Taiga/pine_key.tscn" id="39_ilxlq"]
+[ext_resource type="Theme" uid="uid://dc1ctcksywkhs" path="res://Assets/Theme/Credit/Label Details.tres" id="40_gy7pi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o24yh"]
 animations = [{
@@ -608,5 +609,13 @@ wait_time = 0.33
 [node name="Chest" parent="Chest & Key" instance=ExtResource("37_khdhi")]
 visible = false
 key_scene = ExtResource("39_ilxlq")
+
+[node name="Enemy_Name_Label" type="Label" parent="."]
+offset_left = -31.0
+offset_top = -178.0
+offset_right = 26.0
+offset_bottom = -155.0
+theme = ExtResource("40_gy7pi")
+text = "Hunter MK I"
 
 [connection signal="timeout" from="Fire_Timer" to="." method="_on_FireTimer_timeout"]

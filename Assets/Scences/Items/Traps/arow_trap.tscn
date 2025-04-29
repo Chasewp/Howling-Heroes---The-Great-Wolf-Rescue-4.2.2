@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://c1uaykkvn7v0t"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Item/Traps/Arrow_Traps.gd" id="1_s7xv1"]
+[ext_resource type="Texture2D" uid="uid://gbftk62luel2" path="res://Assets/Image/Items/Bullets/All_Fire_Bullet_Pixel_16x16_04.png" id="2_vnqn5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty0y1"]
+atlas = ExtResource("2_vnqn5")
+region = Rect2(0, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wssy"]
+atlas = ExtResource("2_vnqn5")
+region = Rect2(16, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxecn"]
+atlas = ExtResource("2_vnqn5")
+region = Rect2(32, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wivx0"]
+atlas = ExtResource("2_vnqn5")
+region = Rect2(48, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdlbq"]
+atlas = ExtResource("2_vnqn5")
+region = Rect2(64, 240, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3q0au"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty0y1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wssy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxecn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wivx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdlbq")
+}],
+"loop": true,
+"name": &"Arrow",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_de6i3"]
+radius = 74.3236
+
+[node name="Arow_Trap_Bullets" type="Area2D"]
+script = ExtResource("1_s7xv1")
+damage = 15.0
+AP_dmg = 0.53
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(9, 9)
+sprite_frames = SubResource("SpriteFrames_3q0au")
+animation = &"Arrow"
+frame_progress = 0.768743
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_de6i3")
+debug_color = Color(0.647059, 0.521569, 0.0745098, 0.419608)
+
+[node name="HomingTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="HomingTimer" to="." method="_on_homing_timer_timeout"]

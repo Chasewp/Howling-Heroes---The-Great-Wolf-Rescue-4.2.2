@@ -1,17 +1,16 @@
 [gd_scene load_steps=15 format=3 uid="uid://cuuxigy7yprh4"]
 
-[ext_resource type="Texture2D" uid="uid://mt10ekon5blx" path="res://Assets/Image/Background/Stage/Taiga/Background/sky.png" id="1_m7bde"]
+[ext_resource type="Texture2D" uid="uid://b31jbx5rkujqo" path="res://Assets/Image/Background/Stage/Taiga/Background/sky.png" id="1_m7bde"]
 [ext_resource type="Shader" path="res://Assets/Scences/Stages/Tundra/auto_scroller.gdshader" id="2_duhou"]
-[ext_resource type="Texture2D" uid="uid://b1qn47242fvgk" path="res://Assets/Image/Background/Stage/Taiga/Background/sky_cloud.png" id="2_j52uh"]
-[ext_resource type="Texture2D" uid="uid://jmb5kgvtywhj" path="res://Assets/Image/Background/Stage/Taiga/Background/mountain2.png" id="3_7j0lh"]
-[ext_resource type="Texture2D" uid="uid://dkr01nrna1jnp" path="res://Assets/Image/Background/Stage/Taiga/Background/pine1.png" id="4_qdccy"]
-[ext_resource type="Texture2D" uid="uid://bnc1tp6divjre" path="res://Assets/Image/Background/Stage/Taiga/Background/pine2.png" id="5_q0xub"]
+[ext_resource type="Texture2D" uid="uid://703es6npx7n4" path="res://Assets/Image/Background/Stage/Taiga/Background/sky_cloud.png" id="2_j52uh"]
+[ext_resource type="Texture2D" uid="uid://cdav5nd7j52oe" path="res://Assets/Image/Background/Stage/Taiga/Background/mountain2.png" id="3_7j0lh"]
+[ext_resource type="Texture2D" uid="uid://dk15gun342ws0" path="res://Assets/Image/Background/Stage/Taiga/Background/pine1.png" id="4_qdccy"]
+[ext_resource type="Texture2D" uid="uid://bwm126m1ie5hy" path="res://Assets/Image/Background/Stage/Taiga/Background/pine2.png" id="5_q0xub"]
 [ext_resource type="Shader" path="res://Assets/Shaders/sand_stromdessert.gdshader" id="7_mek7u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mynjc"]
+render_priority = 0
 shader = ExtResource("2_duhou")
-shader_parameter/direction = Vector2(-1, 0)
-shader_parameter/speed_scale = 0.06
 
 [sub_resource type="Gradient" id="Gradient_v6y6w"]
 
