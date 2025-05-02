@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b63jenx5a01xy"]
 
 [ext_resource type="Texture2D" uid="uid://c3tccm34k160" path="res://Assets/Image/Items/Teleport/Teleport.png" id="1_7vj17"]
-[ext_resource type="Script" path="res://Assets/Scripts/Utilities/Teleport/teleport_a_1.gd" id="1_jstt8"]
+[ext_resource type="AudioStream" uid="uid://dmharh3gqbre" path="res://Assets/Music/Dialogues/Executed_enemy/Access Denied Teleportation Requirements Incomplete. Elimination and Command Target Thresholds Not Achieved.wav" id="2_do5p8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yujkk"]
 radius = 47.05
@@ -9,7 +9,6 @@ radius = 47.05
 [node name="Teleport_Normal" type="Area2D"]
 collision_layer = 4
 collision_mask = 3
-script = ExtResource("1_jstt8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
@@ -21,4 +20,8 @@ shape = SubResource("CircleShape2D_yujkk")
 
 [node name="destination" type="Marker2D" parent="."]
 
-[connection signal="body_entered" from="." to="." method="_on_teleport_body_entered"]
+[node name="Sfx_deniied" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1, -2)
+stream = ExtResource("2_do5p8")
+bus = &"Sound Effects"
+area_mask = 8192

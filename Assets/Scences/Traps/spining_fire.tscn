@@ -9,19 +9,11 @@ metadata/_edit_group_ = true
 
 [node name="Fire" parent="." instance=ExtResource("1_fi32d")]
 
-[node name="Fire2" parent="." instance=ExtResource("1_fi32d")]
-
 [node name="Fire3" parent="." instance=ExtResource("1_fi32d")]
-
-[node name="Fire4" parent="." instance=ExtResource("1_fi32d")]
 
 [node name="Fire5" parent="." instance=ExtResource("1_fi32d")]
 
-[node name="Fire6" parent="." instance=ExtResource("1_fi32d")]
-
 [node name="Fire7" parent="." instance=ExtResource("1_fi32d")]
-
-[node name="Fire8" parent="." instance=ExtResource("1_fi32d")]
 
 [node name="Rotation" type="Node2D" parent="."]
 metadata/_edit_group_ = true
@@ -29,23 +21,11 @@ metadata/_edit_group_ = true
 [node name="Marker2D" type="Marker2D" parent="Rotation"]
 position = Vector2(0, -45)
 
-[node name="Marker2D2" type="Marker2D" parent="Rotation"]
-position = Vector2(35, -35)
-
 [node name="Marker2D3" type="Marker2D" parent="Rotation"]
 position = Vector2(45, 0)
-
-[node name="Marker2D4" type="Marker2D" parent="Rotation"]
-position = Vector2(35, 35)
 
 [node name="Marker2D5" type="Marker2D" parent="Rotation"]
 position = Vector2(0, 45)
 
-[node name="Marker2D6" type="Marker2D" parent="Rotation"]
-position = Vector2(-35, 35)
-
 [node name="Marker2D7" type="Marker2D" parent="Rotation"]
 position = Vector2(-45, 0)
-
-[node name="Marker2D8" type="Marker2D" parent="Rotation"]
-position = Vector2(-35, -35)

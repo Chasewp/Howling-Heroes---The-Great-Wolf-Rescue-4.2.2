@@ -87,7 +87,6 @@ var data = load(SAVE_DATA)
 var anim_state = state.IDDLE
 var current_health : float
 var current_armor:float
-var _game_over_scence = load("res://Assets/Scences/UI/Game over/Game_Over.tscn")
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -108,7 +107,7 @@ func _ready():
 	hurt_area_chest.Healths = player_health
 	hurt_area_chest.Armors = player_armor
 	hurt_area_chest.received_damage.connect(_on_received_damage)
-
+	
 	if data is Data_Progress : 
 		player_singleton_autoload.setter_name(data.player_name)
 		player_singleton_autoload.setter_health(data.player_health)
@@ -150,11 +149,16 @@ func _ready():
 	if is_burst_garou_equip == true:
 		# Pastikan ammo diinisialisasi dengan benar
 		current_ammo = player_ammo  # <-- Tambahkan ini
-		reloading_timer.connect("timeout",Callable(self,"refill_ammo"))    
+		reloading_timer.connect("timeout",Callable(self,"refill_ammo"))   
+		
+		#shooting_timer.connect("timeout",Callable(self,"shoot"))
 		refill_ammo()
 		maganize_lbl.text = str(player_mag)
 		bullets_caps_lbl.text = str(current_ammo)
-
+		
+	shooting_timer.wait_time = 2.5  # Cooldown 2.5 detik untuk tembak
+	machete_timer.wait_time = 3.85  # Cooldown 3.85 detik untuk slash	
+	
 func update_state():
 		if anim_state == state.HURT: 
 			return
@@ -170,57 +174,63 @@ func update_state():
 				anim_state = state.JUMPDOWN
 	
 func update_animation(direction):
-	# Turn Right
-	if direction > 0 :
-		player_Sprites.flip_h = false
-	# turn Left
-	elif direction <0:
-		player_Sprites.flip_h = true
+	 # Tentukan arah hadap berdasarkan mouse
+	var mouse_pos = get_global_mouse_position()
+	player_Sprites.flip_h = mouse_pos.x < global_position.x
+	
+	# Update projectile/slash position
+	if player_Sprites.flip_h:
+		projectile.position = Vector2(-104, -53)
+		slash_effect.position = Vector2(-108, -32)
+	else:
+		projectile.position = Vector2(104, -53)
+		slash_effect.position = Vector2(108, -32)
+	
 		
 	match  anim_state:	
 		#Iddle Normal
 		state.IDDLE:
-			if player_Sprites.flip_h:
+			if player_Sprites.flip_h == true:
 				animation_player.play("Iddle_Flip")
 			else:	
 				animation_player.play("Iddle")
 		#Normal Running
 		state.RUNNING:
-			if player_Sprites.flip_h:
+			if player_Sprites.flip_h== true:
 				animation_player.play("Run_Flip")
 			else:	
 				animation_player.play("Run")
 		#Riffle Running
 		state.SHOOT:
 			if player_Sprites.flip_h:
-				animation_player.play("Run_Shoot_Flip")
-			else:	
-				animation_player.play("Run_Shoot")
+				animation_player.play("Run_Shoot_Flip", -1, 1.0, false)
+			else:
+				animation_player.play("Run_Shoot", -1, 1.0, false)
 			
 		#Normal Jump	
 		state.JUMPUP:
-			if player_Sprites.flip_h:
+			if player_Sprites.flip_h== true:
 				animation_player.play("Jump_Flip")
 			else:
 				animation_player.play("Jump")
 			
 		#Normal Fall
 		state.JUMPDOWN:
-			if player_Sprites.flip_h:
+			if player_Sprites.flip_h== true:
 				animation_player.play("Fall_Flip")
 			else:
 				animation_player.play("Fall")
 		
 		#Hurt	
 		state.HURT:
-			if player_Sprites.flip_h:
+			if player_Sprites.flip_h== true:
 				animation_player.play("Hurt_Flip")
 			else:
 				animation_player.play("Hurt")
 		
 		#Died
 		state.DIED:
-			if player_Sprites.flip_h:
+			if player_Sprites.flip_h== true:
 				animation_player.play("Died_Flip")
 			else:
 				animation_player.play("Died")
@@ -228,10 +238,13 @@ func update_animation(direction):
 		#Attack Machete
 		state.ATTACKMACHETE:
 			if player_Sprites.flip_h:
-				animation_player.play("Machete_Attack_Flip")
+				animation_player.play("Machete_Attack_Flip", -1, 1.0, false)
 			else:
-				animation_player.play("Machete_Attack")
-
+				animation_player.play("Machete_Attack", -1, 1.0, false)
+				
+func _on_shoot_timer_timeout():
+	anim_state = state.IDDLE 
+	
 func add_health_armor():
 	if player_health and player_armor< 100:
 		current_health = player_health
@@ -272,12 +285,12 @@ func _physics_process(delta):
 	
 	if not reloading_timer.is_stopped():
 		return
-		
+		# shoot
 	if Input.is_action_just_pressed("shoot_brust_garou") == true:
 		if current_ammo > 0:
 			anim_state = state.SHOOT
-			animation_player.play()
 			shoot()
+			
 		else: 
 			ammo_empty_sfx.play()
 	
@@ -285,19 +298,10 @@ func _physics_process(delta):
 		if current_ammo < player_ammo and player_mag > 0:
 			reloading()
 		
+		#slash
 	if Input.is_action_just_pressed("slash_machete") and  player_singleton_autoload.is_machete_equip == true:
-		if not machete_timer.is_stopped():
-			return
-			
-		anim_state = state.ATTACKMACHETE		
-		animation_player.play()
-		var slash_instance = slash_scences.instantiate()
-		slash_instance.rotation = slash_effect.rotation
-		slash_instance.global_position = slash_effect.global_position
-		slash_instance.transform = slash_effect.global_transform
-		get_tree().root.add_child(slash_instance)
-		
-	
+			slash()
+
 	if Input.is_action_just_pressed("interaction"):
 		var Wolves = hurt_area_chest.get_overlapping_bodies()
 		for wolf in Wolves :
@@ -313,14 +317,41 @@ func _physics_process(delta):
 				
 	if player_health <=0:
 		died()	
-			
-func shoot():
-	if not shooting_timer.is_stopped() or current_ammo <= 0:
-		return
 		
+func slash():
+	if machete_timer.time_left > 0:  # <-- Cek waktu timer
+		return
+	
+	# Tentukan arah hadap berdasarkan posisi mouse
+	var mouse_pos = get_global_mouse_position()
+	player_Sprites.flip_h = mouse_pos.x < global_position.x
+	
+	anim_state = state.ATTACKMACHETE   
+	update_animation(0)
+	
+	# Instantiate slash
+	var slash_instance = slash_scences.instantiate()
+	slash_instance.rotation = slash_effect.rotation
+	slash_instance.global_position = slash_effect.global_position
+	slash_instance.transform = slash_effect.global_transform
+	get_tree().root.add_child(slash_instance)
+	machete_timer.start()
+	
+func shoot():
+	if shooting_timer.time_left > 0 or current_ammo <= 0:  # <-- Cek waktu timer
+		return
+	
+	# Tentukan arah hadap berdasarkan posisi mouse
+	var mouse_pos = get_global_mouse_position()
+	player_Sprites.flip_h = mouse_pos.x < global_position.x
+	
 	current_ammo -= 1
 	bullets_caps_lbl.text = str(current_ammo)
-		
+	
+	anim_state = state.SHOOT
+	update_animation(0) 	
+	 
+	# Instantiate bullet
 	var bullet_instance = bullet_scence.instantiate()
 	bullet_instance.rotation = projectile.rotation
 	bullet_instance.global_position = projectile.global_position
@@ -329,10 +360,7 @@ func shoot():
 		
 	SFX_Shoot.play()
 	bullets_caps_lbl.text = str(current_ammo)
-	shooting_timer.start(0.25 - _fire_rate)  # set according to your fire rate timing
-
-	if player_ammo <= 0:
-		ammo_empty_sfx.play()
+	shooting_timer.start(0.25 - _fire_rate)
 	
 func reloading():
 	if player_mag <= 0:
@@ -396,6 +424,7 @@ func _on_received_damage(_damage: float, _is_ap: bool, _ap_dmg: float):
 		update_animation(0)
 	# Debug print
 	print("Damage Received - Health: ", current_health, " Armor: ", current_armor)
+	
 func take_damage(damage:float,is_armor_piercing:bool,AP_dmg :float):
 	var prev_health = player_health
 	var prev_armor = player_armor
@@ -429,12 +458,16 @@ func take_damage(damage:float,is_armor_piercing:bool,AP_dmg :float):
 func died():
 	anim_state = state.DIED
 	animation_player.play()
-	LoadingScreen.load_scence(_game_over_scence)
+	LoadingScreen.load_scence("res://Assets/Scences/UI/Game over/Game_Over.tscn")
 	queue_free()
-	
+	MissionStatData.reset_data()
 
-		
 func _on_animation_player_finished(anim_name):
+	if anim_name == "Machete_Attack" or anim_name == "Machete_Attack_Flip":
+		anim_state = state.IDDLE
+	elif anim_name == "Run_Shoot" or anim_name == "Run_Shoot_Flip":
+		anim_state = state.IDDLE
+		
 	if anim_name == "Hurt":
 		anim_state = state.IDDLE
 		update_animation(0)

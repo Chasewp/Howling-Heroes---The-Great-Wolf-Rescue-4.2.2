@@ -2330,10 +2330,12 @@ bullets_caps_lbl = NodePath("Info/Text/Ammo_Label/Bullets_Caps")
 maganize_lbl = NodePath("Info/Text/Ammo_Label/Mag_lbl")
 bullet_scence = ExtResource("2_vc508")
 slash_scences = ExtResource("3_m86m4")
+player_health = 4500.0
+player_armor = 6500.0
 health_bar = NodePath("Progress bar/Health_Bar")
 armor_bar = NodePath("Progress bar/Armor_Bar")
-player_ammo = 30
-player_mag = 150
+player_ammo = 75
+player_mag = 750
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -62)
@@ -2544,7 +2546,7 @@ vertical_alignment = 1
 [node name="Timer" type="Node" parent="."]
 
 [node name="shoot_timer" type="Timer" parent="Timer"]
-wait_time = 0.8
+wait_time = 2.0
 one_shot = true
 
 [node name="reloading_timer" type="Timer" parent="Timer"]
@@ -2616,6 +2618,6 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_hhdec")
 [connection signal="update_coordinate" from="." to="Info/Text" method="_on_player_update_coordinate"]
 [connection signal="executed" from="Hurt_Area_chest" to="." method="died"]
 [connection signal="finished" from="SFX/SFXReloading_voice" to="." method="_on_sfx_reloading_voice_finished"]
-[connection signal="timeout" from="Timer/reloading_timer" to="." method="refill_ammo"]
+[connection signal="timeout" from="Timer/shoot_timer" to="." method="_on_shoot_timer_timeout"]
 [connection signal="value_changed" from="Progress bar/Health_Bar" to="." method="_on_player_health_changed"]
 [connection signal="value_changed" from="Progress bar/Armor_Bar" to="." method="_on_player_armor_changed"]

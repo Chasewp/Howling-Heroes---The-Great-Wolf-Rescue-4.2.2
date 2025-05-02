@@ -1,9 +1,9 @@
 [gd_resource type="SpriteFrames" load_steps=24 format=3 uid="uid://db7bdnert7pta"]
 
-[ext_resource type="Texture2D" uid="uid://c617x107bwvju" path="res://Assets/Image/Enemy/Animal/Enemy/Bears/Spritesheets/Brown_Attack.png" id="1_xxo3w"]
-[ext_resource type="Texture2D" uid="uid://icsx4vxpy1sb" path="res://Assets/Image/Enemy/Animal/Enemy/Bears/Spritesheets/Brown_Death.png" id="2_s42j6"]
-[ext_resource type="Texture2D" uid="uid://cxngsavfa63ph" path="res://Assets/Image/Enemy/Animal/Enemy/Bears/Spritesheets/Brown_Idle.png" id="3_w670y"]
-[ext_resource type="Texture2D" uid="uid://cwew47nt1078k" path="res://Assets/Image/Enemy/Animal/Enemy/Bears/Spritesheets/Brown_Walk.png" id="4_0hgj7"]
+[ext_resource type="Texture2D" uid="uid://c617x107bwvju" path="res://Assets/Image/Enemy/Animal/Bears/Spritesheets/Brown_Attack.png" id="1_xxo3w"]
+[ext_resource type="Texture2D" uid="uid://icsx4vxpy1sb" path="res://Assets/Image/Enemy/Animal/Bears/Spritesheets/Brown_Death.png" id="2_s42j6"]
+[ext_resource type="Texture2D" uid="uid://cxngsavfa63ph" path="res://Assets/Image/Enemy/Animal/Bears/Spritesheets/Brown_Idle.png" id="3_w670y"]
+[ext_resource type="Texture2D" uid="uid://cwew47nt1078k" path="res://Assets/Image/Enemy/Animal/Bears/Spritesheets/Brown_Walk.png" id="4_0hgj7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tyue2"]
 atlas = ExtResource("1_xxo3w")

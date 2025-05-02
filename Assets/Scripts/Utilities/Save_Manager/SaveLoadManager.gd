@@ -15,13 +15,16 @@ func save_game():
 		# save the path to the currently loaded level
 	save_progress.level_path = stage_root.get_current_level_path()
 	
-	#store player health, position, biome_location, armor
+	#store player health, position, biome_location, & equipments
 	save_progress.player_position = play.global_position
 	save_progress.player_name = player_singleton_autoload.name_character
 	save_progress.player_biome_location = player_singleton_autoload.location
 	save_progress.player_health = player_singleton_autoload.health
 	save_progress.player_armor = player_singleton_autoload.armor
-	
+	save_progress.ammmo = player_singleton_autoload.ammo_bullets
+	save_progress.mag = player_singleton_autoload.magazine_stock
+	save_progress.is_brust_garou_equip = player_singleton_autoload.is_burst_garou_equip
+	save_progress.is_machete_equip = player_singleton_autoload.is_machete_equip
 	
 	#store mission log
 	save_progress.mission_wolf_rescued = MissionStatData.wolf_rescued
@@ -133,9 +136,9 @@ func load_game():
 	# verify & restore player armor
 	player_singleton_autoload.armor = min(save_progress.player_armor,100)
 	# verify & restore player ammo
-	player_singleton_autoload.ammo_bullets = min(save_progress.ammmo,30)
+	player_singleton_autoload.ammo_bullets = min(save_progress.ammmo,75)
 	# verify & restore player Mag
-	player_singleton_autoload.magazine_stock = min(save_progress.mag,150)
+	player_singleton_autoload.magazine_stock = min(save_progress.mag,750)
 	
 	#Restore Keys
 	"Taiga Keys"
@@ -154,6 +157,10 @@ func load_game():
 	
 	"Dessert Key"
 	player_singleton_autoload.is_have_dessert_key = save_progress.is_have_dessert_key
+	
+	# restore equipments
+	player_singleton_autoload.is_burst_garou_equip = save_progress.is_brust_garou_equip 
+	player_singleton_autoload.is_machete_equip = save_progress.is_machete_equip 
 	
 	# restore all dynamic game elements	
 	for item in save_progress.saved_data:

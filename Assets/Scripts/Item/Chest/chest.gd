@@ -8,18 +8,16 @@ extends StaticBody2D
 var is_opened := false
 
 func _ready():
+	# Jangan sembunyikan sprite di awal
 	closed_sprite.visible = false
 	open_sprite.visible = false
-	# Chest awalnya tersembunyi
+	set_collision_layer_value(16, false)  # Nonaktifkan collision sampai boss mati
 
 func boss_defeated():
-	# Munculkan chest setelah boss mati
 	closed_sprite.visible = true
-	animation_player.play("appear")  # Animasi muncul
-	
-	# Tunggu animasi selesai sebelum bisa dibuka
+	animation_player.play("appear")
 	await animation_player.animation_finished
-	set_collision_layer_value(1, true)  # Aktifkan collision
+	set_collision_layer_value(16, true)  # Aktifkan collision setelah animasi
 
 func _on_body_entered(body):
 	if body.is_in_group("player") and not is_opened:

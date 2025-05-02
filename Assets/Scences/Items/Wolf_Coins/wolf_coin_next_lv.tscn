@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Item/Wolf_Coins/wolf_coin.gd" id="1_38asw"]
 [ext_resource type="SpriteFrames" uid="uid://c3fw3fyilfg7d" path="res://Assets/Animate/Item/Wolf_Howl_Coins.tres" id="1_awq82"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Wolf_Coins/Detection_Area.gd" id="2_h7psy"]
-[ext_resource type="AudioStream" uid="uid://c6mfuyehbesav" path="res://Assets/Music/SFX/Pick_Up_Item/item-pick-up-38258.mp3" id="3_6hysc"]
+[ext_resource type="AudioStream" uid="uid://0b4wvmwxduce" path="res://Assets/Music/SFX/Pick_Up_Item/item-pick-up-38258.mp3" id="3_6hysc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gej7v"]
 radius = 62.0
@@ -46,7 +46,7 @@ tracks/2/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("3_6hysc")
 }],
-"times": PackedFloat32Array(-0.1)
+"times": PackedFloat32Array(0)
 }
 tracks/2/use_blend = true
 tracks/3/type = "value"
@@ -154,8 +154,9 @@ shape = SubResource("CircleShape2D_gej7v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_awq82")
-animation = &"Flip"
+animation = &"Fanish"
 autoplay = "Flip"
+frame = 29
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 root_node = NodePath("../..")

@@ -30,5 +30,5 @@ func UpdatePos(value : Vector2):
 	player_position = value
 
 func add_magazine():
-	if mag <=150:
-		mag += 30
+	if mag <=750:
+		mag += 75

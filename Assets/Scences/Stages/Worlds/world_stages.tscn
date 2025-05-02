@@ -31,7 +31,6 @@ unique_name_in_owner = true
 world_root = NodePath("../WorldRoot")
 is_machete_equip = true
 is_burst_garou_equip = true
-player_mag = 180
 
 [node name="UI" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -94,6 +93,7 @@ unique_name_in_owner = true
 script = ExtResource("5_dhs1r")
 
 [connection signal="exit_reached" from="WorldRoot/Taiga_A1_Word_Starter" to="WorldRoot" method="_on_level_exit_reached"]
+[connection signal="reset" from="UI/Mission" to="Player" method="died"]
 [connection signal="mouse_entered" from="UI/Save" to="." method="_on_enter_button"]
 [connection signal="mouse_exited" from="UI/Save" to="." method="_on_exit_button"]
 [connection signal="pressed" from="UI/Save" to="." method="_on_save_game"]

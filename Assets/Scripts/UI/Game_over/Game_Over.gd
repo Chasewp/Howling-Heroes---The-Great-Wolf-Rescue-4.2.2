@@ -1,9 +1,5 @@
 extends Control
 
-var _exit_game_scene = load("res://Assets/Scences/UI/Exit_Game_Over/Exit_Game_Over.tscn")
-var _player_change_name = load("res://Assets/Theme/Player_Name/Player_Name.tres")
-
-
 @onready var  button_sfx = $Button_Sfx
 @onready var game_over = $Mission_Failed
 
@@ -16,10 +12,10 @@ func _ready():
 	game_over.play()
 	
 func _exit_game():
-	LoadingScreen.load_scence(_exit_game_scene)
+	LoadingScreen.load_scence("res://Assets/Scences/UI/Exit_Game_Over/Exit_Game_Over.tscn")
 	
 func _retry_game():
-	LoadingScreen.load_scence(_player_change_name)
+	LoadingScreen.load_scence("res://Assets/Scences/UI/Character_Name/Player_Name.tscn")
 
 func on_mouse_entered()-> void:
 	Input.set_custom_mouse_cursor(hand_cursor)

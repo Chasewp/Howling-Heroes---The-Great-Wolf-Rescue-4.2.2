@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://ubdw1auhhxqi"]
 
 [ext_resource type="Shader" path="res://Assets/Shaders/auto_scroller.gdshader" id="1_41bnw"]
-[ext_resource type="Texture2D" uid="uid://o7n1aerloa5x" path="res://Assets/Image/Background/Stage/Grassland/PNG/background_plains-Sheet1.png" id="2_uc2l5"]
-[ext_resource type="Texture2D" uid="uid://dkkx67wvcv5ld" path="res://Assets/Image/Background/Stage/Grassland/PNG/background_plains-Sheet2.png" id="3_3nn30"]
-[ext_resource type="Texture2D" uid="uid://da61ai0m1xia3" path="res://Assets/Image/Background/Stage/Grassland/PNG/background_plains-Sheet3.png" id="4_mvdwu"]
-[ext_resource type="Texture2D" uid="uid://cdcontgb7qjbm" path="res://Assets/Image/Background/Stage/Grassland/PNG/background_plains-Sheet4.png" id="5_a66i5"]
-[ext_resource type="Texture2D" uid="uid://bqe476a56i1fp" path="res://Assets/Image/Background/Stage/Grassland/PNG/background_plains-Sheet5.png" id="6_f36nb"]
+[ext_resource type="Texture2D" uid="uid://dgqo8v5smfwti" path="res://Assets/Image/Background/Stage/Grassland/PNG/background_plains-Sheet1.png" id="2_uc2l5"]
+[ext_resource type="Texture2D" uid="uid://bndg5gyubplt" path="res://Assets/Image/Background/Stage/Grassland/PNG/background_plains-Sheet2.png" id="3_3nn30"]
+[ext_resource type="Texture2D" uid="uid://3gxbg44sgcus" path="res://Assets/Image/Background/Stage/Grassland/PNG/background_plains-Sheet3.png" id="4_mvdwu"]
+[ext_resource type="Texture2D" uid="uid://bxmndrm7oej5x" path="res://Assets/Image/Background/Stage/Grassland/PNG/background_plains-Sheet4.png" id="5_a66i5"]
+[ext_resource type="Texture2D" uid="uid://dnlky1fdmcik2" path="res://Assets/Image/Background/Stage/Grassland/PNG/background_plains-Sheet5.png" id="6_f36nb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_33krx"]
 shader = ExtResource("1_41bnw")
@@ -38,10 +38,11 @@ shader_parameter/speed_scale = 0.05
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground"]
 material = SubResource("ShaderMaterial_33krx")
-offset_right = 3068.0
+offset_right = 3.84e+07
 offset_bottom = 180.0
-scale = Vector2(4, 4)
+scale = Vector2(4.00534, 4)
 texture = ExtResource("2_uc2l5")
+expand_mode = 1
 stretch_mode = 1
 
 [node name="ParallaxBackground2" type="ParallaxLayer" parent="."]
@@ -50,10 +51,11 @@ stretch_mode = 1
 material = SubResource("ShaderMaterial_ttvdd")
 offset_left = 1.0
 offset_top = 181.0
-offset_right = 3070.0
+offset_right = 3.84e+06
 offset_bottom = 361.0
 scale = Vector2(3, 3)
 texture = ExtResource("3_3nn30")
+expand_mode = 1
 stretch_mode = 1
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
@@ -61,10 +63,11 @@ stretch_mode = 1
 [node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
 material = SubResource("ShaderMaterial_gpnv6")
 offset_top = 367.0
-offset_right = 6136.0
+offset_right = 3.84e+08
 offset_bottom = 547.0
 scale = Vector2(2, 2)
 texture = ExtResource("4_mvdwu")
+expand_mode = 1
 stretch_mode = 1
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
@@ -73,7 +76,7 @@ stretch_mode = 1
 material = SubResource("ShaderMaterial_rgryv")
 offset_left = 2.0
 offset_top = 543.0
-offset_right = 12272.0
+offset_right = 3.83e+08
 offset_bottom = 723.0
 texture = ExtResource("5_a66i5")
 stretch_mode = 1
@@ -84,7 +87,8 @@ stretch_mode = 1
 material = SubResource("ShaderMaterial_a6oqh")
 offset_left = 2.0
 offset_top = 545.0
-offset_right = 12273.0
+offset_right = 3.48e+08
 offset_bottom = 725.0
 texture = ExtResource("6_f36nb")
+expand_mode = 1
 stretch_mode = 1

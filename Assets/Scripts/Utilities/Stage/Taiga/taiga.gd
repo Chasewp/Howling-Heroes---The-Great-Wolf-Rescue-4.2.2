@@ -16,14 +16,14 @@ func _process(delta):
 
 func _on_teleport_stage_1_to_stage_2_player_body_entered(body):
 	if body.is_in_group("player"):
-		if MissionStatData.enemy_kill == 5 and MissionStatData.boss_kill == 1 :
-			body.set_position(teleported.destination.global_position)
+		if MissionStatData.enemy_kill >= 5 and MissionStatData.boss_kill >= 1:
+			body.set_position($Teleport/TeleportStage_2/destination.global_position)
 		else:
-			body.set_position(teleported.destination.global_position)
+			$Teleport/TeleportStage_2/Sfx_deniied.play()
 
 func _on_teleport_stage_2_to_stage_3_player_body_enter(body):
 	if body.is_in_group("player"):
-		if MissionStatData.enemy_kill == 10 and MissionStatData.boss_kill == 2 :
+		if MissionStatData.enemy_kill >= 10 and MissionStatData.boss_kill >= 2 :
 			body.set_position(teleported.destination.global_position)
 		else:
 			body.set_position(teleported.destination.global_position)
@@ -78,10 +78,10 @@ func _on_teleport_stage_9_to_stage_10_player_body_enter(body):
 			body.set_position(teleported.destination.global_position)
 
 func _on_teleport_stage_body_entered(body):
-	if body.is_in_group("player") and MissionStatData.enemy_kill == 5:
+	if body.is_in_group("player") and MissionStatData.enemy_kill >= 5:
 		$"Bos_Encounter/Bos_1/Panel 5 required enemy".visible = false
 		body.set_position($Bos_Encounter/Bos_1/Teleport_Stage/destination.global_position)
-		queue_free()
+		
 	else:
 		$"Bos_Encounter/Bos_1/Panel 5 required enemy".visible = true
 		$"Bos_Encounter/Bos_1/Required 5 enemy executed".play()

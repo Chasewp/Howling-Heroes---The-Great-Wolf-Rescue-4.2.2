@@ -42,7 +42,7 @@ func _on_take_damage(hitbox: Hitboxes) -> void:
 			else:
 			# Non-AP damage langsung kena Health
 				Healths -= damage
-			if Healths <=0:
+			if Healths <0:
 				executed.emit()
 		
 			# Emit sinyal damage

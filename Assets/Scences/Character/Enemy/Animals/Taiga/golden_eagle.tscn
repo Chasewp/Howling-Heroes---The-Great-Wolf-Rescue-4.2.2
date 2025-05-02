@@ -1,37 +1,38 @@
-[gd_scene load_steps=39 format=3 uid="uid://ve6g864losvt"]
+[gd_scene load_steps=46 format=3 uid="uid://ve6g864losvt"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Taiga/Golden_Eagle.gd" id="1_2q5fs"]
-[ext_resource type="Texture2D" uid="uid://dsyhklm8qhvw0" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Hurt/Hurt 1.png" id="2_av3ox"]
-[ext_resource type="Texture2D" uid="uid://bnrcbdwqvfppc" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/jump/Jump.png" id="2_k1ufa"]
-[ext_resource type="Texture2D" uid="uid://b8hjlw58me2nm" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Hurt/Hurt 2.png" id="3_emqe1"]
-[ext_resource type="Texture2D" uid="uid://bqbo3vpsv485d" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Run/Run 1.png" id="3_i42x1"]
-[ext_resource type="Texture2D" uid="uid://dd0bwsy45smkn" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Run/Run 2.png" id="4_5rbx0"]
-[ext_resource type="Texture2D" uid="uid://c3lmoqt1yci2y" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Run/Run 3.png" id="5_jx2kp"]
-[ext_resource type="Texture2D" uid="uid://dfp6lfldpfiix" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Died/Died.png" id="5_nrm7k"]
-[ext_resource type="Texture2D" uid="uid://coarpky64kwv6" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Fall/Fall.png" id="6_p0651"]
-[ext_resource type="Texture2D" uid="uid://ekbqr7sa8ibj" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Run/Run 4.png" id="6_pcgg0"]
-[ext_resource type="Texture2D" uid="uid://cq7ojpbcm1hn" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Attack/Attack 1.png" id="7_wuk4c"]
-[ext_resource type="Texture2D" uid="uid://bw8jq17n1en5j" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Attack/Attack 2.png" id="8_todrh"]
-[ext_resource type="Texture2D" uid="uid://kkdgt28rnrq" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Attack/Attack 3.png" id="9_closm"]
-[ext_resource type="Texture2D" uid="uid://nk5xvgn0ityr" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Iddle/Iddle 1.png" id="10_ebvyv"]
-[ext_resource type="Texture2D" uid="uid://4rscv1cfpibp" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Iddle/Iddle 2.png" id="11_gaabc"]
-[ext_resource type="Texture2D" uid="uid://bk6g2cjg1ulgi" path="res://Assets/Image/Enemy/Animal/Enemy/Golden Eagle/Iddle/Iddle 3.png" id="12_3yy0f"]
+[ext_resource type="Texture2D" uid="uid://dsyhklm8qhvw0" path="res://Assets/Image/Enemy/Animal/Golden Eagle/Hurt/Hurt 1.png" id="2_av3ox"]
+[ext_resource type="Texture2D" uid="uid://bnrcbdwqvfppc" path="res://Assets/Image/Enemy/Animal/Golden Eagle/jump/Jump.png" id="2_k1ufa"]
+[ext_resource type="Texture2D" uid="uid://cq7ojpbcm1hn" path="res://Assets/Image/Enemy/Animal/Golden Eagle/Attack/Attack 1.png" id="2_x4kuf"]
+[ext_resource type="Texture2D" uid="uid://bw8jq17n1en5j" path="res://Assets/Image/Enemy/Animal/Golden Eagle/Attack/Attack 2.png" id="3_83xyp"]
+[ext_resource type="Texture2D" uid="uid://b8hjlw58me2nm" path="res://Assets/Image/Enemy/Animal/Golden Eagle/Hurt/Hurt 2.png" id="3_emqe1"]
+[ext_resource type="Texture2D" uid="uid://kkdgt28rnrq" path="res://Assets/Image/Enemy/Animal/Golden Eagle/Attack/Attack 3.png" id="4_laxje"]
+[ext_resource type="Texture2D" uid="uid://dfp6lfldpfiix" path="res://Assets/Image/Enemy/Animal/Golden Eagle/Died/Died.png" id="5_nrm7k"]
+[ext_resource type="Texture2D" uid="uid://coarpky64kwv6" path="res://Assets/Image/Enemy/Animal/Golden Eagle/Fall/Fall.png" id="6_11n06"]
+[ext_resource type="Texture2D" uid="uid://nk5xvgn0ityr" path="res://Assets/Image/Enemy/Animal/Golden Eagle/Iddle/Iddle 1.png" id="10_ebvyv"]
+[ext_resource type="Texture2D" uid="uid://4rscv1cfpibp" path="res://Assets/Image/Enemy/Animal/Golden Eagle/Iddle/Iddle 2.png" id="11_gaabc"]
+[ext_resource type="Texture2D" uid="uid://bk6g2cjg1ulgi" path="res://Assets/Image/Enemy/Animal/Golden Eagle/Iddle/Iddle 3.png" id="12_3yy0f"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hurtbox/Hurt box.gd" id="13_ol3by"]
+[ext_resource type="Texture2D" uid="uid://bqbo3vpsv485d" path="res://Assets/Image/Enemy/Animal/Golden Eagle/Run/Run 1.png" id="13_rqb7h"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="14_gbshe"]
+[ext_resource type="Texture2D" uid="uid://dd0bwsy45smkn" path="res://Assets/Image/Enemy/Animal/Golden Eagle/Run/Run 2.png" id="14_uxgpe"]
+[ext_resource type="Texture2D" uid="uid://c3lmoqt1yci2y" path="res://Assets/Image/Enemy/Animal/Golden Eagle/Run/Run 3.png" id="15_17xxj"]
 [ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="15_mmmuq"]
+[ext_resource type="Texture2D" uid="uid://ekbqr7sa8ibj" path="res://Assets/Image/Enemy/Animal/Golden Eagle/Run/Run 4.png" id="16_vgiwo"]
+[ext_resource type="AudioStream" uid="uid://cflkyuqvpf2n8" path="res://Assets/Music/SFX/Enemy/Animal/talon claw.mp3" id="17_6ygdv"]
 [ext_resource type="Theme" uid="uid://dc1ctcksywkhs" path="res://Assets/Theme/Credit/Label Details.tres" id="20_alg21"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v15re"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_wuk4c")
+"texture": ExtResource("2_x4kuf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_todrh")
+"texture": ExtResource("3_83xyp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_closm")
+"texture": ExtResource("4_laxje")
 }],
 "loop": false,
 "name": &"attack",
@@ -47,9 +48,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_p0651")
+"texture": ExtResource("6_11n06")
 }],
-"loop": true,
+"loop": false,
 "name": &"fall",
 "speed": 5.0
 }, {
@@ -88,60 +89,21 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_i42x1")
+"texture": ExtResource("13_rqb7h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_5rbx0")
+"texture": ExtResource("14_uxgpe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_jx2kp")
+"texture": ExtResource("15_17xxj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_pcgg0")
+"texture": ExtResource("16_vgiwo")
 }],
 "loop": true,
 "name": &"run",
 "speed": 5.0
 }]
-
-[sub_resource type="Animation" id="Animation_qxsbn"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../RayCast2D:target_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-300, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../RayCast2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-34, -31)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_elldc"]
 length = 0.6
@@ -179,7 +141,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-300, 0)]
+"values": [Vector2(-125, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -205,6 +167,100 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../sfx")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("17_6ygdv")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
+
+[sub_resource type="Animation" id="Animation_b2bwx"]
+resource_name = "attack_flip"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["attack"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../RayCast2D:target_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(125, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../RayCast2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, -31)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../sfx")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("17_6ygdv")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_bv77i"]
 length = 0.2
@@ -242,7 +298,95 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-300, 0)]
+"values": [Vector2(-125, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../RayCast2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, -31)]
+}
+
+[sub_resource type="Animation" id="Animation_i2dm1"]
+resource_name = "died_flip"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["died"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../RayCast2D:target_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(125, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../RayCast2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, -31)]
 }
 
 [sub_resource type="Animation" id="Animation_sdbxj"]
@@ -293,7 +437,83 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-300, 0)]
+"values": [Vector2(-125, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_yqx0o"]
+resource_name = "fall_flip"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["fall"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../RayCast2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, -31)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../RayCast2D:target_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(125, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_yuqqf"]
@@ -321,6 +541,106 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["hurt"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../RayCast2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-34, -31)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../RayCast2D:target_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-125, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c7v6h"]
+resource_name = "hurt_flip"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["hurt"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../RayCast2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, -31)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../RayCast2D:target_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(125, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_4ar8v"]
@@ -360,7 +680,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-300, 0)]
+"values": [Vector2(-125, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -373,6 +693,83 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-34, -31)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_3vyge"]
+resource_name = "iddle_flip"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["iddle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../RayCast2D:target_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(125, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../RayCast2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, -31)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_xkinp"]
@@ -400,6 +797,145 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["jump"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../RayCast2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, -31)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../RayCast2D:target_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-125, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8wxiy"]
+resource_name = "jump_flip"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["jump"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../RayCast2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, -31)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../RayCast2D:target_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-125, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qxsbn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../RayCast2D:target_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-300, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../RayCast2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-34, -31)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_egsb2"]
@@ -429,45 +965,17 @@ tracks/1/keys = {
 "update": 1,
 "values": ["run"]
 }
-
-[sub_resource type="Animation" id="Animation_b2bwx"]
-resource_name = "attack_flip"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["attack"]
-}
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../RayCast2D:target_position")
+tracks/2/path = NodePath(".:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(300, 0)]
+"update": 1,
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -484,37 +992,108 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath(".:flip_h")
+tracks/4/path = NodePath("../RayCast2D:target_position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-125, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hivq2"]
+resource_name = "run_flip"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["run"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../RayCast2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, -31)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../RayCast2D:target_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-125, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2ktrs"]
 _data = {
+"Attack": SubResource("Animation_elldc"),
+"Attack_Flip": SubResource("Animation_b2bwx"),
+"Died": SubResource("Animation_bv77i"),
+"Died_Flip": SubResource("Animation_i2dm1"),
+"Fall": SubResource("Animation_sdbxj"),
+"Fall_Flip": SubResource("Animation_yqx0o"),
+"Hurt": SubResource("Animation_yuqqf"),
+"Hurt_Flip": SubResource("Animation_c7v6h"),
+"Iddle": SubResource("Animation_4ar8v"),
+"Iddle_Flip": SubResource("Animation_3vyge"),
+"Jump": SubResource("Animation_xkinp"),
+"Jump_Flip": SubResource("Animation_8wxiy"),
 "RESET": SubResource("Animation_qxsbn"),
-"attack": SubResource("Animation_elldc"),
-"attack_flip": SubResource("Animation_b2bwx"),
-"died": SubResource("Animation_bv77i"),
-"fall": SubResource("Animation_sdbxj"),
-"hurt": SubResource("Animation_yuqqf"),
-"iddle": SubResource("Animation_4ar8v"),
-"jump": SubResource("Animation_xkinp"),
-"run": SubResource("Animation_egsb2")
+"Run": SubResource("Animation_egsb2"),
+"Run_Flip": SubResource("Animation_hivq2")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_elaqf"]
-radius = 78.7464
+radius = 78.5175
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ahsm8"]
-radius = 64.2573
+radius = 74.027
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6dpau"]
-radius = 76.5572
+radius = 85.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_es05s"]
 
@@ -525,23 +1104,36 @@ bg_color = Color(1, 0, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddpp1"]
 
-[node name="Golden_Eagle" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_raycast", "timers") groups=["enemy"]]
+[node name="Golden_Eagle" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") groups=["enemy"]]
 collision_layer = 33
-collision_mask = 2
+collision_mask = 34
 motion_mode = 1
-platform_floor_layers = 4294836224
+platform_on_leave = 1
+platform_floor_layers = 1
+platform_wall_layers = 1
 safe_margin = 1.0
 script = ExtResource("1_2q5fs")
 health_bar = NodePath("Health_Bar")
 armor_bar = NodePath("Armor_Bar")
 hit_box = NodePath("Hitboxes")
 hurt_box = NodePath("Hurtboxes")
+enemy_sprites = NodePath("AnimatedSprite2D")
+enemy_sprite_animation = NodePath("AnimatedSprite2D/AnimationPlayer")
 enemy_raycast = NodePath("RayCast2D")
 timers = NodePath("Timer")
+hlt = 250.0
+arm = 10.0
+jump = 3
+speed = 400.0
+damage = 10.0
+Acceleration = 15.0
+Jump_velocity = -350.0
+eficient_Armor = 0.1
+is_flying = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v15re")
-animation = &"attack"
+animation = &"run"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
@@ -556,12 +1148,16 @@ debug_color = Color(0.47468, 0.574594, 0.374097, 0.42)
 collision_layer = 64
 collision_mask = 16
 script = ExtResource("13_ol3by")
+Healths = 250.0
+Armors = 10.0
+Eficient_Armors = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtboxes"]
 shape = SubResource("CircleShape2D_ahsm8")
 
 [node name="Hitboxes" type="Area2D" parent="."]
 script = ExtResource("14_gbshe")
+damage = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitboxes"]
 shape = SubResource("CircleShape2D_6dpau")
@@ -573,7 +1169,6 @@ debug_color = Color(0.126521, 0.646847, 0, 0.42)
 position = Vector2(-34, -31)
 target_position = Vector2(-300, 0)
 collision_mask = 2
-collide_with_areas = true
 
 [node name="Health_Bar" type="ProgressBar" parent="."]
 offset_left = -19.0
@@ -612,3 +1207,5 @@ offset_right = 26.0
 offset_bottom = -155.0
 theme = ExtResource("20_alg21")
 text = "Golden Eagle"
+
+[connection signal="executed" from="Hurtboxes" to="." method="died"]

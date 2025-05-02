@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Scripts/Item/Traps/Arrow_Traps/Arrow_Shooter_Top.gd" id="1_jca88"]
 [ext_resource type="Texture2D" uid="uid://8ergr6o1ax4p" path="res://Assets/Image/Items/Traps/Etc/Shooter_Arrow_Trap.png" id="1_wf4de"]
-[ext_resource type="PackedScene" uid="uid://cs6eioajavyjn" path="res://Assets/Scences/Items/Bullets/Arrow/arrow_bullets.tscn" id="2_io2rp"]
+[ext_resource type="PackedScene" uid="uid://c1uaykkvn7v0t" path="res://Assets/Scences/Items/Traps/arow_trap.tscn" id="2_02xwo"]
 [ext_resource type="AudioStream" uid="uid://d0k0j364o735p" path="res://Assets/Music/SFX/Weapon/Arrow/arrow-body-impact-146419.mp3" id="4_2v3jo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5rn5s"]
@@ -177,7 +177,7 @@ radius = 7.07107
 collision_layer = 1024
 collision_mask = 8
 script = ExtResource("1_jca88")
-arrow_scene = ExtResource("2_io2rp")
+arrow_scene = ExtResource("2_02xwo")
 triple_shot = true
 is_destructible = false
 
@@ -196,12 +196,17 @@ libraries = {
 shape = SubResource("CircleShape2D_18pxq")
 
 [node name="ShootPoint" type="Marker2D" parent="."]
+rotation = -1.5708
+gizmo_extents = 0.0
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="TurretRaycast" type="RayCast2D" parent="."]
 target_position = Vector2(0, -300)
-collision_mask = 9
+collision_mask = 3
 
 [node name="sfx" type="AudioStreamPlayer2D" parent="."]
 area_mask = 8192
 
 [node name="ShootTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

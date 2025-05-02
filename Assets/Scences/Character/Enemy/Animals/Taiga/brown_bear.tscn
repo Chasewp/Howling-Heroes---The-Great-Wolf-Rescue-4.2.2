@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b5a3j5sbcyw3s"]
+[gd_scene load_steps=35 format=3 uid="uid://b5a3j5sbcyw3s"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Taiga/Brown_Bear.gd" id="1_eacxl"]
 [ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="3_eimeo"]
@@ -14,7 +14,7 @@
 [ext_resource type="Theme" uid="uid://dc1ctcksywkhs" path="res://Assets/Theme/Credit/Label Details.tres" id="12_vses7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_is84u"]
-size = Vector2(148, 101)
+size = Vector2(109, 81)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kk3t4"]
 
@@ -162,6 +162,20 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-34, -27)]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath(".")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_m8nbv"]
@@ -707,7 +721,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/4/type = "audio"
 tracks/4/imported = false
@@ -1542,105 +1556,6 @@ tracks/9/keys = {
 "values": [Vector2(-18, -40.5)]
 }
 
-[sub_resource type="Animation" id="Animation_xylpe"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:flip_h")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Hit box:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(30, -21)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Hurt_Box:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-10, -63)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("RayCast2D:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(60, -62)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("RayCast2D:target_position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(125, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("AnimatedSprite2D:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("CollisionShape Awhole Body:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-22, -40.5)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Hit box/CollisionShape2D:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(34, -27)]
-}
-
 [sub_resource type="Animation" id="Animation_4r8vy"]
 resource_name = "run"
 length = 0.8
@@ -1887,7 +1802,6 @@ _data = {
 "Iddle_Flip": SubResource("Animation_0xt7e"),
 "Jump": SubResource("Animation_wdud0"),
 "Jump_Flip": SubResource("Animation_erdvu"),
-"RESET": SubResource("Animation_xylpe"),
 "Run": SubResource("Animation_4r8vy"),
 "Run_Flip": SubResource("Animation_aqlkj")
 }
@@ -1922,7 +1836,7 @@ dis_min = 45
 dis_max = 500
 
 [node name="CollisionShape Awhole Body" type="CollisionShape2D" parent="."]
-position = Vector2(-22, -40.5)
+position = Vector2(2.5, -39.5)
 shape = SubResource("RectangleShape2D_is84u")
 debug_color = Color(0.992186, 0.552685, 0.795965, 0.42)
 
@@ -1968,21 +1882,19 @@ libraries = {
 autoplay = "Iddle"
 
 [node name="Hit box" type="Area2D" parent="." groups=["enemy_hitbox"]]
-unique_name_in_owner = true
-position = Vector2(30, -21)
+position = Vector2(49, -15)
 collision_layer = 128
 collision_mask = 10
 script = ExtResource("10_pdpkm")
 damage = 15.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hit box"]
-position = Vector2(34, -27)
+position = Vector2(-34, -27)
 shape = SubResource("CircleShape2D_84jpt")
 debug_color = Color(0.851093, 0.372035, 5.77569e-07, 0.42)
 
 [node name="Hurt_Box" type="Area2D" parent="." groups=["enemy_hurtbox"]]
-unique_name_in_owner = true
-position = Vector2(-10, -63)
+position = Vector2(9, -45)
 collision_layer = 64
 collision_mask = 16
 script = ExtResource("11_ec0mk")
@@ -2004,7 +1916,6 @@ collision_mask = 3
 volume_db = -3.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
 one_shot = true
 
 [node name="Enemy_Name_Label" type="Label" parent="."]
@@ -2019,4 +1930,3 @@ text = "Brown Bear"
 [connection signal="value_changed" from="Armor_Bar" to="." method="_on_enemy_armor_changed"]
 [connection signal="area_entered" from="Hurt_Box" to="." method="on_hurt_area_enemy"]
 [connection signal="executed" from="Hurt_Box" to="." method="died"]
-[connection signal="timeout" from="Timer" to="." method="_on_attack_cooldown_timeout"]

@@ -9,8 +9,8 @@ var hand_cursor = load("res://Assets/Image/Cursor/hand_paw.png")
 
 func _ready():
 	stage_root.level_exit_reached.connect(_on_level_exit_reached)
-	
-	
+	Input.set_custom_mouse_cursor(crosshair_Cursor)
+	Input.MOUSE_MODE_CONFINED
 func _on_level_exit_reached(next_level):
 	stage_root.load_level_async(next_level)
 
@@ -21,7 +21,7 @@ func _process(delta):
 		#_pause(not _paused)
 #
 			#
-#func _pause(value:bool):
+#funcdaa _pause(value:bool):
 	#_paused = value
 	#_pause_screen.visible = _paused
 	#get_tree().paused = _paused

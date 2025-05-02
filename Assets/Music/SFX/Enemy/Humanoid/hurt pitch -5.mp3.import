@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://in66a8jragwf"
+path="res://.godot/imported/hurt pitch -5.mp3-aee2a0c88af4a98ea189c70066c3d404.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/SFX/Enemy/Humanoid/hurt pitch -5.mp3"
+dest_files=["res://.godot/imported/hurt pitch -5.mp3-aee2a0c88af4a98ea189c70066c3d404.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

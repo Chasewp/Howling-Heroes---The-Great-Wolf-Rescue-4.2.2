@@ -101,7 +101,7 @@ window/size/resizable=false
 window/energy_saving/keep_screen_on=false
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
-window/vsync/vsync_mode=0
+window/stretch/scale_mode="integer"
 mouse_cursor/custom_image="res://Assets/Image/Cursor/Cursor 32x32.png"
 
 [dotnet]
@@ -232,8 +232,6 @@ mission_log={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
 lights_and_shadows/use_physical_light_units=true
 global_illumination/voxel_gi/quality=1
 camera/depth_of_field/depth_of_field_bokeh_quality=3

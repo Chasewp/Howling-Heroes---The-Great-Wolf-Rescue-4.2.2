@@ -56,8 +56,9 @@ func _ready():
 		enemiy.connect("executed",Callable(MissionStatData,"update_enemy_kills"))
 	
 	var bossies =  get_tree().get_nodes_in_group("boss")
-	for boess in bossies:
-		boess.connect("executed",Callable(MissionStatData,"update_boss_kills"))
+	for boss in bossies:
+		boss.connect("executed",Callable(MissionStatData,"update_boss_kills"))
+
 
 	if data is Data_Progress:
 		player_singleton_autoload.setter_location(data.player_biome_location)
@@ -108,7 +109,19 @@ func _ready():
 	else : 
 		print("Failed to load resource data.")
 	
+	MissionStatData.connect("enemy_kill_updated", Callable(self, "_on_enemy_kill_updated"))
+	MissionStatData.connect("wolf_rescue_updated",Callable(self,"_on_wolf_rescue_updated"))
+	MissionStatData.connect("boss_kill_updated",Callable(self,"_on_boss_kill_updated"))
+	MissionStatData.connect("reset",Callable(self,"reset_data"))
+	
+func _on_enemy_kill_updated(new_count):
+	Label_Enemy_Executed.text = str(new_count)
 
+func _on_wolf_rescue_updated(new_count):
+	Label_Wolf_Rescue.text=str(new_count)
+	
+func _on_boss_kill_updated(new_count):
+	Label_Boss_Elimited.text = str(new_count)
 func _process(delta):
 	if Input.is_action_just_pressed("mission_log"):  
 		toggle_mission_log()
@@ -117,11 +130,14 @@ func toggle_mission_log():
 	self.visible = !self.visible
 		
 
-func reset_data():
-	Label_Wolf_Rescue.set_text(str(0))
-	Total_Wolf_Rescue_Label.set_text(str(0))
-	Label_Enemy_Executed.set_text(str(0))
-	total_enemy_executed_label.set_text(str(0))
-	Label_Boss_Elimited.set_text(str(0))
-	total_boss_eleminated_Label.set_text(str(0))
-
+func reset_data(new_count1,new_count2,new_count3):
+	new_count1=0
+	new_count2=0
+	new_count3= 0
+	Label_Wolf_Rescue.set_text(str(new_count1))
+	Total_Wolf_Rescue_Label.set_text(str(new_count1))
+	Label_Enemy_Executed.set_text(str(new_count2))
+	total_enemy_executed_label.set_text(str(new_count2))
+	Label_Boss_Elimited.set_text(str(new_count3))
+	total_boss_eleminated_Label.set_text(str(new_count3))
+	

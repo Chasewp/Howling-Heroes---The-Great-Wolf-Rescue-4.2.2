@@ -12,16 +12,18 @@ enum state{
 }
 var animate_state  = state.IDDLE
 
+
 @export_category("Enemy Nodes")
 @export var health_bar :ProgressBar
 @export var armor_bar :ProgressBar
 @export var hit_box :Hitboxes
 @export var hurt_box :Hurtboxes
-@export var target_player:CharacterBody2D 
+@export var target_player:CharacterBody2D
 @export var enemy_sprites : AnimatedSprite2D
 @export var enemy_sprite_animation : AnimationPlayer
 @export var enemy_raycast : RayCast2D
 @export var timers : Timer
+
 
 @export_category("Enemy Class Variable")
 @export var hlt : float
@@ -40,13 +42,19 @@ var animate_state  = state.IDDLE
 @export var left_bounds : Vector2
 @export var right_bounds : Vector2
 @export var is_flying: bool = false
+@export var can_attack := true
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var current_health : float
 var current_armor : float
 
+var is_invincible := false
+var invincibility_duration := 0.5  # 0.5 detik
+
 func _ready():
+	target_player = get_tree().root.get_node("World_Stages/Player")
+	
 	print(get_tree().root.get_node("World_Stages/Player"))  # Harus return valid node
 	# Initialize hurtbox values
 	hurt_box.Healths = hlt
@@ -81,6 +89,14 @@ func _on_player_freed():
 	animate_state = state.IDDLE
 
 func take_damage(_damage: float, _is_ap: bool, _ap_dmg: float):
+	if is_invincible:
+		return
+	
+	# Aktifkan invincibility
+	is_invincible = true
+	await get_tree().create_timer(invincibility_duration).timeout
+	is_invincible = false
+	
 	# Update current values from hurtbox
 	current_health = hurt_box.Healths
 	current_armor = hurt_box.Armors
@@ -92,11 +108,22 @@ func take_damage(_damage: float, _is_ap: bool, _ap_dmg: float):
 	# Play hurt animation if not dead
 	if current_health > 0:
 		animate_state = state.HURT
-		enemy_sprite_animation.play()
+		enemy_sprite_animation.play("Hurt")
 		update_animation(direction.x)
+	elif current_health < 0:
+		died()
 	# Debug print
 	print("Damage Received ", damage, "Health: ", current_health, " Armor: ", current_armor)
 	
+func died():
+	animate_state = state.DIED
+	enemy_sprite_animation.play("Died")
+	
+	# Hentikan semua proses
+	timers.stop()
+	set_physics_process(false)
+	
+	await enemy_sprite_animation.animation_finished
 func move(dir,spd):
 	spd = speed
 	if is_on_wall() and  is_on_floor():
@@ -283,3 +310,26 @@ func _physics_process(delta):
 	else:
 		handle_movement(delta)
 
+func attack():
+	if not can_attack or not is_instance_valid(target_player):
+		return
+	
+	can_attack = false
+	timers.start()
+	
+	enemy_sprite_animation.play("Attack")
+	await enemy_sprite_animation.animation_finished
+	
+	## Beri damage jika kondisi masih terpenuhi
+	#if (is_instance_valid(target_player) and 
+		#global_position.distance_to(target_player.global_position) < attack_range * 1.2 and
+		#enemy_raycast.is_colliding() and 
+		#enemy_raycast.get_collider() == target_player):
+		#
+		#target_player.take_damage(damage, AP, APdmg)
+	var overlapping_body = hit_box.get_overlapping_bodies()
+	for body in overlapping_body:
+		if body.is_in_group("player"):
+			body.take_damage(damage, AP, APdmg)
+			
+	animate_state = state.RUNNING

@@ -3,83 +3,134 @@ extends Enemy_Main_Class
 
 @export var attack_range := 100.0
 @export var attack_cooldown := 2.0
+@export var patrol_speed := 50.0  # Slower speed when patrolling
+@export var chase_speed := 150.0  # Faster speed when chasing
 
-var can_attack := true
+var has_been_counted := false
+var is_chasing := false
+var patrol_direction := 1  # 1 for right, -1 for left
 
 func _ready():
 	super._ready()
+	# Set patrol bounds relative to spawn position
 	left_bounds = global_position + Vector2(-300, 0)
 	right_bounds = global_position + Vector2(300, 0)
 	timers.wait_time = attack_cooldown
-
-func _physics_process(delta):
-	handle_gravity(delta)
+	timers.connect("timeout", Callable(self, "_on_attack_cooldown_timeout")) 
+	# Start with random initial direction
+	patrol_direction = 1 if randf() > 0.5 else -1  
+	enemy_raycast.target_position = Vector2(attack_range, 0)
 	
+func _physics_process(delta):
+	# Hentikan proses jika enemy sudah mati
+	if animate_state == state.DIED:
+		return
+		
+	handle_gravity(delta)
 	if animate_state != state.HURT and animate_state != state.DIED:
 		look_for_player()
 		change_direction()
 		handle_movement(delta)
-	
-	move_and_slide()
+	## Update raycast direction
+	#enemy_raycast.target_position = Vector2(-attack_range if enemy_sprites.flip_h else attack_range, 0)
+	## Update raycast direction berdasarkan arah hadap
+	#if is_instance_valid(enemy_sprites):
+		#if enemy_sprites.flip_h:
+			#enemy_raycast.target_position = Vector2(-attack_range, 0)
+		#else:
+			#enemy_raycast.target_position = Vector2(attack_range, 0)
+	#
+	## Pastikan enemy_sprites masih valid sebelum diakses
+	#if is_instance_valid(enemy_sprites):
+		#if enemy_sprites.flip_h:
+			#enemy_raycast.target_position = Vector2(-attack_range, 0)
+		#else:
+			#enemy_raycast.target_position = Vector2(attack_range, 0)
+
 	update_state()
 
 func change_direction():
 	if not is_instance_valid(target_player) or not is_instance_valid(enemy_sprites):
 		return
 	
-	# Jika dalam jarak serang
-	if global_position.distance_to(target_player.global_position) < attack_range:
+	var distance_to_player = global_position.distance_to(target_player.global_position)
+	var can_see_player = enemy_raycast.is_colliding() and enemy_raycast.get_collider() == target_player
+	
+	# 1. LOGICA SERANG
+	if distance_to_player < attack_range and can_see_player:
 		if can_attack:
 			animate_state = state.ATTACK
 			attack()
+		is_chasing = true
 		return
 	
-	# Patroli atau chase
-	if animate_state == state.IDDLE:
-		if enemy_sprites.flip_h:
-			if global_position.x <= right_bounds.x:
-				direction = Vector2.RIGHT
-			else:
-				direction = Vector2.LEFT
-				enemy_sprites.flip_h = false
-		else:
-			if global_position.x >= left_bounds.x:
-				direction = Vector2.LEFT
-			else:
-				direction = Vector2.RIGHT
-				enemy_sprites.flip_h = true
-	else:
+	# 2. LOGICA CHASE (30% lebih besar dari attack range)
+	elif distance_to_player < attack_range * 3:
+		is_chasing = true
 		direction = (target_player.global_position - global_position).normalized()
-		
-	# Flip sprite berdasarkan arah
-	if direction.x > 0:
-		enemy_sprites.flip_h = true
-	elif direction.x < 0:
-		enemy_sprites.flip_h = false
+		animate_state = state.RUNNING
+	
+	# 3. LOGICA PATROL
+	else:
+		is_chasing = false
+		patrol_behavior()
 
-func attack():
-	if not can_attack or not is_instance_valid(target_player):
+func patrol_behavior():
+	# Hentikan jika sudah mati
+	if animate_state == state.DIED:
 		return
 	
-	can_attack = false
-	timers.start()
+	# Check bounds
+	if global_position.x >= right_bounds.x:
+		patrol_direction = -1
+	elif global_position.x <= left_bounds.x:
+		patrol_direction = 1
 	
-	# Trigger animasi serangan
-	enemy_sprite_animation.play("Attack")
-	await enemy_sprite_animation.animation_finished
+	direction = Vector2(patrol_direction, 0)
 	
-	# Beri damage jika masih dalam jarak
-	if global_position.distance_to(target_player.global_position) < attack_range * 1.2:
-		target_player.take_damage(damage, AP, APdmg)
+	# Update flip sprite hanya jika node masih valid
+	if is_instance_valid(enemy_sprites):
+		enemy_sprites.flip_h = patrol_direction == -1
 	
-	animate_state = state.RUNNING
-
+	# Pause logic dengan pengecekan validitas
+	if (global_position.x >= right_bounds.x or global_position.x <= left_bounds.x) and randf() < 0.3:
+		animate_state = state.IDDLE
+		get_tree().create_timer(randf_range(0.5, 1.5)).timeout.connect(
+			func(): 
+				# Tambahkan pengecekan triple
+				if is_instance_valid(self) and is_instance_valid(enemy_sprites) and animate_state == state.IDDLE:
+					animate_state = state.RUNNING
+		)
 func _on_attack_cooldown_timeout():
 	can_attack = true
+	# Reset state setelah cooldown
+	if animate_state != state.HURT and animate_state != state.DIED:
+		animate_state = state.RUNNING
+		
+func handle_movement(delta:float):
+	# Use appropriate speed based on state
+	var current_speed = chase_speed if is_chasing else patrol_speed
+	
+	if animate_state == state.RUNNING:
+		velocity.x = move_toward(velocity.x, direction.x * current_speed, Acceleration * delta)
+	else:
+		velocity.x = move_toward(velocity.x, 0, Acceleration * delta)
+	
+	move_and_slide()
 
 func died():
 	animate_state = state.DIED
 	enemy_sprite_animation.play("Died")
+	
+	# Hentikan semua proses
+	timers.stop()
+	set_physics_process(false)
+	
 	await enemy_sprite_animation.animation_finished
+	
+	# Hapus collision shape untuk mencegah interaksi lebih lanjut
+	#if $"Hitbox/CollisionShape2D":
+		#$"Hitbox/CollisionShape2D".set_deferred("disabled", true)
+	
 	queue_free()
 	MissionStatData.update_enemy_kills()

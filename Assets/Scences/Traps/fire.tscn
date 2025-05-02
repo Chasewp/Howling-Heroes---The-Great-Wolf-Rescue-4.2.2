@@ -9,7 +9,7 @@ radius = 4.12311
 [node name="Fire" type="AnimatedSprite2D"]
 sprite_frames = ExtResource("1_3rk4k")
 autoplay = "default"
-frame_progress = 0.852397
+frame_progress = 0.363434
 
 [node name="Area2D" type="Area2D" parent="." groups=["traps"]]
 collision_layer = 1024

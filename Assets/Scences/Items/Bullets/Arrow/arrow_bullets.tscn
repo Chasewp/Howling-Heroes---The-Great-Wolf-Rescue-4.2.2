@@ -10,7 +10,7 @@ size = Vector2(22, 2)
 collision_mask = 3
 script = ExtResource("1_snco5")
 
-[node name="Arroww" type="AnimatedSprite2D" parent="."]
+[node name="Arrow" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_7ke4s")
 frame = 2
 frame_progress = 1.0

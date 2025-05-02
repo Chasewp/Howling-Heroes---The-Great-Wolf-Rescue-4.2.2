@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvlp42uatweqx"
+path="res://.godot/imported/Free Tiger Sound Effects Download.mp3-31696280a380d21178f0da8522291f99.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/SFX/Enemy/Animal/Free Tiger Sound Effects Download.mp3"
+dest_files=["res://.godot/imported/Free Tiger Sound Effects Download.mp3-31696280a380d21178f0da8522291f99.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
