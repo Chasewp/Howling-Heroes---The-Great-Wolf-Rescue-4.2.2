@@ -1340,6 +1340,13 @@ bg_color = Color(1, 0, 1, 1)
 collision_layer = 32
 collision_mask = 3
 script = ExtResource("1_7a2mn")
+hlt = 350.0
+arm = 40.0
+jump = 2
+speed = 300.0
+damage = 18.0
+Acceleration = 15.0
+Jump_velocity = -350.0
 health_bar = NodePath("Health_Bar")
 armor_bar = NodePath("Armor_Bar")
 hit_box = NodePath("Hitboxes")
@@ -1348,13 +1355,6 @@ enemy_sprites = NodePath("AnimatedSprite2D")
 enemy_sprite_animation = NodePath("AnimatedSprite2D/AnimationPlayer")
 enemy_raycast = NodePath("RayCast2D")
 timers = NodePath("Timer")
-hlt = 350.0
-arm = 40.0
-jump = 2
-speed = 300.0
-damage = 18.0
-Acceleration = 15.0
-Jump_velocity = -350.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.35, 0.35)
@@ -1443,4 +1443,3 @@ theme = ExtResource("8_ehh1x")
 text = "Wolvine"
 
 [connection signal="executed" from="Hurtboxes" to="." method="died"]
-[connection signal="timeout" from="Timer" to="." method="_on_attack_cooldown_timeout"]

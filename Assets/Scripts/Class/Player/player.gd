@@ -151,13 +151,12 @@ func _ready():
 		current_ammo = player_ammo  # <-- Tambahkan ini
 		reloading_timer.connect("timeout",Callable(self,"refill_ammo"))   
 		
-		#shooting_timer.connect("timeout",Callable(self,"shoot"))
 		refill_ammo()
 		maganize_lbl.text = str(player_mag)
 		bullets_caps_lbl.text = str(current_ammo)
 		
-	shooting_timer.wait_time = 2.5  # Cooldown 2.5 detik untuk tembak
-	machete_timer.wait_time = 3.85  # Cooldown 3.85 detik untuk slash	
+	shooting_timer.wait_time = 2.95  # Cooldown 2.5 detik untuk tembak
+	machete_timer.wait_time = 1.85  # Cooldown 3.85 detik untuk slash	
 	
 func update_state():
 		if anim_state == state.HURT: 
@@ -286,7 +285,7 @@ func _physics_process(delta):
 	if not reloading_timer.is_stopped():
 		return
 		# shoot
-	if Input.is_action_just_pressed("shoot_brust_garou") == true:
+	if Input.is_action_just_pressed("shoot_brust_garou") and is_burst_garou_equip == true:
 		if current_ammo > 0:
 			anim_state = state.SHOOT
 			shoot()

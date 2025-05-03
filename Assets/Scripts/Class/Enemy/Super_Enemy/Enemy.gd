@@ -50,7 +50,7 @@ var current_health : float
 var current_armor : float
 
 var is_invincible := false
-var invincibility_duration := 0.5  # 0.5 detik
+var invincibility_duration := 1.2  # 0.5 detik
 
 func _ready():
 	target_player = get_tree().root.get_node("World_Stages/Player")
@@ -110,7 +110,10 @@ func take_damage(_damage: float, _is_ap: bool, _ap_dmg: float):
 		animate_state = state.HURT
 		enemy_sprite_animation.play("Hurt")
 		update_animation(direction.x)
-	elif current_health < 0:
+	if current_health < 0:
+		# Hapus collision shape untuk mencegah interaksi lebih lanjut
+		hit_box.DISABLE_MODE_REMOVE
+		hurt_box.DISABLE_MODE_REMOVE
 		died()
 	# Debug print
 	print("Damage Received ", damage, "Health: ", current_health, " Armor: ", current_armor)
@@ -299,10 +302,10 @@ func _safe_set_flip_h(value: bool):
 	if is_instance_valid(enemy_sprites):
 		enemy_sprites.call_deferred("set_flip_h", value)
 		
-func _process(delta):
-	print("Sprite valid:", is_instance_valid(enemy_sprites), 
-		  " | Raycast valid:", is_instance_valid(enemy_raycast),
-		  " | State:", animate_state)
+#func _process(delta):
+	#print("Sprite valid:", is_instance_valid(enemy_sprites), 
+		  #" | Raycast valid:", is_instance_valid(enemy_raycast),
+		  #" | State:", animate_state)
 		
 func _physics_process(delta):
 	if is_flying:

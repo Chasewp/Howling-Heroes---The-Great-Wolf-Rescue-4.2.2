@@ -19,10 +19,10 @@ func _on_player_name_text_submitted(new_text):
 	# Set data ke singleton
 	player_singleton_autoload.setter_name(new_text)
 	player_singleton_autoload.setter_location("Taiga")
-	player_singleton_autoload.setter_armor(100.0)
-	player_singleton_autoload.setter_health(100.0)
+	player_singleton_autoload.setter_armor(950.0)
+	player_singleton_autoload.setter_health(1000.0)
 	player_singleton_autoload.setter_ammo_bullet(75)
-	player_singleton_autoload.setter_magazine_stock(750)
+	player_singleton_autoload.setter_magazine_stock(7500)
 	# save data into the file
 	var data = Data_Progress.new()
 	data.player_name = player_singleton_autoload.getter_name()

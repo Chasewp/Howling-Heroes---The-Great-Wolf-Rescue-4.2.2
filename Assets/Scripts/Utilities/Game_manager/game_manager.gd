@@ -10,7 +10,8 @@ var hand_cursor = load("res://Assets/Image/Cursor/hand_paw.png")
 func _ready():
 	stage_root.level_exit_reached.connect(_on_level_exit_reached)
 	Input.set_custom_mouse_cursor(crosshair_Cursor)
-	Input.MOUSE_MODE_CONFINED
+	Input.MOUSE_MODE_VISIBLE
+	
 func _on_level_exit_reached(next_level):
 	stage_root.load_level_async(next_level)
 

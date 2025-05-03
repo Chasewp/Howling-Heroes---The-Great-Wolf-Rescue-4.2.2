@@ -3,10 +3,9 @@ extends Hitboxes
 
 @export var speed = 300
 @onready var animation = $AnimatedSprite2D
-var _has_exploded:bool = false
+
 
 func _physics_process(delta):
-	if not _has_exploded:
 		animation.play("default")
 		position += (Vector2.RIGHT*speed).rotated(rotation)*delta
 
@@ -14,13 +13,14 @@ func _process(delta):
 	#Destroying bullets during get into terains tileset
 	for body in self.get_overlapping_bodies():
 		if body.is_in_group("Terains"):
-			animation.play("explode")
 			queue_free()
+		
 	
 	#destroying bullets during get into enemy hurtbox
 	for area in self.get_overlapping_areas():
-		if area.is_in_group("enemy_hurt_box"):
-			animation.play("explode")
+		if area.is_in_group("enemy_hurtbox"):
+			queue_free()
+			
 			
 func _ready():
 	set_as_top_level(true)

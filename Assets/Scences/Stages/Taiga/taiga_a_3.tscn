@@ -499,16 +499,6 @@ position = Vector2(1851, 219)
 
 [node name="Red_fox" parent="Enemy/Stage_1" instance=ExtResource("19_m4b03")]
 position = Vector2(2865, 27)
-attack_range = null
-attack_cooldown = null
-patrol_speed = null
-chase_speed = null
-AP = null
-APdmg = null
-direction = null
-left_bounds = null
-right_bounds = null
-is_flying = null
 
 [node name="Wolvine" parent="Enemy/Stage_1" instance=ExtResource("22_0rx8n")]
 position = Vector2(294, 461)

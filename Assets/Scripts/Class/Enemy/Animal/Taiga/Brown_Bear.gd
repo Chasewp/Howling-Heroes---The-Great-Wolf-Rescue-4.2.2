@@ -118,7 +118,44 @@ func handle_movement(delta:float):
 	
 	move_and_slide()
 
+func attack():
+	if not can_attack or not is_instance_valid(target_player):
+		return
+	
+	can_attack = false
+	timers.start()
+	
+	enemy_sprite_animation.play("Attack")
+	await enemy_sprite_animation.animation_finished
+	
+	## Beri damage jika kondisi masih terpenuhi
+	#if (is_instance_valid(target_player) and 
+		#global_position.distance_to(target_player.global_position) < attack_range * 1.2 and
+		#enemy_raycast.is_colliding() and 
+		#enemy_raycast.get_collider() == target_player):
+		#
+		#target_player.take_damage(damage, AP, APdmg)
+	var overlapping_area = hit_box.get_overlapping_areas()
+	for area in overlapping_area:
+		if area.is_in_group("player_hurtbox"):
+			area.take_damage(damage, AP, APdmg)
+			
+	animate_state = state.RUNNING
+
 func died():
-	super.died()	
+	animate_state = state.DIED
+	enemy_sprite_animation.play("Died")
+	
+	# Hentikan semua proses
+	timers.stop()
+	set_physics_process(false)
+	
+	await enemy_sprite_animation.animation_finished
+	
+	# Hapus collision shape untuk mencegah interaksi lebih lanjut
+	#if $"Hitbox/CollisionShape2D":
+		#$"Hitbox/CollisionShape2D".set_deferred("disabled", true)
+	
 	queue_free()
 	MissionStatData.update_enemy_kills()
+

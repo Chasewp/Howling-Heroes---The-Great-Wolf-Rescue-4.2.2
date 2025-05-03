@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bi4hvn314kpgx"]
+[gd_scene load_steps=9 format=3 uid="uid://bi4hvn314kpgx"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Item/Bullets/Bullets/Player_Bullets.gd" id="1_3i7yn"]
 [ext_resource type="Texture2D" uid="uid://msxx7uanopiq" path="res://Assets/Image/Items/Bullets/All_Fire_Bullet_Pixel_16x16_02.png" id="1_4sdnw"]
@@ -19,26 +19,6 @@ region = Rect2(288, 176, 16, 16)
 atlas = ExtResource("1_4sdnw")
 region = Rect2(304, 176, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fqhwj"]
-atlas = ExtResource("1_4sdnw")
-region = Rect2(208, 288, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oluyg"]
-atlas = ExtResource("1_4sdnw")
-region = Rect2(224, 288, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l8vrg"]
-atlas = ExtResource("1_4sdnw")
-region = Rect2(240, 288, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5si6l"]
-atlas = ExtResource("1_4sdnw")
-region = Rect2(256, 288, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fyvq0"]
-atlas = ExtResource("1_4sdnw")
-region = Rect2(272, 288, 16, 16)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbmhu"]
 animations = [{
 "frames": [{
@@ -57,26 +37,6 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fqhwj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oluyg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l8vrg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5si6l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fyvq0")
-}],
-"loop": false,
-"name": &"explode",
-"speed": 15.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wcr8k"]
@@ -85,9 +45,9 @@ animations = [{
 collision_layer = 16
 collision_mask = 65
 script = ExtResource("1_3i7yn")
-damage = 13.0
+damage = 32.0
 is_armor_piercing = true
-AP_dmg = 0.2
+AP_dmg = 0.85
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cbmhu")

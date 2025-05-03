@@ -3,6 +3,7 @@ extends Area2D
 
 signal received_damage(damage: float, is_AP: bool, AP_dmg: float)
 signal executed
+
 @export var Healths: float 
 @export var Armors: float 
 @export var Eficient_Armors: float  

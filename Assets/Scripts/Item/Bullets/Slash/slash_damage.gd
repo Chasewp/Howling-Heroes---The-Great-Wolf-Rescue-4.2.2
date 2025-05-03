@@ -21,5 +21,5 @@ func _process(delta):
 	
 	#destroying slash effect during get into enemy hurtbox
 	for area in self.get_overlapping_areas():
-		if area.is_in_group("enemy_hurt_box"):
+		if area.is_in_group("enemy_hurtbox"):
 			queue_free()
