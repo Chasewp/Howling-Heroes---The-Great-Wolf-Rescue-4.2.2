@@ -2340,7 +2340,7 @@ position = Vector2(-1, -62)
 shape = SubResource("RectangleShape2D_5lckb")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
-[node name="Hurt_Area_chest" type="Area2D" parent="." groups=["hurt_box", "player_hurtbox"]]
+[node name="Hurt_Area_chest" type="Area2D" parent="." groups=["player_hurtbox"]]
 unique_name_in_owner = true
 position = Vector2(2.38419e-07, -41)
 rotation = 0.00151747

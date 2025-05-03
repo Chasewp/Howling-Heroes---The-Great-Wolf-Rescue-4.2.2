@@ -1783,7 +1783,6 @@ shape = SubResource("RectangleShape2D_is84u")
 debug_color = Color(0.992186, 0.552685, 0.795965, 0.42)
 
 [node name="Hit box" type="Area2D" parent="." groups=["enemy_hitbox"]]
-unique_name_in_owner = true
 position = Vector2(-20, -21)
 collision_layer = 128
 collision_mask = 10
@@ -1835,7 +1834,6 @@ libraries = {
 autoplay = "Iddle"
 
 [node name="Hurt_Box" type="Area2D" parent="." groups=["enemy_hurtbox", "hurt_box"]]
-unique_name_in_owner = true
 position = Vector2(-10, -63)
 collision_layer = 64
 collision_mask = 16

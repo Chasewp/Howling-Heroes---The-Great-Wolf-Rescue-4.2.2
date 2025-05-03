@@ -318,7 +318,7 @@ func _physics_process(delta):
 		died()	
 		
 func slash():
-	if machete_timer.time_left > 0:  # <-- Cek waktu timer
+	if not machete_timer.is_stopped():  # <-- Cek waktu timer
 		return
 	
 	# Tentukan arah hadap berdasarkan posisi mouse
@@ -337,7 +337,7 @@ func slash():
 	machete_timer.start()
 	
 func shoot():
-	if shooting_timer.time_left > 0 or current_ammo <= 0:  # <-- Cek waktu timer
+	if not shooting_timer.is_stopped() or current_ammo <= 0:  # <-- Cek waktu timer
 		return
 	
 	# Tentukan arah hadap berdasarkan posisi mouse

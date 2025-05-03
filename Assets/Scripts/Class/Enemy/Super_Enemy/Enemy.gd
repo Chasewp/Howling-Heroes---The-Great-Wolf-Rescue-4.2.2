@@ -51,7 +51,7 @@ var current_armor : float
 
 var is_invincible := false
 var invincibility_duration := 1.2  # 0.5 detik
-
+var has_been_counted := false 
 func _ready():
 	target_player = get_tree().root.get_node("World_Stages/Player")
 	
@@ -119,12 +119,19 @@ func take_damage(_damage: float, _is_ap: bool, _ap_dmg: float):
 	print("Damage Received ", damage, "Health: ", current_health, " Armor: ", current_armor)
 	
 func died():
+	if has_been_counted:
+		return
+	
+	has_been_counted = true
 	animate_state = state.DIED
 	enemy_sprite_animation.play("Died")
 	
 	# Hentikan semua proses
 	timers.stop()
 	set_physics_process(false)
+	
+	await enemy_sprite_animation.animation_finished
+	queue_free()
 	
 	await enemy_sprite_animation.animation_finished
 func move(dir,spd):

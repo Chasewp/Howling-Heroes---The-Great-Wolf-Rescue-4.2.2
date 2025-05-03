@@ -6,7 +6,6 @@ extends Enemy_Main_Class
 @export var patrol_speed := 50.0  # Slower speed when patrolling
 @export var chase_speed := 150.0  # Faster speed when chasing
 
-var has_been_counted := false
 var is_chasing := false
 var patrol_direction := 1  # 1 for right, -1 for left
 
@@ -143,19 +142,6 @@ func attack():
 	animate_state = state.RUNNING
 
 func died():
-	animate_state = state.DIED
-	enemy_sprite_animation.play("Died")
-	
-	# Hentikan semua proses
-	timers.stop()
-	set_physics_process(false)
-	
-	await enemy_sprite_animation.animation_finished
-	
-	# Hapus collision shape untuk mencegah interaksi lebih lanjut
-	#if $"Hitbox/CollisionShape2D":
-		#$"Hitbox/CollisionShape2D".set_deferred("disabled", true)
-	
-	queue_free()
+	super.died()
 	MissionStatData.update_enemy_kills()
 

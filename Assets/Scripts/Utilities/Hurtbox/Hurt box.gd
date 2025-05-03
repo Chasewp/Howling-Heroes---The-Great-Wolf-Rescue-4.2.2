@@ -10,43 +10,43 @@ signal executed
 
 func _ready():
 	connect("area_entered", _on_take_damage)
+	
 
 func _on_take_damage(hitbox: Hitboxes) -> void:
+	
 	var hitboxess = self.get_overlapping_areas()
 	for hitboxs in hitboxess:
-		hitboxs = hitbox
-		if hitboxs != null:
-		## Forward damage ke parent player
-		#if get_parent().has_method("take_damage"):
-			#get_parent().take_damage(hitbox.damage, hitbox.is_armor_piercing, hitbox.AP_dmg)
+		if hitboxs != null and hitboxs is Hitboxes:
+			var damage = hitboxs.damage
+			var is_ap = hitboxs.is_armor_piercing
+			var ap_dmg = hitboxs.AP_dmg
 			
-			var damage = hitbox.damage
-		
-			if hitbox.is_armor_piercing:
-			# AP damage kena Armor & Health sekaligus
-				var armor_damage = (damage * hitbox.AP_dmg) * Eficient_Armors  # Damage ke Armor
-				var health_damage = damage * (1.0 - hitbox.AP_dmg)  # Damage langsung ke Health
-
-			# Kalau Armor masih ada, serap damage dulu
+			if is_ap:
+				var armor_damage = damage * ap_dmg * Eficient_Armors
+				var health_damage = damage * (1.0 - ap_dmg)
+				
 				if Armors > 0:
 					if Armors >= armor_damage:
 						Armors -= armor_damage
 					else:
-					# Armor habis → sisa damage ke Health
-						var leftover_damage = armor_damage - Armors
+						# Jika armor habis, sisa damage ke health
+						health_damage += (armor_damage - Armors)
 						Armors = 0
-						health_damage += leftover_damage  # Tambahin ke health_damage yang udah ada
-
-			# Kurangi Health dengan total damage yang lolos
-				Healths -= health_damage
-		
+				
+				# PASTIKAN DAMAGE KE HEALTH
+				Healths -= health_damage  # <-- BARIS INI HARUS ADA
 			else:
-			# Non-AP damage langsung kena Health
+				# Non-AP: Langsung ke health
 				Healths -= damage
-			if Healths <0:
+			
+			# Panggil died() jika health <= 0
+			if Healths <= 0:
 				executed.emit()
-		
-			# Emit sinyal damage
-			received_damage.emit(damage, hitbox.is_armor_piercing, hitbox.AP_dmg)
-		
-		print("Health:", Healths,"|", "Armor:", Armors,"|", "Efisiensi Armor:", Eficient_Armors)
+			
+			received_damage.emit(damage, is_ap, ap_dmg)
+		print("======== DAMAGE REPORT ========")
+		print("Health : ", Healths)	
+		print("Armor: ",Armors)
+		print("Eficient Armor: ",Eficient_Armors)
+		print("Damages : ", hitboxs.damage)
+		print("AP_Damages : ", hitboxs.AP_dmg)

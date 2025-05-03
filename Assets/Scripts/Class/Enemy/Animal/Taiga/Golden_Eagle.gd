@@ -95,8 +95,5 @@ func _on_attack_cooldown_timeout():
 	can_attack = true
 
 func died():
-	animate_state = state.DIED
-	enemy_sprite_animation.play("Died")
-	await enemy_sprite_animation.animation_finished
-	queue_free()
+	super.died()
 	MissionStatData.update_enemy_kills()
