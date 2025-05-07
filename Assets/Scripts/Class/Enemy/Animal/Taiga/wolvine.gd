@@ -30,22 +30,6 @@ func _physics_process(delta):
 		look_for_player()
 		change_direction()
 		handle_movement(delta)
-	## Update raycast direction
-	#enemy_raycast.target_position = Vector2(-attack_range if enemy_sprites.flip_h else attack_range, 0)
-	## Update raycast direction berdasarkan arah hadap
-	#if is_instance_valid(enemy_sprites):
-		#if enemy_sprites.flip_h:
-			#enemy_raycast.target_position = Vector2(-attack_range, 0)
-		#else:
-			#enemy_raycast.target_position = Vector2(attack_range, 0)
-	#
-	## Pastikan enemy_sprites masih valid sebelum diakses
-	#if is_instance_valid(enemy_sprites):
-		#if enemy_sprites.flip_h:
-			#enemy_raycast.target_position = Vector2(-attack_range, 0)
-		#else:
-			#enemy_raycast.target_position = Vector2(attack_range, 0)
-
 	update_state()
 
 func change_direction():
@@ -69,7 +53,7 @@ func change_direction():
 		direction = (target_player.global_position - global_position).normalized()
 		animate_state = state.RUNNING
 	
-	# 3. LOGICA PATROL
+	# 3. LOGICA PATROL	
 	else:
 		is_chasing = false
 		patrol_behavior()
@@ -100,6 +84,7 @@ func patrol_behavior():
 				if is_instance_valid(self) and is_instance_valid(enemy_sprites) and animate_state == state.IDDLE:
 					animate_state = state.RUNNING
 		)
+		
 func _on_attack_cooldown_timeout():
 	can_attack = true
 	# Reset state setelah cooldown
@@ -114,7 +99,6 @@ func handle_movement(delta:float):
 		velocity.x = move_toward(velocity.x, direction.x * current_speed, Acceleration * delta)
 	else:
 		velocity.x = move_toward(velocity.x, 0, Acceleration * delta)
-	
 	move_and_slide()
 
 func attack():
@@ -126,18 +110,11 @@ func attack():
 	
 	enemy_sprite_animation.play("Attack")
 	await enemy_sprite_animation.animation_finished
-	
-	## Beri damage jika kondisi masih terpenuhi
-	#if (is_instance_valid(target_player) and 
-		#global_position.distance_to(target_player.global_position) < attack_range * 1.2 and
-		#enemy_raycast.is_colliding() and 
-		#enemy_raycast.get_collider() == target_player):
-		#
-		#target_player.take_damage(damage, AP, APdmg)
-	var overlapping_area = hit_box.get_overlapping_areas()
-	for area in overlapping_area:
-		if area.is_in_group("player_hurtbox"):
-			area.take_damage(damage, AP, APdmg)
+
+	#var overlapping_area = hit_box.get_overlapping_areas()
+	#for area in overlapping_area:
+		#if area.is_in_group("player_hurtbox"):
+			#area.take_damage(damage, AP, APdmg)
 			
 	animate_state = state.RUNNING
 

@@ -12,7 +12,6 @@ enum state{
 }
 var animate_state  = state.IDDLE
 
-
 @export_category("Enemy Nodes")
 @export var health_bar :ProgressBar
 @export var armor_bar :ProgressBar
@@ -52,6 +51,9 @@ var current_armor : float
 var is_invincible := false
 var invincibility_duration := 1.2  # 0.5 detik
 var has_been_counted := false 
+var recently_hit := false 
+var is_already_dead := false
+
 func _ready():
 	target_player = get_tree().root.get_node("World_Stages/Player")
 	
@@ -79,7 +81,7 @@ func _ready():
 	armor_bar.max_value = arm
 	armor_bar.value = current_armor
 	
-	# Connect damage signals
+	## Connect damage signals
 	hurt_box.received_damage.connect(take_damage)
 	if target_player:
 		target_player.tree_exiting.connect(_on_player_freed)
@@ -91,6 +93,12 @@ func _on_player_freed():
 func take_damage(_damage: float, _is_ap: bool, _ap_dmg: float):
 	if is_invincible:
 		return
+	if recently_hit or animate_state == state.DIED:
+		return
+	
+	recently_hit = true
+	await get_tree().create_timer(0.1).timeout  # Cooldown 0.1 detik
+	recently_hit = false
 	
 	# Aktifkan invincibility
 	is_invincible = true
@@ -105,23 +113,26 @@ func take_damage(_damage: float, _is_ap: bool, _ap_dmg: float):
 	health_bar.value = current_health
 	armor_bar.value = current_armor
 	
-	# Play hurt animation if not dead
-	if current_health > 0:
-		animate_state = state.HURT
-		enemy_sprite_animation.play("Hurt")
-		update_animation(direction.x)
-	if current_health < 0:
+	if current_health <= 0:
 		# Hapus collision shape untuk mencegah interaksi lebih lanjut
 		hit_box.DISABLE_MODE_REMOVE
 		hurt_box.DISABLE_MODE_REMOVE
 		died()
+	elif current_health > 0:# Play hurt animation if not dead
+		animate_state = state.HURT
+		enemy_sprite_animation.play("Hurt")
+		update_animation(direction.x)
+
 	# Debug print
-	print("Damage Received ", damage, "Health: ", current_health, " Armor: ", current_armor)
+	print("Damage Received ", _damage, " Health: ", current_health, " Armor: ", current_armor)
 	
 func died():
 	if has_been_counted:
 		return
+	if is_already_dead:
+		return
 	
+	is_already_dead = true
 	has_been_counted = true
 	animate_state = state.DIED
 	enemy_sprite_animation.play("Died")
@@ -133,7 +144,7 @@ func died():
 	await enemy_sprite_animation.animation_finished
 	queue_free()
 	
-	await enemy_sprite_animation.animation_finished
+	
 func move(dir,spd):
 	spd = speed
 	if is_on_wall() and  is_on_floor():

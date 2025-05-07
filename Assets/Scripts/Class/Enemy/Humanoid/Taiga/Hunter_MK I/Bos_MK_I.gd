@@ -115,7 +115,6 @@ func died():
 	
 	# 5. Panggil fungsi munculkan chest
 	chest.boss_defeated()
-	
 	queue_free()
 	
 

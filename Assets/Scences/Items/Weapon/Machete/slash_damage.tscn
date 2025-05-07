@@ -61,7 +61,7 @@ _data = {
 collision_layer = 16
 collision_mask = 65
 script = ExtResource("1_80rk7")
-damage = 45.0
+damage = 85.0
 
 [node name="Attack_1" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1, 2.39)

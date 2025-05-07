@@ -40,7 +40,7 @@ func _on_take_damage(hitbox: Hitboxes) -> void:
 				Healths -= damage
 			
 			# Panggil died() jika health <= 0
-			if Healths <= 0:
+			if Healths < 0:
 				executed.emit()
 			
 			received_damage.emit(damage, is_ap, ap_dmg)

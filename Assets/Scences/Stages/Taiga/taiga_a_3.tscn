@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dacxduhw3cbjc"]
+[gd_scene load_steps=46 format=3 uid="uid://dacxduhw3cbjc"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Stage/Taiga/taiga.gd" id="1_g4hk3"]
 [ext_resource type="PackedScene" uid="uid://ca0nm25t6mv6w" path="res://Assets/Scences/Items/Cammera/camera_Stage.tscn" id="2_00v6u"]
@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://d3lpwm66i3h54" path="res://Assets/Scences/Character/Enemy/Humanoid/Taiga/hunter_mk_i.tscn" id="13_8w5b2"]
 [ext_resource type="PackedScene" uid="uid://cbo01n7ccb6dr" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/black_bear.tscn" id="13_eiy3r"]
 [ext_resource type="PackedScene" uid="uid://barjbila0h7xr" path="res://Assets/Scences/Platfrom/Taiga/taiga_platrom.tscn" id="14_5av82"]
-[ext_resource type="PackedScene" uid="uid://b5a3j5sbcyw3s" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/brown_bear.tscn" id="14_wqxwl"]
 [ext_resource type="AudioStream" uid="uid://cijoewb00qfu0" path="res://Assets/Music/SFX/Biomes/Forest Music/Forest.mp3" id="16_nktca"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="17_nrca3"]
 [ext_resource type="PackedScene" uid="uid://ve6g864losvt" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/golden_eagle.tscn" id="19_8fc52"]
@@ -487,11 +486,20 @@ position = Vector2(1753, 419)
 
 [node name="Stage_1" type="Node" parent="Enemy"]
 
-[node name="Brown_Bear" parent="Enemy/Stage_1" instance=ExtResource("14_wqxwl")]
-position = Vector2(123, 87)
-
 [node name="Black_Bear" parent="Enemy/Stage_1" instance=ExtResource("13_eiy3r")]
 position = Vector2(132, 265)
+eficient_Armor = 0.35
+
+[node name="Black_Bear2" parent="Enemy/Stage_1" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") instance=ExtResource("13_eiy3r")]
+position = Vector2(81, 90)
+health_bar = NodePath("../Black_Bear/Health_Bar")
+armor_bar = NodePath("../Black_Bear/Armor_Bar")
+hit_box = NodePath("../Black_Bear/Hit box")
+hurt_box = NodePath("../Black_Bear/Hurt_Box")
+enemy_sprites = NodePath("../Black_Bear/Black_Bear_Animation")
+enemy_sprite_animation = NodePath("../Black_Bear/Black_Bear_Animation/AnimationPlayer")
+enemy_raycast = NodePath("../Black_Bear/RayCast2D")
+timers = NodePath("../Black_Bear/Timer")
 eficient_Armor = 0.35
 
 [node name="Golden_Eagle" parent="Enemy/Stage_1" instance=ExtResource("19_8fc52")]
@@ -504,19 +512,6 @@ position = Vector2(2865, 27)
 position = Vector2(294, 461)
 
 [node name="Stage_2" type="Node" parent="Enemy"]
-
-[node name="Brown_Bear" parent="Enemy/Stage_2" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation") instance=ExtResource("14_wqxwl")]
-position = Vector2(3078, 225)
-health_bar = NodePath("../../Stage_1/Brown_Bear/Health_Bar")
-armor_bar = NodePath("../../Stage_1/Brown_Bear/Armor_Bar")
-hit_box = NodePath("../../Stage_1/Brown_Bear/Hit box")
-hurt_box = NodePath("../../Stage_1/Brown_Bear/Hurt_Box")
-enemy_sprites = NodePath("../../Stage_1/Brown_Bear/AnimatedSprite2D")
-enemy_sprite_animation = NodePath("../../Stage_1/Brown_Bear/AnimatedSprite2D/AnimationPlayer")
-hlt = 440.0
-arm = 33.0
-damage = 16.5
-eficient_Armor = 0.33
 
 [node name="Black_Bear" parent="Enemy/Stage_2" instance=ExtResource("13_eiy3r")]
 position = Vector2(3422, 13)

@@ -1755,12 +1755,13 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3w1w"]
 size = Vector2(80.5, 63)
 
-[node name="Black_Bear" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") groups=["enemy"]]
+[node name="Black_Bear" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") groups=["enemy"]]
 collision_layer = 32
 collision_mask = 3
 script = ExtResource("1_fgq6m")
 health_bar = NodePath("Health_Bar")
 armor_bar = NodePath("Armor_Bar")
+hit_box = NodePath("Hit box")
 hurt_box = NodePath("Hurt_Box")
 enemy_sprites = NodePath("Black_Bear_Animation")
 enemy_sprite_animation = NodePath("Black_Bear_Animation/AnimationPlayer")
@@ -1774,8 +1775,6 @@ damage = 16.0
 Acceleration = 15.0
 Jump_velocity = -350.0
 eficient_Armor = 0.2
-dis_min = 25
-dis_max = 500
 
 [node name="CollisionShape Awhole Body" type="CollisionShape2D" parent="."]
 position = Vector2(18, -43)
