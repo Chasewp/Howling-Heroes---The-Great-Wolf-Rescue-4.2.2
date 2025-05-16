@@ -21,7 +21,7 @@ var animate_state  = state.IDDLE
 @export var enemy_sprites : AnimatedSprite2D
 @export var enemy_sprite_animation : AnimationPlayer
 @export var enemy_raycast : RayCast2D
-@export var timers : Timer
+
 
 
 @export_category("Enemy Class Variable")
@@ -41,7 +41,7 @@ var animate_state  = state.IDDLE
 @export var left_bounds : Vector2
 @export var right_bounds : Vector2
 @export var is_flying: bool = false
-@export var can_attack := true
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -63,9 +63,7 @@ func _ready():
 	hurt_box.Armors = arm
 	hurt_box.Eficient_Armors = eficient_Armor
 	
-	# Pastikan timer terhubung
-	if timers:
-		timers.connect("timeout", Callable(self, "_on_timer_timeout"))
+	
 	
 	#target player
 	if not target_player:
@@ -138,7 +136,6 @@ func died():
 	enemy_sprite_animation.play("Died")
 	
 	# Hentikan semua proses
-	timers.stop()
 	set_physics_process(false)
 	
 	await enemy_sprite_animation.animation_finished
@@ -301,12 +298,12 @@ func look_for_player():
 		stop_chase()
 		
 func chase_player():
-	timers.stop()
 	animate_state = state.RUNNING
 	
 func stop_chase():
-	if timers.time_left<= 0:
-		timers.start()
+	pass
+	#if not is_chasing:
+		#animate_state = state.IDDLE
 
 func on_hurt_area_enemy(area):
 	if not is_instance_valid(target_player):  # Pastikan player masih ada
@@ -320,10 +317,7 @@ func _safe_set_flip_h(value: bool):
 	if is_instance_valid(enemy_sprites):
 		enemy_sprites.call_deferred("set_flip_h", value)
 		
-#func _process(delta):
-	#print("Sprite valid:", is_instance_valid(enemy_sprites), 
-		  #" | Raycast valid:", is_instance_valid(enemy_raycast),
-		  #" | State:", animate_state)
+
 		
 func _physics_process(delta):
 	if is_flying:
@@ -332,11 +326,11 @@ func _physics_process(delta):
 		handle_movement(delta)
 
 func attack():
-	if not can_attack or not is_instance_valid(target_player):
-		return
-	
-	can_attack = false
-	timers.start()
+	#if not can_attack or not is_instance_valid(target_player):
+		#return
+	#
+	#can_attack = false
+	#timers.start()
 	
 	enemy_sprite_animation.play("Attack")
 	await enemy_sprite_animation.animation_finished

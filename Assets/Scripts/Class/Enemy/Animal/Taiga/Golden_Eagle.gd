@@ -31,9 +31,8 @@ func change_direction():
 	
 	# Jika dalam jarak serang
 	if distance_to_player < attack_range:
-		if can_attack:
-			animate_state = state.ATTACK
-			attack()
+		animate_state = state.ATTACK
+		attack()
 		return
 	
 	# Patroli area terbatas (125 pixel dari posisi awal)
@@ -76,11 +75,8 @@ func handle_flying_movement(delta):
 	move_and_slide()
 
 func attack():
-	if not can_attack or not is_instance_valid(target_player):
+	if  not is_instance_valid(target_player):
 		return
-	
-	can_attack = false
-	timers.start()
 	
 	enemy_sprite_animation.play("Attack")
 	await enemy_sprite_animation.animation_finished
@@ -91,8 +87,7 @@ func attack():
 	
 	animate_state = state.RUNNING
 
-func _on_attack_cooldown_timeout():
-	can_attack = true
+
 
 func died():
 	super.died()

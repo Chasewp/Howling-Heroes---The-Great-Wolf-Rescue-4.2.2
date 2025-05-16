@@ -154,9 +154,9 @@ shape = SubResource("CircleShape2D_gej7v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_awq82")
-animation = &"Fanish"
+animation = &"Flip"
 autoplay = "Flip"
-frame = 29
+frame = 27
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 root_node = NodePath("../..")

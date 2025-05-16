@@ -1,5 +1,5 @@
 class_name Cages
-extends StaticBody2D
+extends Area2D
 
 signal cage_unlocked
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://capgwdnhn40bm"]
+[gd_scene load_steps=17 format=3 uid="uid://capgwdnhn40bm"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/UI/Main_Menu/MainMenu.gd" id="1_2ju3c"]
+[ext_resource type="Theme" uid="uid://cu5rkp7vl04w3" path="res://Assets/Theme/Main Menu/main_menu_dialogue.tres" id="2_08g5m"]
 [ext_resource type="Texture2D" uid="uid://c5mw58h2ajhr" path="res://Assets/Image/Background/Main_Menu/w2BsPEmg.jpeg" id="2_eo3sk"]
 [ext_resource type="Texture2D" uid="uid://c4aec0kompmv8" path="res://Assets/Image/Logo/Logo Project Howling Heroes The Great Wolf Rescue.png" id="3_aqiha"]
 [ext_resource type="FontFile" uid="uid://daews5bmpatgf" path="res://Assets/Fonts/WolfpackHalloweed-EaGOl.otf" id="4_c4irr"]
@@ -31,17 +32,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2ju3c")
 
-[node name="AcceptDialog" type="AcceptDialog" parent="."]
+[node name="AcceptDialog" type="ConfirmationDialog" parent="."]
 initial_position = 2
-size = Vector2i(401, 100)
+size = Vector2i(547, 100)
 visible = true
 unresizable = true
 borderless = true
 popup_window = true
+theme = ExtResource("2_08g5m")
 ok_button_text = "YES"
 dialog_text = "Are you sure want to reset all data your progress?"
 dialog_hide_on_ok = false
 dialog_close_on_escape = false
+cancel_button_text = "NO"
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1

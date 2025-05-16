@@ -7,4 +7,10 @@ extends Level
 func _ready():
 	super._ready()
 	music.play()
-	next_level = "res://Assets/Scences/Stages/Taiga/taiga_a_3.tscn"
+	
+
+
+func _on_teleport_next_stage_body_entered(body):
+	if body.is_in_group("player"):
+		_on_exit_reached()
+	

@@ -2,15 +2,6 @@ extends Control
 
 @onready var character_name = $Character_Name
 @onready var biome_location = $Biome_Location
-@onready var Pine_Key  = %Pine_Keys
-@onready var ice_key = %Ice_Key
-@onready var stone_key = %Stone_Key
-@onready var snow_fang_key = %Snow_Fang_Key
-@onready var frozen_paw_securelock_key = %Frozen_Paw_SecureLock_Key
-@onready var grass_key = %Grass_Key
-@onready var flower_key = %Flower_Key
-@onready var ground_key = %Ground_Key
-@onready var dessert_key = %Dessert_Key
 @onready var machete_image = %Machete
 @onready var machete_background = %Machete_background
 @onready var machete_Label = %LabelMacchete
@@ -23,36 +14,48 @@ var save = load("user://Save/Progress/Save_Progress.tres")
 
 	
 func _ready():
+	player_singleton_autoload.Keys_updated.connect(_update_all_keys)
+	# Update UI dari singleton (baik dari save atau default)
+	_update_ui_from_singleton()
 	# Load data dari file save
 	var save_path = "user://Save/Progress/Save_Progress.tres"
 	if ResourceLoader.exists(save_path):
+		save = load(save_path)
 		if save is Data_Progress:
-			# Set data ke singleton
-			player_singleton_autoload.setter_name(save.player_name)
-			player_singleton_autoload.setter_armor(save.player_armor)
-			player_singleton_autoload.setter_health(save.player_health)
-			player_singleton_autoload.setter_location(save.player_biome_location)
-			# Update UI
-			character_name.set_text(player_singleton_autoload.getter_name())
-			biome_location.set_text("Location : " + player_singleton_autoload.getter_location())
+			# Update singleton dari save file
+			_update_singleton_from_save(save)
 		else:
-			print("Failed to load resource data.")
+			print("Invalid save data format.")
 	else:
-		print("Save file not found.")
-
-	# Update keys visibility
-	get_keys()
+		print("No save file found. Using default singleton values.")
 	
+	
+	
+func _update_singleton_from_save(save_data: Data_Progress):
+	player_singleton_autoload.setter_name(save_data.player_name)
+	player_singleton_autoload.setter_armor(save_data.player_armor)
+	player_singleton_autoload.setter_health(save_data.player_health)
+	player_singleton_autoload.setter_location(save_data.player_biome_location)
+	player_singleton_autoload.setter_pine_key(save_data.is_have_pine_key)
+	player_singleton_autoload.setter_ice_key(save_data.is_have_ice_key)
+	player_singleton_autoload.setter_stone_key(save_data.is_have_stone_key)
+	player_singleton_autoload.setter_snow_fang_key(save_data.is_have_snow_fang_key)
+	player_singleton_autoload.setter_frozen_paw_securelock_key(save_data.is_have_frozen_paw_securelook_key)
+	player_singleton_autoload.setter_grass_key(save_data.is_have_grass_key)
+	player_singleton_autoload.setter_dessert_key(save_data.is_have_dessert_key)
 
+func _update_ui_from_singleton():
+	character_name.text = player_singleton_autoload.getter_name()
+	biome_location.text = "Location: " + player_singleton_autoload.getter_location()
 
-func get_keys():
-	# Set visibility based on each key's availability
-	Pine_Key.visible = player_singleton_autoload.getter_pine_key()
-	ice_key.visible = player_singleton_autoload.getter_ice_key()
-	stone_key.visible = player_singleton_autoload.getter_stone_key()
-	snow_fang_key.visible = player_singleton_autoload.getter_snow_fang_key()
-	frozen_paw_securelock_key.visible = player_singleton_autoload.getter_frozen_paw_securelock_key()
-	grass_key.visible = player_singleton_autoload.getter_grass_key()
-	flower_key.visible = player_singleton_autoload.getter_flower_key()
-	ground_key.visible = player_singleton_autoload.getter_ground_key()
-	dessert_key.visible = player_singleton_autoload.getter_dessert_key()
+func _update_all_keys():
+	#Update visibility keys
+	$Keys/Pine_Keys.visible = player_singleton_autoload.getter_pine_key()
+	$Keys/Ice_Key.visible = player_singleton_autoload.getter_ice_key()
+	$Keys/Stone_Key.visible = player_singleton_autoload.getter_stone_key()
+	$Keys/Snow_Fang_Key.visible = player_singleton_autoload.getter_snow_fang_key()
+	$Keys/Frozen_Paw_SecureLock_Key.visible = player_singleton_autoload.getter_frozen_paw_securelock_key()
+	$Keys/Grass_Key.visible = player_singleton_autoload.getter_grass_key()
+	$Keys/Flower_Key.visible = player_singleton_autoload.getter_flower_key()
+	$Keys/Ground_Key.visible = player_singleton_autoload.getter_ground_key()
+	$Keys/Dessert_Key.visible = player_singleton_autoload.getter_dessert_key()

@@ -68,67 +68,60 @@ text = "LABEL
 "
 
 [node name="Keys" type="GridContainer" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(0, 32)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
+offset_left = -320.0
 offset_bottom = 40.0
 grow_horizontal = 0
 columns = 9
 
-[node name="Pine_Keys" type="TextureRect" parent="Keys" groups=["pine_key"]]
-unique_name_in_owner = true
+[node name="Pine_Keys" type="TextureRect" parent="Keys" groups=["keys", "pine_key"]]
 layout_mode = 2
 texture = ExtResource("4_y1y3y")
 
-[node name="Ice_Key" type="TextureRect" parent="Keys" groups=["ice_key"]]
-unique_name_in_owner = true
+[node name="Ice_Key" type="TextureRect" parent="Keys" groups=["ice_key", "keys"]]
 layout_mode = 2
 texture = ExtResource("5_fw4fl")
 
-[node name="Stone_Key" type="TextureRect" parent="Keys" groups=["stone_key"]]
-unique_name_in_owner = true
+[node name="Stone_Key" type="TextureRect" parent="Keys" groups=["keys", "stone_key"]]
 layout_mode = 2
 texture = ExtResource("6_5dvk6")
 
-[node name="Snow_Fang_Key" type="TextureRect" parent="Keys" groups=["snow_fang_key"]]
-unique_name_in_owner = true
+[node name="Snow_Fang_Key" type="TextureRect" parent="Keys" groups=["keys", "snow_fang_key"]]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("7_igh0v")
 expand_mode = 1
 
-[node name="Frozen_Paw_SecureLock_Key" type="TextureRect" parent="Keys" groups=["frozen_paw_securelock_key"]]
-unique_name_in_owner = true
+[node name="Frozen_Paw_SecureLock_Key" type="TextureRect" parent="Keys" groups=["frozen_paw_securelock_key", "keys"]]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("8_asro1")
 expand_mode = 1
 
-[node name="Grass_Key" type="TextureRect" parent="Keys" groups=["grass_key"]]
-unique_name_in_owner = true
+[node name="Grass_Key" type="TextureRect" parent="Keys" groups=["grass_key", "keys"]]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("9_dqrri")
 expand_mode = 1
 
-[node name="Flower_Key" type="TextureRect" parent="Keys" groups=["flower_key"]]
-unique_name_in_owner = true
+[node name="Flower_Key" type="TextureRect" parent="Keys" groups=["flower_key", "keys"]]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("10_oi5vy")
 expand_mode = 1
 
-[node name="Ground_Key" type="TextureRect" parent="Keys" groups=["ground_key"]]
-unique_name_in_owner = true
+[node name="Ground_Key" type="TextureRect" parent="Keys" groups=["ground_key", "keys"]]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("11_2l8vb")
 expand_mode = 1
 
-[node name="Dessert_Key" type="TextureRect" parent="Keys" groups=["dessert_key"]]
-unique_name_in_owner = true
+[node name="Dessert_Key" type="TextureRect" parent="Keys" groups=["dessert_key", "keys"]]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("12_dmpkh")

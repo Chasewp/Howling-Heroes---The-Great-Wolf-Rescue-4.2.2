@@ -43,3 +43,11 @@ func show_alamanac():
 	_on_howling_finished()
 	AlmanacOpenCloser.wolf_almanac_scene = almanac
 	AlmanacOpenCloser.open_wolf_almanac()
+
+func _on_inside_the_wolf(body):
+	super._on_inside_the_wolf(body)
+	Choirs.play()
+	_on_choirs_finished()
+	
+func _on_choirs_finished():
+	rescue()

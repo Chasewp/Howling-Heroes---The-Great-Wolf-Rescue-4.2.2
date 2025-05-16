@@ -235,7 +235,7 @@ bg_color = Color(1, 0, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63yay"]
 
-[node name="Hunter_MK II" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") groups=["Boss"]]
+[node name="Hunter_MK II" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast") groups=["Boss"]]
 collision_layer = 32
 script = ExtResource("1_4u5wd")
 health_bar = NodePath("Health_Bar")
@@ -243,7 +243,6 @@ armor_bar = NodePath("Armor_Bar")
 enemy_sprites = NodePath("AnimatedSprite2D")
 enemy_sprite_animation = NodePath("AnimatedSprite2D/AnimationPlayer")
 enemy_raycast = NodePath("RayCast2D")
-timers = NodePath("Timer")
 jump = 1
 speed = 300.0
 damage = 25.0

@@ -90,6 +90,8 @@ var current_armor:float
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var save_load = SaveLoadManagerFile.new()
+
 func _init():
 	is_machete_equip = player_singleton_autoload.is_machete_equip
 	is_burst_garou_equip = player_singleton_autoload.is_burst_garou_equip
@@ -155,8 +157,8 @@ func _ready():
 		maganize_lbl.text = str(player_mag)
 		bullets_caps_lbl.text = str(current_ammo)
 		
-	shooting_timer.wait_time = 2.95  # Cooldown 2.5 detik untuk tembak
-	machete_timer.wait_time = 1.85  # Cooldown 3.85 detik untuk slash	
+	shooting_timer.wait_time = 4.95  # Cooldown 2.5 detik untuk tembak
+	machete_timer.wait_time = 3.85  # Cooldown 3.85 detik untuk slash	
 	
 func update_state():
 		if anim_state == state.HURT: 
@@ -285,7 +287,7 @@ func _physics_process(delta):
 	if not reloading_timer.is_stopped():
 		return
 		# shoot
-	if Input.is_action_just_pressed("shoot_brust_garou") and is_burst_garou_equip == true:
+	if Input.is_action_just_pressed("shoot_brust_garou")and player_singleton_autoload.is_burst_garou_equip==true:
 		if current_ammo > 0:
 			anim_state = state.SHOOT
 			shoot()
@@ -293,7 +295,7 @@ func _physics_process(delta):
 		else: 
 			ammo_empty_sfx.play()
 	
-	if Input.is_action_just_pressed("reloading") and is_burst_garou_equip:
+	if Input.is_action_just_pressed("reloading")and player_singleton_autoload.is_burst_garou_equip == true:
 		if current_ammo < player_ammo and player_mag > 0:
 			reloading()
 		
@@ -309,10 +311,6 @@ func _physics_process(delta):
 			interact_label.set_text("Press " + "`Z`" + " to rescue the wolf")
 			interact_panel.visible = true	
 		
-		#var Items = hurt_area_foot.get_overlapping_bodies():
-		#for item in Items:
-			#if item.is_in_group("item"):
-				#print("Item picked up: ", item.name)
 				
 	if player_health <=0:
 		died()	
@@ -337,9 +335,10 @@ func slash():
 	machete_timer.start()
 	
 func shoot():
-	if not shooting_timer.is_stopped() or current_ammo <= 0:  # <-- Cek waktu timer
+	if not shooting_timer.is_stopped():  # <-- Cek waktu timer
 		return
-	
+	if  current_ammo <= 0:
+		return
 	# Tentukan arah hadap berdasarkan posisi mouse
 	var mouse_pos = get_global_mouse_position()
 	player_Sprites.flip_h = mouse_pos.x < global_position.x
@@ -428,9 +427,9 @@ func take_damage(damage:float,is_armor_piercing:bool,AP_dmg :float):
 	var prev_health = player_health
 	var prev_armor = player_armor
 	
-	# Hitung damage ke armor dan health
+	# Calculate damage to armor and health
 	if is_armor_piercing:
-		var armor_damage = (damage * AP_dmg) * 0.15  # Efisiensi armor 15%
+		var armor_damage = (damage * AP_dmg) * 0.15  # Eficient armor 15%
 		var health_damage = damage * (1.0 - AP_dmg)
 		
 		player_armor = max(player_armor - armor_damage, 0)
@@ -446,7 +445,7 @@ func take_damage(damage:float,is_armor_piercing:bool,AP_dmg :float):
 	health_bar.value = player_health
 	armor_bar.value = player_armor
 	
-	# Trigger hurt animation jika ada damage
+	# Trigger hurt animation if get the damage
 	if player_health < prev_health or player_armor < prev_armor:
 		anim_state = state.HURT
 		update_animation(0)
@@ -460,7 +459,9 @@ func died():
 	LoadingScreen.load_scence("res://Assets/Scences/UI/Game over/Game_Over.tscn")
 	queue_free()
 	MissionStatData.reset_data()
-
+	save_load.new_game()
+	WolfData.reset_Wolf_Rescue_data()
+	
 func _on_animation_player_finished(anim_name):
 	if anim_name == "Machete_Attack" or anim_name == "Machete_Attack_Flip":
 		anim_state = state.IDDLE
@@ -478,8 +479,7 @@ func _on_take_item(item: Node2D):
 		print("Item picked up: ", item.name)
 		# You can add more logic here, such as adding the item to an inventory array
 		# or applying its effect to the player.
-
-
+		
 func _on_sfx_reloading_voice_finished():
 	reloading_riffle_sfx.play()
 

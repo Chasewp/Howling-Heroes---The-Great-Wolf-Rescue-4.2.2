@@ -39,8 +39,11 @@ overrides = {
 "bold_font": "\"res://Assets/Fonts/DisposableDroidBB_bld.ttf\"",
 "bold_italics_font": "\"res://Assets/Fonts/DisposableDroidBB_bldital.ttf\"",
 "italics_font": "\"res://Assets/Fonts/DisposableDroidBB_ital.ttf\"",
+"name_label_box_modulate": "Color(1, 0.972656, 0.972656, 1)",
+"name_label_custom_color": "Color(0.984375, 0.976685, 0.976685, 1)",
 "next_indicator_size": "Vector2(75, 75)",
-"next_indicator_texture": "\"res://Assets/Image/etc/Dialogue/NEXT_LINE_INDICATOR/7116bae26a854748edad8552e503e776H0f4LoJC35cXIVjD-0.png\""
+"next_indicator_texture": "\"7116bae26a854748edad8552e503e776H0f4LoJC35cXIVjD-0.png\"",
+"normal_font": "\"res://Assets/Fonts/DisposableDroidBB.ttf\""
 }
 
 [sub_resource type="Resource" id="Resource_n7720"]
@@ -80,4 +83,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_5dqx6")]([])
-metadata/_latest_layer = "10"
+metadata/_latest_layer = "13"

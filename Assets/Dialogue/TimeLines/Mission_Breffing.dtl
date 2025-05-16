@@ -17,19 +17,19 @@ Would you prefer to skip the mission briefing?
 	join "Character/Sergant Lupine" rightmost [animation="Slide In Right" length="0.6"]
 	[music path="res://Assets/Music/Music/Backsound/MIssion _Breffing/UWF HQ Backsound.mp3" fade="0.0" volume="-15.0" bus="SFX"]
 	[voice path="res://Assets/Music/Dialogues/Mission_Breafing/Intro-2(Sergeant Lupine - 1) full_radio.wav" volume="0.0" bus="Voice"]
-	"Sergant Lupine": This is Sergeant Lupine from United Wolves Federation Headquarters. Do you copy? Over.
+	"Character/Sergant Lupine": This is Sergeant Lupine from United Wolves Federation Headquarters. Do you copy? Over.
 	leave "Character/Sergant Lupine" [animation="Instant Out" length="0.3"]
 	[background arg="res://Assets/Image/Background/Stage/Taiga/pixel_art_A_breathtaking_scene.jpeg" fade="0.2"]
 	[music path="res://Assets/Music/Music/Backsound/MIssion _Breffing/Player_SFX.mp3" fade="0.0" volume="-15.0" bus="SFX"]
 	join Character/Player leftmost [animation="Slide In Left"]
 	[voice path="res://Assets/Music/Dialogues/Mission_Breafing/Intro-3(Player - 1) full_radio.wav" volume="0.0" bus="Voice"]
-	Player: Copy and clear, Sergeant. This is the Player the wolf ranger and wolf biologist. Over.
+	Character/Player: Copy and clear, Sergeant. This is the Player the wolf ranger and wolf biologist. Over.
 	leave Character/Player [animation="Instant Out"]
 	[background arg="res://Assets/Image/Background/Intro_Com-link/Intro_com-link.png" fade="0.2" transition="Simple Fade"]
 	[music path="res://Assets/Music/Music/Backsound/MIssion _Breffing/UWF HQ Backsound.mp3" fade="0.0" volume="-15.0" bus="SFX"]
 	join "Character/Sergant Lupine" rightmost [animation="Slide In Right" length="0.6"]
 	[voice path="res://Assets/Music/Dialogues/Mission_Breafing/Intro-4(Sergeant Lupine - 2) full_radio.wav" volume="0.0"]
-	"Sergant Lupine": Your mission is to rescue 27 wolves species across four biomes\: taiga, tundra, grassland, and desert. You will be equipped with a machete and an assault rifle. In order to obtain the key to the cages, you must eliminate the designated boss. Upon completing this objective, the chest containing the key will be dropped, allowing you to proceed with the rescue. Over.
+	"Character/Sergant Lupine": Your mission is to rescue 27 wolves species across four biomes\: taiga, tundra, grassland, and desert. You will be equipped with a machete and an assault rifle. In order to obtain the key to the cages, you must eliminate the designated boss. Upon completing this objective, the chest containing the key will be dropped, allowing you to proceed with the rescue. Over.
 	leave "Character/Sergant Lupine" [animation="Instant Out" length="0.3"]
 	[background arg="res://Assets/Image/Background/Stage/Taiga/pixel_art_A_breathtaking_scene.jpeg" fade="0.2"]
 	[music path="res://Assets/Music/Music/Backsound/MIssion _Breffing/Player_SFX.mp3" fade="0.0" volume="-15.0" bus="SFX"]
@@ -41,13 +41,13 @@ Would you prefer to skip the mission briefing?
 	[music path="res://Assets/Music/Music/Backsound/MIssion _Breffing/UWF HQ Backsound.mp3" fade="0.0" volume="-15.0" bus="SFX"]
 	join "Character/Sergant Lupine" rightmost [animation="Slide In Right" length="0.6"]
 	[voice path="res://Assets/Music/Dialogues/Mission_Breafing/Intro-6(Sergeant Lupine - 3) full_radio.wav" volume="0.0" bus="Voice"]
-	"Sergant Lupine": Very well. If you are prepared, proceed with caution. Farewell, and good luck on your mission. Sergeant Lupine, over and out.
+	"Character/Sergant Lupine": Very well. If you are prepared, proceed with caution. Farewell, and good luck on your mission. Sergeant Lupine, over and out.
 	leave "Character/Sergant Lupine" [animation="Instant Out" length="0.3"]
 	[background arg="res://Assets/Image/Background/Stage/Taiga/pixel_art_A_breathtaking_scene.jpeg" fade="0.2"]
 	[music path="res://Assets/Music/Music/Backsound/MIssion _Breffing/Player_SFX.mp3" fade="0.0" volume="-15.0" bus="SFX"]
 	join Character/Player leftmost [animation="Slide In Left"]
 	[voice path="res://Assets/Music/Dialogues/Mission_Breafing/Intro-7(Player- 3) full_radio.wav" volume="0.0" bus="Voice"]
-	Player: Player, over and out.
-	leave Player [animation="Instant Out"]
+	Character/Player: Player, over and out.
+	leave  [animation="Instant Out"]
 	[music fade="0.0" volume="0.0"]
 	[signal arg="Change_Scence"]

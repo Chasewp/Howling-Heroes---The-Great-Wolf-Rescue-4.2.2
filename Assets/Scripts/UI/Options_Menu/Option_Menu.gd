@@ -1,4 +1,3 @@
-class_name Option_Menu
 extends Control
 
 "Cursor"

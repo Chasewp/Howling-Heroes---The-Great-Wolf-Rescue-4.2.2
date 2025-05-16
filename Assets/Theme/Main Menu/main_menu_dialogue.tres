@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cu5rkp7vl04w3"]
+
+[ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="1_vqhaf"]
+
+[resource]
+default_font = ExtResource("1_vqhaf")
+default_font_size = 24
+AcceptDialog/font_sizes/pixel_font_size = 24
+AcceptDialog/fonts/pixelize = ExtResource("1_vqhaf")

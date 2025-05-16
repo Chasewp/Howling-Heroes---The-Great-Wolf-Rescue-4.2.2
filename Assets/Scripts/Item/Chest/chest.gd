@@ -1,5 +1,5 @@
 class_name Chest
-extends StaticBody2D
+extends Area2D
 
 @export var key_scene : PackedScene  # Assign scene key di inspector
 @onready var animation_player = $AnimationPlayer
@@ -15,8 +15,8 @@ func _ready():
 
 func boss_defeated():
 	closed_sprite.visible = true
-	animation_player.play("appear")
-	await animation_player.animation_finished
+	#animation_player.play("appear")
+	#await animation_player.animation_finished
 	set_collision_layer_value(16, true)  # Aktifkan collision setelah animasi
 
 func _on_body_entered(body):
@@ -26,7 +26,7 @@ func _on_body_entered(body):
 func open_chest():
 	is_opened = true
 	animation_player.play("open")
-	$ChestOpenSFX.play()
+	#$ChestOpenSFX.play()
 	
 	await animation_player.animation_finished
 	spawn_key()

@@ -6,13 +6,13 @@ From the Taiga forest, UWF HQ (United Wolves Federation Headquarters) reaches ou
 join "Character/Sergant Lupine" rightmost [animation="Slide In Right" length="0.6"]
 [music path="res://Assets/Music/Music/Backsound/MIssion _Breffing/UWF HQ Backsound.mp3" fade="0.0" volume="-15.0" bus="SFX"]
 [voice path="res://Assets/Music/Dialogues/Mission_Breafing/Intro-2(Sergeant Lupine - 1) full_radio.wav" volume="0.0" bus="Voice"]
-"Sergant Lupine": This is Sergeant Lupine from United Wolves Federation Headquarters. Do you copy? Over.
+"Character/Sergant Lupine": This is Sergeant Lupine from United Wolves Federation Headquarters. Do you copy? Over.
 leave "Character/Sergant Lupine" [animation="Instant Out" length="0.3"]
 [background arg="res://Assets/Image/Background/Stage/Dessert/8.png" fade="0.2"]
 [music path="res://Assets/Music/SFX/Wind/wind1.wav" fade="0.0" volume="-15.0" bus="SFX"]
 join Character/Player leftmost [animation="Slide In Left"]
 [voice path="res://Assets/Music/Dialogues/Mission_Breafing/Intro-3(Player - 1) full_radio.wav" volume="0.0" bus="Voice"]
-Player: Copy and clear, Sergeant. This is the Player the wolf ranger and wolf biologist. Over.
+Character/Player: Copy and clear, Sergeant. This is the Player the wolf ranger and wolf biologist. Over.
 leave Character/Player [animation="Instant Out"]
 [background arg="res://Assets/Image/Background/Intro_Com-link/Intro_com-link.png" fade="0.2" transition="Simple Fade"]
 [music path="res://Assets/Music/Music/Backsound/MIssion _Breffing/UWF HQ Backsound.mp3" fade="0.0" volume="-15.0" bus="SFX"]
@@ -24,7 +24,7 @@ leave "Character/Sergant Lupine" [animation="Instant Out" length="0.3"]
 [music path="res://Assets/Music/SFX/Wind/wind1.wav" fade="0.0" volume="-3.0" bus="SFX"]
 join Character/Player leftmost [animation="Slide In Left"]
 [voice path="res://Assets/Music/Dialogues/Mission_Finish/Player_D1_Mission(Full_Radio).wav" volume="0.0" bus="Voice"]
-Player: Thank you, Sergeant. It was my honor to serve. Over.
+Character/Player: Thank you, Sergeant. It was my honor to serve. Over.
 leave Character/Player [animation="Slide In Left"]
 [background arg="res://Assets/Image/Background/Intro_Com-link/Intro_com-link.png" fade="0.2" transition="Simple Fade"]
 [music path="res://Assets/Music/Music/Backsound/MIssion _Breffing/UWF HQ Backsound.mp3" fade="0.0" volume="-15.0" bus="SFX"]
@@ -36,6 +36,6 @@ leave "Character/Sergant Lupine" [animation="Instant Out" length="0.3"]
 [music path="res://Assets/Music/SFX/Wind/wind1.wav" fade="0.0" volume="-3.0" bus="SFX"]
 join Character/Player leftmost [animation="Slide In Left"]
 [voice path="res://Assets/Music/Dialogues/Mission_Finish/Player_D2_Mission(Full_Radio).wav" volume="0.0" bus="Voice"]
-Player: My pleasure, Sergeant. Player, over and out.
+Character/Player: My pleasure, Sergeant. Player, over and out.
 leave Character/Player [animation="Slide In Left"]
 [signal arg="quit_game"]

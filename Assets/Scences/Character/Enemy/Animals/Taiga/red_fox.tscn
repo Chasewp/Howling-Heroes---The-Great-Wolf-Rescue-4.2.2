@@ -1360,7 +1360,7 @@ size = Vector2(58.7098, 67)
 [sub_resource type="CircleShape2D" id="CircleShape2D_6kgwd"]
 radius = 33.664
 
-[node name="Red_fox" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers") groups=["enemy"]]
+[node name="Red_fox" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast") groups=["enemy"]]
 collision_layer = 32
 collision_mask = 3
 script = ExtResource("1_ryo0h")
@@ -1371,7 +1371,6 @@ hurt_box = NodePath("Hurt_Box")
 enemy_sprites = NodePath("AnimatedSprite2D")
 enemy_sprite_animation = NodePath("AnimatedSprite2D/AnimationPlayer")
 enemy_raycast = NodePath("RayCast2D")
-timers = NodePath("Timer")
 hlt = 200.0
 arm = 15.0
 jump = 2

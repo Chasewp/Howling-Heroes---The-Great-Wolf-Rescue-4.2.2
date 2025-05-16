@@ -16,7 +16,7 @@ func _ready():
 	super._ready()
 	left_bounds = global_position + Vector2(-300, 0)
 	right_bounds = global_position + Vector2(300, 0)
-	timers.wait_time = attack_cooldown
+	#timers.wait_time = attack_cooldown
 	fire_timer.stop()
 
 # Fungsi untuk dijalankan saat pemain masuk area trigger
@@ -44,7 +44,7 @@ func change_direction():
 	
 	# Jika dalam jarak serang
 	if global_position.distance_to(target_player.global_position) < attack_range:
-		if can_attack and not is_attacking:  # Prevent overlapping attacks
+		if  not is_attacking:  # Prevent overlapping attacks
 			animate_state = state.ATTACK
 			attack()
 		return
@@ -73,12 +73,11 @@ func change_direction():
 		enemy_sprites.flip_h = false
 
 func attack():
-	if not can_attack or not is_instance_valid(target_player) or is_attacking:
+	if not is_instance_valid(target_player) or is_attacking:
 		return
 	
 	is_attacking = true  # Set attacking flag
-	can_attack = false
-	timers.start()
+	
 	
 	# Trigger animasi serangan
 	enemy_sprite_animation.play("Attack")
@@ -92,8 +91,6 @@ func attack():
 	animate_state = state.RUNNING
 	is_attacking = false  # Reset attacking flag
 
-func _on_attack_cooldown_timeout():
-	can_attack = true
 
 
 func died():
@@ -110,11 +107,14 @@ func died():
 	chest.key_scene = pine_key_scene
 	
 	# 4. Posisikan chest dan tambahkan ke scene
-	chest.position = global_position + Vector2(0, -50)
+	chest.position = global_position + Vector2(0,0)
 	get_parent().add_child(chest)
 	
 	# 5. Panggil fungsi munculkan chest
 	chest.boss_defeated()
+	
+	#6 Update Boss Killed
+	MissionStatData.update_boss_kills()
 	queue_free()
 	
 

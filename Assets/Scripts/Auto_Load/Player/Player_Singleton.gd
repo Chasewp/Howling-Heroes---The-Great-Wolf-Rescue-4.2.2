@@ -2,6 +2,7 @@
 class_name Player_Singleton
 extends Node
 
+signal Keys_updated
 # Variables class
 @export_category("Variable Class")
 @export var name_character : String :
@@ -28,7 +29,7 @@ extends Node
 	set = setter_magazine_stock,
 	get = getter_magazine_stock
 
-@export var is_machete_equip : bool :
+@export var is_machete_equip : bool:
 	set = setter_machete_equip,
 	get = getter_machete_equip
 	
@@ -175,35 +176,36 @@ func setter_brust_garou_equip(brust_garou:bool):
 #Setter Pine_Key
 func setter_pine_key(value:bool):
 	is_have_pine_key = value
-	
+	emit_signal("Keys_updated")
 #Setter Ice_Key
 func setter_ice_key(value:bool):
 	is_have_ice_key = value
-
+	emit_signal("Keys_updated")
 #Setter Stone_Key
 func setter_stone_key(value:bool):
 	is_have_stone_key = value
-
+	emit_signal("Keys_updated")
 #Setter Snow_Fang_Key
 func setter_snow_fang_key(value:bool):
 	is_have_snow_fang_key = value
-	
+	emit_signal("Keys_updated")
 #Setter Frozen_Paw_Securelock_Key
 func setter_frozen_paw_securelock_key(value:bool):
 	is_have_frozen_paw_securelook_key = value
-	
+	emit_signal("Keys_updated")
 #Setter Grass_Key
 func setter_grass_key(value:bool):
 	is_have_grass_key = value
-	
+	emit_signal("Keys_updated")
 #Setter Flower Key
 func setter_flower_key(value:bool):
 	is_have_flower_key = value
-
+	emit_signal("Keys_updated")
 #Setter Ground Key
 func setter_ground_key(value:bool):
 	is_have_ground_key = value
-
+	emit_signal("Keys_updated")
 #Setter Dessert Key
 func setter_dessert_key(value:bool):
 	is_have_dessert_key = value
+	emit_signal("Keys_updated")

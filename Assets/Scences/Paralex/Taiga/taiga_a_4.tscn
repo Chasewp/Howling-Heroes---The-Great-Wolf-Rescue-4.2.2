@@ -18,9 +18,12 @@ shader_parameter/sharpness = 10.0
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
-offset_left = 8090.0
-offset_right = 8090.0
+offset_left = 8942.0
+offset_top = -30.0
+offset_right = 16942.0
+offset_bottom = 720.0
 texture = ExtResource("1_e8gat")
+expand_mode = 1
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]

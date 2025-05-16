@@ -523,7 +523,7 @@ func _set_Eurasian_Wolf_Rescue_Status(status:bool):
 	Data_Wolves["Eurasian Wolf"]["Rescued"] = status
 	var _eurasian_Wolf_Rescue_Status_Rescued = FileAccess.open(WOLVES_LIST_DATA,FileAccess.WRITE)
 	_eurasian_Wolf_Rescue_Status_Rescued.store_line(JSON.stringify(Data_Wolves))
-	_eurasian_Wolf_Rescue_Status_Rescued.closed()
+	_eurasian_Wolf_Rescue_Status_Rescued.close()
 #######################################################################
 #9
 #Gray Wolf 

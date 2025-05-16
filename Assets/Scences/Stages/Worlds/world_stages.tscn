@@ -24,7 +24,6 @@ unique_name_in_owner = true
 script = ExtResource("1_fswvq")
 
 [node name="Taiga_A1_Word_Starter" parent="WorldRoot" instance=ExtResource("2_8kyh3")]
-next_level = "res://Assets/Scences/Stages/Taiga/taiga_a_3.tscn"
 
 [node name="Player" parent="." instance=ExtResource("3_xb5hv")]
 unique_name_in_owner = true
@@ -41,13 +40,13 @@ top_level = true
 [node name="Mission" parent="UI" instance=ExtResource("6_qn67d")]
 top_level = true
 anchor_left = 0.857
-anchor_top = 0.379
-anchor_right = 1.0
-anchor_bottom = 0.679
-offset_left = 0.039917
-offset_top = 0.119995
-offset_right = 1.0
-offset_bottom = 0.119995
+anchor_top = 0.161
+anchor_right = 0.996
+anchor_bottom = 0.461
+offset_left = -5.95996
+offset_top = 0.0799866
+offset_right = 0.119995
+offset_bottom = 0.0799866
 grow_horizontal = 0
 
 [node name="Save" type="Button" parent="UI"]
