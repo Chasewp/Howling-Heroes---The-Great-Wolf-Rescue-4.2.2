@@ -15,9 +15,9 @@ func rescue():
 	Howling_SFX.play()
 	print("The " + Wolf_Name + " have been rescued")
 	show_alamanac()
-	queue_free()
 	MissionStatData.update_wolf_rescue()
-
+	remove_child(self)
+	
 func show_alamanac():
 	var almanac = book_alamanac.instantiate()
 	# Wolf Image

@@ -9,9 +9,9 @@ extends Enemy_Main_Class
 
 # Variabel kontrol aktivasi
 var is_activated := false
-	
 var is_attacking := false  # New flag to prevent overlapping attacks
 var enemy_bullet = load("res://Assets/Scences/Items/Bullets/Riffle_Bullets/Enemy_Bullets-Pistol.tscn")
+
 func _ready():
 	super._ready()
 	left_bounds = global_position + Vector2(-300, 0)

@@ -21,7 +21,6 @@ func _on_visible_on_screen_enabler_2d_screen_exited():
 
 func on_area_inbound(area):
 	if area.is_in_group("player_hurtbox"):
-			has_hit = true
 			queue_free()
 
 func on_body_inbound(body):

@@ -394,8 +394,15 @@ bg_color = Color(1, 0, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpkd2"]
 
-[node name="Tiger" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast", "timers")]
+[node name="Tiger" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast")]
 script = ExtResource("1_bblrp")
+health_bar = NodePath("Health_Bar")
+armor_bar = NodePath("Armor_Bar")
+hit_box = NodePath("Hitboxes")
+hurt_box = NodePath("Hurtboxes")
+enemy_sprites = NodePath("AnimatedSprite2D")
+enemy_sprite_animation = NodePath("AnimatedSprite2D/AnimationPlayer")
+enemy_raycast = NodePath("RayCast2D")
 hlt = 450.0
 arm = 35.0
 jump = 2
@@ -404,14 +411,6 @@ damage = 18.0
 Acceleration = 15.0
 Jump_velocity = -400.0
 eficient_Armor = 0.35
-health_bar = NodePath("Health_Bar")
-armor_bar = NodePath("Armor_Bar")
-hit_box = NodePath("Hitboxes")
-hurt_box = NodePath("Hurtboxes")
-enemy_sprites = NodePath("AnimatedSprite2D")
-enemy_sprite_animation = NodePath("AnimatedSprite2D/AnimationPlayer")
-enemy_raycast = NodePath("RayCast2D")
-timers = NodePath("Timer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4txun")

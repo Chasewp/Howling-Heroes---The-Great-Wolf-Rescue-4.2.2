@@ -5,13 +5,14 @@ extends Level
 @onready var platfrom = $platfrommAnimationPlayer
 
 # Bos 1 & Stage 1
-@onready var required5enemyexecutedsound = $"Bos_Encounter/Bos_1/Teleport_Stage/Required 5 enemy executed"
-@onready var teleport_to_bos_1_position = $Bos_Encounter/Bos_1/Teleport_Stage/destination
-@onready var labelrequired5enemyexecuted = $"Bos_Encounter/Bos_1/Teleport_Stage/Panel 5 required enemy"
-
+@onready var required5enemyexecutedsound = $"Bos_Encounter/Bos_1/Ecounter_To_bos/Required 5 enemy executed"
+@onready var teleport_to_bos_1_position = $Bos_Encounter/Bos_1/Ecounter_To_bos/destination
+@onready var labelrequired5enemyexecuted = $"Bos_Encounter/Bos_1/Ecounter_To_bos/Panel 5 required enemy"
+#
 #Bos 1 Executed
-@onready var teleport_to_wolf_cage = $Bos_Encounter/Bos_1/Teleport_Stage2/destination
-@onready var teleport_wolf_cage = $Bos_Encounter/Bos_1/Teleport_Stage2
+@onready var teleport_to_wolf_cage = $Bos_Encounter/Bos_1/cave_teleporter_To_Wolf_Cage/Area2D/Marker2D
+@onready var teleport_wolf_cage = $Bos_Encounter/Bos_1/cave_teleporter_To_Wolf_Cage
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	music.play()
@@ -99,12 +100,12 @@ func _on_teleport_stage_body_exited(body):
 		labelrequired5enemyexecuted.visible = false
 		required5enemyexecutedsound.stop()
 
-func _on_boss1_executed_body_enter(body):
-	if body.is_in_group("player"):
-		body.set_position(teleport_to_wolf_cage.global_position)
-		
-
-func _on_bos1_executed_bos_exited(body):
-	if body.is_in_group("player"):
-		teleport_wolf_cage.DISABLE_MODE_REMOVE
-		teleport_wolf_cage.visible = false
+#func _on_boss1_executed_body_enter(body):
+	#if body.is_in_group("player"):
+		#body.set_position(teleport_to_wolf_cage.global_position)
+		#
+#
+#func _on_bos1_executed_bos_exited(body):
+	#if body.is_in_group("player"):
+		#teleport_wolf_cage.DISABLE_MODE_REMOVE
+		#teleport_wolf_cage.visible = false

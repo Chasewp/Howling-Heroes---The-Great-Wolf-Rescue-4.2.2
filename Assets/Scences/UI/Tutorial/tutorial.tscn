@@ -3819,6 +3819,7 @@ player_name = "Player"
 player_health = 100.0
 player_armor = 100.0
 player_biome = "Taiga"
+world_root = NodePath("..")
 is_machete_equip = true
 is_burst_garou_equip = true
 health_bar = NodePath("Progress bar/Health_Bar")
@@ -4115,7 +4116,7 @@ hurt_box = NodePath("Hurt_Box")
 enemy_sprites = NodePath("AnimatedSprite2D")
 enemy_sprite_animation = NodePath("AnimatedSprite2D/AnimationPlayer")
 enemy_raycast = NodePath("RayCast2D")
-hlt = 100.0
+hlt = 95.0
 arm = 15.0
 jump = 2
 speed = 320.0
@@ -4257,6 +4258,11 @@ position = Vector2(617, 359)
 
 [node name="Brust_garaou" parent="." instance=ExtResource("86_2snt5")]
 position = Vector2(494, 344)
+
+[node name="background_color" type="ColorRect" parent="."]
+offset_right = 1286.0
+offset_bottom = 718.0
+color = Color(0.25098, 0.25098, 0.25098, 1)
 
 [connection signal="canceled" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_canceled"]
 [connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]

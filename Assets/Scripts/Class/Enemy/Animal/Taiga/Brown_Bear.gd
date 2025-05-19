@@ -14,8 +14,6 @@ func _ready():
 	# Set patrol bounds relative to spawn position
 	left_bounds = global_position + Vector2(-300, 0)
 	right_bounds = global_position + Vector2(300, 0)
-	timers.wait_time = attack_cooldown
-	timers.connect("timeout", Callable(self, "_on_attack_cooldown_timeout")) 
 	# Start with random initial direction
 	patrol_direction = 1 if randf() > 0.5 else -1  
 	enemy_raycast.target_position = Vector2(attack_range, 0)
@@ -57,9 +55,8 @@ func change_direction():
 	
 	# 1. LOGICA SERANG
 	if distance_to_player < attack_range and can_see_player:
-		if can_attack:
-			animate_state = state.ATTACK
-			attack()
+		animate_state = state.ATTACK
+		attack()
 		is_chasing = true
 		return
 	
@@ -100,11 +97,7 @@ func patrol_behavior():
 				if is_instance_valid(self) and is_instance_valid(enemy_sprites) and animate_state == state.IDDLE:
 					animate_state = state.RUNNING
 		)
-func _on_attack_cooldown_timeout():
-	can_attack = true
-	# Reset state setelah cooldown
-	if animate_state != state.HURT and animate_state != state.DIED:
-		animate_state = state.RUNNING
+
 		
 func handle_movement(delta:float):
 	# Use appropriate speed based on state

@@ -22,8 +22,6 @@ var animate_state  = state.IDDLE
 @export var enemy_sprite_animation : AnimationPlayer
 @export var enemy_raycast : RayCast2D
 
-
-
 @export_category("Enemy Class Variable")
 @export var hlt : float
 @export var arm : float

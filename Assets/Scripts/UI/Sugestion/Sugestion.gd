@@ -11,4 +11,4 @@ func _ready():
 
 func _on_audio_stream_player_2d_finished():
 	fade_animation.play("Fade_out")
-	LoadingScreen.load_scence("res://Assets/Scences/UI/Tutorial/tutorial.tscn")
+	get_tree().change_scene_to_file("res://Assets/Scences/UI/Tutorial/tutorial.tscn")

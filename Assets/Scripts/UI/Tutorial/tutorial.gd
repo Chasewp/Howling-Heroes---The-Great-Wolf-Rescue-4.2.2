@@ -10,6 +10,7 @@ extends Node2D
 @onready var dialogenarator = $Dialogue_narator
 @onready var wordstilesets = $tilesets
 @onready var keyhintlbl = $Key_hint
+@onready var background_color = $background_color
 # Mr Wolf
 @onready var mrwolf= $Mr_Wolf
 @onready var mrwolflabeldialog = $"Mr Wolf Label"
@@ -92,6 +93,7 @@ func _on_sfx_alert_finished():
 func _on_confirmation_dialog_canceled():
 	dialogue_text.visible = true
 	dialogue_text.text = "No, Good Choose."
+	background_color.visible = false
 	dialogejoin.play()
 
 func _on_dialogue_leave_tutorial_finished():
