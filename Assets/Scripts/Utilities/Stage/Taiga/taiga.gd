@@ -10,7 +10,7 @@ extends Level
 @onready var labelrequired5enemyexecuted = $"Bos_Encounter/Bos_1/Ecounter_To_bos/Panel 5 required enemy"
 #
 #Bos 1 Executed
-@onready var teleport_to_wolf_cage = $Bos_Encounter/Bos_1/cave_teleporter_To_Wolf_Cage/Area2D/Marker2D
+@onready var teleport_to_wolf_cage = $Bos_Encounter/Bos_1/cave_teleporter_To_Wolf_Cage/Area2D/Marker2D 
 @onready var teleport_wolf_cage = $Bos_Encounter/Bos_1/cave_teleporter_To_Wolf_Cage
 
 # Called when the node enters the scene tree for the first time.

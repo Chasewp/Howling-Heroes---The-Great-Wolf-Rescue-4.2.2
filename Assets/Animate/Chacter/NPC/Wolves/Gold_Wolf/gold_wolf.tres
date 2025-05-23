@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://ca3nxfrskgtde"]
 
-[ext_resource type="Texture2D" uid="uid://dlkm84fflcm4j" path="res://Assets/Image/Character/Wolves/Gold/Gold_Wolf.png" id="2_o2pmx"]
+[ext_resource type="Texture2D" uid="uid://u81apnvsyehj" path="res://Assets/Image/Character/Wolves/Gold/Gold_Wolf.png" id="2_o2pmx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nhnfu"]
 atlas = ExtResource("2_o2pmx")

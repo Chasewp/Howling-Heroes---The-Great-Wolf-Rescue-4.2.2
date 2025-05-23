@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://wh1qjrf1tb56"]
+[gd_scene load_steps=10 format=3 uid="uid://wh1qjrf1tb56"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/UI/Options_Menu/Option_Menu.gd" id="1_jaa75"]
 [ext_resource type="Texture2D" uid="uid://ca37ndc8femkj" path="res://Assets/Image/images/Background/Option/Settings.jpeg" id="1_o1l7c"]
 [ext_resource type="AudioStream" uid="uid://ty2bg0clrp0t" path="res://Assets/Music/All Button/Quit_Button.mp3" id="2_1nk4j"]
 [ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="2_al8ah"]
+[ext_resource type="AudioStream" uid="uid://cduvbt2ruia6n" path="res://Assets/Music/Music/Backsound/Main_Menu/Howling_Heroes-OST.mp3" id="5_bvspm"]
+[ext_resource type="FontFile" uid="uid://bv6xsykw7vcai" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="5_xmlq0"]
+[ext_resource type="FontFile" uid="uid://b37vftxdinymo" path="res://Assets/Fonts/DisposableDroidBB_ital.ttf" id="6_6top6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_klgu7"]
 
@@ -231,6 +234,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_klgu7")
 text = "Back"
 
 [node name="Save_Button" type="Button" parent="Backkground/Options Menu/Buttons"]
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("2_al8ah")
@@ -239,11 +243,46 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_ifj1x")
 text = "Save
 "
 
+[node name="Info Label" type="RichTextLabel" parent="Backkground"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.675
+anchor_right = 0.47
+anchor_bottom = 0.844
+offset_right = -0.600037
+offset_bottom = 0.319946
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("2_al8ah")
+theme_override_fonts/bold_font = ExtResource("5_xmlq0")
+theme_override_fonts/italics_font = ExtResource("6_6top6")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[b]Info[/b]
+[b]Slide Left (⬅️)[/b] : Lowers volume by [b]-1dB [/b]
+[b]Slide Right (➡️)[/b] : Boosts volume by [b]+1dB[/b]
+[b]Left position[/b]  : Default [b]0dB[/b]
+"
+
+[node name="Backsound_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_bvspm")
+volume_db = -8.0
+bus = &"Music"
+
 [connection signal="item_selected" from="Backkground/Options Menu/Settings_Option_Tab_Menu/Video/Video_Settings/Display_Mode_Option" to="." method="_on_display_mode_option_item_selected"]
 [connection signal="toggled" from="Backkground/Options Menu/Settings_Option_Tab_Menu/Video/Video_Settings/V_Sync_Switch" to="." method="_on_v_sync_switch_pressed"]
+[connection signal="mouse_entered" from="Backkground/Options Menu/Settings_Option_Tab_Menu/Audio" to="." method="_on_audio_mouse_entered"]
+[connection signal="mouse_exited" from="Backkground/Options Menu/Settings_Option_Tab_Menu/Audio" to="." method="_on_audio_mouse_exited"]
+[connection signal="mouse_entered" from="Backkground/Options Menu/Settings_Option_Tab_Menu/Audio/Audio_Settings/Master_Volume_Setings/Master_Slider" to="." method="_on_master_slider_mouse_entered"]
+[connection signal="mouse_exited" from="Backkground/Options Menu/Settings_Option_Tab_Menu/Audio/Audio_Settings/Master_Volume_Setings/Master_Slider" to="." method="_on_master_slider_mouse_exited"]
 [connection signal="value_changed" from="Backkground/Options Menu/Settings_Option_Tab_Menu/Audio/Audio_Settings/Master_Volume_Setings/Master_Slider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="Backkground/Options Menu/Settings_Option_Tab_Menu/Audio/Audio_Settings/Music_Volume_Setings/Music_Slider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="Backkground/Options Menu/Settings_Option_Tab_Menu/Audio/Audio_Settings/Voice_Volume_Setings/Voice_Slider" to="." method="_on_voice_slider_value_changed"]
 [connection signal="value_changed" from="Backkground/Options Menu/Settings_Option_Tab_Menu/Audio/Audio_Settings/SFX_Volume_Setings/SFX_Slider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="mouse_entered" from="Backkground/Options Menu/Buttons/Back_Button" to="." method="on_mouse_entered"]
+[connection signal="mouse_exited" from="Backkground/Options Menu/Buttons/Back_Button" to="." method="on_mouse_exited"]
 [connection signal="pressed" from="Backkground/Options Menu/Buttons/Back_Button" to="." method="_on_back_button_pressed"]
+[connection signal="mouse_entered" from="Backkground/Options Menu/Buttons/Save_Button" to="." method="on_mouse_entered"]
+[connection signal="mouse_exited" from="Backkground/Options Menu/Buttons/Save_Button" to="." method="on_mouse_exited"]
 [connection signal="pressed" from="Backkground/Options Menu/Buttons/Save_Button" to="." method="_on_save_button_pressed"]

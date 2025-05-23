@@ -1,39 +1,36 @@
 [gd_scene load_steps=24 format=3 uid="uid://kcc5o6h6mu5s"]
 
-[ext_resource type="Texture2D" uid="uid://onphxq86dlns" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/9 Background.png" id="1_2f8gq"]
-[ext_resource type="Texture2D" uid="uid://ckj00fnryecer" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/8 Stars.png" id="2_577sp"]
-[ext_resource type="Texture2D" uid="uid://djjt7ivduxm3j" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/6 Sun.png" id="2_pcmlc"]
-[ext_resource type="Texture2D" uid="uid://nn8hua44ej52" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/8 Stars2.png" id="3_bh761"]
-[ext_resource type="Texture2D" uid="uid://bhdffk1itbdyu" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/5 Mountains.png" id="3_onb15"]
-[ext_resource type="Texture2D" uid="uid://qjkeiih5jdvr" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/7 Clouds.png" id="4_2qygd"]
+[ext_resource type="Texture2D" uid="uid://kqrplxc3r6kp" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/9 Background.png" id="1_2f8gq"]
+[ext_resource type="Texture2D" uid="uid://dbpy2hl8ae1yr" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/8 Stars.png" id="2_577sp"]
+[ext_resource type="Texture2D" uid="uid://bjkedq2qkw8i7" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/6 Sun.png" id="2_pcmlc"]
+[ext_resource type="Texture2D" uid="uid://bxa8asxbu5prk" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/8 Stars2.png" id="3_bh761"]
+[ext_resource type="Texture2D" uid="uid://be0dlcp1ho3ta" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/5 Mountains.png" id="3_onb15"]
+[ext_resource type="Texture2D" uid="uid://2xosya8i2glh" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/7 Clouds.png" id="4_2qygd"]
 [ext_resource type="Shader" path="res://Assets/Scences/Stages/Tundra/auto_scroller.gdshader" id="4_65h55"]
-[ext_resource type="Texture2D" uid="uid://cbf5jqslactiq" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/7 Clouds2.png" id="5_pnrys"]
-[ext_resource type="Texture2D" uid="uid://d3xgg40071q3g" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/4 Layer4.png" id="8_s51lt"]
-[ext_resource type="Texture2D" uid="uid://dmc8c0opmiksw" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/3 Layer3.png" id="9_8ub03"]
-[ext_resource type="Texture2D" uid="uid://dwdbsgk4xeine" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/2 Layer2.png" id="10_qv1k5"]
-[ext_resource type="Texture2D" uid="uid://bvj1vykmxpnbk" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/1 Layer1.png" id="12_ftw8x"]
+[ext_resource type="Texture2D" uid="uid://bgu2aopn2s3ks" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/7 Clouds2.png" id="5_pnrys"]
+[ext_resource type="Texture2D" uid="uid://47hom3atbkqs" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/4 Layer4.png" id="8_s51lt"]
+[ext_resource type="Texture2D" uid="uid://j76lr7urnjn8" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/3 Layer3.png" id="9_8ub03"]
+[ext_resource type="Texture2D" uid="uid://cvh1nbp81icnu" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/2 Layer2.png" id="10_qv1k5"]
+[ext_resource type="Texture2D" uid="uid://b50ys3tq4ocpg" path="res://Assets/Image/Background/Stage/Dessert/Desert Parallax by Cryptogene/1 Layer1.png" id="12_ftw8x"]
 [ext_resource type="Shader" path="res://Assets/Shaders/sand_stromdessert.gdshader" id="13_vbgpr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vglin"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_suf36"]
+render_priority = 0
 shader = ExtResource("4_65h55")
-shader_parameter/direction = Vector2(1, 0)
-shader_parameter/speed_scale = 0.02
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_peg6j"]
+render_priority = 0
 shader = ExtResource("4_65h55")
-shader_parameter/direction = Vector2(1, 0)
-shader_parameter/speed_scale = 0.01
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_huydn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aqce1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f6vo1"]
+render_priority = 0
 shader = ExtResource("4_65h55")
-shader_parameter/direction = Vector2(1, 0)
-shader_parameter/speed_scale = 5.02
 
 [sub_resource type="Gradient" id="Gradient_brumv"]
 
@@ -67,8 +64,8 @@ custom_minimum_size = Vector2(13023, 1000)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 13023.0
-offset_bottom = 1000.0
+offset_right = 125000.0
+offset_bottom = 1250.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_2f8gq")
@@ -83,7 +80,7 @@ custom_minimum_size = Vector2(13023, 1000)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 13023.0
+offset_right = 125000.0
 offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -95,7 +92,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Stars_2"]
 custom_minimum_size = Vector2(13023, 1000)
-offset_right = 13023.0
+offset_right = 125000.0
 offset_bottom = 1000.0
 texture = ExtResource("3_bh761")
 stretch_mode = 1
@@ -109,7 +106,7 @@ custom_minimum_size = Vector2(13023, 1000)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 13023.0
+offset_right = 125000.0
 offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -125,7 +122,7 @@ custom_minimum_size = Vector2(13023, 1000)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 13023.0
+offset_right = 125000.0
 offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -139,7 +136,7 @@ metadata/_edit_use_anchors_ = true
 material = SubResource("ShaderMaterial_huydn")
 clip_contents = true
 custom_minimum_size = Vector2(13023, 1000)
-offset_right = 13023.0
+offset_right = 125000.0
 offset_bottom = 1080.0
 texture = ExtResource("2_pcmlc")
 stretch_mode = 1
@@ -163,8 +160,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Hills_1"]
 custom_minimum_size = Vector2(13023, 1000)
-offset_right = 1280.0
-offset_bottom = 720.0
+offset_right = 125000.0
+offset_bottom = 1080.0
 texture = ExtResource("8_s51lt")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
@@ -176,7 +173,7 @@ custom_minimum_size = Vector2(13023, 1000)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 13023.0
+offset_right = 125000.0
 offset_bottom = 1000.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -192,7 +189,7 @@ custom_minimum_size = Vector2(13023, 1000)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 13023.0
+offset_right = 125000.0
 offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -204,7 +201,7 @@ stretch_mode = 1
 [node name="TextureRect" type="TextureRect" parent="Hills_4"]
 material = SubResource("ShaderMaterial_f6vo1")
 custom_minimum_size = Vector2(13023, 1000)
-offset_right = 13023.0
+offset_right = 125000.0
 offset_bottom = 1080.0
 texture = ExtResource("12_ftw8x")
 
@@ -217,7 +214,7 @@ custom_minimum_size = Vector2(13023, 1156)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 13023.0
+offset_right = 125000.0
 offset_bottom = 1156.0
 grow_horizontal = 2
 grow_vertical = 2
