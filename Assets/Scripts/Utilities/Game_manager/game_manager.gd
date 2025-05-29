@@ -18,16 +18,6 @@ func _on_level_exit_reached(next_level):
 func _process(delta):
 	pass
 	
-	#if Input.is_action_just_pressed("pause"):
-		#_pause(not _paused)
-#
-			#
-#funcdaa _pause(value:bool):
-	#_paused = value
-	#_pause_screen.visible = _paused
-	#get_tree().paused = _paused
-
-
 ## ------------------------------------------------------------------------------------
 
 # Called when the save game button is pressed

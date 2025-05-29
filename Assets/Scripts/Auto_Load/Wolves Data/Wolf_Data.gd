@@ -3,9 +3,13 @@ class_name Wolf_Data_List_Singletons
 extends Node
 
 const WOLVES_LIST_DATA = "res://Assets/Scripts/Class/NPC/Wolves/Data/Wolves_Data.json"
+const wolf_open_all = "res://Assets/Scripts/Class/NPC/Wolves/Data/Wolves_Data - open all-test-purpose.json"
 var Data_Wolves = {}
 func _ready():
-	Data_Wolves = load_wolves_data(WOLVES_LIST_DATA)
+	#prod
+	#Data_Wolves = load_wolves_data(WOLVES_LIST_DATA)
+	#stag
+	Data_Wolves = load_wolves_data(wolf_open_all)
 	
 func load_wolves_data(file_path : String):      
 	if FileAccess.file_exists(file_path):

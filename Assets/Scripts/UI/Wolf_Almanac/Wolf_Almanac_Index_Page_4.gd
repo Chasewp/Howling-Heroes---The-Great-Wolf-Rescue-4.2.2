@@ -16,45 +16,45 @@ var _GreenlandWolfAlmanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/Gree
 @onready var HimalayanWolfLabel = $"Background/Almanac Index/WolfVBoxContainer12/Label_Wolf_12"
 var _HimalayanWolf_Almanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/Himalayan Wolf/himalayan_wolf_almanac.tscn")
 
-#func _ready():
-	#if WolfData._get_Great_Plains_Wolf_Rescue_Status() and WolfData._get_Greenland_Wolf_Rescue_Status() and WolfData._get_Himalyan_Wolf_Rescue_Status() == true:
-		#GreatPlainWolfImage.disabled = false
-		#great_plain_wolf_image()
-		#GreatPlainWolfLabel.disabled = false
-		#GreatPlainWolfLabel.text = WolfData._get_Great_Plains_Wolf_Name()
-		#GreenlandWolfImage.disabled = false
-		#great_plain_wolf_image()
-		#GreenlandWolfLabel.disabled = false
-		#GreenlandWolfLabel.text = WolfData._get_Greenland_Wolf_Name()
-		#HimalayanWolfImage.disabled = false
-		#himalayan_wolf_image()
-		#HimalayanWolfLabel.disabled = false
-		#HimalayanWolfLabel.text = WolfData._get_Himalayan_Wolf_Name()
-	#else:
-		#GreatPlainWolfImage.disabled = true
-		#GreatPlainWolfLabel.disabled = true
-		#GreenlandWolfImage.disabled = true
-		#GreenlandWolfLabel.disabled = true
-		#HimalayanWolfImage.disabled = true
-		#HimalayanWolfLabel.disabled = true
+func _ready():
+	if WolfData._get_Great_Plains_Wolf_Rescue_Status() or WolfData._get_Greenland_Wolf_Rescue_Status() or WolfData._get_Himalyan_Wolf_Rescue_Status() :
+		GreatPlainWolfImage.disabled = false
+		great_plain_wolf_image()
+		GreatPlainWolfLabel.disabled = false
+		GreatPlainWolfLabel.text = WolfData._get_Great_Plains_Wolf_Name()
+		GreenlandWolfImage.disabled = false
+		great_plain_wolf_image()
+		GreenlandWolfLabel.disabled = false
+		GreenlandWolfLabel.text = WolfData._get_Greenland_Wolf_Name()
+		HimalayanWolfImage.disabled = false
+		himalayan_wolf_image()
+		HimalayanWolfLabel.disabled = false
+		HimalayanWolfLabel.text = WolfData._get_Himalayan_Wolf_Name()
+	else:
+		GreatPlainWolfImage.disabled = true
+		GreatPlainWolfLabel.disabled = true
+		GreenlandWolfImage.disabled = true
+		GreenlandWolfLabel.disabled = true
+		HimalayanWolfImage.disabled = true
+		HimalayanWolfLabel.disabled = true
 
 #Great Plain Wolf Image
 func great_plain_wolf_image():
 	var image = Image.load_from_file(WolfData._get_Great_Plains_Wolf_Image_Path())
 	var texture = ImageTexture.create_from_image(image)
-	GreatPlainWolfImage.texture_normal(texture)	
+	GreatPlainWolfImage.texture_normal=texture
 
 #Greenland Wolf Image
 func greenland_wolf_image():
 	var image = Image.load_from_file(WolfData._get_Greenland_Wolf_Image_Path())
 	var texture = ImageTexture.create_from_image(image)
-	GreenlandWolfImage.texture_normal(texture)	
+	GreenlandWolfImage.texture_normal=texture	
 
 #Himalayan Wolf Image
 func himalayan_wolf_image():
 	var image = Image.load_from_file(str(WolfData._get_Himalayan_Wolf_Image_Path()))
 	var texture = ImageTexture.create_from_image(image)
-	HimalayanWolfImage.texture_normal(texture)	
+	HimalayanWolfImage.texture_normal=texture
 
 func open_great_plain_wolf_almanac():
 	button_sfx.play()

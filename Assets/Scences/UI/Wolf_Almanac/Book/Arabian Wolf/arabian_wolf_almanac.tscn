@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://7k6wlvublb2x"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/UI/Wolf_Alamanac_Book/Wolf_Almanac_Book.gd" id="1_q525m"]
-[ext_resource type="Texture2D" uid="uid://8lvpv8lhorhe" path="res://Assets/Image/Background/UI/Wolf_Alamac_Book/opened_notebook_isolated_on_background.png" id="2_3yek3"]
-[ext_resource type="FontFile" uid="uid://dk1ja3jllfjob" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="3_d8ydl"]
-[ext_resource type="FontFile" uid="uid://dmorfn4drgakd" path="res://Assets/Fonts/DisposableDroidBB_bldital.ttf" id="4_u1jt1"]
-[ext_resource type="FontFile" uid="uid://bj1q5gmkmip6u" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="5_q0l1t"]
-[ext_resource type="FontFile" uid="uid://c4dpeuiv2xlp4" path="res://Assets/Fonts/DisposableDroidBB_ital.ttf" id="6_ypsfv"]
-[ext_resource type="Texture2D" uid="uid://d1bj347xylj36" path="res://Assets/Image/Buttons/right-arrow.png" id="7_4eceb"]
+[ext_resource type="Texture2D" uid="uid://cjaxxmfegjphe" path="res://Assets/Image/Background/UI/Wolf_Alamac_Book/opened_notebook_isolated_on_background.png" id="2_3yek3"]
+[ext_resource type="FontFile" uid="uid://bv6xsykw7vcai" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="3_d8ydl"]
+[ext_resource type="FontFile" uid="uid://ccpiomxr4hnwi" path="res://Assets/Fonts/DisposableDroidBB_bldital.ttf" id="4_u1jt1"]
+[ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="5_q0l1t"]
+[ext_resource type="FontFile" uid="uid://b37vftxdinymo" path="res://Assets/Fonts/DisposableDroidBB_ital.ttf" id="6_ypsfv"]
+[ext_resource type="Texture2D" uid="uid://c6h50ut55x04r" path="res://Assets/Image/Buttons/right-arrow.png" id="7_4eceb"]
 
 [node name="Arabian_Wolf_Almanac" type="Control"]
 layout_mode = 3
@@ -26,7 +26,6 @@ offset_right = 1280.0
 offset_bottom = 903.0
 texture = ExtResource("2_3yek3")
 expand_mode = 1
-metadata/_edit_lock_ = true
 
 [node name="Wolf_Picture" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(430, 615)

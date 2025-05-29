@@ -20,19 +20,19 @@ var _IndianWolfAlamanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/Indian
 func hudson_bay_wolf_image():
 	var image = Image.load_from_file(str(WolfData._get_Hudson_Bay_Wolf_Image_Path()))
 	var texture = ImageTexture.create_from_image(image)
-	HudsonBayWolfImage.texture_normal(texture)	
+	HudsonBayWolfImage.texture_normal=texture	
 	
 #Iberian Wolf Image
 func iberian_wolf_image():
 	var image = Image.load_from_file(str(WolfData._get_Iberian_Wolf_Image_Path()))
 	var texture = ImageTexture.create_from_image(image)
-	IberianWolfImage.texture_normal(texture)	
+	IberianWolfImage.texture_normal=texture
 
 #Indian Wolf Image
 func indian_wolf_image():
 	var image = Image.load_from_file(str(WolfData._get_Indian_Wolf_Image_Path()))
 	var texture = ImageTexture.create_from_image(image)
-	IndianWolfImage.texture_normal(texture)	
+	IndianWolfImage.texture_normal=texture
 	
 func open_hudson_bay_wolf_almanac():
 	button_sfx.play()
@@ -113,7 +113,7 @@ func open_indian_wolf_almanac():
 	AlmanacOpenCloser.open_wolf_species_page_5()
 	
 func _ready():
-	if WolfData._get_Hudsom_Bay_Wolf_Rescue_Status() and WolfData._get_Iberian_Wolf_Rescue_Status() and WolfData._get_Indian_Wolf_Rescue_Status() == true:
+	if WolfData._get_Hudsom_Bay_Wolf_Rescue_Status() or WolfData._get_Iberian_Wolf_Rescue_Status() or WolfData._get_Indian_Wolf_Rescue_Status() == true:
 	#Rescued
 		HudsonBayWolfImage.disabled = false
 		hudson_bay_wolf_image()

@@ -20,19 +20,19 @@ var _LabradorWolfAlmanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/Labra
 func interior_alaskan_wolf_image():
 	var image = Image.load_from_file(str(WolfData._get_Interior_Alaskan_Wolf_Image_Path()))
 	var texture = ImageTexture.create_from_image(image)
-	InteriorAlaskanWolfImage.texture_normal(texture)	
+	InteriorAlaskanWolfImage.texture_normal=texture	
 
 #Italian Wolf Image
 func italian_wolf_image():
 	var image = Image.load_from_file(str(WolfData._get_Italian_Wolf_Image_Path()))
 	var texture = ImageTexture.create_from_image(image)
-	ItalianWolfImage.texture_normal(texture)	
+	ItalianWolfImage.texture_normal+texture	
 
 #Labrador Wolf Image
 func labrador_wolf_image():
-	var image = Image.load_from_file(str(WolfData._get_Baffin_Island_Wolf_Image_Path()))
+	var image = Image.load_from_file(str(WolfData._get_Baffin_Islz_Wolf_Image_Path()))
 	var texture = ImageTexture.create_from_image(image)
-	LabradorWolfImage.texture_normal(texture)	
+	LabradorWolfImage.texture_normal=texture
 
 func open_interior_alaskan_wolf_almanac():
 	button_sfx.play()
@@ -112,7 +112,7 @@ func open_labrador_wolf_alamanac():
 	AlmanacOpenCloser.open_wolf_species_page_6()
 	
 func _ready():
-	if WolfData._get_Interior_Alaskan_Wolf_Rescue_Status() and WolfData._get_Italian_Wolf_Rescue_Status() and WolfData._get_Labrador_Wolf_Rescue_Status() == true:
+	if WolfData._get_Interior_Alaskan_Wolf_Rescue_Status() or WolfData._get_Italian_Wolf_Rescue_Status() or WolfData._get_Labrador_Wolf_Rescue_Status() == true:
 		#Rescued
 		InteriorAlaskanWolfImage.disabled = false
 		interior_alaskan_wolf_image()

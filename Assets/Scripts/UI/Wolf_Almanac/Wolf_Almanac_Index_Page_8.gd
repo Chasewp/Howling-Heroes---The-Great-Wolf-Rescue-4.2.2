@@ -20,19 +20,19 @@ var _RedWolfAlmanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/Red Wolf/r
 func northern_rocky_mountain_wolf_image():
 	var image = Image.load_from_file(WolfData._get_Northern_Rocky_Mountain_Wolf_Image_Path())
 	var texture = ImageTexture.create_from_image(image)
-	NorthernRockyMountainWolfImage.texture_normal(texture)
+	NorthernRockyMountainWolfImage.texture_normal=texture
 
 # Northwestern Wolf
 func northwestern_wolf_image():
 	var image = Image.load_from_file(WolfData._get_Northern_Rocky_Mountain_Wolf_Image_Path())
 	var texture = ImageTexture.create_from_image(image)
-	NorthernRockyMountainWolfImage.texture_normal(texture)
+	NorthernRockyMountainWolfImage.texture_normal=texture
 
 # Red Wolf Image
 func red_wolf_image():
 	var image = Image.load_from_file(WolfData._get_Northern_Rocky_Mountain_Wolf_Image_Path())
 	var texture = ImageTexture.create_from_image(image)
-	NorthernRockyMountainWolfImage.texture_normal(texture)
+	NorthernRockyMountainWolfImage.texture_normal=texture
 
 func open_northern_rocky_mountain_wolf_almanac():
 	button_sfx.play()
@@ -114,7 +114,7 @@ func open_red_wolf_alamanac():
 	
 func _ready():
 	# Recsued
-	if WolfData._get_Nortern_Rocky_Mountain_Wolf_Rescue_Status() and WolfData._get_Northwestern_Wolf_Rescue_Status() and WolfData._get_Red_Wolf_Rescue_Status():
+	if WolfData._get_Nortern_Rocky_Mountain_Wolf_Rescue_Status() or WolfData._get_Northwestern_Wolf_Rescue_Status() or WolfData._get_Red_Wolf_Rescue_Status():
 		northern_rocky_mountain_wolf_image()
 		NorthernRockyMountainWolfImage.disabled = false
 		NorthwesternWolfLabel.text = WolfData._get_Northern_Rocky_Mountain_Wolf_Name()

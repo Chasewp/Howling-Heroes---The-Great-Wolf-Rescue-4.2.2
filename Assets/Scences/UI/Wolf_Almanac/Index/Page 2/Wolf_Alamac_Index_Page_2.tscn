@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://cokoy6m8s3kf6"]
 
-[ext_resource type="Texture2D" uid="uid://blcflasp4l32d" path="res://Assets/Image/Background/UI/Wolf Almanac Index/Wood Texture.png" id="1_ec662"]
+[ext_resource type="Texture2D" uid="uid://bw8k1jga0lsni" path="res://Assets/Image/Background/UI/Wolf Almanac Index/Wood Texture.png" id="1_ec662"]
 [ext_resource type="Script" path="res://Assets/Scripts/UI/Wolf_Almanac/Wolf_Almanac_Index_Page_2.gd" id="1_fk30v"]
-[ext_resource type="FontFile" uid="uid://dmorfn4drgakd" path="res://Assets/Fonts/DisposableDroidBB_bldital.ttf" id="2_i1e8y"]
+[ext_resource type="FontFile" uid="uid://ccpiomxr4hnwi" path="res://Assets/Fonts/DisposableDroidBB_bldital.ttf" id="2_i1e8y"]
 [ext_resource type="Theme" uid="uid://dk2f873t2ffc2" path="res://Assets/Theme/Wolf_Almanac_Idex/Button.tres" id="3_0nf77"]
 [ext_resource type="Texture2D" uid="uid://cfaq68nhdhm38" path="res://Assets/Animate/Item/Lock_Buttons.tres" id="4_1sg0b"]
-[ext_resource type="Texture2D" uid="uid://2u26f5jabtcj" path="res://Assets/Image/Buttons/Button.png" id="4_5isah"]
-[ext_resource type="AudioStream" uid="uid://ca2al0w7iqcu" path="res://Assets/Music/SFX/Normal_Button/Click button.mp3" id="4_tctes"]
+[ext_resource type="Texture2D" uid="uid://rkl0rkgecry7" path="res://Assets/Image/Buttons/Button.png" id="4_5isah"]
+[ext_resource type="AudioStream" uid="uid://dvqtsqnkxmd3c" path="res://Assets/Music/SFX/Normal_Button/Click button.mp3" id="4_tctes"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5teu"]
 atlas = ExtResource("4_5isah")

@@ -94,22 +94,22 @@ func open_vancouver_coastal_island_wolf():
 func steppe_wolf_caspian_sea_wolf_image():
 	var image = Image.load_from_file(WolfData._get_Steppe_Wolf_Image_Path())
 	var texture = ImageTexture.create_from_image(image)
-	SteppeWolf_Caspian_Sea_WolfImage.texture_normal(texture)	
-
+	SteppeWolf_Caspian_Sea_WolfImage.texture_normal=texture
+	
 func tundra_wolf_image():
 	var image = Image.load_from_file(WolfData._get_Tundra_Wolf_Image_Path())
 	var texture = ImageTexture.create_from_image(image)
-	TundraWolfImage.texture_normal(texture)	
+	TundraWolfImage.texture_normal=texture
 
 func vancouver_coastal_island_wolf_image():
 	var image = Image.load_from_file(WolfData._get_Vancouver_Coastal_Island_Wolf_Image_Path())
 	var texture = ImageTexture.create_from_image(image)
-	VancouverCoastalIslandWolfImage.texture_normal(texture)	
+	VancouverCoastalIslandWolfImage.texture_normal=texture
 
 
 func _ready():
 	#Rescued
-	if WolfData._get_Steppe_Wolf_Rescue_Status() and WolfData._get_Tundra_Wolf_Rescue_Status() and WolfData._get_Vancover_Coastal_Island_Wolf_Rescue_Status():
+	if WolfData._get_Steppe_Wolf_Rescue_Status() or WolfData._get_Tundra_Wolf_Rescue_Status() or WolfData._get_Vancover_Coastal_Island_Wolf_Rescue_Status():
 		steppe_wolf_caspian_sea_wolf_image()
 		SteppeWolf_Caspian_Sea_WolfImage.disabled = false
 		SteppeWolf_Caspian_Sea_WolfLabel.text = WolfData._get_Steppe_Wolf_Name()

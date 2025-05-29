@@ -17,7 +17,7 @@ var _BaffinIslanWolfAlamanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/B
 var _BritishColumbianWolfAlamanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/British Colombian Wolf/british_colombian_wolf_almanac.tscn")
 
 func _ready():
-	if WolfData._get_Arctic_Wolf_Rescue_Status() and WolfData._get_Baffin_Island_Wolf_Rescue_Status() and WolfData._get_British_Columbian_Wolf_Rescue_Status() ==true:
+	if WolfData._get_Arctic_Wolf_Rescue_Status() or  WolfData._get_Baffin_Island_Wolf_Rescue_Status() or WolfData._get_British_Columbian_Wolf_Rescue_Status() :
 		#Recued
 		ArcticWolfImage.set_disabled(false)
 		artic_wolf_image()
@@ -122,18 +122,18 @@ func open_british_columbian_wolf():
 func artic_wolf_image():
 	var image = Image.load_from_file(str(WolfData._get_Arctic_Wolf_Image_Path()))
 	var texture = ImageTexture.create_from_image(image)
-	ArcticWolfImage.texture_normal(texture)	
+	ArcticWolfImage.texture_normal = texture
 
 #Baffin Wolf Image
 func baffin_wolf_image():
 	var image = Image.load_from_file(str(WolfData._get_Baffin_Island_Wolf_Image_Path()))
 	var texture = ImageTexture.create_from_image(image)
-	BaffinIslandWolfImage.texture_normal(texture)	
+	BaffinIslandWolfImage.texture_normal = texture	
 	
 #British Columbian Wolf
 func british_columbian_wolf_image():
 	var image = Image.load_from_file(str(WolfData._get_British_Columbian_Wolf_Image_Path()))
 	var texture = ImageTexture.create_from_image(image)
-	BritishColumbianWolfImage.texture_normal(texture)	
+	BritishColumbianWolfImage.texture_normal=texture	
 	
 

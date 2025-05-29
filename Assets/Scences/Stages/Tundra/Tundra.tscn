@@ -811,7 +811,7 @@ position = Vector2(69275, 766)
 position = Vector2(63331.9, 736.87)
 
 [node name="Tundra_platfrom_Long3" parent="PlatForm/Stage_3" instance=ExtResource("9_q23b1")]
-position = Vector2(54601.1, 703.97)
+position = Vector2(54601.3, 703.97)
 
 [node name="Tundra_platfrom_Long4" parent="PlatForm/Stage_3" instance=ExtResource("9_q23b1")]
 position = Vector2(51611.1, 720)
@@ -820,19 +820,19 @@ position = Vector2(51611.1, 720)
 position = Vector2(43091.5, 752)
 
 [node name="Tundra_platfrom_Long7" parent="PlatForm/Stage_3" instance=ExtResource("9_q23b1")]
-position = Vector2(40855, 816.06)
+position = Vector2(40855.1, 816.06)
 
 [node name="Tundra_platfrom_Long8" parent="PlatForm/Stage_3" instance=ExtResource("9_q23b1")]
-position = Vector2(39227.1, 818.925)
+position = Vector2(39227.3, 818.925)
 
 [node name="Tundra_platfrom_Long5" parent="PlatForm/Stage_3" instance=ExtResource("9_q23b1")]
-position = Vector2(48424.3, 703.955)
+position = Vector2(48424.5, 703.955)
 
 [node name="Platform_Short" parent="PlatForm/Stage_3" instance=ExtResource("12_5u52h")]
 position = Vector2(67449.6, 745)
 
 [node name="Platform_Short3" parent="PlatForm/Stage_3" instance=ExtResource("12_5u52h")]
-position = Vector2(62147.1, 706)
+position = Vector2(62147, 706)
 
 [node name="Platform_Short4" parent="PlatForm/Stage_3" instance=ExtResource("12_5u52h")]
 position = Vector2(59770.9, 672)
@@ -847,7 +847,7 @@ position = Vector2(50725.8, 688)
 position = Vector2(47578.1, 671)
 
 [node name="Platform_Short9" parent="PlatForm/Stage_3" instance=ExtResource("12_5u52h")]
-position = Vector2(45932.4, 720.51)
+position = Vector2(45932.3, 720.51)
 
 [node name="Platform_Short10" parent="PlatForm/Stage_3" instance=ExtResource("12_5u52h")]
 position = Vector2(44528, 720)
@@ -856,7 +856,7 @@ position = Vector2(44528, 720)
 position = Vector2(58540.2, 671.885)
 
 [node name="Platform_Short2" parent="PlatForm/Stage_3" instance=ExtResource("12_5u52h")]
-position = Vector2(65251.5, 720)
+position = Vector2(65251.4, 720)
 
 [node name="Stage_2" type="Node" parent="PlatForm"]
 

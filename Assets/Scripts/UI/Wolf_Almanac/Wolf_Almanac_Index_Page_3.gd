@@ -18,7 +18,7 @@ var _EurasianWolfAlmanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/Euras
 var _GrayWolfAlmanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/Gray Wolf/gray_wolf_almanac.tscn")
 
 func _ready():
-	if WolfData._get_Eastern_Wolf_Rescue_Status() and WolfData._get_Eurasian_Wolf_Rescue_Status() and WolfData._get_Gray_Wolf_Rescue_Status() == true:
+	if WolfData._get_Eastern_Wolf_Rescue_Status() or WolfData._get_Eurasian_Wolf_Rescue_Status() or WolfData._get_Gray_Wolf_Rescue_Status() == true:
 		#Rescued
 		EasternWolfImage.set_disabled(false)
 		eastern_wolf_image()
@@ -45,19 +45,19 @@ func _ready():
 func eastern_wolf_image():
 	var image = Image.load_from_file(str(WolfData._get_Eastern_Wolf_Image_Path()))
 	var texture = ImageTexture.create_from_image(image)
-	EasternWolfImage.texture_normal(texture)	
+	EasternWolfImage.texture_normal=texture	
 		
 #Eurasian Wolf Image
 func eurasian_wolf_image():
 	var image = Image.load_from_file(str(WolfData._get_Eurasian_Wolf_Image_Path()))
 	var texture = ImageTexture.create_from_image(image)
-	EurasianWolfImage.texture_normal(texture)	
+	EurasianWolfImage.texture_normal=texture	
 
 #Gray Wolf Image
 func gray_wolf_image() :
 	var image = Image.load_from_file(str(WolfData._get_Gray_Wolf_Image_Path()))
 	var texture = ImageTexture.create_from_image(image)
-	GrayWolfImage.texture_normal(texture)	
+	GrayWolfImage.texture_normal=texture
 	
 func open_eastern_wolf_almanac():
 	button_sfx.play()

@@ -18,21 +18,21 @@ var _MongolianWolfAlamnac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/Mong
 
 #Mackenzie River Wolf Image
 func mackenzie_river_wolf_image():
-	var image = Image.load_from_file(str(WolfData._get_Baffin_Island_Wolf_Image_Path()))
+	var image = Image.load_from_file(str(WolfData._get_Baffin_Islor_Wolf_Image_Path()))
 	var texture = ImageTexture.create_from_image(image)
-	MackenzieRiverWolfImage.texture_normal(texture)	
+	MackenzieRiverWolfImage.texture_normal=texture
 	
 #Mexican Wolf Image
 func mexican_wolf_image():
 	var image = Image.load_from_file(str(WolfData._get_Baffin_Island_Wolf_Image_Path()))
 	var texture = ImageTexture.create_from_image(image)
-	MexicanWolfImage.texture_normal(texture)	
+	MexicanWolfImage.texture_normal=texture	
 
 #Mongolian Wolf
 func mongolian_wolf_image():
 	var image = Image.load_from_file(str(WolfData._get_Baffin_Island_Wolf_Image_Path()))
 	var texture = ImageTexture.create_from_image(image)
-	MongolianWolfImage.texture_normal(texture)	
+	MongolianWolfImage.texture_normal=texture
 
 func open_Mackenzie_River_Wolf_almanac():
 	button_sfx.play()
@@ -113,7 +113,7 @@ func open_mongolian_wolf_almanac():
 	AlmanacOpenCloser.open_wolf_species_page_7()
 	
 func _ready():
-	if WolfData._get_Mackenzie_River_Wolf_Rescue_Status() and WolfData._get_Mexican_Wolf_Rescue_Status() and WolfData._get_Mongolian_Wolf_Rescue_Status() == true:
+	if WolfData._get_Mackenzie_River_Wolf_Rescue_Status() and WolfData._get_Mexican_Wolf_Rescue_Status() or WolfData._get_Mongolian_Wolf_Rescue_Status() == true:
 		#Rescued
 		MackenzieRiverWolfImage.disabled = false
 		mackenzie_river_wolf_image()

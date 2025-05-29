@@ -5,6 +5,7 @@ extends Node
 "Cursor"
 var normal_cursor = load("res://Assets/Image/Cursor/Cursor 32x32.png")
 var hand_cursor = load("res://Assets/Image/Cursor/hand_paw.png")
+var background_image_path = "res://Assets/Image/Background/UI/Wolf_Alamac_Book/opened_notebook_isolated_on_background.png"
 
 #background
 @onready var background = $Book_Texturee
@@ -30,19 +31,9 @@ var hand_cursor = load("res://Assets/Image/Cursor/hand_paw.png")
 @onready var diets = $Diets_List
 #Back butoons
 @onready var backbtn = $TextureButton
-#infos
-@onready var specieslbl =$Name_Species
-@onready var heightlbl = $Height_Label
-@onready var weightlbl = $Weight
-@onready var lengthlbl = $Length_size
-@onready var conservationlbl = $"CONSERVATION STATUS"
-@onready var regionlbl = $Region
-@onready var morphlogoylbl = $Morphology
-@onready var dietslbl = $Diets
-
 
 func _ready():
-	set_background("res://Assets/Image/Background/UI/Wolf_Alamac_Book/opened_notebook_isolated_on_background.png")
+	set_background(background_image_path)
 	set_wolf_image(WolfAlmanac.wolf_image)
 	name_Wolf.set_text(WolfAlmanac.wolf_name)
 	species.set_text(WolfAlmanac.wolf_species)

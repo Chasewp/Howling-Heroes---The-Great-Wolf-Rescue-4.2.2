@@ -63,16 +63,16 @@ func _ready():
 			label_switch.set_text("OFF")	
 	
 	#Label Master Volume
-	Max_Label_Master_Volume.text=str(Master_Volume.value)+" db" if Master_Volume.value +" db"< Master_Volume.max_value else  "MAX"
+	Max_Label_Master_Volume.text=str(Master_Volume.value) if Master_Volume.value < Master_Volume.max_value else  "MAX"
 	
 	#Music Volume Max Label
-	Max_Label_Music_Volume.text=str(Music_Volume.value) +" db"if Music_Volume.value +" db"< Music_Volume.max_value else "MAX"
+	Max_Label_Music_Volume.text=str(Music_Volume.value) if Music_Volume.value < Music_Volume.max_value else "MAX"
 	
 	#Dialogue Volume Max Label
-	Max_Label_Dialogue_Volume.text=str(Dialogue_Volume.value) +" db" if Dialogue_Volume.value+" db" < Dialogue_Volume.max_value else "MAX"
+	Max_Label_Dialogue_Volume.text=str(Dialogue_Volume.value)  if Dialogue_Volume.value < Dialogue_Volume.max_value else "MAX"
 	
 	#SFX Volume Max Label\
-	Max_Label_SFX_Volume.text=str(sfx_Volume.value)+" db" if sfx_Volume.value +" db"< sfx_Volume.max_value else "MAX"
+	Max_Label_SFX_Volume.text=str(sfx_Volume.value) if sfx_Volume.value < sfx_Volume.max_value else "MAX"
 	
 	backsound.play()
 func _on_back_button_pressed():
@@ -93,19 +93,19 @@ func _on_v_sync_switch_pressed(button_pressed):
 
 func _on_master_slider_value_changed(value):
 	GlobalSettings._update_master_Volume(value)
-	Max_Label_Master_Volume.text=str(value) +" db" if value < Master_Volume.max_value else  "MAX"
+	Max_Label_Master_Volume.text=str(value)  if value < Master_Volume.max_value else  "MAX"
 
 func _on_music_slider_value_changed(value):
 	GlobalSettings._update_music_Volume(value)
-	Max_Label_Music_Volume.text=str(value) +" db"if value < Music_Volume.max_value else "MAX"
+	Max_Label_Music_Volume.text=str(value) if value < Music_Volume.max_value else "MAX"
 
 func _on_voice_slider_value_changed(value):
 	GlobalSettings._update_dialogue_Volume(value)
-	Max_Label_Dialogue_Volume.text=str(value)+" db" if value < Dialogue_Volume.max_value else "MAX"
+	Max_Label_Dialogue_Volume.text=str(value) if value < Dialogue_Volume.max_value else "MAX"
 
 func _on_sfx_slider_value_changed(value):
 	GlobalSettings._update_SFX_Volume(value)
-	Max_Label_SFX_Volume.text=str(value) +" db" if value < sfx_Volume.max_value else "MAX"
+	Max_Label_SFX_Volume.text=str(value)  if value < sfx_Volume.max_value else "MAX"
 	
 func _on_save_button_pressed():
 	button_sound.play()
