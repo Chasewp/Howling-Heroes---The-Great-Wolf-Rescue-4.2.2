@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1747977413
+::res://::1748596099
 Codecov API.yaml::TextFile::-1::1747636198::0::1::::<><>::
 default_bus_layout.tres::AudioBusLayout::196888898710771457::1747636198::0::1::::<><>::
 default_env.tres::Environment::8213894370153476355::1747707196::0::1::::<><>::
@@ -646,7 +646,7 @@ LICENSE.md::TextFile::-1::1747636198::0::1::::<><>::
 LOGO_LICENSE.md::TextFile::-1::1747636198::0::1::::<><>::
 README.md::TextFile::-1::1747636198::0::1::::<><>::
 version.txt::TextFile::-1::1747636198::0::1::::<><>::
-::res://addons/limboai/bin/::1747977406
+::res://addons/limboai/bin/::1748596094
 limboai.gdextension::GDExtension::-1::1747636198::0::1::::<><>::
 ::res://addons/limboai/bin/liblimboai.macos.editor.framework/::1747823901
 ::res://addons/limboai/bin/liblimboai.macos.template_release.framework/::1747823902
@@ -725,12 +725,12 @@ Brown_bear_behaviour.tres::BehaviorTree::3724315175010402726::1747636198::0::1::
 ::res://Assets/Animate/::1747823906
 ::res://Assets/Animate/Chacter/::1747823906
 ::res://Assets/Animate/Chacter/Enemy/::1747823906
-::res://Assets/Animate/Chacter/Enemy/Animal/::1747963600
+::res://Assets/Animate/Chacter/Enemy/Animal/::1748581725
 artic_fox.tres::SpriteFrames::8817490978782275844::1747636198::0::1::::<><>::uid://y481veg85urf::::res://Assets/Image/Enemy/Animal/Enemy/Arctic Fox.png
-black_bear.tres::SpriteFrames::705277279398747523::1747963600::0::1::::<><>::uid://dtf1h5jxe7uu8::::res://Assets/Image/Enemy/Animal/Bears/Spritesheets/Black_Attack.png<>uid://cs2eh7j1lq7io::::res://Assets/Image/Enemy/Animal/Bears/Spritesheets/Black_Death.png<>uid://ijl6aajcpi2q::::res://Assets/Image/Enemy/Animal/Bears/Spritesheets/Black_Walk.png<>uid://cyforu4o7nhwg::::res://Assets/Image/Enemy/Animal/Bears/Spritesheets/Black_Idle.png
+black_bear.tres::SpriteFrames::705277279398747523::1748581725::0::1::::<><>::uid://dtf1h5jxe7uu8::::res://Assets/Image/Enemy/Animal/Bears/Spritesheets/Black_Attack.png<>uid://cs2eh7j1lq7io::::res://Assets/Image/Enemy/Animal/Bears/Spritesheets/Black_Death.png<>uid://ijl6aajcpi2q::::res://Assets/Image/Enemy/Animal/Bears/Spritesheets/Black_Walk.png<>uid://cyforu4o7nhwg::::res://Assets/Image/Enemy/Animal/Bears/Spritesheets/Black_Idle.png
 brown_bear.tres::SpriteFrames::7295577747003567378::1747636198::0::1::::<><>::uid://c617x107bwvju::::res://Assets/Image/Enemy/Animal/Bears/Spritesheets/Brown_Attack.png<>uid://icsx4vxpy1sb::::res://Assets/Image/Enemy/Animal/Bears/Spritesheets/Brown_Death.png<>uid://cxngsavfa63ph::::res://Assets/Image/Enemy/Animal/Bears/Spritesheets/Brown_Idle.png<>uid://cwew47nt1078k::::res://Assets/Image/Enemy/Animal/Bears/Spritesheets/Brown_Walk.png
 polar_bear.tres::SpriteFrames::3925824886212057644::1747636198::0::1::::<><>::uid://vtvuvea3o3ks::::res://Assets/Image/Enemy/Animal/Enemy/Bears/Spritesheets/White_Attack.png<>uid://wey6qhehrph2::::res://Assets/Image/Enemy/Animal/Enemy/Bears/Spritesheets/White_Death.png<>uid://d4horo8unykox::::res://Assets/Image/Enemy/Animal/Enemy/Bears/Spritesheets/White_Walk.png<>uid://cygqchi472030::::res://Assets/Image/Enemy/Animal/Enemy/Bears/Spritesheets/White_Idle.png
-red_fox.tres::SpriteFrames::6443747688256611784::1747963600::0::1::::<><>::uid://bgiomqxgtn5ye::::res://Assets/Image/Enemy/Animal/Red_Fox.png
+red_fox.tres::SpriteFrames::6443747688256611784::1748581725::0::1::::<><>::uid://bgiomqxgtn5ye::::res://Assets/Image/Enemy/Animal/Red_Fox.png
 Wolvrine.tres::SpriteFrames::2880523261060787446::1747636198::0::1::::<><>::uid://cei360e1xo1l6::::res://Assets/Image/Enemy/Animal/Enemy/Wolvine/Died/Died.png<>uid://dm8t6mwqpf5wf::::res://Assets/Image/Enemy/Animal/Enemy/Wolvine/Attack/Attack 1.png<>uid://c0cb7a2uotlob::::res://Assets/Image/Enemy/Animal/Enemy/Wolvine/run/run 1.png<>uid://bpktpgr7vt75i::::res://Assets/Image/Enemy/Animal/Enemy/Wolvine/Attack/Attack 2.png<>uid://0f24g762a6lt::::res://Assets/Image/Enemy/Animal/Enemy/Wolvine/Attack/Attack 3.png<>uid://4op4t4jeyv0s::::res://Assets/Image/Enemy/Animal/Enemy/Wolvine/run/run 2.png<>uid://biohgd60fhkkt::::res://Assets/Image/Enemy/Animal/Enemy/Wolvine/Fall/Fall 1.png<>uid://dapcidtvybge8::::res://Assets/Image/Enemy/Animal/Enemy/Wolvine/Fall/Fall 2.png<>uid://m7crcj4qco8v::::res://Assets/Image/Enemy/Animal/Enemy/Wolvine/Hurt/Hurt 2.png<>uid://db81ijeavo4h0::::res://Assets/Image/Enemy/Animal/Enemy/Wolvine/Hurt/Hurt 3.png<>uid://douoleninmma0::::res://Assets/Image/Enemy/Animal/Enemy/Wolvine/Iddle/Iddle-1.png<>uid://b02avnvrsms27::::res://Assets/Image/Enemy/Animal/Enemy/Wolvine/jump/jump 1.png<>uid://katrtkcmokta::::res://Assets/Image/Enemy/Animal/Enemy/Wolvine/jump/jump 2.png
 ::res://Assets/Animate/Chacter/Enemy/Humanoid/::1747823906
 Hunter_MK III.tres::SpriteFrames::7894749029531863888::1747636198::0::1::::<><>::
@@ -739,16 +739,16 @@ hunter_mk_iii.tscn::PackedScene::8015610582087028844::1747636198::0::1::::<><>::
 ::res://Assets/Animate/Chacter/NPC/Wolves/::1747823906
 ::res://Assets/Animate/Chacter/NPC/Wolves/Black_Wolf/::1747823906
 Black_wolf.tres::SpriteFrames::2091816962029851538::1747636198::0::1::::<><>::uid://b3v7vvnxgckvg::::res://Assets/Image/Character/Wolves/Black/Black_Wolf.png
-::res://Assets/Animate/Chacter/NPC/Wolves/Brown_Wolf/::1747963600
-brown_wolf.tres::SpriteFrames::8453746938237202471::1747963600::0::1::::<><>::uid://drixosrnfasnj::::res://Assets/Image/Character/Wolves/Brown/Brown_Wolf.png
-::res://Assets/Animate/Chacter/NPC/Wolves/Gold_Wolf/::1747963600
-gold_wolf.tres::SpriteFrames::4831474628375537158::1747963600::0::1::::<><>::uid://u81apnvsyehj::::res://Assets/Image/Character/Wolves/Gold/Gold_Wolf.png
-::res://Assets/Animate/Chacter/NPC/Wolves/Gray_-Wolf/::1747963600
-gray_wolf.tres::SpriteFrames::519812797398247040::1747963600::0::1::::<><>::uid://byfjo2fpnu34r::::res://Assets/Image/Character/Wolves/Gray/Gray_Wolf.png
+::res://Assets/Animate/Chacter/NPC/Wolves/Brown_Wolf/::1748581725
+brown_wolf.tres::SpriteFrames::8453746938237202471::1748581725::0::1::::<><>::uid://drixosrnfasnj::::res://Assets/Image/Character/Wolves/Brown/Brown_Wolf.png
+::res://Assets/Animate/Chacter/NPC/Wolves/Gold_Wolf/::1748581725
+gold_wolf.tres::SpriteFrames::4831474628375537158::1748581725::0::1::::<><>::uid://u81apnvsyehj::::res://Assets/Image/Character/Wolves/Gold/Gold_Wolf.png
+::res://Assets/Animate/Chacter/NPC/Wolves/Gray_-Wolf/::1748581725
+gray_wolf.tres::SpriteFrames::519812797398247040::1748581725::0::1::::<><>::uid://byfjo2fpnu34r::::res://Assets/Image/Character/Wolves/Gray/Gray_Wolf.png
 ::res://Assets/Animate/Chacter/NPC/Wolves/Silver_Wolf/::1747823906
 silver_wolf.tres::SpriteFrames::788703498755818068::1747636198::0::1::::<><>::uid://2y2412sgqnsc::::res://Assets/Image/Character/Wolves/Silver/Silver_Wolf.png
-::res://Assets/Animate/Chacter/NPC/Wolves/White_Wolf/::1747963600
-White_wolf.tres::SpriteFrames::4004397993038460754::1747963600::0::1::::<><>::uid://ciofgrlcmkrjd::::res://Assets/Image/Character/Wolves/White/White_Wolf.png
+::res://Assets/Animate/Chacter/NPC/Wolves/White_Wolf/::1748581725
+White_wolf.tres::SpriteFrames::4004397993038460754::1748581725::0::1::::<><>::uid://ciofgrlcmkrjd::::res://Assets/Image/Character/Wolves/White/White_Wolf.png
 ::res://Assets/Animate/Chacter/Player/::1747823906
 Machete_Attack.tres::SpriteFrames::636499560999745499::1747636198::0::1::::<><>::uid://cuue4jblm6bn3::::res://Assets/Image/Items/Bullets/All_Fire_Bullet_Pixel_16x16_02.png
 ::res://Assets/Animate/Item/::1747823906
@@ -766,8 +766,8 @@ fire.tres::SpriteFrames::2236250428497581551::1747636198::0::1::::<><>::uid://du
 Mr_Wolf.dch::Resource/Resource::-1::1747636198::0::1::::<><>::
 Player.dch::Resource/Resource::-1::1747636198::0::1::::<><>::
 Sergant Lupine.dch::Resource/Resource::-1::1747636198::0::1::::<><>::
-::res://Assets/Dialogue/Theme/::1747963599
-Pixelize_font.tres::Resource/DialogicStyle::7206643389557044491::1747963599::0::1::::<><>::res://addons/dialogic/Resources/dialogic_style_layer.gd<>uid://c1k5m0w3r40xf::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn<>uid://cy1y14inwkplb::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn<>uid://cn674foxwedqu::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn<>uid://bquja8jyk8kbr::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn<>uid://dsbwnp5hegnu3::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn<>uid://dhk6j6eb6e3q::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn<>uid://cvgf4c6gg0tsy::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn<>uid://lx24i8fl6uo::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn<>res://addons/dialogic/Resources/dialogic_style.gd
+::res://Assets/Dialogue/Theme/::1748581724
+Pixelize_font.tres::Resource/DialogicStyle::7206643389557044491::1748581724::0::1::::<><>::res://addons/dialogic/Resources/dialogic_style_layer.gd<>uid://c1k5m0w3r40xf::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn<>uid://cy1y14inwkplb::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn<>uid://cn674foxwedqu::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn<>uid://bquja8jyk8kbr::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn<>uid://dsbwnp5hegnu3::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn<>uid://dhk6j6eb6e3q::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn<>uid://cvgf4c6gg0tsy::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn<>uid://lx24i8fl6uo::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn<>res://addons/dialogic/Resources/dialogic_style.gd
 Pixelize_Visual_Novel.tres::Resource/Resource::4396765608337922874::1747636198::0::1::::<><>::uid://c1k5m0w3r40xf::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn<>res://addons/dialogic/Resources/dialogic_style_layer.gd<>uid://cy1y14inwkplb::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn<>uid://bquja8jyk8kbr::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn<>uid://cn674foxwedqu::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn<>uid://dsbwnp5hegnu3::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn<>uid://dhk6j6eb6e3q::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn<>uid://cvgf4c6gg0tsy::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn<>uid://lx24i8fl6uo::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn<>res://addons/dialogic/Resources/dialogic_style.gd
 Speaker_Mode.tres::Resource/Resource::5794453110338011654::1747636198::0::1::::<><>::uid://c1k5m0w3r40xf::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn<>res://addons/dialogic/Resources/dialogic_style_layer.gd<>uid://by6waso0mjpjp::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/textbox_with_speaker_portrait.tscn<>uid://cn674foxwedqu::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn<>uid://dsbwnp5hegnu3::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn<>uid://dhk6j6eb6e3q::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn<>uid://cvgf4c6gg0tsy::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn<>uid://lx24i8fl6uo::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn<>res://addons/dialogic/Resources/dialogic_style.gd
 ::res://Assets/Dialogue/TimeLines/::1747823906
@@ -1119,7 +1119,7 @@ Layer 1.png::CompressedTexture2D::8544891889663399585::1747636198::1747689489::1
 ::res://Assets/Image/Cursor/Cross_Hair/::1747823909
 Layer 1.png::CompressedTexture2D::1302679523775996093::1747636198::1747689489::1::::<><>::
 ::res://Assets/Image/Enemy/::1747823909
-::res://Assets/Image/Enemy/Animal/::1747823909
+::res://Assets/Image/Enemy/Animal/::1747977481
 Adobe Express - file.png::CompressedTexture2D::867623521051641944::1747636198::1747689492::1::::<><>::
 Arctic Fox.png::CompressedTexture2D::1746450403070816471::1747636198::1747689485::1::::<><>::
 Canadian_Lyrnx.png::CompressedTexture2D::366728789011500586::1747636198::1747689486::1::::<><>::
@@ -1789,7 +1789,7 @@ Idle.png::CompressedTexture2D::4916352871223550306::1747636198::1747689679::1:::
 ::res://Assets/Image/etc/Pixel Adventure 1/Free/Traps/Trampoline/::1747823911
 Idle.png::CompressedTexture2D::7383503188793242031::1747636198::1747689679::1::::<><>::
 Jump (28x28).png::CompressedTexture2D::5422779286603162432::1747636198::1747689679::1::::<><>::
-::res://Assets/Image/etc/Trap/::1747823911
+::res://Assets/Image/etc/Trap/::1747977481
 Arrow_Double_Jump.png::CompressedTexture2D::7829896322892610869::1747636198::1747689679::1::::<><>::
 Be_Spear.png::CompressedTexture2D::6502173611678299406::1747636198::1747689679::1::::<><>::
 Be_Xich.png::CompressedTexture2D::4674983427414419939::1747636198::1747689679::1::::<><>::
@@ -2162,7 +2162,7 @@ Cursor 32x32.png::CompressedTexture2D::5384442301746302760::1747636198::17476894
 Cursor.png::CompressedTexture2D::6406101330161508959::1747636198::1747689413::1::::<><>::
 ::res://Assets/Image/images/Dialogue/::1747823917
 Dialogbox-transformed 600x150.png::CompressedTexture2D::2682034354070564179::1747636198::1747689412::1::::<><>::
-::res://Assets/Image/images/enemies/::1747823917
+::res://Assets/Image/images/enemies/::1747977481
 Actor1_3.png::CompressedTexture2D::2301696189569243035::1747636198::1747689412::1::::<><>::
 Actor1_4.png::CompressedTexture2D::7633797246994085507::1747636198::1747689412::1::::<><>::
 Actor1_5.png::CompressedTexture2D::2919298721080311735::1747636198::1747689412::1::::<><>::
@@ -2521,7 +2521,7 @@ Actor3_7.png::CompressedTexture2D::8675260311503316934::1747636198::1747689377::
 Actor3_8.png::CompressedTexture2D::812104659857569819::1747636198::1747689377::1::::<><>::
 PlayerMale.png::CompressedTexture2D::4226064680584987804::1747636198::1747689377::1::::<><>::
 WerewolfScratchAttack.png::CompressedTexture2D::5947786873627701555::1747636198::1747689377::1::::<><>::
-::res://Assets/Image/images/sv_enemies/::1747823919
+::res://Assets/Image/images/sv_enemies/::1747977481
 Actor1_3.png::CompressedTexture2D::5679536918576559519::1747636198::1747689377::1::::<><>::
 Actor1_4.png::CompressedTexture2D::1872839003842691068::1747636198::1747689377::1::::<><>::
 Actor1_5.png::CompressedTexture2D::5529720704689169003::1747636198::1747689377::1::::<><>::
@@ -2713,7 +2713,7 @@ bluemarble-2048.png::CompressedTexture2D::545952190412991336::1747636198::174768
 ::res://Assets/Image/Items/::1747823923
 ::res://Assets/Image/Items/Ammmo_Mag/::1747823921
 Ammo_Mag.png::CompressedTexture2D::7363045399743760884::1747636198::1747689468::1::::<><>::
-::res://Assets/Image/Items/Bullets/::1747823921
+::res://Assets/Image/Items/Bullets/::1747977507
 All_Fire_Bullet_Pixel_16x16_02.png::CompressedTexture2D::880864198984139036::1747636198::1747689467::1::::<><>::
 All_Fire_Bullet_Pixel_16x16_04.png::CompressedTexture2D::423535528994965009::1747636198::1747689466::1::::<><>::
 ::res://Assets/Image/Items/Cage/::1747823921
@@ -3006,7 +3006,7 @@ UI_Flat_Textfield_02.png::CompressedTexture2D::5915550635380689624::1747636198::
 Teleport.png::CompressedTexture2D::199337583735834175::1747636198::1747689429::1::::<><>::
 Teleport_Stage.png::CompressedTexture2D::7283933392034250328::1747636198::1747689436::1::::<><>::
 ::res://Assets/Image/Items/Traps/::1747823922
-::res://Assets/Image/Items/Traps/Etc/::1747823922
+::res://Assets/Image/Items/Traps/Etc/::1747977481
 Arrow_Double_Jump.png::CompressedTexture2D::4561060256498420792::1747636198::1747689425::1::::<><>::
 Be_Spear.png::CompressedTexture2D::8558065389163518055::1747636198::1747689425::1::::<><>::
 Be_Xich.png::CompressedTexture2D::1647143505689328329::1747636198::1747689425::1::::<><>::
@@ -3239,7 +3239,7 @@ Red-Himalayan-Wolf-Canis-lupus-chanco.jpg::CompressedTexture2D::3933525921877879
 ::res://Assets/Image/Wolves/Hudson Bay Wolf/::1747823923
 1280px-Canis.lupus.occidentalis-ZOO.Olomouc3.jpg::CompressedTexture2D::3921802124990814278::1747636198::1747689448::1::::<><>::
 Hudson_Bay_Wolf.png::CompressedTexture2D::4433448427109328507::1747636198::1747689448::1::::<><>::
-::res://Assets/Image/Wolves/Iberian Wolf/::1747823923
+::res://Assets/Image/Wolves/Iberian Wolf/::1747977481
 1280px-Iberian_Wolf_AdF_001.jpg::CompressedTexture2D::6157932453452171419::1747636198::1747689448::1::::<><>::
 ::res://Assets/Image/Wolves/Indian Wolf/::1747823923
 Indian_Wolf.png::CompressedTexture2D::6481395148001697120::1747636198::1747689445::1::::<><>::
@@ -3860,8 +3860,8 @@ dessert.tscn::PackedScene::706192983266932302::1747899466::0::1::::<><>::uid://k
 ::res://Assets/Scences/Paralex/Grassland/::1747823937
 Grassland.tscn::PackedScene::1406064055484383404::1747636198::0::1::::<><>::res://Assets/Shaders/auto_scroller.gdshader<>uid://dgqo8v5smfwti::::res://Assets/Image/Background/Stage/Grassland/PNG/background_plains-Sheet1.png<>uid://bndg5gyubplt::::res://Assets/Image/Background/Stage/Grassland/PNG/background_plains-Sheet2.png<>uid://3gxbg44sgcus::::res://Assets/Image/Background/Stage/Grassland/PNG/background_plains-Sheet3.png<>uid://bxmndrm7oej5x::::res://Assets/Image/Background/Stage/Grassland/PNG/background_plains-Sheet4.png<>uid://dnlky1fdmcik2::::res://Assets/Image/Background/Stage/Grassland/PNG/background_plains-Sheet5.png
 taiga_a_3.tscn::PackedScene::7313041853066178272::1747636198::0::1::::<><>::uid://lmlgi8lmb4x0::::res://Assets/Image/Background/Stage/Taiga/pixel art taiga forest parallax background, side scroller, landscape 6k.png<>res://Assets/Shaders/sand_stromdessert.gdshader
-::res://Assets/Scences/Paralex/Taiga/::1747977360
-Taiga.gdshader::Shader::-1::1747977360::0::1::::<><>::
+::res://Assets/Scences/Paralex/Taiga/::1748595693
+Taiga.gdshader::Shader::-1::1748595693::0::1::::<><>::
 taiga.tscn::PackedScene::6200361764462979021::1747636198::0::1::::<><>::res://Assets/Shaders/sand_stromdessert.gdshader<>uid://b3xmhefq67wan::::res://Assets/Image/Background/Stage/Taiga/pixel_art_A_breathtaking_scene.jpeg
 taiga_2.tscn::PackedScene::6219316926114935111::1747636198::0::1::::<><>::uid://b31jbx5rkujqo::::res://Assets/Image/Background/Stage/Taiga/Background/sky.png<>res://Assets/Scences/Stages/Tundra/auto_scroller.gdshader<>uid://703es6npx7n4::::res://Assets/Image/Background/Stage/Taiga/Background/sky_cloud.png<>uid://cdav5nd7j52oe::::res://Assets/Image/Background/Stage/Taiga/Background/mountain2.png<>uid://dk15gun342ws0::::res://Assets/Image/Background/Stage/Taiga/Background/pine1.png<>uid://bwm126m1ie5hy::::res://Assets/Image/Background/Stage/Taiga/Background/pine2.png<>res://Assets/Shaders/sand_stromdessert.gdshader
 taiga_a_3.tscn::PackedScene::7313041853066178272::1747636198::0::1::::<><>::uid://lmlgi8lmb4x0::::res://Assets/Image/Background/Stage/Taiga/pixel art taiga forest parallax background, side scroller, landscape 6k.png<>res://Assets/Shaders/sand_stromdessert.gdshader
@@ -3882,10 +3882,10 @@ PlatForm_TransportShort.tscn::PackedScene::2342465826818823722::1747964055::0::1
 Tundra_Platfrom 1.tscn::PackedScene::8048137060325245260::1747636198::0::1::::<><>::uid://dti7dasx7n1s2::::res://Assets/Tileset/Biome_Tileset.tres
 Tundra_Platfrom 2.tscn::PackedScene::1016726587282882600::1747964145::0::1::::<><>::uid://be2o4st0shlrm::::res://Assets/Tileset/Tileset_Taiga A1.tres
 ::res://Assets/Scences/Stages/::1747823937
-::res://Assets/Scences/Stages/Dessert/::1747917440
-dessert.tscn::PackedScene::1514032098066273266::1747917440::0::1::::<><>::uid://kcc5o6h6mu5s::::res://Assets/Scences/Paralex/Dessert/dessert.tscn<>res://Assets/Scripts/Utilities/Stage/Dessert/dessert.gd<>uid://ca0nm25t6mv6w::::res://Assets/Scences/Items/Cammera/camera_Stage.tscn<>uid://c40qprrhr37lc::::res://Assets/Scences/Platfrom/dessert/desert_platfrom.tscn<>res://Assets/Scripts/Utilities/Check_Point_Managers/CheckpointManager.gd<>uid://ymmj8d0ppy7e::::res://Assets/Scences/Items/Check_Points/check_point.tscn<>uid://be2o4st0shlrm::::res://Assets/Tileset/Tileset_Taiga A1.tres<>uid://df6apmterwiib::::res://Assets/Scences/Platfrom/dessert/palm_leafs_.tscn<>res://Assets/Scripts/Utilities/Player_Spawner/Player_Spawner.gd<>uid://d08255h4ooj57::::res://Assets/Music/SFX/Wind/wind1.wav<>uid://biwpx1vfxnnab::::res://Assets/Music/SFX/Biomes/Jungle Music/MP3/jungle_with_intro.mp3<>uid://cau5155y6kc1q::::res://Assets/Scences/Character/NPC/Wolves/Gold/Arabian_Wolf/Arabian_Wolf.tscn<>uid://br3y2wminllit::::res://Assets/Scences/Items/Wolf_Coins/wolf_coin_next_lv.tscn<>uid://cp171x53dlm7n::::res://Assets/Scences/Traps/desert_rock.tscn<>uid://damhkymc1kira::::res://Assets/Scences/Items/Cage/Dessert/Dessert_Cage.tscn<>uid://bhnwdg518fk1e::::res://Assets/Scences/Character/NPC/Wolves/Brown/Indian_Wolf/Indian_Wolf.tscn<>uid://ep8hjmo4gqqo::::res://Assets/Scences/Character/NPC/Wolves/Gray/Mexican_Wolf/Mexican_Wolf.tscn<>uid://btqgl2umcojj5::::res://Assets/Scences/Util/Tecave_teleporter/caveteleportdessertright.tscn<>uid://bd4k8tc60s8wt::::res://Assets/Scences/caveteleportdessertleft.tscn
-::res://Assets/Scences/Stages/Grassland/::1747976323
-grassland.tscn::PackedScene::2664090976765122580::1747976323::0::1::::<><>::uid://ubdw1auhhxqi::::res://Assets/Scences/Paralex/Grassland/Grassland.tscn<>res://Assets/Scripts/Utilities/Stage/Grassland/grassland.gd<>uid://be2o4st0shlrm::::res://Assets/Tileset/Tileset_Taiga A1.tres<>uid://dxry70rbu77w6::::res://Assets/Scences/Items/Cage/Grassland/Grass_Cage.tscn<>uid://3ljdvv8uvfl2::::res://Assets/Scences/Platfrom/GrassLand/Plat_GrassLane_Transport.tscn<>uid://d3jodqdelrofo::::res://Assets/Scences/Util/Tecave_teleporter/grassland_teleport_Right.tscn<>uid://cd3bxnpw00ck4::::res://Assets/Scences/Util/Tecave_teleporter/grassland_teleport_left.tscn
+::res://Assets/Scences/Stages/Dessert/::1748578866
+dessert.tscn::PackedScene::1514032098066273266::1748578866::0::1::::<><>::uid://kcc5o6h6mu5s::::res://Assets/Scences/Paralex/Dessert/dessert.tscn<>res://Assets/Scripts/Utilities/Stage/Dessert/dessert.gd<>uid://ca0nm25t6mv6w::::res://Assets/Scences/Items/Cammera/camera_Stage.tscn<>uid://c40qprrhr37lc::::res://Assets/Scences/Platfrom/dessert/desert_platfrom.tscn<>res://Assets/Scripts/Utilities/Check_Point_Managers/CheckpointManager.gd<>uid://ymmj8d0ppy7e::::res://Assets/Scences/Items/Check_Points/check_point.tscn<>uid://be2o4st0shlrm::::res://Assets/Tileset/Tileset_Taiga A1.tres<>uid://df6apmterwiib::::res://Assets/Scences/Platfrom/dessert/palm_leafs_.tscn<>res://Assets/Scripts/Utilities/Player_Spawner/Player_Spawner.gd<>uid://d08255h4ooj57::::res://Assets/Music/SFX/Wind/wind1.wav<>uid://biwpx1vfxnnab::::res://Assets/Music/SFX/Biomes/Jungle Music/MP3/jungle_with_intro.mp3<>uid://cau5155y6kc1q::::res://Assets/Scences/Character/NPC/Wolves/Gold/Arabian_Wolf/Arabian_Wolf.tscn<>uid://br3y2wminllit::::res://Assets/Scences/Items/Wolf_Coins/wolf_coin_next_lv.tscn<>uid://cp171x53dlm7n::::res://Assets/Scences/Traps/desert_rock.tscn<>uid://damhkymc1kira::::res://Assets/Scences/Items/Cage/Dessert/Dessert_Cage.tscn<>uid://bhnwdg518fk1e::::res://Assets/Scences/Character/NPC/Wolves/Brown/Indian_Wolf/Indian_Wolf.tscn<>uid://ep8hjmo4gqqo::::res://Assets/Scences/Character/NPC/Wolves/Gray/Mexican_Wolf/Mexican_Wolf.tscn<>uid://btqgl2umcojj5::::res://Assets/Scences/Util/Tecave_teleporter/caveteleportdessertright.tscn<>uid://bd4k8tc60s8wt::::res://Assets/Scences/caveteleportdessertleft.tscn
+::res://Assets/Scences/Stages/Grassland/::1748595693
+grassland.tscn::PackedScene::2664090976765122580::1748595693::0::1::::<><>::uid://ubdw1auhhxqi::::res://Assets/Scences/Paralex/Grassland/Grassland.tscn<>res://Assets/Scripts/Utilities/Stage/Grassland/grassland.gd<>uid://be2o4st0shlrm::::res://Assets/Tileset/Tileset_Taiga A1.tres<>uid://dxry70rbu77w6::::res://Assets/Scences/Items/Cage/Grassland/Grass_Cage.tscn<>uid://3ljdvv8uvfl2::::res://Assets/Scences/Platfrom/GrassLand/Plat_GrassLane_Transport.tscn<>uid://d3jodqdelrofo::::res://Assets/Scences/Util/Tecave_teleporter/grassland_teleport_Right.tscn<>uid://cd3bxnpw00ck4::::res://Assets/Scences/Util/Tecave_teleporter/grassland_teleport_left.tscn
 ::res://Assets/Scences/Stages/Taiga/::1747899466
 taiga_a_1.tscn::PackedScene::7738681703438501488::1747899465::0::1::::<><>::res://Assets/Scripts/Utilities/Stage/Taiga/taiga_starter.gd<>uid://culrb1suvevtd::::res://Assets/Scences/Paralex/Taiga/taiga.tscn<>uid://kiogdnn1wmau::::res://Assets/Scences/Items/Weapon/Machete/machete.tscn<>uid://be2o4st0shlrm::::res://Assets/Tileset/Tileset_Taiga A1.tres<>res://Assets/Scripts/Utilities/Player_Spawner/Player_Spawner.gd<>uid://wc2k8qdf0h58::::res://Assets/Scences/Items/Weapon/Brust_garou/Brust_garaou.tscn<>uid://cijoewb00qfu0::::res://Assets/Music/SFX/Biomes/Forest Music/Forest.mp3
 taiga_a_3.tscn::PackedScene::7164793717120476680::1747899466::0::1::::<><>::res://Assets/Scripts/Utilities/Stage/Taiga/taiga.gd<>uid://ca0nm25t6mv6w::::res://Assets/Scences/Items/Cammera/camera_Stage.tscn<>uid://culrb1suvevtd::::res://Assets/Scences/Paralex/Taiga/taiga.tscn<>uid://cuuxigy7yprh4::::res://Assets/Scences/Paralex/Taiga/taiga_2.tscn<>uid://be2o4st0shlrm::::res://Assets/Tileset/Tileset_Taiga A1.tres<>uid://dcgqy35frqjee::::res://Assets/Scences/Paralex/Taiga/taiga_a_3.tscn<>uid://do60jfk40770p::::res://Assets/Scences/Character/NPC/Wolves/Gray/Eurasian_Wolf/Eurasian_Wolf.tscn<>uid://sraitif5w2fc::::res://Assets/Scences/Paralex/Taiga/taiga_a_4.tscn<>uid://8sni2y3wclb0::::res://Assets/Scences/Character/NPC/Wolves/White/Machenzie_River_Wolf/Machenzie_River_Wolf.tscn<>uid://cndqerygqtk6p::::res://Assets/Scences/Items/Cage/Taiga/pine__cage.tscn<>uid://di6bgtu0y432v::::res://Assets/Scences/Items/Player_Spawner/player_spawner.tscn<>uid://ddvjw3yd3jpcc::::res://Assets/Music/Dialogues/Executed_enemy/Required 5 enemy.wav<>uid://ccpiomxr4hnwi::::res://Assets/Fonts/DisposableDroidBB_bldital.ttf<>uid://d3lpwm66i3h54::::res://Assets/Scences/Character/Enemy/Humanoid/Taiga/hunter_mk_i.tscn<>uid://b4y10wltel5dd::::res://Assets/Scences/Util/Tecave_teleporter/Cave_Teleporter.tscn<>uid://cbo01n7ccb6dr::::res://Assets/Scences/Character/Enemy/Animals/Taiga/black_bear.tscn<>uid://barjbila0h7xr::::res://Assets/Scences/Platfrom/Taiga/taiga_platrom.tscn<>uid://cijoewb00qfu0::::res://Assets/Music/SFX/Biomes/Forest Music/Forest.mp3<>res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd<>uid://ve6g864losvt::::res://Assets/Scences/Character/Enemy/Animals/Taiga/golden_eagle.tscn<>uid://bha1kd0hiiw4r::::res://Assets/Scences/Character/Enemy/Animals/Taiga/red_fox.tscn<>uid://dm2f35rrowtqx::::res://Assets/Scences/Character/Enemy/Animals/Taiga/wolvrine.tscn
@@ -4226,8 +4226,8 @@ Hodson_Bay_Wolf.gd::GDScript::-1::1747636198::0::1::::Hudson_Bay_Wolf<>Wolves_Ch
 Mackenzie_River_Wolf.gd::GDScript::-1::1747636198::0::1::::Mackenzie_River_Wolf<>Wolves_Character<>::
 ::res://Assets/Scripts/Class/NPC/Wolves/Character/White/Tundra_Wolf/::1747823937
 Tundra_Wolf.gd::GDScript::-1::1747636198::0::1::::Tundra_Wolf<>Wolves_Character<>::
-::res://Assets/Scripts/Class/NPC/Wolves/Data/::1747825484
-Wolves_Data.json::JSON::-1::1747825484::0::1::::<><>::
+::res://Assets/Scripts/Class/NPC/Wolves/Data/::1747977508
+Wolves_Data.json::JSON::-1::1747977508::0::1::::<><>::
 ::res://Assets/Scripts/Class/Player/::1747823937
 player.gd::GDScript::-1::1747636198::0::1::::Player_controlled<>CharacterBody2D<>::
 ::res://Assets/Scripts/Item/::1747823937
@@ -4406,9 +4406,9 @@ Tutorials.gd::GDScript::-1::1747636198::0::1::::<>Node2D<>::
 UnusedData.gd::GDScript::-1::1747636198::0::1::::UnusedData<>SavedData<>::
 ::res://Assets/Scripts/Utilities/Wolf_Coins/::1747823938
 Detection_Area.gd::GDScript::-1::1747636198::0::1::::<>Area2D<>::
-::res://Assets/Shaders/::1747977360
+::res://Assets/Shaders/::1748595693
 auto_scroller.gdshader::Shader::-1::1747636198::0::1::::<><>::
-auto_scroller_Tundra.gdshader::Shader::-1::1747977360::0::1::::<><>::
+auto_scroller_Tundra.gdshader::Shader::-1::1748595693::0::1::::<><>::
 sand_pouring.gdshader::Shader::-1::1747636198::0::1::::<><>::
 sand_stromdessert.gdshader::Shader::-1::1747636198::0::1::::<><>::
 taiga1.gdshader::Shader::-1::1747636198::0::1::::<><>::
@@ -4437,9 +4437,9 @@ Options_Menu_Slider.tres::StyleBoxLine::5816168605563242376::1747636198::0::1:::
 Player_Name.tres::Theme::6459011398460081421::1747636198::0::1::::<><>::uid://bv6xsykw7vcai::::res://Assets/Fonts/DisposableDroidBB_bld.ttf
 ::res://Assets/Theme/Wolf_Almanac_Idex/::1747823938
 Button.tres::Theme::7917252927883219627::1747636198::0::1::::<><>::uid://dk1ja3jllfjob::::res://Assets/Fonts/DisposableDroidBB_bld.ttf
-::res://Assets/Tileset/::1747963600
-Biome_Tileset.tres::TileSet::8511313432279436847::1747963600::0::1::::<><>::uid://nda03g3ohk3c::::res://Assets/Image/Tile_Set/Biome/d5faddcd-9400-4c4c-846d-f3eaf096e311.png
-Tileset_Taiga A1.tres::TileSet::2723817059458631602::1747963600::0::1::::<><>::uid://bsgldwrfl8ita::::res://Assets/Image/Tile_Set/Taiga/forest_tileset.png<>uid://nda03g3ohk3c::::res://Assets/Image/Tile_Set/Biome/d5faddcd-9400-4c4c-846d-f3eaf096e311.png<>uid://veuahbhbt4jq::::res://Assets/Image/images/tilesets/Dungeon_B.png<>uid://45itfcoge8ok::::res://Assets/Image/images/tilesets/Outside_B.png
+::res://Assets/Tileset/::1748581725
+Biome_Tileset.tres::TileSet::8511313432279436847::1748581725::0::1::::<><>::uid://nda03g3ohk3c::::res://Assets/Image/Tile_Set/Biome/d5faddcd-9400-4c4c-846d-f3eaf096e311.png
+Tileset_Taiga A1.tres::TileSet::2723817059458631602::1748581725::0::1::::<><>::uid://bsgldwrfl8ita::::res://Assets/Image/Tile_Set/Taiga/forest_tileset.png<>uid://nda03g3ohk3c::::res://Assets/Image/Tile_Set/Biome/d5faddcd-9400-4c4c-846d-f3eaf096e311.png<>uid://veuahbhbt4jq::::res://Assets/Image/images/tilesets/Dungeon_B.png<>uid://45itfcoge8ok::::res://Assets/Image/images/tilesets/Outside_B.png
 ::res://Tests/::1747823938
 ::res://Tests/Resources/::1747823938
 unit_test_character.dch::Resource/Resource::-1::1747636198::0::1::::<><>::
