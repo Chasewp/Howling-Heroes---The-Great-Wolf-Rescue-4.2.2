@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://gix0ie0j80x8"]
+
+[ext_resource type="Texture2D" uid="uid://dvf68wt8xdwsb" path="res://Assets/Image/Background/Stage/Taiga/Backgroun 7.png" id="1_yil80"]
+[ext_resource type="Shader" path="res://Assets/Scences/Paralex/Taiga/Taiga.gdshader" id="2_vio6j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kcxub"]
+shader = ExtResource("2_vio6j")
+shader_parameter/colorMode = 0
+shader_parameter/color = null
+shader_parameter/timescale = 0.2
+shader_parameter/hScrollSpeedFactor = 1.0
+shader_parameter/vScrollSpeedFactor = 1.0
+shader_parameter/entropyFactor = 1.0
+shader_parameter/sharpness = 10.0
+
+[node name="Taiga A6" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
+offset_left = 24942.0
+offset_right = 32942.0
+offset_bottom = 1100.0
+texture = ExtResource("1_yil80")
+expand_mode = 1
+
+[node name="Shadow Effect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_kcxub")
+anchors_preset = -1
+anchor_right = 0.25
+offset_left = 8942.0
+offset_right = 16580.0
+offset_bottom = 708.0

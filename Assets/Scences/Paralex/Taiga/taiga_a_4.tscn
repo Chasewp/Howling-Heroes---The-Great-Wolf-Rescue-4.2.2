@@ -26,10 +26,10 @@ texture = ExtResource("1_e8gat")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Shadow Effect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_8tnhm")
 anchors_preset = -1
 anchor_right = 0.25
-offset_left = 8116.0
-offset_right = 15754.0
+offset_left = 8942.0
+offset_right = 16580.0
 offset_bottom = 708.0

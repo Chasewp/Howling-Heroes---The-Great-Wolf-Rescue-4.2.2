@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgmplnkl2txla"]
+
+[ext_resource type="Shader" path="res://Assets/Scences/Paralex/Taiga/Taiga.gdshader" id="1_5d0cm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dh7om"]
+shader = ExtResource("1_5d0cm")
+shader_parameter/colorMode = 0
+shader_parameter/color = null
+shader_parameter/timescale = 0.2
+shader_parameter/hScrollSpeedFactor = 1.0
+shader_parameter/vScrollSpeedFactor = 1.0
+shader_parameter/entropyFactor = 1.0
+shader_parameter/sharpness = 10.0
+
+[node name="Taiga-A9" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
+offset_left = 40942.0
+offset_right = 40982.0
+offset_bottom = 40.0
+
+[node name="Shadow Effect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_dh7om")
+anchors_preset = -1
+anchor_right = 0.25
+offset_left = 8942.0
+offset_right = 16580.0
+offset_bottom = 708.0

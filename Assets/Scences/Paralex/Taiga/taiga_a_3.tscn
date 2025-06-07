@@ -31,7 +31,7 @@ shader_parameter/noise_texture = SubResource("NoiseTexture2D_emsdt")
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
 offset_left = 2942.0
-offset_right = 8942.0
+offset_right = 10942.0
 offset_bottom = 720.0
 texture = ExtResource("1_2128l")
 

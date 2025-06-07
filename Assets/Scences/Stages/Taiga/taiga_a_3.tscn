@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://dacxduhw3cbjc"]
+[gd_scene load_steps=64 format=3 uid="uid://dacxduhw3cbjc"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Stage/Taiga/taiga.gd" id="1_g4hk3"]
 [ext_resource type="PackedScene" uid="uid://ca0nm25t6mv6w" path="res://Assets/Scences/Items/Cammera/camera_Stage.tscn" id="2_00v6u"]
@@ -8,9 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://dcgqy35frqjee" path="res://Assets/Scences/Paralex/Taiga/taiga_a_3.tscn" id="5_uqdba"]
 [ext_resource type="PackedScene" uid="uid://do60jfk40770p" path="res://Assets/Scences/Character/NPC/Wolves/Gray/Eurasian_Wolf/Eurasian_Wolf.tscn" id="7_2xikr"]
 [ext_resource type="PackedScene" uid="uid://sraitif5w2fc" path="res://Assets/Scences/Paralex/Taiga/taiga_a_4.tscn" id="7_fctwr"]
+[ext_resource type="PackedScene" uid="uid://dajnc56dgw0cv" path="res://Assets/Scences/Paralex/Taiga/Taiga_a5.tscn" id="8_f05wb"]
 [ext_resource type="PackedScene" uid="uid://8sni2y3wclb0" path="res://Assets/Scences/Character/NPC/Wolves/White/Machenzie_River_Wolf/Machenzie_River_Wolf.tscn" id="8_k13xk"]
 [ext_resource type="PackedScene" uid="uid://cndqerygqtk6p" path="res://Assets/Scences/Items/Cage/Taiga/pine__cage.tscn" id="9_gbjs0"]
+[ext_resource type="PackedScene" uid="uid://gix0ie0j80x8" path="res://Assets/Scences/Paralex/Taiga/taiga_a_6.tscn" id="9_n73ph"]
 [ext_resource type="PackedScene" uid="uid://di6bgtu0y432v" path="res://Assets/Scences/Items/Player_Spawner/player_spawner.tscn" id="9_vtvml"]
+[ext_resource type="PackedScene" uid="uid://b6ciujxaodh8c" path="res://Assets/Scences/Paralex/Taiga/taiga_a_7.tscn" id="10_r816m"]
+[ext_resource type="PackedScene" uid="uid://c2rgjvguuy0tx" path="res://Assets/Scences/Paralex/Taiga/taiga_a_8.tscn" id="11_geufl"]
 [ext_resource type="AudioStream" uid="uid://ddvjw3yd3jpcc" path="res://Assets/Music/Dialogues/Executed_enemy/Required 5 enemy.wav" id="11_qm1w7"]
 [ext_resource type="FontFile" uid="uid://ccpiomxr4hnwi" path="res://Assets/Fonts/DisposableDroidBB_bldital.ttf" id="12_qptcy"]
 [ext_resource type="PackedScene" uid="uid://d3lpwm66i3h54" path="res://Assets/Scences/Character/Enemy/Humanoid/Taiga/hunter_mk_i.tscn" id="13_8w5b2"]
@@ -286,6 +290,16 @@ scroll_base_offset = Vector2(1278, 0)
 
 [node name="Taiga_A_4" parent="Background" instance=ExtResource("7_fctwr")]
 
+[node name="TaigaA5" parent="Background" instance=ExtResource("8_f05wb")]
+
+[node name="Taiga A6" parent="Background" instance=ExtResource("9_n73ph")]
+
+[node name="Taiga-A7" parent="Background" instance=ExtResource("10_r816m")]
+visible = false
+
+[node name="Taiga_A8" parent="Background" instance=ExtResource("11_geufl")]
+visible = false
+
 [node name="Wall_Barrier" type="Node" parent="."]
 
 [node name="Stage_1" type="Node" parent="Wall_Barrier"]
@@ -516,12 +530,11 @@ position = Vector2(324988, -179)
 shape = SubResource("RectangleShape2D_npte3")
 
 [node name="Buttom_Side" type="StaticBody2D" parent="Wall_Barrier/Entry Wall"]
-position = Vector2(11, 1305)
+position = Vector2(324988, 1126)
 collision_mask = 34
 physics_material_override = SubResource("PhysicsMaterial_vfaeh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Barrier/Entry Wall/Buttom_Side"]
-position = Vector2(324988, -179)
 shape = SubResource("RectangleShape2D_npte3")
 
 [node name="Wolves" type="Node" parent="."]

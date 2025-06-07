@@ -3,16 +3,18 @@ extends Enemy_Main_Class
 
 @export var attack_range := 100.0
 @export var attack_cooldown := 2.0
-@export var patrol_radius := 800.0  # Patrol area radius in pixels
+@export var patrol_radius := 300.0  # Patrol area radius in pixels
 
 var patrol_center: Vector2  # Center point for patrol area
 var is_chasing := false
+#var selesih_x = target_player.global_position.x - self.global_position.x
 
 func _ready():
 	is_flying = true
 	patrol_center = global_position  # Set initial patrol center
 	super._ready()
-
+	#target_player = Player_controlled.new()
+	
 func _physics_process(delta):
 	handle_gravity(delta)
 	
@@ -50,6 +52,7 @@ func change_direction():
 	else:
 		# Chase player tapi tetap dalam radius patroli + buffer
 		is_chasing = true
+		
 		var to_player = (target_player.global_position - global_position).normalized()
 		var target_pos = patrol_center + (to_player * min(patrol_radius * 0.8, distance_to_player))
 		direction = (target_pos - global_position).normalized()
@@ -86,8 +89,6 @@ func attack():
 		target_player.take_damage(damage, AP, APdmg)
 	
 	animate_state = state.RUNNING
-
-
 
 func died():
 	super.died()

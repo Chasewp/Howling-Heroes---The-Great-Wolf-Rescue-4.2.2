@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dajnc56dgw0cv"]
+
+[ext_resource type="Texture2D" uid="uid://c31kfkss55uk5" path="res://Assets/Image/Background/Stage/Taiga/Backgriun 6.png" id="1_b8naj"]
+[ext_resource type="Shader" path="res://Assets/Scences/Paralex/Taiga/Taiga.gdshader" id="2_574uk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4d62i"]
+shader = ExtResource("2_574uk")
+shader_parameter/colorMode = 0
+shader_parameter/color = null
+shader_parameter/timescale = 0.2
+shader_parameter/hScrollSpeedFactor = 1.0
+shader_parameter/vScrollSpeedFactor = 1.0
+shader_parameter/entropyFactor = 1.0
+shader_parameter/sharpness = 10.0
+
+[node name="TaigaA5" type="ParallaxBackground"]
+
+[node name="Background 1" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Background 1"]
+offset_left = 16942.0
+offset_right = 24942.0
+offset_bottom = 720.0
+texture = ExtResource("1_b8naj")
+
+[node name="Shadow Effect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_4d62i")
+custom_minimum_size = Vector2(0, 720)
+anchors_preset = -1
+anchor_right = 0.25
+offset_left = 16942.0
+offset_right = 24622.0
+offset_bottom = 708.0
