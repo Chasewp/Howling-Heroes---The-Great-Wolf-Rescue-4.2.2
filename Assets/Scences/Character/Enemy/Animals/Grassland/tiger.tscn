@@ -394,7 +394,7 @@ bg_color = Color(1, 0, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpkd2"]
 
-[node name="Tiger" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast")]
+[node name="Snow_leopard" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast")]
 script = ExtResource("1_bblrp")
 health_bar = NodePath("Health_Bar")
 armor_bar = NodePath("Armor_Bar")

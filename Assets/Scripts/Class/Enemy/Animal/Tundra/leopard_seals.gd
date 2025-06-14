@@ -1,5 +1,6 @@
-class_name Brown_Bear
+class_name Leopard_seal
 extends Enemy_Main_Class
+
 
 @export var attack_range := 100.0
 @export var attack_cooldown := 2.0
@@ -28,6 +29,7 @@ func _physics_process(delta):
 		look_for_player()
 		change_direction()
 		handle_movement(delta)
+
 	update_state()
 
 func change_direction():
@@ -50,7 +52,7 @@ func change_direction():
 		direction = (target_player.global_position - global_position).normalized()
 		animate_state = state.RUNNING
 	
-	# 3. LOGICA PATROL	
+	# 3. LOGICA PATROL
 	else:
 		is_chasing = false
 		patrol_behavior()
@@ -81,6 +83,7 @@ func patrol_behavior():
 				if is_instance_valid(self) and is_instance_valid(enemy_sprites) and animate_state == state.IDDLE:
 					animate_state = state.RUNNING
 		)
+
 		
 func handle_movement(delta:float):
 	# Use appropriate speed based on state
@@ -90,21 +93,8 @@ func handle_movement(delta:float):
 		velocity.x = move_toward(velocity.x, direction.x * current_speed, Acceleration * delta)
 	else:
 		velocity.x = move_toward(velocity.x, 0, Acceleration * delta)
+	
 	move_and_slide()
-
-func attack():
-	if not is_instance_valid(target_player):
-		return
-		
-	enemy_sprite_animation.play("Attack")
-	await enemy_sprite_animation.animation_finished
-
-	#var overlapping_area = hit_box.get_overlapping_areas()
-	#for area in overlapping_area:
-		#if area.is_in_group("player_hurtbox"):
-			#area.take_damage(damage, AP, APdmg)
-			
-	animate_state = state.RUNNING
 
 func died():
 	super.died()

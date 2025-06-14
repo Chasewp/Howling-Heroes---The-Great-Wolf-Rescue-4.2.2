@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://m2oouf5q1ry1"
+path="res://.godot/imported/Leopard Seal_hurt.wav-062387b68e6c130c095791c08377f2fe.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX/Enemy/Animal/Leopard Seal_hurt.wav"
+dest_files=["res://.godot/imported/Leopard Seal_hurt.wav-062387b68e6c130c095791c08377f2fe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

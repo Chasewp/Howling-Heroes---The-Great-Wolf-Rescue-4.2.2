@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://boqmv5b62kosv"]
 
-[ext_resource type="Shader" path="res://Assets/Scences/Stages/Tundra/Tundra1.gdshader" id="1_dppfu"]
+[ext_resource type="Shader" path="res://Assets/Shaders/Tundra1.gdshader" id="1_dppfu"]
 
 [resource]
 shader = ExtResource("1_dppfu")

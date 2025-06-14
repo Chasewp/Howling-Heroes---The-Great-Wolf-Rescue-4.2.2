@@ -1,4 +1,4 @@
-class_name Brown_Bear
+class_name Artic_Fox
 extends Enemy_Main_Class
 
 @export var attack_range := 100.0

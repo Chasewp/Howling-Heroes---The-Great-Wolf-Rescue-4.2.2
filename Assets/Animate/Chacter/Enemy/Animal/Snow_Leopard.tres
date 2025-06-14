@@ -1,0 +1,96 @@
+[gd_resource type="SpriteFrames" load_steps=15 format=3 uid="uid://byas72srdhtuj"]
+
+[ext_resource type="Texture2D" uid="uid://cnl8new75ffoq" path="res://Assets/Image/Enemy/Animal/Leopard Seal/Attack/Attack 1.png" id="1_hxrlu"]
+[ext_resource type="Texture2D" uid="uid://bedmrsflskxpl" path="res://Assets/Image/Enemy/Animal/Leopard Seal/Attack/Attack 2.png" id="1_w25rf"]
+[ext_resource type="Texture2D" uid="uid://bm354yd6x0tba" path="res://Assets/Image/Enemy/Animal/Leopard Seal/Died/Died 1.png" id="3_qec07"]
+[ext_resource type="Texture2D" uid="uid://cpjbf8yl63vjg" path="res://Assets/Image/Enemy/Animal/Leopard Seal/Died/Died 2.png" id="4_wdlm3"]
+[ext_resource type="Texture2D" uid="uid://e5pkshq0olua" path="res://Assets/Image/Enemy/Animal/Leopard Seal/Fall/Fall.png" id="5_q20g1"]
+[ext_resource type="Texture2D" uid="uid://7x065sc1pwso" path="res://Assets/Image/Enemy/Animal/Leopard Seal/hurt/Hurt 1.png" id="6_n2de0"]
+[ext_resource type="Texture2D" uid="uid://dk0o1rsjqp26q" path="res://Assets/Image/Enemy/Animal/Leopard Seal/hurt/Hurt 2.png" id="7_tcqy7"]
+[ext_resource type="Texture2D" uid="uid://b710jfjs7uu1x" path="res://Assets/Image/Enemy/Animal/Leopard Seal/Iddle/Iddle 1.png" id="8_nxf70"]
+[ext_resource type="Texture2D" uid="uid://v245pdl0ctve" path="res://Assets/Image/Enemy/Animal/Leopard Seal/Iddle/Iddle 2.png" id="9_6josw"]
+[ext_resource type="Texture2D" uid="uid://bvg3dfusyeoux" path="res://Assets/Image/Enemy/Animal/Leopard Seal/Iddle/Iddle 3.png" id="10_tinpp"]
+[ext_resource type="Texture2D" uid="uid://bkxke3k8uf00x" path="res://Assets/Image/Enemy/Animal/Leopard Seal/Jump/Jump.png" id="11_3mfn4"]
+[ext_resource type="Texture2D" uid="uid://nqi1xlh87rcd" path="res://Assets/Image/Enemy/Animal/Leopard Seal/New folder/Run 1.png" id="12_r3fdv"]
+[ext_resource type="Texture2D" uid="uid://cmwxeacpbra7u" path="res://Assets/Image/Enemy/Animal/Leopard Seal/New folder/Run 2.png" id="13_rjufb"]
+[ext_resource type="Texture2D" uid="uid://bpbt7aaobyxs4" path="res://Assets/Image/Enemy/Animal/Leopard Seal/New folder/Run 3.png" id="14_vrcil"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_w25rf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hxrlu")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qec07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wdlm3")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_q20g1")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_n2de0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tcqy7")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_nxf70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6josw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tinpp")
+}],
+"loop": true,
+"name": &"iddle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_3mfn4")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_r3fdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rjufb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vrcil")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]

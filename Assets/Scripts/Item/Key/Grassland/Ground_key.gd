@@ -1,4 +1,4 @@
-class_name Dessert_Key
+class_name Ground_Key
 extends Area2D
 @onready var animation_player = $AnimationPlayer
 @export var float_height : float = 10.0
@@ -19,6 +19,6 @@ func _on_body_entered(body):
 
 func collect_key(player):
 	animation_player.play("get_the_key")
-	player_singleton_autoload.setter_dessert_key(true)
+	player_singleton_autoload.setter_ground_key(true)
 	await animation_player.animation_finished
 	queue_free()
