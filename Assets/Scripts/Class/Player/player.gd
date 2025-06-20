@@ -90,7 +90,6 @@ var current_armor:float
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-var save_load = SaveLoadManagerFile.new()
 
 func _init():
 	is_machete_equip = player_singleton_autoload.is_machete_equip
@@ -459,7 +458,7 @@ func died():
 	LoadingScreen.load_scence("res://Assets/Scences/UI/Game over/Game_Over.tscn")
 	queue_free()
 	MissionStatData.reset_data()
-	save_load.new_game()
+	SaveLoadManager.new_game()
 	WolfData.reset_Wolf_Rescue_data()
 	
 func _on_animation_player_finished(anim_name):

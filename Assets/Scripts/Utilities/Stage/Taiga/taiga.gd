@@ -8,16 +8,18 @@ extends Level
 @onready var required5enemyexecutedsound = $"Bos_Encounter/Bos_1/Ecounter_To_bos/Required 5 enemy executed"
 @onready var teleport_to_bos_1_position = $Bos_Encounter/Bos_1/Ecounter_To_bos/destination
 @onready var labelrequired5enemyexecuted = $"Bos_Encounter/Bos_1/Ecounter_To_bos/Panel 5 required enemy"
-#
+
 #Bos 1 Executed
 @onready var teleport_to_wolf_cage = $Bos_Encounter/Bos_1/cave_teleporter_To_Wolf_Cage/Area2D/Marker2D 
-@onready var teleport_wolf_cage = $Bos_Encounter/Bos_1/cave_teleporter_To_Wolf_Cage
+@onready var teleport_wolf_cage = $Bos_Encounter/Bos_1/cave_teleporter_To_Wolf_Cage # Teleport to Wolf Cage 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	music.play()
 	platfrom.play("platfrom_move")
-
+	teleport_wolf_cage.visible = false
+	if MissionStatData.boss_kill >= 1 :
+		teleport_to_wolf_cage.visible = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

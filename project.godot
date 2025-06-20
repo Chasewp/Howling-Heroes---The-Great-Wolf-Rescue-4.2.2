@@ -38,6 +38,7 @@ MissionStatData="*res://Assets/Scripts/Auto_Load/Mission_data_stats/Mission_Stat
 player_singleton_autoload="*res://Assets/Scripts/Auto_Load/Player/Player_Singleton.gd"
 AlmanacOpenCloser="*res://Assets/Scripts/Auto_Load/Wolf_Almanac_Scence_Open_Closer/Almanac_Open_Close.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+SaveLoadManager="*res://Assets/Scripts/Utilities/Save_Manager/SaveLoadManager.gd"
 
 [collada]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://dacxduhw3cbjc"]
+[gd_scene load_steps=65 format=3 uid="uid://dacxduhw3cbjc"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Stage/Taiga/taiga.gd" id="1_g4hk3"]
 [ext_resource type="PackedScene" uid="uid://ca0nm25t6mv6w" path="res://Assets/Scences/Items/Cammera/camera_Stage.tscn" id="2_00v6u"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="17_nrca3"]
 [ext_resource type="PackedScene" uid="uid://ve6g864losvt" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/golden_eagle.tscn" id="19_8fc52"]
 [ext_resource type="PackedScene" uid="uid://bha1kd0hiiw4r" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/red_fox.tscn" id="19_m4b03"]
+[ext_resource type="PackedScene" uid="uid://x7jt8s4abruj" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/brown_bear.tscn" id="21_yw4qv"]
 [ext_resource type="PackedScene" uid="uid://dm2f35rrowtqx" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/wolvrine.tscn" id="22_0rx8n"]
 
 [sub_resource type="Animation" id="Animation_c7rdu"]
@@ -671,17 +672,6 @@ position = Vector2(1753, 419)
 position = Vector2(132, 265)
 eficient_Armor = 0.35
 
-[node name="Black_Bear2" parent="Enemy/Stage_1" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast") instance=ExtResource("13_eiy3r")]
-position = Vector2(81, 90)
-health_bar = NodePath("../Black_Bear/Health_Bar")
-armor_bar = NodePath("../Black_Bear/Armor_Bar")
-hit_box = NodePath("../Black_Bear/Hit box")
-hurt_box = NodePath("../Black_Bear/Hurt_Box")
-enemy_sprites = NodePath("../Black_Bear/Black_Bear_Animation")
-enemy_sprite_animation = NodePath("../Black_Bear/Black_Bear_Animation/AnimationPlayer")
-enemy_raycast = NodePath("../Black_Bear/RayCast2D")
-eficient_Armor = 0.35
-
 [node name="Golden_Eagle" parent="Enemy/Stage_1" instance=ExtResource("19_8fc52")]
 position = Vector2(1851, 219)
 
@@ -690,6 +680,9 @@ position = Vector2(2865, 27)
 
 [node name="Wolvine" parent="Enemy/Stage_1" instance=ExtResource("22_0rx8n")]
 position = Vector2(294, 461)
+
+[node name="Brown_Bear" parent="Enemy/Stage_1" instance=ExtResource("21_yw4qv")]
+position = Vector2(64, 69)
 
 [node name="Stage_2" type="Node" parent="Enemy"]
 

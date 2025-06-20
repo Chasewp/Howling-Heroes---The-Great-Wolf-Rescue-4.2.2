@@ -1,8 +1,9 @@
 class_name Game_Manager
 extends Node2D
 
-@onready var stage_root : WorldRoot = %WorldRoot
-@onready var save_load :SaveLoadManagerFile =%Save_Loader
+@onready var stage_root : WorldRoot = $WorldRoot
+@onready var save_load :SaveLoadManagerFile =$Utilities/Save_Loader
+
 @onready var button_sfx = $UI/butons_sfx
 var crosshair_Cursor = load("res://Assets/Image/Cursor/Cross_Hair/Layer 1.png")
 var hand_cursor = load("res://Assets/Image/Cursor/hand_paw.png")
@@ -10,7 +11,8 @@ var hand_cursor = load("res://Assets/Image/Cursor/hand_paw.png")
 func _ready():
 	stage_root.level_exit_reached.connect(_on_level_exit_reached)
 	Input.set_custom_mouse_cursor(crosshair_Cursor)
-	Input.MOUSE_MODE_VISIBLE
+	#Show Cursor 
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 func _on_level_exit_reached(next_level):
 	stage_root.load_level_async(next_level)

@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://bo8ky70qah4nu"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/UI/Wolf_Almanac/Wolf_Almanac_Index_Page_1.gd" id="1_xcq0k"]
-[ext_resource type="Texture2D" uid="uid://blcflasp4l32d" path="res://Assets/Image/Background/UI/Wolf Almanac Index/Wood Texture.png" id="2_ygj5s"]
-[ext_resource type="FontFile" uid="uid://dk1ja3jllfjob" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="3_curut"]
-[ext_resource type="Texture2D" uid="uid://2u26f5jabtcj" path="res://Assets/Image/Buttons/Button.png" id="4_57avl"]
+[ext_resource type="Texture2D" uid="uid://bw8k1jga0lsni" path="res://Assets/Image/Background/UI/Wolf Almanac Index/Wood Texture.png" id="2_ygj5s"]
+[ext_resource type="FontFile" uid="uid://bv6xsykw7vcai" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="3_curut"]
+[ext_resource type="Texture2D" uid="uid://rkl0rkgecry7" path="res://Assets/Image/Buttons/Button.png" id="4_57avl"]
 [ext_resource type="Texture2D" uid="uid://cfaq68nhdhm38" path="res://Assets/Animate/Item/Lock_Buttons.tres" id="4_n6aa0"]
 [ext_resource type="Theme" uid="uid://dk2f873t2ffc2" path="res://Assets/Theme/Wolf_Almanac_Idex/Button.tres" id="5_li3ld"]
-[ext_resource type="FontFile" uid="uid://dmorfn4drgakd" path="res://Assets/Fonts/DisposableDroidBB_bldital.ttf" id="7_g30er"]
-[ext_resource type="AudioStream" uid="uid://ca2al0w7iqcu" path="res://Assets/Music/SFX/Normal_Button/Click button.mp3" id="8_bbj54"]
+[ext_resource type="FontFile" uid="uid://ccpiomxr4hnwi" path="res://Assets/Fonts/DisposableDroidBB_bldital.ttf" id="7_g30er"]
+[ext_resource type="AudioStream" uid="uid://dvqtsqnkxmd3c" path="res://Assets/Music/SFX/Normal_Button/Click button.mp3" id="8_bbj54"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sgmu4"]
 atlas = ExtResource("4_57avl")

@@ -1,19 +1,36 @@
 extends Node
 class_name SaveLoadManagerFile
 
-@onready var play:Player_controlled =  %Player as Player_controlled
-@onready var stage_root : WorldRoot = %WorldRoot as WorldRoot
+var play:Player_controlled 
+var stage_root : WorldRoot 
 
+func register_world_root(root: WorldRoot):
+	stage_root = root
 
+func register_player(player: Player_controlled):
+	play = player
+	
 func _ready():
+	#Find dymanic player & stage_root
+	play = get_tree().root.find_child("Player", true, false) as Player_controlled
+	stage_root = get_tree().root.find_child("WorldRoot", true, false) as WorldRoot
+	
+	if not play or not stage_root:
+		push_error("Failed to find required nodes for SaveLoadManager")
+		return
+
 	new_game()
 	
 # Function to save game data
 func save_game():
+	if not is_instance_valid(stage_root):
+		push_error("WorldRoot is not valid, cannot save game")
+		return
+		
 	var save_progress: Data_Progress = Data_Progress.new()
 	
 		# save the path to the currently loaded level
-	save_progress.level_path = stage_root.get_current_level_path()
+	save_progress.level_path = get_current_level_path_safe()
 	
 	#store player health, position, biome_location, & equipments
 	save_progress.player_position = play.global_position
@@ -61,6 +78,21 @@ func save_game():
 	ResourceSaver.save(save_progress, "user://Save/Progress/Save_Progress.tres")
 	print("Game saved successfully.")
 
+func get_current_level_path_safe() -> String:
+	if not is_instance_valid(stage_root):
+		return ""
+	
+	# Coba beberapa cara untuk mendapatkan path level
+	if stage_root.has_method("get_current_level_path"):
+		return stage_root.get_current_level_path()
+	
+	# Alternatif: cari level secara manual
+	for node in get_tree().get_nodes_in_group("level"):
+		if node.scene_file_path:
+			return node.scene_file_path
+	
+	return "res://invalid.tscn"
+	
 func save_check_points(pos:Vector2,_stg : String):
 	var save_progress: Data_Progress = Data_Progress.new()
 	
