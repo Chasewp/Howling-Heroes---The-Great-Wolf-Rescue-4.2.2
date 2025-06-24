@@ -61,7 +61,15 @@ func _ready():
 	hurt_box.Armors = arm
 	hurt_box.Eficient_Armors = eficient_Armor
 	
-	
+	## Tambahkan physics material
+	#var physics_material = PhysicsMaterial.new()
+	#physics_material.bounce = 0.1
+	#physics_material.friction = 0.5
+	#
+	## Terapkan ke collision shape
+	#var collision_shape = $CollisionShape2D
+	#if collision_shape:
+		#collision_shape.physics_material_override = physics_material
 	
 	#target player
 	if not target_player:
@@ -117,8 +125,11 @@ func take_damage(_damage: float, _is_ap: bool, _ap_dmg: float):
 	elif current_health > 0:# Play hurt animation if not dead
 		animate_state = state.HURT
 		enemy_sprite_animation.play("Hurt")
+		await enemy_sprite_animation.animation_finished
+		# Kembali ke state sebelumnya setelah hurt
+		animate_state = state.RUNNING if velocity.length_squared() > 1 else state.IDDLE
 		update_animation(direction.x)
-
+	
 	# Debug print
 	print("Damage Received ", _damage, " Health: ", current_health, " Armor: ", current_armor)
 	

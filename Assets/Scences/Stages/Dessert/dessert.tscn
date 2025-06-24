@@ -1,11 +1,9 @@
-[gd_scene load_steps=48 format=3 uid="uid://vtn5f5opig4q"]
+[gd_scene load_steps=46 format=3 uid="uid://vtn5f5opig4q"]
 
 [ext_resource type="PackedScene" uid="uid://kcc5o6h6mu5s" path="res://Assets/Scences/Paralex/Dessert/dessert.tscn" id="1_pcqu5"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Stage/Dessert/dessert.gd" id="1_ubgou"]
 [ext_resource type="PackedScene" uid="uid://ca0nm25t6mv6w" path="res://Assets/Scences/Items/Cammera/camera_Stage.tscn" id="3_f2xjq"]
 [ext_resource type="PackedScene" uid="uid://c40qprrhr37lc" path="res://Assets/Scences/Platfrom/dessert/desert_platfrom.tscn" id="3_nwrbk"]
-[ext_resource type="Script" path="res://Assets/Scripts/Utilities/Check_Point_Managers/CheckpointManager.gd" id="4_txpgb"]
-[ext_resource type="PackedScene" uid="uid://ymmj8d0ppy7e" path="res://Assets/Scences/Items/Check_Points/check_point.tscn" id="5_la3co"]
 [ext_resource type="TileSet" uid="uid://be2o4st0shlrm" path="res://Assets/Tileset/Tileset_Taiga A1.tres" id="6_m1h2u"]
 [ext_resource type="PackedScene" uid="uid://df6apmterwiib" path="res://Assets/Scences/Platfrom/dessert/palm_leafs_.tscn" id="6_qqmqv"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Player_Spawner/Player_Spawner.gd" id="7_qqv2f"]
@@ -946,21 +944,6 @@ position = Vector2(37847, 626.6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall_Stage/Wall_Barrier_Stage_3/StaticBody2D"]
 shape = SubResource("RectangleShape2D_88r4p")
-
-[node name="CheckpointManager" type="Node" parent="."]
-script = ExtResource("4_txpgb")
-
-[node name="Check_Point_Wolf 1" parent="CheckpointManager" instance=ExtResource("5_la3co")]
-position = Vector2(1419, 864)
-
-[node name="Check_Point_Wolf 2" parent="CheckpointManager" instance=ExtResource("5_la3co")]
-position = Vector2(4453, 1006)
-
-[node name="Check_Point_Wolf 3" parent="CheckpointManager" instance=ExtResource("5_la3co")]
-position = Vector2(7960, 282)
-
-[node name="Check_Point_Wolf 4" parent="CheckpointManager" instance=ExtResource("5_la3co")]
-position = Vector2(11599, 948)
 
 [node name="AssetEnvirnmnt" type="TileMap" parent="."]
 tile_set = ExtResource("6_m1h2u")

@@ -10,16 +10,58 @@ extends Level
 @onready var labelrequired5enemyexecuted = $"Bos_Encounter/Bos_1/Ecounter_To_bos/Panel 5 required enemy"
 
 #Bos 1 Executed
-@onready var teleport_to_wolf_cage = $Bos_Encounter/Bos_1/cave_teleporter_To_Wolf_Cage/Area2D/Marker2D 
-@onready var teleport_wolf_cage = $Bos_Encounter/Bos_1/cave_teleporter_To_Wolf_Cage # Teleport to Wolf Cage 
+@onready var teleport_to_eurasian_wolf_cage_marker = $Bos_Encounter/Bos_1/cave_teleporter_To_Wolf_Cage/Area2D/Marker2D 
+@onready var teleport_eurasian_wolf_cage_cave = $Bos_Encounter/Bos_1/cave_teleporter_To_Wolf_Cage # Teleport to Wolf Cage 
+
+#Bos 2 & Stage 2
+var required10enemyexecutedsound
+var teleport_to_bos_2_position
+var labelrequired10enemyexecuted
+
+#Bos 2 Executed
+var teleport_to_machenzie_river_wolf_cage_marker
+var teleport_to_machenzie_river_wolf_cage_cave
+
+#Bos 3 & Stage 3
+var required15enemyexecutedsound
+var teleport_to_bos_3_position
+var labelrequired15enemyexecuted
+
+#Bos 3 Executed
+var teleport_to_northern_rocky_mountain_wolf_marker
+var teleport_to_northern_rocky_mountain_wolf_cave
+
+#Bos 4 & Stage 4
+var required20enemyexecutedsound
+var teleport_to_bos_4_position
+var labelrequired20enemyexecuted
+
+#Bos 4 Executed
+var teleport_to_northwestern_wolf_marker
+var teleprot_to_northwestern_wolf_cave
+
+#Bos 5 & Stage 5
+var required30enemyexecutedsound
+var teleport_to_bos_5_position
+var labelrequired30enemyexecuted
+
+#Bos 5 Executed
+var teleport_british_columbian_wolf_marker
+var teleport_british_columbian_wolf_cave
+
+#Bos 6 & Stage 6
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	music.play()
 	platfrom.play("platfrom_move")
-	teleport_wolf_cage.visible = false
-	if MissionStatData.boss_kill >= 1 :
-		teleport_to_wolf_cage.visible = true
+	teleport_eurasian_wolf_cage_cave.visible = false
+	match MissionStatData.boss_kill:
+		1:
+			teleport_eurasian_wolf_cage_cave.visible = true
+		
+	
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

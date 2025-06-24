@@ -50,6 +50,8 @@ animations = [{
 radius = 74.3236
 
 [node name="Arow_Trap_Bullets" type="Area2D"]
+collision_layer = 1024
+collision_mask = 9
 script = ExtResource("1_s7xv1")
 damage = 15.0
 AP_dmg = 0.53
@@ -63,8 +65,3 @@ frame_progress = 0.768743
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_de6i3")
 debug_color = Color(0.647059, 0.521569, 0.0745098, 0.419608)
-
-[node name="HomingTimer" type="Timer" parent="."]
-wait_time = 2.0
-
-[connection signal="timeout" from="HomingTimer" to="." method="_on_homing_timer_timeout"]

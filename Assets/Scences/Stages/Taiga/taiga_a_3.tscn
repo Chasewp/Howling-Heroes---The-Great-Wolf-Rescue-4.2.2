@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://dacxduhw3cbjc"]
+[gd_scene load_steps=66 format=3 uid="uid://dacxduhw3cbjc"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Stage/Taiga/taiga.gd" id="1_g4hk3"]
 [ext_resource type="PackedScene" uid="uid://ca0nm25t6mv6w" path="res://Assets/Scences/Items/Cammera/camera_Stage.tscn" id="2_00v6u"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://bha1kd0hiiw4r" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/red_fox.tscn" id="19_m4b03"]
 [ext_resource type="PackedScene" uid="uid://x7jt8s4abruj" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/brown_bear.tscn" id="21_yw4qv"]
 [ext_resource type="PackedScene" uid="uid://dm2f35rrowtqx" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/wolvrine.tscn" id="22_0rx8n"]
+[ext_resource type="PackedScene" uid="uid://dxuhjidss1q4q" path="res://Assets/Scences/Items/Traps/Arrow_Shooter_Top.tscn" id="28_kpudn"]
 
 [sub_resource type="Animation" id="Animation_c7rdu"]
 length = 0.001
@@ -712,6 +713,28 @@ mix_target = 1
 bus = &"Music"
 
 [node name="Traps" type="Node" parent="."]
+
+[node name="Stage 1" type="Node" parent="Traps"]
+
+[node name="Arrow_Trap_Top" parent="Traps/Stage 1" instance=ExtResource("28_kpudn")]
+position = Vector2(1238, 520)
+shotgun_pellets = 6
+use_raycast = false
+auto_fire = true
+is_destructible = false
+
+[node name="Arrow_Trap_Top2" parent="Traps/Stage 1" instance=ExtResource("28_kpudn")]
+position = Vector2(1352, 519)
+shotgun_pellets = 8
+use_raycast = false
+is_destructible = false
+
+[node name="Arrow_Trap_Top3" parent="Traps/Stage 1" instance=ExtResource("28_kpudn")]
+position = Vector2(1475, 523)
+shotgun_pellets = 10
+use_raycast = false
+auto_fire = true
+is_destructible = false
 
 [node name="Heal" type="Node" parent="."]
 

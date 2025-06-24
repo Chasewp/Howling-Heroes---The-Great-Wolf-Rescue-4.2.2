@@ -8,6 +8,7 @@ extends Enemy_Main_Class
 @export var attack_cooldown := 2.0
 @export var bullet_spawn_offset := Vector2(20, -10) # Offset posisi tembak relatif terhadap sprite
 
+
 # Variabel kontrol aktivasi
 var is_activated := false
 var is_attacking := false  # New flag to prevent overlapping attacks
@@ -29,18 +30,30 @@ func activate_boss():
 	fire_timer.start()
 	 
 func update_bullet_spawn_position():
+	# Pastikan flip state konsisten
 	if enemy_sprites.flip_h:
-		bullet_spawn_point.position = bullet_spawn_offset
+		bullet_spawn_point.position.x = abs(bullet_spawn_offset.x)
+		bullet_spawn_point.scale.x = 1
 	else:
-		bullet_spawn_point.position = Vector2(-bullet_spawn_offset.x, bullet_spawn_offset.y)
+		bullet_spawn_point.position.x = -abs(bullet_spawn_offset.x)
+		bullet_spawn_point.scale.x = -1
+		
+	# Posisi Y tetap sama
+	bullet_spawn_point.position.y = bullet_spawn_offset.y
 
 func _physics_process(delta):
-	if not is_activated:
-		return  # Jangan jalankan AI jika belum diaktifkan
+	if not is_activated or animate_state == state.DIED:
+		return
+	
 	handle_gravity(delta)
 	
-	# Only process movement if not in hurt/died state
-	if animate_state != state.HURT and animate_state != state.DIED:
+	# Prioritaskan state HURT
+	if animate_state == state.HURT:
+		move_and_slide()
+		return
+	
+	# Proses AI hanya jika tidak sedang attack
+	if not is_attacking:
 		look_for_player()
 		change_direction()
 		handle_movement(delta)
@@ -85,19 +98,20 @@ func change_direction():
 	update_bullet_spawn_position() # Update posisi tembak setelah flip
 
 func attack():
-	if not is_instance_valid(target_player) or is_attacking:
+	if not is_instance_valid(target_player) or is_attacking or animate_state == state.HURT:
 		return
 	
 	is_attacking = true
+	velocity = Vector2.ZERO # Hentikan gerakan saat attack
 	
 	# Pastikan player masih dalam jarak dan terlihat
-	if (global_position.distance_to(target_player.global_position) < attack_range * 1.2 and
-		enemy_raycast.is_colliding() and 
-		enemy_raycast.get_collider() == target_player):
-		
+	if global_position.distance_to(target_player.global_position) < attack_range * 1.2:
 		enemy_sprite_animation.play("Attack")
 		await enemy_sprite_animation.animation_finished
-		target_player.take_damage(damage, AP, APdmg)
+		
+		# Beri damage jika masih dalam jangkauan
+		if (global_position.distance_to(target_player.global_position) < attack_range * 1.2):
+			target_player.take_damage(damage, AP, APdmg)
 	
 	animate_state = state.RUNNING
 	is_attacking = false
@@ -138,14 +152,36 @@ func fire_bullet_towards_player(delay = 0.0):
 	await get_tree().create_timer(delay).timeout
 	if not is_instance_valid(target_player) or animate_state == state.DIED:
 		return
-		
+	
+	# Tampilkan muzzle flash
+	#muzzle_flash.emitting = true
+	await get_tree().create_timer(0.05).timeout
+	#muzzle_flash.emitting = false
+	
 	# Gunakan bullet_spawn_point sebagai posisi awal
 	var bullet = enemy_bullet.instantiate()
-	var direction = (target_player.global_position - bullet_spawn_point.global_position).normalized()
-	bullet.rotation = direction.angle()
-	bullet.position = bullet_spawn_point.global_position # Gunakan posisi spawn point
+	
+	# Hitung arah dengan mempertimbangkan flip sprite
+	var target_pos = target_player.global_position
+	var spawn_pos = bullet_spawn_point.global_position
+	
+	# Hitung arah yang benar
+	var fire_direction
+	if enemy_sprites.flip_h:
+		fire_direction = Vector2.RIGHT
+	else:
+		fire_direction = Vector2.LEFT
+		
+	# Jika player di belakang, sesuaikan arah
+	if sign(target_pos.x - global_position.x) != sign(fire_direction.x):
+		fire_direction.x *= -1
+	
+	bullet.rotation = fire_direction.angle()
+	bullet.position = spawn_pos
+	bullet.direction = fire_direction # Pastikan bullet punya properti direction
 	bullet.speed = 400
-	get_parent().add_child(bullet)
+	
+	get_parent().call_deferred("add_child", bullet)
 	
 func _on_activation_area_body_entered(body):
 	if body.is_in_group("player"):

@@ -16,7 +16,7 @@ func rescue():
 	print("The " + Wolf_Name + " have been rescued")
 	show_alamanac()
 	MissionStatData.update_wolf_rescue()
-	remove_child(self)
+	visible = false
 	
 func show_alamanac():
 	var almanac = book_alamanac.instantiate()

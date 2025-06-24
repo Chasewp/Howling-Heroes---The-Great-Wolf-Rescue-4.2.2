@@ -3,32 +3,57 @@ extends Enemy_Main_Class
 
 @export var attack_range := 100.0
 @export var attack_cooldown := 2.0
-@export var patrol_speed := 50.0  # Slower speed when patrolling
-@export var chase_speed := 150.0  # Faster speed when chasing
+@export var patrol_speed := 50.0
+@export var chase_speed := 150.0
+@export var recovery_time := 0.5 # Time to recover after being hurt
 
 var is_chasing := false
-var patrol_direction := 1  # 1 for right, -1 for left
+var patrol_direction := 1
+var can_attack := true
+var is_recovering := false
 
 func _ready():
 	super._ready()
-	# Set patrol bounds relative to spawn position
 	left_bounds = global_position + Vector2(-300, 0)
 	right_bounds = global_position + Vector2(300, 0)
-	# Start with random initial direction
 	patrol_direction = 1 if randf() > 0.5 else -1  
 	enemy_raycast.target_position = Vector2(attack_range, 0)
 	
 func _physics_process(delta):
-	# Hentikan proses jika enemy sudah mati
 	if animate_state == state.DIED:
 		return
 		
 	handle_gravity(delta)
-	if animate_state != state.HURT and animate_state != state.DIED:
+	
+	# Special handling for hurt state
+	if animate_state == state.HURT:
+		handle_hurt_state()
+		return
+		
+	if animate_state != state.DIED:
 		look_for_player()
 		change_direction()
 		handle_movement(delta)
+		
 	update_state()
+
+func handle_hurt_state():
+	# Only process hurt state logic once
+	if is_recovering:
+		return
+		
+	is_recovering = true
+	velocity = Vector2.ZERO # Stop movement when hurt
+	
+	# Wait for hurt animation to finish
+	await enemy_sprite_animation.animation_finished
+	
+	# Additional recovery time
+	await get_tree().create_timer(recovery_time).timeout
+	
+	# Reset states
+	is_recovering = false
+	animate_state = state.RUNNING if is_chasing else state.IDDLE
 
 func change_direction():
 	if not is_instance_valid(target_player) or not is_instance_valid(enemy_sprites):
@@ -37,26 +62,61 @@ func change_direction():
 	var distance_to_player = global_position.distance_to(target_player.global_position)
 	var can_see_player = enemy_raycast.is_colliding() and enemy_raycast.get_collider() == target_player
 	
-	# 1. LOGICA SERANG
-	if distance_to_player < attack_range and can_see_player:
+	# Attack logic
+	if distance_to_player < attack_range and can_see_player and can_attack:
 		animate_state = state.ATTACK
 		attack()
 		is_chasing = true
 		return
 	
-	# 2. LOGICA CHASE (30% lebih besar dari attack range)
+	# Chase logic
 	elif distance_to_player < attack_range * 3:
 		is_chasing = true
 		direction = (target_player.global_position - global_position).normalized()
 		animate_state = state.RUNNING
 	
-	# 3. LOGICA PATROL	
+	# Patrol logic
 	else:
 		is_chasing = false
 		patrol_behavior()
 
+func attack():
+	if not is_instance_valid(target_player) or not can_attack:
+		return
+		
+	can_attack = false
+	enemy_sprite_animation.play("Attack")
+	
+	# Wait for attack animation to complete
+	await enemy_sprite_animation.animation_finished
+	
+	# Apply damage if still in range
+	if (is_instance_valid(target_player) and 
+		global_position.distance_to(target_player.global_position) < attack_range * 1.2):
+		
+		var overlapping_bodies = hit_box.get_overlapping_bodies()
+		for body in overlapping_bodies:
+			if body.is_in_group("player"):
+				body.take_damage(damage, AP, APdmg)
+	
+	# Cooldown before next attack
+	await get_tree().create_timer(attack_cooldown).timeout
+	can_attack = true
+	
+	animate_state = state.RUNNING
+
+func take_damage(amount: float, _is_ap: bool, _ap_dmg: float):
+	if is_invincible or animate_state == state.DIED:
+		return
+		
+	super.take_damage(amount, _is_ap, _ap_dmg)
+	
+	# Immediately transition to hurt state
+	if animate_state != state.DIED:
+		animate_state = state.HURT
+		is_chasing = true # Chase player after being hit
+
 func patrol_behavior():
-	# Hentikan jika sudah mati
 	if animate_state == state.DIED:
 		return
 	
@@ -68,43 +128,27 @@ func patrol_behavior():
 	
 	direction = Vector2(patrol_direction, 0)
 	
-	# Update flip sprite hanya jika node masih valid
 	if is_instance_valid(enemy_sprites):
 		enemy_sprites.flip_h = patrol_direction == -1
 	
-	# Pause logic dengan pengecekan validitas
+	# Random idle pauses
 	if (global_position.x >= right_bounds.x or global_position.x <= left_bounds.x) and randf() < 0.3:
 		animate_state = state.IDDLE
 		get_tree().create_timer(randf_range(0.5, 1.5)).timeout.connect(
 			func(): 
-				# Tambahkan pengecekan triple
-				if is_instance_valid(self) and is_instance_valid(enemy_sprites) and animate_state == state.IDDLE:
+				if is_instance_valid(self) and animate_state == state.IDDLE:
 					animate_state = state.RUNNING
 		)
-		
+
 func handle_movement(delta:float):
-	# Use appropriate speed based on state
 	var current_speed = chase_speed if is_chasing else patrol_speed
 	
 	if animate_state == state.RUNNING:
 		velocity.x = move_toward(velocity.x, direction.x * current_speed, Acceleration * delta)
 	else:
 		velocity.x = move_toward(velocity.x, 0, Acceleration * delta)
-	move_and_slide()
-
-func attack():
-	if not is_instance_valid(target_player):
-		return
 		
-	enemy_sprite_animation.play("Attack")
-	await enemy_sprite_animation.animation_finished
-
-	#var overlapping_area = hit_box.get_overlapping_areas()
-	#for area in overlapping_area:
-		#if area.is_in_group("player_hurtbox"):
-			#area.take_damage(damage, AP, APdmg)
-			
-	animate_state = state.RUNNING
+	move_and_slide()
 
 func died():
 	super.died()

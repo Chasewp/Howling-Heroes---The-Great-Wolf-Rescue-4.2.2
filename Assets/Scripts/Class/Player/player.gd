@@ -104,6 +104,15 @@ func _ready():
 	player_mag = 150
 	# Initialize hurtbox values
 	hurt_area_chest.Eficient_Armors = 0.15
+	
+	# Update projectile/slash position
+	if player_Sprites.flip_h:
+		projectile.position = Vector2(-104, -53)
+		slash_effect.position = Vector2(-108, -32)
+	else:
+		projectile.position = Vector2(104, -53)
+		slash_effect.position = Vector2(108, -32)
+		
 	# Connect damage signals
 	hurt_area_chest.Healths = player_health
 	hurt_area_chest.Armors = player_armor
@@ -160,31 +169,26 @@ func _ready():
 	machete_timer.wait_time = 3.85  # Cooldown 3.85 detik untuk slash	
 	
 func update_state():
-		if anim_state == state.HURT: 
-			return
-		if is_on_floor():
-			if velocity == Vector2.ZERO:
-				anim_state = state.IDDLE
-			elif  velocity.x != 0:
-				anim_state = state.RUNNING
-		else: 
-			if velocity.y <0 :
-				anim_state = state.JUMPUP
-			else:
-				anim_state = state.JUMPDOWN
+	var prev_state = anim_state
+	if anim_state == state.HURT: 
+		return
+	if is_on_floor():
+		if velocity == Vector2.ZERO:
+			anim_state = state.IDDLE
+		elif  velocity.x != 0:
+			anim_state = state.RUNNING
+	else: 
+		if velocity.y <0 :
+			anim_state = state.JUMPUP
+		else:
+			anim_state = state.JUMPDOWN
 	
 func update_animation(direction):
 	 # Tentukan arah hadap berdasarkan mouse
 	var mouse_pos = get_global_mouse_position()
 	player_Sprites.flip_h = mouse_pos.x < global_position.x
 	
-	# Update projectile/slash position
-	if player_Sprites.flip_h:
-		projectile.position = Vector2(-104, -53)
-		slash_effect.position = Vector2(-108, -32)
-	else:
-		projectile.position = Vector2(104, -53)
-		slash_effect.position = Vector2(108, -32)
+	
 	
 		
 	match  anim_state:	
@@ -203,9 +207,9 @@ func update_animation(direction):
 		#Riffle Running
 		state.SHOOT:
 			if player_Sprites.flip_h:
-				animation_player.play("Run_Shoot_Flip", -1, 1.0, false)
+				animation_player.play("Run_Shoot_Flip")
 			else:
-				animation_player.play("Run_Shoot", -1, 1.0, false)
+				animation_player.play("Run_Shoot")
 			
 		#Normal Jump	
 		state.JUMPUP:
@@ -255,7 +259,11 @@ func add_health_armor():
 func _physics_process(delta):
 	if DialogueManager.is_dialog_active or anim_state == state.DIED:
 		return
-		
+	
+	# Cek jika jatuh dari platform
+	if global_position.y > 1000: # Sesuaikan dengan tinggi layar
+		take_damage(10, false, 0) # Damage saat jatuh 
+		#global_position = coordinate.player_position # Teleport ke posisi aman	
 	# Handle movement hanya jika tidak sedang HURT
 	if anim_state != state.HURT:
 		# Handle gravity

@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://iqmmdvpj1sel"]
 
-[ext_resource type="Texture2D" uid="uid://dgblau2q4ntx4" path="res://Assets/Image/Items/Wolf_Stone/Wolf_Stone.png" id="1_4sswv"]
+[ext_resource type="Texture2D" uid="uid://bavin0plkmpek" path="res://Assets/Image/Items/Wolf_Stone/Wolf_Stone.png" id="1_4sswv"]
 [ext_resource type="Script" path="res://Assets/Scripts/Item/Wolf_Stone/wolf_stone.gd" id="1_epebj"]
-[ext_resource type="AudioStream" uid="uid://bwuh2ckdfuvgl" path="res://Assets/Music/SFX/Healing/mixkit-bless-choir-655.wav" id="3_2vui3"]
+[ext_resource type="AudioStream" uid="uid://dnt5sxs887o0x" path="res://Assets/Music/SFX/Healing/mixkit-bless-choir-655.wav" id="3_2vui3"]
 
 [sub_resource type="Animation" id="Animation_ds5fy"]
 length = 0.001
@@ -189,10 +189,12 @@ radius = 54.037
 [node name="Wolf_Stone_Healer" type="Area2D" groups=["item"]]
 collision_layer = 4
 collision_mask = 2
+monitoring = false
 monitorable = false
 script = ExtResource("1_epebj")
 
 [node name="WolfStone" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 position = Vector2(0, -108)
 scale = Vector2(0.13, 0.13)
 texture = ExtResource("1_4sswv")
@@ -209,7 +211,6 @@ position = Vector2(1, -53)
 shape = SubResource("CircleShape2D_uo832")
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
-bus = &"Sound_Effect"
 area_mask = 8192
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

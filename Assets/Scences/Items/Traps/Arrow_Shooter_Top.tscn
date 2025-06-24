@@ -1,9 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://dxuhjidss1q4q"]
+[gd_scene load_steps=20 format=3 uid="uid://dxuhjidss1q4q"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Item/Traps/Arrow_Traps/Arrow_Shooter_Top.gd" id="1_jca88"]
 [ext_resource type="Texture2D" uid="uid://8ergr6o1ax4p" path="res://Assets/Image/Items/Traps/Etc/Shooter_Arrow_Trap.png" id="1_wf4de"]
 [ext_resource type="PackedScene" uid="uid://c1uaykkvn7v0t" path="res://Assets/Scences/Items/Traps/arow_trap.tscn" id="2_02xwo"]
 [ext_resource type="AudioStream" uid="uid://d0k0j364o735p" path="res://Assets/Music/SFX/Weapon/Arrow/arrow-body-impact-146419.mp3" id="4_2v3jo"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tyup5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5rn5s"]
 atlas = ExtResource("1_wf4de")
@@ -175,17 +177,15 @@ radius = 7.07107
 
 [node name="Arrow_Trap_Top" type="StaticBody2D"]
 collision_layer = 1024
-collision_mask = 8
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_tyup5")
 script = ExtResource("1_jca88")
 arrow_scene = ExtResource("2_02xwo")
-triple_shot = true
-is_destructible = false
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 rotation = -3.14159
 sprite_frames = SubResource("SpriteFrames_7kjne")
 animation = &"shoot"
-frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
@@ -202,6 +202,7 @@ gizmo_extents = 0.0
 [node name="TurretRaycast" type="RayCast2D" parent="."]
 target_position = Vector2(0, -300)
 collision_mask = 3
+collide_with_areas = true
 
 [node name="sfx" type="AudioStreamPlayer2D" parent="."]
 area_mask = 8192
