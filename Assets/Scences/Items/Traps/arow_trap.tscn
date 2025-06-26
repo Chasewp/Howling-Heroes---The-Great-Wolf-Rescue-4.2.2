@@ -47,7 +47,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_de6i3"]
-radius = 74.3236
+radius = 20.02
 
 [node name="Arow_Trap_Bullets" type="Area2D"]
 collision_layer = 1024
@@ -57,7 +57,7 @@ damage = 15.0
 AP_dmg = 0.53
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(9, 9)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3q0au")
 animation = &"Arrow"
 frame_progress = 0.768743
@@ -65,3 +65,9 @@ frame_progress = 0.768743
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_de6i3")
 debug_color = Color(0.647059, 0.521569, 0.0745098, 0.419608)
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(8, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

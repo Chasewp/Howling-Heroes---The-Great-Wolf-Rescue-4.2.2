@@ -66,7 +66,13 @@ func save_game():
 	"Dessert Key"
 	save_progress.is_have_dessert_key = player_singleton_autoload.is_have_dessert_key
 
-	
+	 # Track dead enemies
+	save_progress.dead_enemies = {}
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	for enemy in enemies:
+		if enemy.has_method("is_dead") and enemy.is_dead():
+			save_progress.dead_enemies[enemy.get_path()] = true
+			
 	# collect all dynamic game elements	
 	var saved_data:Array[SavedData] = []
 	get_tree().call_group("game_events", "on_save_game", saved_data)
@@ -93,50 +99,6 @@ func get_current_level_path_safe() -> String:
 	
 	return "res://invalid.tscn"
 	
-func save_check_points(pos:Vector2,_stg : String):
-	var save_progress: Data_Progress = Data_Progress.new()
-	
-	#Store checkpoint and stages
-	save_progress.player_position = pos
-	#get_path_scences
-	save_progress.saved_data = []
-	for item in get_tree().get_nodes_in_group("game_events"):
-		var saved_item = SavedData.new()
-		saved_item.Scence_path=item.get_scene_path()
-		
-	
-	#store player health,biome_location, armor
-	save_progress.player_name = player_singleton_autoload.name_character
-	save_progress.player_biome_location = player_singleton_autoload.location
-	save_progress.player_health = player_singleton_autoload.health
-	save_progress.player_armor = player_singleton_autoload.armor
-
-	#store mission log
-	save_progress.mission_wolf_rescued = MissionStatData.wolf_rescued
-	save_progress.mission_boss_elimated = MissionStatData.boss_kill
-	save_progress.mission_enemy_elimated = MissionStatData.enemy_kill
-	
-	#Store Keys
-	"Taiga Keys"
-	save_progress.is_have_pine_key = player_singleton_autoload.is_have_pine_key
-	save_progress.is_have_ice_key = player_singleton_autoload.is_have_ice_key
-	save_progress.is_have_stone_key = player_singleton_autoload.is_have_stone_key
-	
-	"Tundra Keys"
-	save_progress.is_have_snow_fang_key = player_singleton_autoload.is_have_snow_fang_key
-	save_progress.is_have_frozen_paw_securelook_key = player_singleton_autoload.is_have_frozen_paw_securelook_key
-	
-	"Grassland Keys"
-	save_progress.is_have_grass_key = player_singleton_autoload.is_have_grass_key
-	save_progress.is_have_flower_key = player_singleton_autoload.is_have_flower_key
-	save_progress.is_have_ground_key = player_singleton_autoload.is_have_ground_key
-	
-	"Dessert Key"
-	save_progress.is_have_dessert_key = player_singleton_autoload.is_have_dessert_key
-	
-# write the savegame to disk
-	ResourceSaver.save(save_progress, "user://Save/Progress/Save_Progress.tres")
-	print("Game saved successfully.")
 	
 # Function to load game data
 func load_game():

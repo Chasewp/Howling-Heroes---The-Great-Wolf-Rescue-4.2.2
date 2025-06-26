@@ -8,8 +8,8 @@ extends Wolf_Almanac_Main_Menu_Index
 var _EasternWolfAlmanac= load("res://Assets/Scences/UI/Wolf_Almanac/Book/Eastern Wolf/eastern_wolf_almanac.tscn")
 
 #Eurasian Wolf
-@onready var EurasianWolfLabel = $"Background/Almanac Index/WolfVBoxContainer8/Wolf 8"
-@onready var EurasianWolfImage = $"Background/Almanac Index/WolfVBoxContainer8/Label_Wolf_8"
+@onready var EurasianWolfImage = $"Background/Almanac Index/WolfVBoxContainer8/Wolf 8"
+@onready var EurasianWolfLabel = $"Background/Almanac Index/WolfVBoxContainer8/Label_Wolf_8"
 var _EurasianWolfAlmanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/Eurasian Wolf/eurasian_wolf_almanac.tscn")
 
 #Gray Wolf
@@ -51,7 +51,7 @@ func eastern_wolf_image():
 func eurasian_wolf_image():
 	var image = Image.load_from_file(str(WolfData._get_Eurasian_Wolf_Image_Path()))
 	var texture = ImageTexture.create_from_image(image)
-	EurasianWolfImage.texture_normal=texture	
+	EurasianWolfImage.texture_normal = texture
 
 #Gray Wolf Image
 func gray_wolf_image() :

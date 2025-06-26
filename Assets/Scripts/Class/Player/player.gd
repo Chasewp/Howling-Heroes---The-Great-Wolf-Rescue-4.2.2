@@ -166,7 +166,7 @@ func _ready():
 		bullets_caps_lbl.text = str(current_ammo)
 		
 	shooting_timer.wait_time = 4.95  # Cooldown 2.5 detik untuk tembak
-	machete_timer.wait_time = 3.85  # Cooldown 3.85 detik untuk slash	
+	machete_timer.wait_time = 2.5 # Cooldown 3.85 detik untuk slash	
 	
 func update_state():
 	var prev_state = anim_state

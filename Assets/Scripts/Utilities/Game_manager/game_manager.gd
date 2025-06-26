@@ -17,8 +17,6 @@ func _ready():
 func _on_level_exit_reached(next_level):
 	stage_root.load_level_async(next_level)
 
-func _process(delta):
-	pass
 	
 ## ------------------------------------------------------------------------------------
 

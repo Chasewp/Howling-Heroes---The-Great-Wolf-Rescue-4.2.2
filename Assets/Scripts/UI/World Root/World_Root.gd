@@ -3,12 +3,17 @@ extends Node2D
 
 signal level_exit_reached(next_level:String)
 
+var spawned_enemies := {}
 
+func register_enemy(enemy: Node):
+	if enemy.has_method("get_persistent_id"):
+		spawned_enemies[enemy.get_persistent_id()] = enemy
+		
 func load_level_async(path:String):
 	# wait a physics frame so we can modify the tree
 	await get_tree().physics_frame
 	get_tree().paused = true
-	
+	spawned_enemies.clear()
 	# load the next level
 	var next_level:Level = load(path).instantiate()
 	next_level.exit_reached.connect(_on_level_exit_reached)

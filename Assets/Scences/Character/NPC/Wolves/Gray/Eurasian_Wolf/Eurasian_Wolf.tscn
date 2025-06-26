@@ -21,6 +21,7 @@ script = ExtResource("1_5nub2")
 Choirs = NodePath("Choirs")
 Howling_SFX = NodePath("Howling")
 book_alamanac = ExtResource("2_gggby")
+Wolf_Name = "Eurasian Wolf"
 Wolf_Animation = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

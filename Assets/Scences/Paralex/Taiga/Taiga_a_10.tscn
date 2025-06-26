@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3bs5nc80hd5c"]
+
+[ext_resource type="Texture2D" uid="uid://v2u3a1bgodal" path="res://Assets/Image/Background/Stage/Taiga/background 4/Preview 4.png" id="1_43hsx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ifhn"]
+
+[node name="Taiga_A10" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40942.0
+offset_right = 199240.0
+offset_bottom = 1296.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_43hsx")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_1ifhn")
+offset_right = 40.0
+offset_bottom = 40.0

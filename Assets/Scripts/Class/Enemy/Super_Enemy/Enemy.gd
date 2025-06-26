@@ -56,20 +56,14 @@ func _ready():
 	target_player = get_tree().root.get_node("World_Stages/Player")
 	
 	print(get_tree().root.get_node("World_Stages/Player"))  # Harus return valid node
-	# Initialize hurtbox values
-	hurt_box.Healths = hlt
-	hurt_box.Armors = arm
-	hurt_box.Eficient_Armors = eficient_Armor
+	 # Initialize hurtbox values only if valid
 	
-	## Tambahkan physics material
-	#var physics_material = PhysicsMaterial.new()
-	#physics_material.bounce = 0.1
-	#physics_material.friction = 0.5
-	#
-	## Terapkan ke collision shape
-	#var collision_shape = $CollisionShape2D
-	#if collision_shape:
-		#collision_shape.physics_material_override = physics_material
+	if is_instance_valid(hurt_box):
+		hurt_box.Healths = hlt
+		hurt_box.Armors = arm
+		hurt_box.Eficient_Armors = eficient_Armor
+		hurt_box.received_damage.connect(take_damage)
+
 	
 	#target player
 	if not target_player:
@@ -95,62 +89,78 @@ func _on_player_freed():
 	animate_state = state.IDDLE
 
 func take_damage(_damage: float, _is_ap: bool, _ap_dmg: float):
-	if is_invincible:
+	if is_invincible or is_already_dead:
 		return
-	if recently_hit or animate_state == state.DIED:
+		
+	# Early return if hurtbox is invalid
+	if not is_instance_valid(hurt_box):
+		return
+	
+	if recently_hit:
 		return
 	
 	recently_hit = true
-	await get_tree().create_timer(0.1).timeout  # Cooldown 0.1 detik
+	await get_tree().create_timer(0.1).timeout
 	recently_hit = false
 	
-	# Aktifkan invincibility
+	# Activate invincibility
 	is_invincible = true
 	await get_tree().create_timer(invincibility_duration).timeout
 	is_invincible = false
 	
-	# Update current values from hurtbox
-	current_health = hurt_box.Healths
-	current_armor = hurt_box.Armors
+	# Safely update values from hurtbox
+	if is_instance_valid(hurt_box):
+		current_health = hurt_box.Healths
+		current_armor = hurt_box.Armors
+		
+		# Update UI bars
+		health_bar.value = current_health
+		armor_bar.value = current_armor
+		
+		if current_health <= 0:
+			# Disable collisions safely
+			if is_instance_valid(hit_box):
+				hit_box.set_deferred("monitoring", false)
+				hit_box.set_deferred("monitorable", false)
+			if is_instance_valid(hurt_box):
+				hurt_box.set_deferred("monitoring", false)
+				hurt_box.set_deferred("monitorable", false)
+			died()
+		elif current_health > 0:
+			animate_state = state.HURT
+			enemy_sprite_animation.play("Hurt")
+			await enemy_sprite_animation.animation_finished
+			animate_state = state.RUNNING if velocity.length_squared() > 1 else state.IDDLE
+			update_animation(direction.x)
 	
-	# Update health and armor bars
-	health_bar.value = current_health
-	armor_bar.value = current_armor
-	
-	if current_health <= 0:
-		# Hapus collision shape untuk mencegah interaksi lebih lanjut
-		hit_box.DISABLE_MODE_REMOVE
-		hurt_box.DISABLE_MODE_REMOVE
-		died()
-	elif current_health > 0:# Play hurt animation if not dead
-		animate_state = state.HURT
-		enemy_sprite_animation.play("Hurt")
-		await enemy_sprite_animation.animation_finished
-		# Kembali ke state sebelumnya setelah hurt
-		animate_state = state.RUNNING if velocity.length_squared() > 1 else state.IDDLE
-		update_animation(direction.x)
-	
-	# Debug print
 	print("Damage Received ", _damage, " Health: ", current_health, " Armor: ", current_armor)
-	
+
 func died():
-	if has_been_counted:
-		return
-	if is_already_dead:
+	if has_been_counted or is_already_dead:
 		return
 	
 	is_already_dead = true
 	has_been_counted = true
 	animate_state = state.DIED
-	enemy_sprite_animation.play("Died")
 	
-	# Hentikan semua proses
+	# Stop processing physics
 	set_physics_process(false)
 	
-	await enemy_sprite_animation.animation_finished
+	# Play death animation if components are valid
+	if is_instance_valid(enemy_sprite_animation):
+		enemy_sprite_animation.play("Died")
+		await enemy_sprite_animation.animation_finished
+	
+	# Queue free after animation completes
 	queue_free()
 	
-	
+func is_dead() -> bool:
+	return animate_state == state.DIED
+
+func get_persistent_id() -> String:
+	# Create a unique identifier for this enemy based on its position and type
+	return "%s_%d_%d" % [name, global_position.x, global_position.y]
+		
 func move(dir,spd):
 	spd = speed
 	if is_on_wall() and  is_on_floor():

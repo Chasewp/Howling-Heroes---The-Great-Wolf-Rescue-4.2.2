@@ -19,7 +19,7 @@ var _ArabianWolfAlmanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/Arabia
 
 func _ready():
 	#rescued
-	if WolfData._get_Alaskan_Tundra_Wolf_Rescue_Status() or WolfData._get_Alexorer_Archipelago_Wolf_Rescue_Status() or WolfData._get_Arabian_Wolf_Rescue_Status():
+	if WolfData._get_Alaskan_Tundra_Wolf_Rescue_Status() or WolfData._get_Alexander_Archipelago_Wolf_Rescue_Status() or WolfData._get_Arabian_Wolf_Rescue_Status():
 		AlaskanTundraWolfImage.set_disabled(false)
 		alaskan_tundra_wolf_image()
 		AlaskanTundraWolfLabel.text = WolfData._get_Alaskan_Tundra_Wolf_Name()

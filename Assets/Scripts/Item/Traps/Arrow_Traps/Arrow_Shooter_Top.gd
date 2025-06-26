@@ -54,8 +54,7 @@ func configure_trap():
 	# Configure raycast with debug
 	detection_ray.target_position = Vector2(0, -raycast_length)
 	detection_ray.add_exception(self)
-	#detection_ray.debug_shape = true
-	#detection_ray.debug_shape_custom_color = Color(0, 1, 0, 0.5) # Green when not colliding
+	
 
 func _physics_process(delta):
 	if not target_player:

@@ -4,24 +4,28 @@ extends Hitboxes
 @export var speed = 250
 @onready var animation = $AnimationPlayer
 var has_hit := false
+var processed_hits := []  # Track enemies we've already hit
+
 func _physics_process(delta):
-		animation.play("default")
-		position += (Vector2.RIGHT*speed).rotated(rotation)*delta
+	animation.play("default")
+	position += (Vector2.RIGHT*speed).rotated(rotation)*delta
 
 func _ready():
 	set_as_top_level(true)
-	area_entered.connect(Callable(self,"on_area_inbound"))
-	body_entered.connect(Callable(self,"on_body_inbound"))
+	area_entered.connect(_on_area_entered)
+	body_entered.connect(_on_body_entered)
 	
 func _on_visible_on_screen_enabler_2d_screen_exited():
 	queue_free()
-	
 
-func on_area_inbound(area):
-	if area.is_in_group("enemy_hurtbox"):
+func _on_area_entered(area):
+	if area.is_in_group("enemy_hurtbox") and not has_hit:
+		var enemy = area.get_parent()
+		if enemy and not enemy in processed_hits:
+			processed_hits.append(enemy)
 			has_hit = true
 			queue_free()
 
-func on_body_inbound(body):
+func _on_body_entered(body):
 	if body.is_in_group("Terains"):
-			queue_free()
+		queue_free()

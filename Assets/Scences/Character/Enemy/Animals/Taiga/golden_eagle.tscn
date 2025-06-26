@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://ve6g864losvt"]
+[gd_scene load_steps=48 format=3 uid="uid://ve6g864losvt"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Taiga/Golden_Eagle.gd" id="1_2q5fs"]
 [ext_resource type="Texture2D" uid="uid://dsyhklm8qhvw0" path="res://Assets/Image/Enemy/Animal/Golden Eagle/Hurt/Hurt 1.png" id="2_av3ox"]
@@ -20,6 +20,8 @@
 [ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="15_mmmuq"]
 [ext_resource type="Texture2D" uid="uid://ekbqr7sa8ibj" path="res://Assets/Image/Enemy/Animal/Golden Eagle/Run/Run 4.png" id="16_vgiwo"]
 [ext_resource type="AudioStream" uid="uid://cflkyuqvpf2n8" path="res://Assets/Music/SFX/Enemy/Animal/talon claw.mp3" id="17_6ygdv"]
+[ext_resource type="AudioStream" uid="uid://b0753hifpji8" path="res://Assets/Music/SFX/Enemy/Animal/eagle-355831.mp3" id="18_2coar"]
+[ext_resource type="AudioStream" uid="uid://cynbbutx5j55" path="res://Assets/Music/SFX/Enemy/Animal/eagle-cry-339725.mp3" id="18_gjbnp"]
 [ext_resource type="Theme" uid="uid://dc1ctcksywkhs" path="res://Assets/Theme/Credit/Label Details.tres" id="20_alg21"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v15re"]
@@ -263,7 +265,7 @@ tracks/5/keys = {
 tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_bv77i"]
-length = 0.2
+length = 0.9
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -324,10 +326,25 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(34, -31)]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../sfx")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("18_2coar")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_i2dm1"]
 resource_name = "died_flip"
-length = 0.2
+length = 0.9
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -388,6 +405,21 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(34, -31)]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../sfx")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("18_2coar")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_sdbxj"]
 length = 0.2
@@ -578,6 +610,21 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(-125, 0)]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../sfx")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.6016,
+"stream": ExtResource("18_gjbnp")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_c7v6h"]
 resource_name = "hurt_flip"
@@ -642,6 +689,21 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(125, 0)]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../sfx")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.6016,
+"stream": ExtResource("18_gjbnp")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_4ar8v"]
 length = 0.6
@@ -1132,7 +1194,7 @@ is_flying = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v15re")
-animation = &"run"
+animation = &"died"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
@@ -1206,5 +1268,13 @@ offset_right = 26.0
 offset_bottom = -155.0
 theme = ExtResource("20_alg21")
 text = "Golden Eagle"
+
+[node name="LeftBoundMarker" type="Marker2D" parent="."]
+position = Vector2(-300, 0)
+
+[node name="StartPositionMarker" type="Marker2D" parent="."]
+
+[node name="RightBoundMarker" type="Marker2D" parent="."]
+position = Vector2(300, 0)
 
 [connection signal="executed" from="Hurtboxes" to="." method="died"]

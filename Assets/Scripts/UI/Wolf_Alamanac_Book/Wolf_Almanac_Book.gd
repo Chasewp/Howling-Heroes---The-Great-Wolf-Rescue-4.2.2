@@ -60,7 +60,7 @@ func set_background(img)-> void:
 
 #quit Wolf WolfAlmanac
 func _on_back_button_pressed()->void:
-		AlmanacOpenCloser.close_wolf_almanac()
+		queue_free()
 	
 func on_mouse_entered()-> void:
 	Input.set_custom_mouse_cursor(hand_cursor)

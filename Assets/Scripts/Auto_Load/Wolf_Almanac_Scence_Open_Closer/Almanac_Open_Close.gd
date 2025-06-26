@@ -184,3 +184,6 @@ func open_wolf_species_page_9():
 			page_node.add_child(current_species)
 			current_species.visible = true
 			print(wolf_species_name + " Almanac Book" + " successfully added and displayed.")
+
+func open_wolf_almanac():
+	pass

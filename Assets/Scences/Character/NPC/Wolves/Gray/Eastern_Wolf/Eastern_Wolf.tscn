@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://d3tku0ill0gva"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/NPC/Wolves/Character/Gray/Eastern_Wolf/eastern_wolf.gd" id="1_uck4p"]
-[ext_resource type="PackedScene" uid="uid://b6u1xi5onqoj5" path="res://Assets/Scences/UI/Wolf_Almanac/Book/Eastern Wolf/eastern_wolf_almanac.tscn" id="2_dmuuy"]
+[ext_resource type="PackedScene" uid="uid://dwxp3cnclmkfr" path="res://Assets/Scences/UI/Wolf_Almanac/Book/Eastern Wolf/eastern_wolf_almanac.tscn" id="2_dmuuy"]
 [ext_resource type="SpriteFrames" uid="uid://hn2ignqr2e3q" path="res://Assets/Animate/Chacter/NPC/Wolves/Gray_-Wolf/gray_wolf.tres" id="3_mwkba"]
-[ext_resource type="AudioStream" uid="uid://dlj0kuum8gror" path="res://Assets/Music/SFX/Howl/Wolf Howl 07.wav" id="3_nif2q"]
-[ext_resource type="AudioStream" uid="uid://b74qkv8adjb87" path="res://Assets/Music/SFX/Get_Wolf/Get_Wolf.wav" id="5_n0khr"]
+[ext_resource type="AudioStream" uid="uid://bwspi6jbv451d" path="res://Assets/Music/SFX/Howl/Wolf Howl 07.wav" id="3_nif2q"]
+[ext_resource type="AudioStream" uid="uid://t867kq16bfh7" path="res://Assets/Music/SFX/Get_Wolf/Get_Wolf.wav" id="5_n0khr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wi3iq"]
 radius = 61.2
@@ -16,7 +16,7 @@ radius = 55.0
 z_index = 1
 y_sort_enabled = true
 collision_layer = 4096
-collision_mask = 9
+collision_mask = 3
 script = ExtResource("1_uck4p")
 Choirs = NodePath("Choirs")
 Howling_SFX = NodePath("Howling")
@@ -46,12 +46,10 @@ debug_color = Color(0.654902, 0.513726, 0.196078, 0.419608)
 
 [node name="Howling" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_nif2q")
-bus = &"Sound_Effect"
 area_mask = 8192
 
 [node name="Choirs" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_n0khr")
-bus = &"Sound_Effect"
 area_mask = 8192
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_inside_the_wolf"]

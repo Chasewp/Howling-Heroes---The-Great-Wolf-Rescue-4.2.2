@@ -26,6 +26,8 @@ extends Resource
 @export var is_brust_garou_equip:bool
 @export var saved_data:Array[SavedData]=[]
 
+var dead_enemies := {}  
+
 func UpdatePos(value : Vector2):
 	player_position = value
 

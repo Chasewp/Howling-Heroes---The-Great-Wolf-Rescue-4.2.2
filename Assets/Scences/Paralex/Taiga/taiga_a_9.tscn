@@ -1,6 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgmplnkl2txla"]
+[gd_scene load_steps=8 format=3 uid="uid://dgmplnkl2txla"]
 
 [ext_resource type="Shader" path="res://Assets/Scences/Paralex/Taiga/Taiga.gdshader" id="1_5d0cm"]
+[ext_resource type="Texture2D" uid="uid://b31jbx5rkujqo" path="res://Assets/Image/Background/Stage/Taiga/Background/sky.png" id="1_tkisk"]
+[ext_resource type="Texture2D" uid="uid://c4qd2abucm36n" path="res://Assets/Image/Background/Stage/Taiga/Background/cloud.png" id="2_a6tn1"]
+[ext_resource type="Texture2D" uid="uid://cdav5nd7j52oe" path="res://Assets/Image/Background/Stage/Taiga/Background/mountain2.png" id="3_i4ckp"]
+[ext_resource type="Texture2D" uid="uid://dk15gun342ws0" path="res://Assets/Image/Background/Stage/Taiga/Background/pine1.png" id="4_bu3im"]
+[ext_resource type="Texture2D" uid="uid://bwm126m1ie5hy" path="res://Assets/Image/Background/Stage/Taiga/Background/pine2.png" id="5_u360e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dh7om"]
 shader = ExtResource("1_5d0cm")
@@ -14,12 +19,60 @@ shader_parameter/sharpness = 10.0
 
 [node name="Taiga-A9" type="ParallaxBackground"]
 
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
+position = Vector2(-5, -190)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer5"]
+offset_left = 40949.0
+offset_top = 187.0
+offset_right = 199247.0
+offset_bottom = 386.0
+texture = ExtResource("1_tkisk")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
 offset_left = 40942.0
-offset_right = 40982.0
-offset_bottom = 40.0
+offset_right = 199234.0
+offset_bottom = 200.0
+texture = ExtResource("2_a6tn1")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer2"]
+offset_left = 40956.0
+offset_top = 91.0
+offset_right = 199254.0
+offset_bottom = 218.0
+texture = ExtResource("3_i4ckp")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer3"]
+offset_left = 40956.0
+offset_top = 144.0
+offset_right = 199254.0
+offset_bottom = 292.0
+texture = ExtResource("4_bu3im")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer4"]
+offset_left = 40949.0
+offset_top = 187.0
+offset_right = 199247.0
+offset_bottom = 386.0
+texture = ExtResource("5_u360e")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Shadow Effect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_dh7om")

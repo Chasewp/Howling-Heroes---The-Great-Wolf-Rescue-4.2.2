@@ -4,6 +4,7 @@ extends Hitboxes
 @export var speed = 400
 @onready var animation = $AnimatedSprite2D
 var has_hit := false
+var direction :Vector2
 
 func _physics_process(delta):
 		animation.play("default")

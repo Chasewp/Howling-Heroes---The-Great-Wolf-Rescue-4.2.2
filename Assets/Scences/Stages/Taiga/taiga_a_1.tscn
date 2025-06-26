@@ -55,11 +55,11 @@ stream = ExtResource("6_hxx5w")
 bus = &"Music"
 area_mask = 16384
 
-[node name="Teleport_Next_stage" type="Area2D" parent="." groups=["level_exit"]]
+[node name="TeleportNextStage" type="Area2D" parent="." groups=["level_exit"]]
 position = Vector2(1224, 417)
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport_Next_stage"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportNextStage"]
 shape = SubResource("RectangleShape2D_5l4bm")
 debug_color = Color(0.383534, 0.0824857, 0.080506, 0.545098)
 
@@ -73,4 +73,4 @@ position = Vector2(-15.25, 0)
 shape = SubResource("RectangleShape2D_io0dc")
 
 [connection signal="exit_reached" from="." to="." method="_on_exit_reached"]
-[connection signal="body_entered" from="Teleport_Next_stage" to="." method="_on_teleport_next_stage_body_entered"]
+[connection signal="body_entered" from="TeleportNextStage" to="." method="_on_teleport_next_stage_body_entered"]
