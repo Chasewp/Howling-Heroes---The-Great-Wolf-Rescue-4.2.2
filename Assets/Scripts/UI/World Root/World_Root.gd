@@ -37,7 +37,6 @@ func load_level_async(path:String):
 	get_tree().paused = false
 	# connect the signal to get notified when the exit is reached
 
-	
 func _on_level_exit_reached(next_level:String):
 	level_exit_reached.emit(next_level)
 

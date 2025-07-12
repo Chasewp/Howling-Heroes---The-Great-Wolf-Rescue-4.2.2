@@ -5,7 +5,7 @@ extends Node2D
 @onready var save_load :SaveLoadManagerFile =$Utilities/Save_Loader
 
 @onready var button_sfx = $UI/butons_sfx
-var crosshair_Cursor = load("res://Assetas/Image/Cursor/Cross_Hair/Layer 1.png")
+var crosshair_Cursor = load("res://Assets/Image/Cursor/Cross_Hair/Layer 1.png")
 var hand_cursor = load("res://Assets/Image/Cursor/hand_paw.png")
 
 func _ready():

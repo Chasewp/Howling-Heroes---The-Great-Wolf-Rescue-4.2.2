@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c1ph53byo1unb" path="res://Assets/Scences/UI/GUI/GUI_Play.tscn" id="1_c82bp"]
 [ext_resource type="Script" path="res://Assets/Scripts/UI/World Root/World_Root.gd" id="1_fswvq"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Game_manager/game_manager.gd" id="1_n3k3x"]
-[ext_resource type="PackedScene" uid="uid://vtn5f5opig4q" path="res://Assets/Scences/Stages/Dessert/dessert.tscn" id="3_noswq"]
+[ext_resource type="PackedScene" uid="uid://diiw7skynmbb1" path="res://Assets/Scences/Stages/Taiga/taiga_a_1.tscn" id="3_374es"]
 [ext_resource type="PackedScene" uid="uid://dk0n5e4gmj3p3" path="res://Assets/Scences/Character/Player/player.tscn" id="3_xb5hv"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Save_Manager/SaveLoadManager.gd" id="5_dhs1r"]
 [ext_resource type="FontFile" uid="uid://bv6xsykw7vcai" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="5_x361y"]
@@ -22,10 +22,10 @@ script = ExtResource("1_n3k3x")
 [node name="WorldRoot" type="Node2D" parent="."]
 script = ExtResource("1_fswvq")
 
-[node name="Dessert" parent="WorldRoot" instance=ExtResource("3_noswq")]
+[node name="Taiga_A1_Word_Starter" parent="WorldRoot" instance=ExtResource("3_374es")]
 
-[node name="Player" parent="." instance=ExtResource("3_xb5hv")]
-world_root = NodePath("../WorldRoot")
+[node name="Player" parent="WorldRoot" instance=ExtResource("3_xb5hv")]
+world_root = NodePath("..")
 is_machete_equip = true
 is_burst_garou_equip = true
 
@@ -88,7 +88,8 @@ area_mask = 8192
 [node name="Save_Loader" type="Node" parent="Utilities" groups=["Save_Loader"]]
 script = ExtResource("5_dhs1r")
 
-[connection signal="reset" from="UI/Mission" to="Player" method="died"]
+[connection signal="exit_reached" from="WorldRoot/Taiga_A1_Word_Starter" to="WorldRoot" method="_on_level_exit_reached"]
+[connection signal="reset" from="UI/Mission" to="WorldRoot/Player" method="died"]
 [connection signal="mouse_entered" from="UI/Save" to="." method="_on_enter_button"]
 [connection signal="mouse_exited" from="UI/Save" to="." method="_on_exit_button"]
 [connection signal="pressed" from="UI/Save" to="." method="_on_save_game"]

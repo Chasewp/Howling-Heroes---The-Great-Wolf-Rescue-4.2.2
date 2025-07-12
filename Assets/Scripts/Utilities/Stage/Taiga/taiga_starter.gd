@@ -8,11 +8,6 @@ func _ready():
 	super._ready()
 	music.play()
 	
-	# Connect the teleport area if it exists
-	if teleport_area:
-		teleport_area.body_entered.connect(_on_teleport_next_stage_body_entered)
-	else:
-		push_warning("Teleport area not found!")
 
 func _on_teleport_next_stage_body_entered(body):
 	if body.is_in_group("player"):

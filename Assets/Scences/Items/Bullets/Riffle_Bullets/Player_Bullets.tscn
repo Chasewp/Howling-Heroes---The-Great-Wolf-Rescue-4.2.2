@@ -45,7 +45,7 @@ animations = [{
 collision_layer = 16
 collision_mask = 65
 script = ExtResource("1_3i7yn")
-damage = 800.0
+damage = 30.0
 is_armor_piercing = true
 AP_dmg = 0.95
 

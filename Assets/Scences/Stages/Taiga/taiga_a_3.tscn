@@ -1,11 +1,11 @@
-[gd_scene load_steps=69 format=3 uid="uid://dacxduhw3cbjc"]
+[gd_scene load_steps=70 format=3 uid="uid://dacxduhw3cbjc"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Stage/Taiga/taiga.gd" id="1_g4hk3"]
 [ext_resource type="PackedScene" uid="uid://ca0nm25t6mv6w" path="res://Assets/Scences/Items/Cammera/camera_Stage.tscn" id="2_00v6u"]
 [ext_resource type="PackedScene" uid="uid://culrb1suvevtd" path="res://Assets/Scences/Paralex/Taiga/taiga.tscn" id="2_rruxb"]
 [ext_resource type="PackedScene" uid="uid://cuuxigy7yprh4" path="res://Assets/Scences/Paralex/Taiga/taiga_2.tscn" id="2_scon1"]
 [ext_resource type="TileSet" uid="uid://be2o4st0shlrm" path="res://Assets/Tileset/Tileset_Taiga A1.tres" id="3_a6xkp"]
-[ext_resource type="PackedScene" uid="uid://dcgqy35frqjee" path="res://Assets/Scences/Paralex/Grassland/taiga_a_3.tscn" id="5_uqdba"]
+[ext_resource type="PackedScene" uid="uid://dcgqy35frqjee" path="res://Assets/Scences/Paralex/Taiga/taiga_a_3.tscn" id="5_uqdba"]
 [ext_resource type="PackedScene" uid="uid://do60jfk40770p" path="res://Assets/Scences/Character/NPC/Wolves/Gray/Eurasian_Wolf/Eurasian_Wolf.tscn" id="7_2xikr"]
 [ext_resource type="PackedScene" uid="uid://sraitif5w2fc" path="res://Assets/Scences/Paralex/Taiga/taiga_a_4.tscn" id="7_fctwr"]
 [ext_resource type="PackedScene" uid="uid://dajnc56dgw0cv" path="res://Assets/Scences/Paralex/Taiga/Taiga_a5.tscn" id="8_f05wb"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://x7jt8s4abruj" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/brown_bear.tscn" id="21_yw4qv"]
 [ext_resource type="PackedScene" uid="uid://dm2f35rrowtqx" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/wolvrine.tscn" id="22_0rx8n"]
 [ext_resource type="PackedScene" uid="uid://dxuhjidss1q4q" path="res://Assets/Scences/Items/Traps/Arrow_Shooter_Top.tscn" id="28_kpudn"]
+[ext_resource type="PackedScene" uid="uid://dk0n5e4gmj3p3" path="res://Assets/Scences/Character/Player/player.tscn" id="30_nsrps"]
 
 [sub_resource type="Animation" id="Animation_c7rdu"]
 length = 0.001
@@ -872,6 +873,8 @@ position = Vector2(-6, 9)
 shape = SubResource("RectangleShape2D_f716n")
 
 [node name="Item" type="Node" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("30_nsrps")]
 
 [connection signal="body_entered" from="Teleport/Stage 1/cave_teleporter_to_stage_2/Area2D" to="." method="_on_teleport_next_stage_body_entered"]
 [connection signal="body_entered" from="Bos_Encounter/Bos_1/cave_teleporter_To_Wolf_Cage/Area2D" to="." method="_on_get_eurasian_wolf"]

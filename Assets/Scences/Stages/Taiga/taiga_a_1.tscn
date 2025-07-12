@@ -72,5 +72,4 @@ physics_material_override = SubResource("PhysicsMaterial_y1wd3")
 position = Vector2(-15.25, 0)
 shape = SubResource("RectangleShape2D_io0dc")
 
-[connection signal="exit_reached" from="." to="." method="_on_exit_reached"]
 [connection signal="body_entered" from="TeleportNextStage" to="." method="_on_teleport_next_stage_body_entered"]
