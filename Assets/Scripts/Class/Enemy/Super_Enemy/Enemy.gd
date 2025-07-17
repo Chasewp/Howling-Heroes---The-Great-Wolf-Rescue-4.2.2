@@ -53,9 +53,9 @@ var recently_hit := false
 var is_already_dead := false
 
 func _ready():
-	target_player = get_tree().root.get_node("World_Stages/Player")
-	
-	print(get_tree().root.get_node("World_Stages/Player"))  # Harus return valid node
+	#target_player = get_tree().root.get_node("World_Stages/Player")
+	#
+	#print(get_tree().root.get_node("World_Stages/Player"))  # Harus return valid node
 	 # Initialize hurtbox values only if valid
 	
 	if is_instance_valid(hurt_box):

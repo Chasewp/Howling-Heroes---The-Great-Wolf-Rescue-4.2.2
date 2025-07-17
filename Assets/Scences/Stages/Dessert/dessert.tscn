@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://vtn5f5opig4q"]
+[gd_scene load_steps=45 format=3 uid="uid://vtn5f5opig4q"]
 
 [ext_resource type="PackedScene" uid="uid://kcc5o6h6mu5s" path="res://Assets/Scences/Paralex/Dessert/dessert.tscn" id="1_pcqu5"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Stage/Dessert/dessert.gd" id="1_ubgou"]
@@ -9,12 +9,10 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Player_Spawner/Player_Spawner.gd" id="7_qqv2f"]
 [ext_resource type="AudioStream" uid="uid://d08255h4ooj57" path="res://Assets/Music/SFX/Wind/wind1.wav" id="10_2l0yb"]
 [ext_resource type="AudioStream" uid="uid://biwpx1vfxnnab" path="res://Assets/Music/SFX/Biomes/Jungle Music/MP3/jungle_with_intro.mp3" id="11_bonkv"]
-[ext_resource type="PackedScene" uid="uid://cau5155y6kc1q" path="res://Assets/Scences/Character/NPC/Wolves/Gold/Arabian_Wolf/Arabian_Wolf.tscn" id="12_yt7qj"]
 [ext_resource type="PackedScene" uid="uid://br3y2wminllit" path="res://Assets/Scences/Items/Wolf_Coins/wolf_coin_next_lv.tscn" id="13_acoul"]
 [ext_resource type="PackedScene" uid="uid://cp171x53dlm7n" path="res://Assets/Scences/Traps/desert_rock.tscn" id="14_1ki0d"]
 [ext_resource type="PackedScene" uid="uid://damhkymc1kira" path="res://Assets/Scences/Items/Cage/Dessert/Dessert_Cage.tscn" id="15_2pmh6"]
-[ext_resource type="PackedScene" uid="uid://bhnwdg518fk1e" path="res://Assets/Scences/Character/NPC/Wolves/Brown/Indian_Wolf/Indian_Wolf.tscn" id="16_e5wa4"]
-[ext_resource type="PackedScene" uid="uid://ep8hjmo4gqqo" path="res://Assets/Scences/Character/NPC/Wolves/Gray/Mexican_Wolf/Mexican_Wolf.tscn" id="17_52wxm"]
+[ext_resource type="PackedScene" uid="uid://c8dg4rd3eq14f" path="res://Assets/Scences/Character/Enemy/Humanoid/Dessert/hunter_mk_elite.tscn" id="15_7ddgx"]
 [ext_resource type="PackedScene" uid="uid://btqgl2umcojj5" path="res://Assets/Scences/Util/Tecave_teleporter/caveteleportdessertright.tscn" id="18_qd6i3"]
 [ext_resource type="PackedScene" uid="uid://bd4k8tc60s8wt" path="res://Assets/Scences/caveteleportdessertleft.tscn" id="19_5mbyl"]
 
@@ -41,10 +39,12 @@ size = Vector2(32.5098, 460)
 size = Vector2(34.0352, 304)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8um7"]
-size = Vector2(128, 1629)
+size = Vector2(125, 1934)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jegte"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lg6yh"]
-size = Vector2(13044, 32)
+size = Vector2(74620, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvx7r"]
 size = Vector2(81, 1253)
@@ -819,8 +819,6 @@ script = ExtResource("1_ubgou")
 
 [node name="Dessert" parent="." instance=ExtResource("1_pcqu5")]
 
-[node name="Camera2D" parent="." instance=ExtResource("3_f2xjq")]
-
 [node name="Walls" type="Node" parent="."]
 
 [node name="Boss_Barrier" type="Node" parent="Walls"]
@@ -854,7 +852,6 @@ position = Vector2(4842, 1044)
 collision_mask = 2
 
 [node name="wall_bos_2_- opening_Collision" type="CollisionShape2D" parent="Walls/Boss_Barrier/Wall_Barrier_Bos_2/wall_bos_2-opening"]
-visible = false
 position = Vector2(6, -185.5)
 shape = SubResource("RectangleShape2D_ll5lv")
 debug_color = Color(0.54902, 0.909804, 1, 0.419608)
@@ -865,7 +862,6 @@ debug_color = Color(0.54902, 0.909804, 1, 0.419608)
 collision_mask = 34
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Boss_Barrier/Wall_Barrier_Bos_4/wall_bos_4-opening"]
-visible = false
 shape = SubResource("RectangleShape2D_av1xx")
 
 [node name="wall_bos_4-Block_inside" type="StaticBody2D" parent="Walls/Boss_Barrier/Wall_Barrier_Bos_4"]
@@ -873,7 +869,6 @@ position = Vector2(11471, 850)
 collision_mask = 34
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Boss_Barrier/Wall_Barrier_Bos_4/wall_bos_4-Block_inside"]
-visible = false
 position = Vector2(431, 25)
 shape = SubResource("RectangleShape2D_4bvo8")
 debug_color = Color(0, 0.792157, 0.921569, 0.419608)
@@ -902,22 +897,29 @@ shape = SubResource("RectangleShape2D_3uqcp")
 position = Vector2(-66, 816)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall_Stage/Left_Wall"]
+position = Vector2(0, -87)
+shape = SubResource("RectangleShape2D_c8um7")
+
+[node name="Right_Wall" type="StaticBody2D" parent="Walls/Wall_Stage"]
+position = Vector2(74559, 813)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall_Stage/Right_Wall"]
+position = Vector2(0, -87)
 shape = SubResource("RectangleShape2D_c8um7")
 
 [node name="lower_floor" type="StaticBody2D" parent="Walls/Wall_Stage"]
-position = Vector2(11, 1612)
+position = Vector2(37181, 1712)
 collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_jegte")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall_Stage/lower_floor"]
-position = Vector2(6512, 0)
 shape = SubResource("RectangleShape2D_lg6yh")
 
 [node name="Upper_floor" type="StaticBody2D" parent="Walls/Wall_Stage"]
-position = Vector2(11, -254)
+position = Vector2(37181, -254)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall_Stage/Upper_floor"]
-position = Vector2(6512, 0)
 shape = SubResource("RectangleShape2D_lg6yh")
 
 [node name="Wall_barier_stage_1" type="Node" parent="Walls/Wall_Stage"]
@@ -1082,24 +1084,6 @@ volume_db = -3.0
 stream = ExtResource("11_bonkv")
 volume_db = -2.0
 
-[node name="Wolves" type="Node" parent="."]
-
-[node name="Arabian_Wolf" parent="Wolves" node_paths=PackedStringArray("Cagees") instance=ExtResource("12_yt7qj")]
-visible = false
-z_index = 0
-position = Vector2(46, 672)
-Cagees = NodePath("../../Cage/Dessert__Cage_Arabian_Wolf")
-
-[node name="Indian_Wolf" parent="Wolves" node_paths=PackedStringArray("Cagees") instance=ExtResource("16_e5wa4")]
-visible = false
-position = Vector2(5912, 464)
-Cagees = NodePath("../../Cage/Dessert__Cage_Indian_Wolf")
-
-[node name="Mexican_Wolf" parent="Wolves" node_paths=PackedStringArray("Cagees") instance=ExtResource("17_52wxm")]
-visible = false
-position = Vector2(9372, 1117)
-Cagees = NodePath("../../Cage/Dessert__Cage_Mexican_Wolf")
-
 [node name="Cage" type="Node" parent="."]
 
 [node name="Dessert__Cage_Arabian_Wolf" parent="Cage" instance=ExtResource("15_2pmh6")]
@@ -1117,9 +1101,6 @@ access_denied = NodePath("../Dessert__Cage_Indian_Wolf/Sound")
 position = Vector2(12593, 164)
 sfx = NodePath("../Dessert__Cage_Indian_Wolf/SFX")
 access_denied = NodePath("../Dessert__Cage_Indian_Wolf/Sound")
-
-[node name="Area2D" type="Area2D" parent="Cage"]
-position = Vector2(-77, -27)
 
 [node name="desert_rock" parent="." instance=ExtResource("14_1ki0d")]
 visible = false
@@ -1259,13 +1240,19 @@ position = Vector2(31453, 599)
 [node name="Marker2D" parent="caveteleportleft" index="1"]
 position = Vector2(-9447, 291)
 
+[node name="Camera_Stage" parent="." instance=ExtResource("3_f2xjq")]
+zoom = Vector2(2.5, 2.5)
+limit_left = -1280
+limit_top = -650
+limit_bottom = 720
+
+[node name="Hunter_MK_Elite" parent="." instance=ExtResource("15_7ddgx")]
+position = Vector2(149, 584)
+
 [connection signal="body_entered" from="Bos_enccounter/bos_1" to="." method="_on_bos_1_body_entered"]
 [connection signal="body_exited" from="Bos_enccounter/bos_2" to="." method="_on_bos_2_body_exited"]
 [connection signal="body_entered" from="Dead_zone/Dead_zone 1" to="." method="_on_dead_zone_1_body_entered"]
 [connection signal="body_entered" from="Dead_zone/Dead_Zone_3" to="." method="_on_dead_zone_2_body_entered"]
-[connection signal="cage_unlocked" from="Cage/Dessert__Cage_Arabian_Wolf" to="Wolves/Arabian_Wolf" method="_on_cage_unlocked"]
-[connection signal="cage_unlocked" from="Cage/Dessert__Cage_Indian_Wolf" to="Wolves/Indian_Wolf" method="_on_cage_unlocked"]
-[connection signal="cage_unlocked" from="Cage/Dessert__Cage_Mexican_Wolf" to="Wolves/Mexican_Wolf" method="_on_cage_unlocked"]
 
 [editable path="Teleport/cave_tp_BossFigh"]
 [editable path="Teleport/caveteleportright"]

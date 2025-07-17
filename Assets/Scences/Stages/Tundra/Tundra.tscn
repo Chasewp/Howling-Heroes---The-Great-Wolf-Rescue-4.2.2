@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bxyhcihr2nyk1"]
+[gd_scene load_steps=35 format=3 uid="uid://bxyhcihr2nyk1"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Stage/Tundra/taiga_3D.gd" id="1_us6rm"]
 [ext_resource type="PackedScene" uid="uid://cuuxigy7yprh4" path="res://Assets/Scences/Paralex/Taiga/taiga_2.tscn" id="2_ap71k"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://do0h664e0upk6" path="res://Assets/Scences/Platfrom/Tundra/plafrom_tundra.tscn" id="11_ngdgy"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="11_rg57k"]
 [ext_resource type="PackedScene" uid="uid://8mycm3q4j3xu" path="res://Assets/Scences/Platfrom/Tundra/PlatForm_TransportShort.tscn" id="12_5u52h"]
+[ext_resource type="PackedScene" uid="uid://dfojlnhyxctod" path="res://Assets/Scences/Character/Enemy/Animals/Tundra/artic_fox.tscn" id="13_g7rx3"]
+[ext_resource type="PackedScene" uid="uid://bvlu11r85fd1y" path="res://Assets/Scences/Character/Enemy/Animals/Tundra/polar_bear.tscn" id="14_10iju"]
+[ext_resource type="PackedScene" uid="uid://bbqp1qxpoh7wh" path="res://Assets/Scences/Character/Enemy/Animals/Tundra/gold_bear.tscn" id="15_2i71b"]
 
 [sub_resource type="Shader" id="Shader_bv82k"]
 code = "shader_type canvas_item;
@@ -935,3 +938,19 @@ position = Vector2(24461, 841.38)
 
 [node name="Tundra_platfrom_Long15" parent="PlatForm/Stage_2" instance=ExtResource("9_q23b1")]
 position = Vector2(16883, 801.915)
+
+[node name="Artic_fox" parent="." instance=ExtResource("13_g7rx3")]
+position = Vector2(570, 22)
+
+[node name="Polar_Bear" parent="." instance=ExtResource("14_10iju")]
+position = Vector2(1850, 73)
+
+[node name="Gold_Bear" parent="." node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast") instance=ExtResource("15_2i71b")]
+position = Vector2(2855, 705)
+health_bar = NodePath("")
+armor_bar = NodePath("")
+hit_box = NodePath("")
+hurt_box = NodePath("")
+enemy_sprites = NodePath("")
+enemy_sprite_animation = NodePath("")
+enemy_raycast = NodePath("")

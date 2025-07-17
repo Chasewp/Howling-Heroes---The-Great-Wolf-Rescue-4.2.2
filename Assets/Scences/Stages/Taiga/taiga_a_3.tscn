@@ -750,24 +750,29 @@ position = Vector2(1753, 419)
 
 [node name="Stage_1" type="Node" parent="Enemy"]
 
-[node name="Black_Bear" parent="Enemy/Stage_1" instance=ExtResource("13_eiy3r")]
+[node name="Black_Bear" parent="Enemy/Stage_1" node_paths=PackedStringArray("target_player") instance=ExtResource("13_eiy3r")]
 position = Vector2(132, 265)
+target_player = NodePath("../../../Player")
 eficient_Armor = 0.35
 
-[node name="Golden_Eagle" parent="Enemy/Stage_1" instance=ExtResource("19_8fc52")]
+[node name="Golden_Eagle" parent="Enemy/Stage_1" node_paths=PackedStringArray("target_player") instance=ExtResource("19_8fc52")]
 position = Vector2(1851, 219)
 collision_layer = 32
 collision_mask = 3
 platform_on_leave = 2
+target_player = NodePath("../../../Player")
 
-[node name="Red_fox" parent="Enemy/Stage_1" instance=ExtResource("19_m4b03")]
+[node name="Red_fox" parent="Enemy/Stage_1" node_paths=PackedStringArray("target_player") instance=ExtResource("19_m4b03")]
 position = Vector2(2865, 27)
+target_player = NodePath("../../../Player")
 
-[node name="Wolvine" parent="Enemy/Stage_1" instance=ExtResource("22_0rx8n")]
+[node name="Wolvine" parent="Enemy/Stage_1" node_paths=PackedStringArray("target_player") instance=ExtResource("22_0rx8n")]
 position = Vector2(294, 448)
+target_player = NodePath("../../../Player")
 
-[node name="Brown_Bear" parent="Enemy/Stage_1" instance=ExtResource("21_yw4qv")]
+[node name="Brown_Bear" parent="Enemy/Stage_1" node_paths=PackedStringArray("target_player") instance=ExtResource("21_yw4qv")]
 position = Vector2(64, 69)
+target_player = NodePath("../../../Player")
 
 [node name="Stage_2" type="Node" parent="Enemy"]
 

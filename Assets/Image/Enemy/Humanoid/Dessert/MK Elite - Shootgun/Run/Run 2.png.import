@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbgy0ddsuxtal"
-path="res://.godot/imported/Verreaux's Eagle.jpg-48b0f14b5970599a6b1bbe40808ab3d8.ctex"
+uid="uid://55hum60fdtly"
+path="res://.godot/imported/Run 2.png-c89395cea38b9ac71237acb046b1e660.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Image/Enemy/Animal/Verreaux's Eagle.jpg"
-dest_files=["res://.godot/imported/Verreaux's Eagle.jpg-48b0f14b5970599a6b1bbe40808ab3d8.ctex"]
+source_file="res://Assets/Image/Enemy/Humanoid/Dessert/MK Elite - Shootgun/Run/Run 2.png"
+dest_files=["res://.godot/imported/Run 2.png-c89395cea38b9ac71237acb046b1e660.ctex"]
 
 [params]
 
