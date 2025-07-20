@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Assets/Scripts/UI/World Root/World_Root.gd" id="1_fswvq"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Game_manager/game_manager.gd" id="1_n3k3x"]
 [ext_resource type="PackedScene" uid="uid://diiw7skynmbb1" path="res://Assets/Scences/Stages/Taiga/taiga_a_1.tscn" id="3_374es"]
-[ext_resource type="PackedScene" uid="uid://dk0n5e4gmj3p3" path="res://Assets/Scences/Character/Player/player.tscn" id="3_xb5hv"]
+[ext_resource type="PackedScene" uid="uid://dk0n5e4gmj3p3" path="res://Assets/Scences/Items/Bullets/Bullets/player.tscn" id="3_xb5hv"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Save_Manager/SaveLoadManager.gd" id="5_dhs1r"]
 [ext_resource type="FontFile" uid="uid://bv6xsykw7vcai" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="5_x361y"]
 [ext_resource type="PackedScene" uid="uid://d2kow5kkphlx6" path="res://Assets/Scences/UI/Mission_Log/mission.tscn" id="6_qn67d"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=86 format=3 uid="uid://dk0n5e4gmj3p3"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Player/player.gd" id="1_j1d3s"]
-[ext_resource type="PackedScene" uid="uid://bi4hvn314kpgx" path="res://Assets/Scences/Items/Bullets/Riffle_Bullets/Player_Bullets.tscn" id="2_vc508"]
+[ext_resource type="PackedScene" uid="uid://bi4hvn314kpgx" path="res://Assets/Scences/Items/Bullets/Bullets/Player_Bullets.tscn" id="2_vc508"]
 [ext_resource type="Texture2D" uid="uid://dd2eopcplo5m7" path="res://Assets/Image/Character/Player/Normal/Iddle/Iddle_2.png" id="3_7e7iu"]
 [ext_resource type="PackedScene" uid="uid://3fimxshrqrjf" path="res://Assets/Scences/Items/Weapon/Machete/slash_damage.tscn" id="3_m86m4"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hurtbox/Hurt box.gd" id="3_o0r77"]

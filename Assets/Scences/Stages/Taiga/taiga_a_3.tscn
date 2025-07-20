@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://x7jt8s4abruj" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/brown_bear.tscn" id="21_yw4qv"]
 [ext_resource type="PackedScene" uid="uid://dm2f35rrowtqx" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/wolvrine.tscn" id="22_0rx8n"]
 [ext_resource type="PackedScene" uid="uid://dxuhjidss1q4q" path="res://Assets/Scences/Items/Traps/Arrow_Shooter_Top.tscn" id="28_kpudn"]
-[ext_resource type="PackedScene" uid="uid://dk0n5e4gmj3p3" path="res://Assets/Scences/Character/Player/player.tscn" id="30_nsrps"]
+[ext_resource type="PackedScene" uid="uid://dk0n5e4gmj3p3" path="res://Assets/Scences/Items/Bullets/Bullets/player.tscn" id="30_nsrps"]
 
 [sub_resource type="Animation" id="Animation_c7rdu"]
 length = 0.001

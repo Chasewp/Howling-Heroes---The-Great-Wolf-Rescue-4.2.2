@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bf5jhcjprlfx1"
+path="res://.godot/imported/lynx died.wav-243f50869ef072a7f61b8b7b1dc7d0f2.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX/Enemy/Animal/lynx died.wav"
+dest_files=["res://.godot/imported/lynx died.wav-243f50869ef072a7f61b8b7b1dc7d0f2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

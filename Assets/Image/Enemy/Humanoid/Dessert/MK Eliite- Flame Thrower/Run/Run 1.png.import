@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df2b1lei5uidc"
-path="res://.godot/imported/Hunter MK II.jpg-053d128305c16093c266125a9751caf0.ctex"
+uid="uid://cbl1k5vmmijm0"
+path="res://.godot/imported/Run 1.png-aa238f09f4bb4d42f70cac7dc5d37627.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Image/Enemy/Animal/Hunter MK II.jpg"
-dest_files=["res://.godot/imported/Hunter MK II.jpg-053d128305c16093c266125a9751caf0.ctex"]
+source_file="res://Assets/Image/Enemy/Humanoid/Dessert/MK Eliite- Flame Thrower/Run/Run 1.png"
+dest_files=["res://.godot/imported/Run 1.png-aa238f09f4bb4d42f70cac7dc5d37627.ctex"]
 
 [params]
 

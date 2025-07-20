@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ck3b0i5gk6xn6"
+path="res://.godot/imported/Free Flamethrower Sound Effects Download.mp3-803d1a7e10fe64e259926e6a2efb6d1b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/SFX/Weapon/Flame trower/Free Flamethrower Sound Effects Download.mp3"
+dest_files=["res://.godot/imported/Free Flamethrower Sound Effects Download.mp3-803d1a7e10fe64e259926e6a2efb6d1b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

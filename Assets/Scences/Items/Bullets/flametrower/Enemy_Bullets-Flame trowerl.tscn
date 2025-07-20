@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bm3yy3layxu2y"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Item/Bullets/Bullets/Enemy_Bullets-Pistol.gd" id="1_p23vb"]
+[ext_resource type="SpriteFrames" uid="uid://du02y0hpcxh3e" path="res://Assets/Animate/Item/Enemy_Bullets-Pistol.tres" id="2_61roy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wcr8k"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nd83t"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_iayy1"]
+
+[node name="Enemy_Bullets-Falme trower" type="Area2D" groups=["bullet_brust_garou"]]
+collision_layer = 128
+collision_mask = 17
+script = ExtResource("1_p23vb")
+damage = 15.0
+is_armor_piercing = true
+AP_dmg = 5.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_61roy")
+frame_progress = 0.680504
+offset = Vector2(8, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 0.5)
+shape = SubResource("CircleShape2D_wcr8k")
+debug_color = Color(0, 0.352941, 0.415686, 0.419608)
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(8, 0)
+
+[node name="Flameparticles" type="GPUParticles2D" parent="."]
+process_material = SubResource("ParticleProcessMaterial_nd83t")
+texture = SubResource("Texture2DRD_iayy1")
+lifetime = 0.5
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

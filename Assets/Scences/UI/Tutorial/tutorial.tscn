@@ -13,7 +13,7 @@
 [ext_resource type="FontFile" uid="uid://bv6xsykw7vcai" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="10_g8fpg"]
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Player/player.gd" id="11_7n81i"]
 [ext_resource type="FontFile" uid="uid://b37vftxdinymo" path="res://Assets/Fonts/DisposableDroidBB_ital.ttf" id="11_jha2q"]
-[ext_resource type="PackedScene" uid="uid://bi4hvn314kpgx" path="res://Assets/Scences/Items/Bullets/Riffle_Bullets/Player_Bullets.tscn" id="12_06bjy"]
+[ext_resource type="PackedScene" uid="uid://bi4hvn314kpgx" path="res://Assets/Scences/Items/Bullets/Bullets/Player_Bullets.tscn" id="12_06bjy"]
 [ext_resource type="PackedScene" uid="uid://c1ph53byo1unb" path="res://Assets/Scences/UI/GUI/GUI_Play.tscn" id="12_t0l8a"]
 [ext_resource type="PackedScene" uid="uid://3fimxshrqrjf" path="res://Assets/Scences/Items/Weapon/Machete/slash_damage.tscn" id="13_6f0gt"]
 [ext_resource type="PackedScene" uid="uid://d2kow5kkphlx6" path="res://Assets/Scences/UI/Mission_Log/mission.tscn" id="13_kiehx"]

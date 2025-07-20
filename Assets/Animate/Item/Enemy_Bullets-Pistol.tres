@@ -1,22 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://du02y0hpcxh3e"]
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://du02y0hpcxh3e"]
 
+[ext_resource type="Texture2D" uid="uid://csyfqgoy6ml55" path="res://Assets/Image/Items/Bullets/Flame Trower.png" id="1_2mbdt"]
 [ext_resource type="Texture2D" uid="uid://gbftk62luel2" path="res://Assets/Image/Items/Bullets/All_Fire_Bullet_Pixel_16x16_04.png" id="1_vqrh3"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_brvd4"]
-atlas = ExtResource("1_vqrh3")
-region = Rect2(256, 176, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pi02u"]
-atlas = ExtResource("1_vqrh3")
-region = Rect2(272, 176, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vpf37"]
-atlas = ExtResource("1_vqrh3")
-region = Rect2(288, 176, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mjw8a"]
-atlas = ExtResource("1_vqrh3")
-region = Rect2(304, 176, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hx4wp"]
 atlas = ExtResource("1_vqrh3")
@@ -46,16 +31,7 @@ region = Rect2(160, 352, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_brvd4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pi02u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vpf37")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mjw8a")
+"texture": ExtResource("1_2mbdt")
 }],
 "loop": true,
 "name": &"default",
