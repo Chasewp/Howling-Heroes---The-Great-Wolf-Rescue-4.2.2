@@ -1,0 +1,208 @@
+[gd_scene load_steps=10 format=3 uid="uid://cmyh3rorxerwq"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/UI/Mission_Completed/Mission_Completed.gd" id="1_v7gmp"]
+[ext_resource type="Texture2D" uid="uid://c63vgs0gen6uu" path="res://Assets/Image/Background/Mission_Completed/Mission_Completed.png" id="2_em1ne"]
+[ext_resource type="FontFile" uid="uid://ccpiomxr4hnwi" path="res://Assets/Fonts/DisposableDroidBB_bldital.ttf" id="3_monuv"]
+[ext_resource type="AudioStream" uid="uid://w3t2ymxhmuhf" path="res://Assets/Music/SFX/Howl/Wolf Howl 09.wav" id="4_8etak"]
+[ext_resource type="AudioStream" uid="uid://bngdrbokc0m" path="res://Assets/Music/Dialogues/Mission_Finish/The mission is complete the biome stage has been cleared.wav" id="5_arqjx"]
+
+[sub_resource type="Animation" id="Animation_ccjm5"]
+resource_name = "Fade_In"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background/Label2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1082, 96), Vector2(98, 222)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background/Label:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(22, 843), Vector2(25, 318)]
+}
+
+[sub_resource type="Animation" id="Animation_4w7bp"]
+resource_name = "Fade_Out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5thqs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background/Label2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(98, 222)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background/Label:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(25, 318)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jrhl3"]
+_data = {
+"Fade_In": SubResource("Animation_ccjm5"),
+"Fade_Out": SubResource("Animation_4w7bp"),
+"RESET": SubResource("Animation_5thqs")
+}
+
+[node name="Mission_Completed" type="Node2D" groups=["level_exit"]]
+script = ExtResource("1_v7gmp")
+next_level = "res://Assets/Scences/Stages/Tundra/Tundra.tscn"
+
+[node name="Background" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_em1ne")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -542.0
+offset_top = -138.0
+offset_right = 542.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.380392, 0.380392, 0.380392, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("3_monuv")
+theme_override_font_sizes/font_size = 83
+text = "The mission is complete"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -615.0
+offset_top = -42.0
+offset_right = 615.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.380392, 0.380392, 0.380392, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("3_monuv")
+theme_override_font_sizes/font_size = 83
+text = "the biome stage has been cleared."
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Fade" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jrhl3")
+}
+
+[node name="Howling_Sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_8etak")
+bus = &"Sound Effects"
+area_mask = 8192
+
+[node name="Mission_completed" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_arqjx")
+bus = &"Voices"
+area_mask = 8192
+
+[connection signal="exit_reached" from="." to="." method="_on_exit_reached"]
+[connection signal="finished" from="Howling_Sfx" to="." method="_on_howling_sfx_finished"]

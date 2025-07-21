@@ -53,10 +53,6 @@ var recently_hit := false
 var is_already_dead := false
 
 func _ready():
-	#target_player = get_tree().root.get_node("World_Stages/Player")
-	#
-	#print(get_tree().root.get_node("World_Stages/Player"))  # Harus return valid node
-	 # Initialize hurtbox values only if valid
 	
 	if is_instance_valid(hurt_box):
 		hurt_box.Healths = hlt
@@ -64,11 +60,10 @@ func _ready():
 		hurt_box.Eficient_Armors = eficient_Armor
 		hurt_box.received_damage.connect(take_damage)
 
-	
-	#target player
-	if not target_player:
-		target_player = get_tree().root.get_node("World_Stages/Player")
-		push_warning("Player node not found! Enemies will not function.")
+	##targetplayer
+	#if not target_player:
+		#target_player = get_tree().root.get_node("World_Stages/Player")
+		#push_warning("Player node not found! Enemies will not function.")
 	# Set current values
 	current_armor = arm
 	current_health = hlt
@@ -192,10 +187,21 @@ func handle_gravity(delta):
 		velocity.y += gravity * delta
 
 func handle_movement(delta:float):
+	if is_flying:
+		return
+		
+	# LOGIKA LOMPAT BARU
+	if is_on_floor() and animate_state == state.RUNNING and is_on_wall():
+		velocity.y = -Jump_velocity  # Gunakan nilai negatif untuk lompat
+	
+	if not is_on_floor():
+		velocity.y += gravity * delta
+	
 	if animate_state == state.RUNNING:
-		velocity = velocity.move_toward(direction * speed, Acceleration * delta)
-	else :
-		velocity = velocity.move_toward(direction*speed, Acceleration*delta)
+		velocity.x = direction.x * speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, Acceleration * delta)
+	
 	move_and_slide()
 
 func update_state():
@@ -203,23 +209,22 @@ func update_state():
 		return
 
 	if is_flying:
-		# Burung cukup antara IDDLE dan RUNNING (mungkin tambah ATTACK)
 		if velocity.length() < 5:
 			animate_state = state.IDDLE
 		else:
 			animate_state = state.RUNNING
 	else:
-		# Ground enemy logic
-		if is_on_floor():
-			if velocity == Vector2.ZERO:
-				animate_state = state.IDDLE
-			elif  velocity.x != 0:
-				animate_state = state.RUNNING
-		else: 
+		# REVISI LOGIKA STATE LOMPAT
+		if not is_on_floor():
 			if velocity.y < 0:
 				animate_state = state.JUMPUP
 			else:
 				animate_state = state.JUMPDOWN
+		else:
+			if velocity.x == 0:
+				animate_state = state.IDDLE
+			else:
+				animate_state = state.RUNNING
 				
 func update_animation(dir):
 	if not is_instance_valid(enemy_sprites):
@@ -284,7 +289,12 @@ func _on_enemy_health_changed(percentage:float):
 	health_bar.value = hlt
 	health_bar.set_value_no_signal(percentage)
 	animate_state= state.HURT
-	
+
+func jumping():
+	if is_on_floor():
+		velocity.y = -Jump_velocity
+		animate_state = state.JUMPUP
+
 func _on_enemy_armor_changed(percentage:float):
 	armor_bar.value = arm
 	armor_bar.set_value_no_signal(percentage)
@@ -303,13 +313,17 @@ func look_for_player():
 	if not is_instance_valid(enemy_raycast) or not is_instance_valid(target_player):
 		return
 	
-	# Update raycast direction
+	# Update raycast direction dan rotation
 	var player_dir = (target_player.global_position - global_position).normalized()
 	enemy_raycast.target_position = player_dir * 300
+	enemy_raycast.global_rotation = player_dir.angle()
+	
+	# Force update raycast
+	enemy_raycast.force_raycast_update()
 	
 	if enemy_raycast.is_colliding():
 		var collider = enemy_raycast.get_collider()
-		if collider == target_player:
+		if collider.is_in_group("player"):  # Lebih reliable pakai group
 			chase_player()
 		else:
 			stop_chase()
@@ -317,13 +331,36 @@ func look_for_player():
 		stop_chase()
 		
 func chase_player():
-	animate_state = state.RUNNING
+	if not is_instance_valid(target_player):
+		return
 	
-func stop_chase():
-	pass
-	#if not is_chasing:
-		#animate_state = state.IDDLE
+	# Hitung arah ke player
+	direction = (target_player.global_position - global_position).normalized()
+	
+	# Update flip sprite berdasarkan arah
+	_safe_set_flip_h(direction.x < 0)
+	
+	# Atur state dan kecepatan
+	animate_state = state.RUNNING
+	velocity.x = direction.x * speed
+	
+	# Logika lompat jika dekat dengan player
+	var distance = global_position.distance_to(target_player.global_position)
+	if distance < 150 and is_on_floor():
+		jumping()
+	
+	# Logika attack jika dalam jarak serang
+	if distance < 100:
+		attack()
 
+func stop_chase():
+	if animate_state == state.ATTACK or animate_state == state.HURT:
+		return
+		
+	animate_state = state.IDDLE
+	velocity.x = 0
+	direction = Vector2.ZERO
+	
 func on_hurt_area_enemy(area):
 	if not is_instance_valid(target_player):  # Pastikan player masih ada
 		return
@@ -342,25 +379,18 @@ func _physics_process(delta):
 	if is_flying:
 		handle_flying_movement(delta)
 	else:
+		# Pastikan raycast diupdate setiap frame
+		if is_instance_valid(target_player):
+			look_for_player()
+		
 		handle_movement(delta)
+		update_state()
+		update_animation(direction.x)
 
 func attack():
-	#if not can_attack or not is_instance_valid(target_player):
-		#return
-	#
-	#can_attack = false
-	#timers.start()
-	
 	enemy_sprite_animation.play("Attack")
 	await enemy_sprite_animation.animation_finished
-	
-	## Beri damage jika kondisi masih terpenuhi
-	#if (is_instance_valid(target_player) and 
-		#global_position.distance_to(target_player.global_position) < attack_range * 1.2 and
-		#enemy_raycast.is_colliding() and 
-		#enemy_raycast.get_collider() == target_player):
-		#
-		#target_player.take_damage(damage, AP, APdmg)
+
 	var overlapping_body = hit_box.get_overlapping_bodies()
 	for body in overlapping_body:
 		if body.is_in_group("player"):

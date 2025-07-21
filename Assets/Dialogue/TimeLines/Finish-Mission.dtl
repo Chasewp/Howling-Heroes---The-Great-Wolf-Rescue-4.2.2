@@ -18,7 +18,7 @@ leave Character/Player [animation="Instant Out"]
 [music path="res://Assets/Music/Music/Backsound/MIssion _Breffing/UWF HQ Backsound.mp3" fade="0.0" volume="-15.0" bus="SFX"]
 join "Character/Sergant Lupine" rightmost [animation="Slide In Right" length="0.6"]
 [voice path="res://Assets/Music/Dialogues/Mission_Finish/Sergant_Lupine_D1_Mission(Full_Radio).wav" volume="0.0"]
-"Character/Sergant Lupine": Player, you have successfully completed your mission of rescuing wolves from the four biomes \: taiga,tundra, grassland, and dessert. We commend your dedication and bravery. Your efforts have made a significant impact on wolf conservation and have enhanced our understanding of their ecological needs. Over.
+"Character/Sergant Lupine": Player, you have successfully completed your mission of rescuing wolves from the four biomes \: taiga, tundra, grassland, and dessert. We commend your dedication and bravery. Your efforts have made a significant impact on wolf conservation and have enhanced our understanding of their ecological needs. Over.
 leave "Character/Sergant Lupine" [animation="Instant Out" length="0.3"]
 [background arg="res://Assets/Image/Background/Stage/Dessert/8.png" fade="0.2"]
 [music path="res://Assets/Music/SFX/Wind/wind1.wav" fade="0.0" volume="-3.0" bus="SFX"]

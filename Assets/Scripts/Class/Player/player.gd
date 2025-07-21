@@ -187,10 +187,7 @@ func update_animation(direction):
 	 # Tentukan arah hadap berdasarkan mouse
 	var mouse_pos = get_global_mouse_position()
 	player_Sprites.flip_h = mouse_pos.x < global_position.x
-	
-	
-	
-		
+
 	match  anim_state:	
 		#Iddle Normal
 		state.IDDLE:
@@ -317,8 +314,7 @@ func _physics_process(delta):
 				wolf.rescue()
 			interact_label.set_text("Press " + "`Z`" + " to rescue the wolf")
 			interact_panel.visible = true	
-		
-				
+
 	if player_health <=0:
 		died()	
 		
@@ -425,11 +421,21 @@ func _on_received_damage(_damage: float, _is_ap: bool, _ap_dmg: float):
 	# Play hurt animation if not dead
 	if current_health > 0:
 		anim_state = state.HURT
-		animation_player.play()
+		animation_player.play("Hurt")  # Explicitly play hurt animation
 		update_animation(0)
+		
+		# Create a timer to return to IDLE after 1.5 seconds
+		var timer = get_tree().create_timer(1.5)
+		timer.timeout.connect(_return_to_idle_after_hurt)
+	
 	# Debug print
 	print("Damage Received - Health: ", current_health, " Armor: ", current_armor)
-	
+
+func _return_to_idle_after_hurt():
+	if anim_state == state.HURT and current_health > 0:
+		anim_state = state.IDDLE
+		update_animation(0)
+		
 func take_damage(damage:float,is_armor_piercing:bool,AP_dmg :float):
 	var prev_health = player_health
 	var prev_armor = player_armor
@@ -498,9 +504,7 @@ func _on_player_health_changed(percentage:float):
 		health_bar.set_value_no_signal(percentage)
 	else:
 		print("Failed to load resource data.")
-		## Hanya set hurt jika damage signifikan
-		#if percentage < health_bar.value:
-			#anim_state = state.HURT
+
 
 func _on_player_armor_changed(percentage:float):
 	if data is Data_Progress : 
@@ -510,6 +514,4 @@ func _on_player_armor_changed(percentage:float):
 		armor_bar.set_value_no_signal(percentage)
 	else:
 		print("Failed to load resource data.")
-	## Hanya set hurt jika armor berkurang
-	#if percentage < armor_bar.value:
-		#anim_state = state.HURT
+

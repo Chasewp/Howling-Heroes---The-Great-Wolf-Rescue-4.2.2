@@ -1,7 +1,7 @@
 [gd_scene load_steps=36 format=3 uid="uid://bha1kd0hiiw4r"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Taiga/red_fox.gd" id="1_ryo0h"]
-[ext_resource type="SpriteFrames" uid="uid://cx2nt26sgqqbg" path="res://Assets/Animate/Chacter/Enemy/Animal/red_fox.tres" id="2_fe0kb"]
+[ext_resource type="SpriteFrames" uid="uid://bf70kob07oxfl" path="res://Assets/Animate/Chacter/Enemy/Animal/red_fox.tres" id="2_fe0kb"]
 [ext_resource type="AudioStream" uid="uid://nyawlq3baxf2" path="res://Assets/Music/SFX/Enemy/Animal/monster-bite-44538.mp3" id="3_bh0e7"]
 [ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="3_pagxi"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="4_1tc3g"]

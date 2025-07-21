@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://0kmxj6w7tdlo"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/UI/End_mission/end_mission.gd" id="1_7b7c8"]
+
+[node name="End-mission" type="Node2D"]
+script = ExtResource("1_7b7c8")

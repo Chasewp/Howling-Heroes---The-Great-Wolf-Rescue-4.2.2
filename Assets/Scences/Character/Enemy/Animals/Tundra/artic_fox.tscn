@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://dfojlnhyxctod"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Taiga/red_fox.gd" id="1_v41w7"]
-[ext_resource type="SpriteFrames" uid="uid://dxvi12eguhx4w" path="res://Assets/Animate/Chacter/Enemy/Animal/artic_fox.tres" id="2_csc2q"]
-[ext_resource type="FontFile" uid="uid://dhgp7qgyslj7a" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="3_dbqo0"]
+[ext_resource type="SpriteFrames" uid="uid://bf70kob07oxfl" path="res://Assets/Animate/Chacter/Enemy/Animal/red_fox.tres" id="2_elyhi"]
+[ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="3_dbqo0"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="4_03vwr"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hurtbox/Hurt box.gd" id="5_ijfwq"]
 
@@ -24,8 +24,22 @@ size = Vector2(53, 27.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_6kgwd"]
 radius = 33.664
 
-[node name="Artic_fox" type="CharacterBody2D" groups=["enemy"]]
+[node name="Artic_fox" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast") groups=["enemy"]]
 script = ExtResource("1_v41w7")
+health_bar = NodePath("Health_Bar")
+armor_bar = NodePath("Armor_Bar")
+hit_box = NodePath("Hit box")
+hurt_box = NodePath("Hurt_Box")
+enemy_sprites = NodePath("AnimatedSprite2D")
+enemy_sprite_animation = NodePath("AnimatedSprite2D/AnimationPlayer")
+enemy_raycast = NodePath("RayCast2D")
+hlt = 220.0
+arm = 15.0
+jump = 2
+speed = 320.0
+damage = 10.0
+Acceleration = 15.0
+Jump_velocity = -350.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6, -32)
@@ -34,7 +48,7 @@ debug_color = Color(0.843137, 0.552941, 0.215686, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
-sprite_frames = ExtResource("2_csc2q")
+sprite_frames = ExtResource("2_elyhi")
 animation = &"run"
 centered = false
 offset = Vector2(-32, -62)
@@ -76,7 +90,6 @@ collide_with_areas = true
 
 [node name="sfx" type="AudioStreamPlayer" parent="."]
 volume_db = -3.0
-bus = &"Sound_Effect"
 
 [node name="Hit box" type="Area2D" parent="." groups=["enemy_hitbox"]]
 unique_name_in_owner = true

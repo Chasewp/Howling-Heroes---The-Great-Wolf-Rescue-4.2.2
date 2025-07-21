@@ -816,6 +816,7 @@ _data = {
 [node name="Dessert" type="Node2D" groups=["level"]]
 y_sort_enabled = true
 script = ExtResource("1_ubgou")
+next_level = "res://Assets/Scences/UI/End mission/end_mission.tscn"
 
 [node name="Dessert" parent="." instance=ExtResource("1_pcqu5")]
 
@@ -966,31 +967,42 @@ layer_3/tile_data = PackedInt32Array(589840, 262145, 22, 655376, 262145, 23, 720
 
 [node name="Bos_enccounter" type="Node" parent="."]
 
-[node name="bos_1" type="Area2D" parent="Bos_enccounter"]
+[node name="Bos 1" type="Node" parent="Bos_enccounter"]
+
+[node name="bos_1" type="Area2D" parent="Bos_enccounter/Bos 1"]
 position = Vector2(1665, 728)
 collision_mask = 10
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bos_enccounter/bos_1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bos_enccounter/Bos 1/bos_1"]
 visible = false
 position = Vector2(5.5, -39)
 shape = SubResource("RectangleShape2D_dnaqf")
 
-[node name="Destinaton_bos1" type="Marker2D" parent="Bos_enccounter/bos_1"]
+[node name="Destinaton_bos1" type="Marker2D" parent="Bos_enccounter/Bos 1/bos_1"]
 position = Vector2(141, -1)
 
-[node name="bos_2" type="Area2D" parent="Bos_enccounter"]
+[node name="Hunter_MK_Elite" parent="Bos_enccounter/Bos 1" instance=ExtResource("15_7ddgx")]
+position = Vector2(149, 584)
+
+[node name="Bos 2" type="Node" parent="Bos_enccounter"]
+
+[node name="bos_2" type="Area2D" parent="Bos_enccounter/Bos 2"]
 position = Vector2(4793, 969)
 collision_mask = 10
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bos_enccounter/bos_2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bos_enccounter/Bos 2/bos_2"]
 visible = false
 position = Vector2(0, 18.5)
 shape = SubResource("RectangleShape2D_30n6m")
 
-[node name="Destinaton_bos2" type="Marker2D" parent="Bos_enccounter/bos_2"]
+[node name="Destinaton_bos2" type="Marker2D" parent="Bos_enccounter/Bos 2/bos_2"]
 position = Vector2(101, 64)
+
+[node name="Bos 3" type="Node" parent="Bos_enccounter"]
+
+[node name="Bos 4" type="Node" parent="Bos_enccounter"]
 
 [node name="Player_spawn" type="Marker2D" parent="."]
 position = Vector2(10, 312)
@@ -1079,10 +1091,13 @@ position = Vector2(6491, 1111)
 [node name="sfx_wind" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_2l0yb")
 volume_db = -3.0
+mix_target = 1
+bus = &"Sound Effects"
 
 [node name="backsound_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_bonkv")
 volume_db = -2.0
+bus = &"Music"
 
 [node name="Cage" type="Node" parent="."]
 
@@ -1246,11 +1261,8 @@ limit_left = -1280
 limit_top = -650
 limit_bottom = 720
 
-[node name="Hunter_MK_Elite" parent="." instance=ExtResource("15_7ddgx")]
-position = Vector2(149, 584)
-
-[connection signal="body_entered" from="Bos_enccounter/bos_1" to="." method="_on_bos_1_body_entered"]
-[connection signal="body_exited" from="Bos_enccounter/bos_2" to="." method="_on_bos_2_body_exited"]
+[connection signal="body_entered" from="Bos_enccounter/Bos 1/bos_1" to="." method="_on_bos_1_body_entered"]
+[connection signal="body_exited" from="Bos_enccounter/Bos 2/bos_2" to="." method="_on_bos_2_body_exited"]
 [connection signal="body_entered" from="Dead_zone/Dead_zone 1" to="." method="_on_dead_zone_1_body_entered"]
 [connection signal="body_entered" from="Dead_zone/Dead_Zone_3" to="." method="_on_dead_zone_2_body_entered"]
 

@@ -571,7 +571,7 @@ position = Vector2(2305, 127)
 position = Vector2(2159, 544)
 
 [node name="Plafrom_Tundra-Glatser" parent="Platfroms/Stage_1" instance=ExtResource("11_ngdgy")]
-position = Vector2(2121, 415)
+position = Vector2(1992.72, 182.164)
 
 [node name="Stage_2" type="Node" parent="Platfroms"]
 
@@ -717,8 +717,6 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Barrier/Stage_4_Barrier/End_Of_Barrier_Stage_4/StaticBody2D"]
 position = Vector2(0, 138.53)
 shape = SubResource("RectangleShape2D_ilmqq")
-
-[node name="Map" type="CanvasLayer" parent="."]
 
 [node name="Dead_Zones" type="Node" parent="."]
 

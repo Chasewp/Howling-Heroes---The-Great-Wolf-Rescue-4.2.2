@@ -107,7 +107,7 @@ _data = {
 "RESET": SubResource("Animation_5thqs")
 }
 
-[node name="Mission_Completed" type="Node2D" groups=["level_exit"]]
+[node name="Mission_Completed-Taiga" type="Node2D" groups=["level_exit"]]
 script = ExtResource("1_85g3n")
 next_level = "res://Assets/Scences/Stages/Tundra/Tundra.tscn"
 
@@ -130,10 +130,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -542.0
-offset_top = -138.0
-offset_right = 542.0
-offset_bottom = -54.0
+offset_left = 98.0
+offset_top = 222.0
+offset_right = 1182.0
+offset_bottom = 306.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -158,10 +158,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -615.0
-offset_top = -42.0
-offset_right = 615.0
-offset_bottom = 42.0
+offset_left = 25.0
+offset_top = 318.0
+offset_right = 1255.0
+offset_bottom = 402.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -204,5 +204,4 @@ stream = ExtResource("5_sldon")
 bus = &"Voices"
 area_mask = 8192
 
-[connection signal="exit_reached" from="." to="." method="_on_exit_reached"]
 [connection signal="finished" from="Howling_Sfx" to="." method="_on_howling_sfx_finished"]

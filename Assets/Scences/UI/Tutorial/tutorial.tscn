@@ -77,7 +77,7 @@
 [ext_resource type="AudioStream" uid="uid://degfo561yvfux" path="res://Assets/Music/SFX/Weapon/Player/Riffle/Player_Riffle.mp3" id="70_anjjg"]
 [ext_resource type="Theme" uid="uid://b0wacjljud6at" path="res://Assets/Theme/Alamanac_Book/Wolf_almanac.tres" id="71_6q672"]
 [ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Taiga/red_fox.gd" id="72_x8tdt"]
-[ext_resource type="SpriteFrames" uid="uid://cx2nt26sgqqbg" path="res://Assets/Animate/Chacter/Enemy/Animal/red_fox.tres" id="73_t6vnm"]
+[ext_resource type="SpriteFrames" uid="uid://bf70kob07oxfl" path="res://Assets/Animate/Chacter/Enemy/Animal/red_fox.tres" id="73_t6vnm"]
 [ext_resource type="AudioStream" uid="uid://nyawlq3baxf2" path="res://Assets/Music/SFX/Enemy/Animal/monster-bite-44538.mp3" id="74_wbnd5"]
 [ext_resource type="AudioStream" uid="uid://d14k7wh1s2wsm" path="res://Assets/Music/SFX/Enemy/Animal/fox-calling-243999.mp3" id="75_2uo8f"]
 [ext_resource type="AudioStream" uid="uid://be5kb8kyc742o" path="res://Assets/Music/SFX/Enemy/Animal/Body Fall Grass Sound Effects - 459 Body Fall Grass sounds for SFX projects.wav" id="76_nyxyg"]
@@ -3705,7 +3705,7 @@ bg_color = Color(0.188235, 0.333333, 0.278431, 0.839216)
 corner_radius_top_left = 8
 corner_radius_bottom_right = 8
 
-[node name="World_Stages" type="Node2D"]
+[node name="Tutorial" type="Node2D"]
 script = ExtResource("1_nxtd7")
 
 [node name="background" type="TextureRect" parent="."]
