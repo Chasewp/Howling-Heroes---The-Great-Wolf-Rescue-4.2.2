@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://vtn5f5opig4q"]
+[gd_scene load_steps=48 format=3 uid="uid://vtn5f5opig4q"]
 
 [ext_resource type="PackedScene" uid="uid://kcc5o6h6mu5s" path="res://Assets/Scences/Paralex/Dessert/dessert.tscn" id="1_pcqu5"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Stage/Dessert/dessert.gd" id="1_ubgou"]
@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://cp171x53dlm7n" path="res://Assets/Scences/Traps/desert_rock.tscn" id="14_1ki0d"]
 [ext_resource type="PackedScene" uid="uid://damhkymc1kira" path="res://Assets/Scences/Items/Cage/Dessert/Dessert_Cage.tscn" id="15_2pmh6"]
 [ext_resource type="PackedScene" uid="uid://c8dg4rd3eq14f" path="res://Assets/Scences/Character/Enemy/Humanoid/Dessert/hunter_mk_elite.tscn" id="15_7ddgx"]
+[ext_resource type="PackedScene" uid="uid://h4sipekiu3o0" path="res://Assets/Scences/Character/Enemy/Animals/Dessert/Black Mamba.tscn" id="16_cttvo"]
+[ext_resource type="PackedScene" uid="uid://qs6tooy1d30f" path="res://Assets/Scences/Character/Enemy/Animals/Dessert/Fennec Fox.tscn" id="17_5xeit"]
+[ext_resource type="PackedScene" uid="uid://qhskkpsclwvo" path="res://Assets/Scences/Character/Enemy/Animals/Dessert/Siberian tiger.tscn" id="18_12rfb"]
 [ext_resource type="PackedScene" uid="uid://btqgl2umcojj5" path="res://Assets/Scences/Util/Tecave_teleporter/caveteleportdessertright.tscn" id="18_qd6i3"]
 [ext_resource type="PackedScene" uid="uid://bd4k8tc60s8wt" path="res://Assets/Scences/caveteleportdessertleft.tscn" id="19_5mbyl"]
 
@@ -1260,6 +1263,15 @@ zoom = Vector2(2.5, 2.5)
 limit_left = -1280
 limit_top = -650
 limit_bottom = 720
+
+[node name="Black Mamba" parent="." instance=ExtResource("16_cttvo")]
+position = Vector2(1647, 366)
+
+[node name="Fennec_Fox" parent="." instance=ExtResource("17_5xeit")]
+position = Vector2(1050, 137)
+
+[node name="Siberian Tiger" parent="." instance=ExtResource("18_12rfb")]
+position = Vector2(2912, 646)
 
 [connection signal="body_entered" from="Bos_enccounter/Bos 1/bos_1" to="." method="_on_bos_1_body_entered"]
 [connection signal="body_exited" from="Bos_enccounter/Bos 2/bos_2" to="." method="_on_bos_2_body_exited"]
