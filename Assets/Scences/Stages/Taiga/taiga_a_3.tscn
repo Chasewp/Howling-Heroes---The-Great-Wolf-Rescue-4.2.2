@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://dacxduhw3cbjc"]
+[gd_scene load_steps=75 format=3 uid="uid://dacxduhw3cbjc"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Stage/Taiga/taiga.gd" id="1_g4hk3"]
 [ext_resource type="PackedScene" uid="uid://ca0nm25t6mv6w" path="res://Assets/Scences/Items/Cammera/camera_Stage.tscn" id="2_00v6u"]
@@ -23,10 +23,13 @@
 [ext_resource type="AudioStream" uid="uid://cijoewb00qfu0" path="res://Assets/Music/SFX/Biomes/Forest Music/Forest.mp3" id="16_nktca"]
 [ext_resource type="AudioStream" uid="uid://bf6vam5sunmdb" path="res://Assets/Music/Dialogues/Executed_enemy/Required 10 enemy.wav" id="17_68mjp"]
 [ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="17_nrca3"]
+[ext_resource type="PackedScene" uid="uid://db8xg6m5kfj4a" path="res://Assets/Scences/Items/Cage/Taiga/Ice__cage.tscn" id="18_pe66c"]
 [ext_resource type="PackedScene" uid="uid://ve6g864losvt" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/golden_eagle.tscn" id="19_8fc52"]
+[ext_resource type="PackedScene" uid="uid://bfcwwghxk8sri" path="res://Assets/Scences/Items/Cage/Taiga/Stone_cage.tscn" id="19_iksmc"]
 [ext_resource type="PackedScene" uid="uid://bha1kd0hiiw4r" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/red_fox.tscn" id="19_m4b03"]
 [ext_resource type="PackedScene" uid="uid://x7jt8s4abruj" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/brown_bear.tscn" id="21_yw4qv"]
 [ext_resource type="PackedScene" uid="uid://dm2f35rrowtqx" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/wolvrine.tscn" id="22_0rx8n"]
+[ext_resource type="PackedScene" uid="uid://s6hrq0fmijgs" path="res://Assets/Scences/Character/Enemy/Animals/Taiga/Canadian_lynx.tscn" id="27_xorfi"]
 [ext_resource type="PackedScene" uid="uid://dxuhjidss1q4q" path="res://Assets/Scences/Items/Traps/Arrow_Shooter_Top.tscn" id="28_kpudn"]
 [ext_resource type="PackedScene" uid="uid://dk0n5e4gmj3p3" path="res://Assets/Scences/Items/Bullets/Bullets/player.tscn" id="30_nsrps"]
 
@@ -263,8 +266,8 @@ libraries = {
 position = Vector2(1030, 4)
 
 [node name="Marker2D" parent="Teleport/Stage 1/cave_teleporter_to_stage_2/Area2D" index="1"]
-visible = false
-position = Vector2(2679, -267)
+modulate = Color(0.988222, 0.988222, 0.988222, 1)
+position = Vector2(2679, -253)
 
 [node name="Stage 2" type="Node" parent="Teleport"]
 
@@ -297,6 +300,9 @@ shape = SubResource("RectangleShape2D_asrqd")
 [node name="Stage 9" type="Node" parent="Teleport"]
 
 [node name="Stage 10" type="Node" parent="Teleport"]
+
+[node name="cave_teleporter" parent="Teleport/Stage 10" instance=ExtResource("13_bgemk")]
+position = Vector2(199192, 171)
 
 [node name="Background" type="Node" parent="."]
 
@@ -737,6 +743,16 @@ position = Vector2(12, 279)
 [node name="Eurasiaan_Cage" parent="Cages" instance=ExtResource("9_gbjs0")]
 position = Vector2(1343, 49)
 
+[node name="Mackenzie River Wolf" parent="Cages" instance=ExtResource("9_gbjs0")]
+position = Vector2(5795, 609)
+
+[node name="Pine__Cage" parent="Cages" instance=ExtResource("9_gbjs0")]
+
+[node name="Ice__Cage" parent="Cages" instance=ExtResource("18_pe66c")]
+
+[node name="Hudson_bay_cage" parent="Cages" instance=ExtResource("19_iksmc")]
+position = Vector2(198266, 208)
+
 [node name="Camera_Stage" parent="." instance=ExtResource("2_00v6u")]
 zoom = Vector2(2.5, 2.5)
 limit_left = -1280
@@ -809,8 +825,22 @@ arm = 38.5
 damage = 17.6
 eficient_Armor = 0.385
 
+[node name="Black_Bear2" parent="Enemy/Stage_2" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast") instance=ExtResource("13_eiy3r")]
+position = Vector2(4075, 345)
+health_bar = NodePath("../Black_Bear/Health_Bar")
+armor_bar = NodePath("../Black_Bear/Armor_Bar")
+hit_box = NodePath("../Black_Bear/Hit box")
+hurt_box = NodePath("../Black_Bear/Hurt_Box")
+enemy_sprites = NodePath("../Black_Bear/Black_Bear_Animation")
+enemy_sprite_animation = NodePath("../Black_Bear/Black_Bear_Animation/AnimationPlayer")
+enemy_raycast = NodePath("../Black_Bear/RayCast2D")
+hlt = 495.0
+arm = 38.5
+damage = 17.6
+eficient_Armor = 0.385
+
 [node name="Red_fox2" parent="Enemy/Stage_2" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast") instance=ExtResource("19_m4b03")]
-position = Vector2(5682, 117)
+position = Vector2(5724, 111)
 health_bar = NodePath("../../Stage_1/Red_fox/Health_Bar")
 armor_bar = NodePath("../../Stage_1/Red_fox/Armor_Bar")
 hit_box = NodePath("../../Stage_1/Red_fox/Hit box")
@@ -847,6 +877,46 @@ enemy_raycast = NodePath("../../Stage_1/Wolvine/RayCast2D")
 hlt = 385.0
 arm = 44.0
 eficient_Armor = 0.44
+
+[node name="Wolvine3" parent="Enemy/Stage_2" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast") instance=ExtResource("22_0rx8n")]
+position = Vector2(3502, 608)
+health_bar = NodePath("../../Stage_1/Wolvine/Health_Bar")
+armor_bar = NodePath("../../Stage_1/Wolvine/Armor_Bar")
+hit_box = NodePath("../../Stage_1/Wolvine/Hitboxes")
+hurt_box = NodePath("../../Stage_1/Wolvine/Hurtboxes")
+enemy_sprites = NodePath("../../Stage_1/Wolvine/AnimatedSprite2D")
+enemy_sprite_animation = NodePath("../../Stage_1/Wolvine/AnimatedSprite2D/AnimationPlayer")
+enemy_raycast = NodePath("../../Stage_1/Wolvine/RayCast2D")
+hlt = 385.0
+arm = 44.0
+eficient_Armor = 0.44
+
+[node name="Canadian Lynx" parent="Enemy/Stage_2" instance=ExtResource("27_xorfi")]
+position = Vector2(4652, 70)
+
+[node name="Canadian Lynx2" parent="Enemy/Stage_2" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast") instance=ExtResource("27_xorfi")]
+position = Vector2(4197, 639)
+health_bar = NodePath("../Canadian Lynx/Health_Bar")
+armor_bar = NodePath("../Canadian Lynx/Armor_Bar")
+hit_box = NodePath("../Canadian Lynx/Hit box")
+hurt_box = NodePath("../Canadian Lynx/Hurt_Box")
+enemy_sprites = NodePath("../Canadian Lynx/AnimatedSprite2D")
+enemy_sprite_animation = NodePath("../Canadian Lynx/AnimatedSprite2D/AnimationPlayer")
+enemy_raycast = NodePath("../Canadian Lynx/RayCast2D")
+
+[node name="Golden_Eagle2" parent="Enemy/Stage_2" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "target_player", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast") instance=ExtResource("19_8fc52")]
+position = Vector2(5070, -76)
+collision_layer = 32
+collision_mask = 3
+platform_on_leave = 2
+health_bar = NodePath("../../Stage_1/Golden_Eagle/Health_Bar")
+armor_bar = NodePath("../../Stage_1/Golden_Eagle/Armor_Bar")
+hit_box = NodePath("../../Stage_1/Golden_Eagle/Hitboxes")
+hurt_box = NodePath("../../Stage_1/Golden_Eagle/Hurtboxes")
+target_player = NodePath("../../../Player")
+enemy_sprites = NodePath("../../Stage_1/Golden_Eagle/AnimatedSprite2D")
+enemy_sprite_animation = NodePath("../../Stage_1/Golden_Eagle/AnimatedSprite2D/AnimationPlayer")
+enemy_raycast = NodePath("../../Stage_1/Golden_Eagle/RayCast2D")
 
 [node name="Stage_3" type="Node" parent="Enemy"]
 
@@ -917,6 +987,7 @@ position = Vector2(329, 16)
 [connection signal="body_entered" from="Heal/Heal_Arena" to="." method="_on_heal_arena_body_entered"]
 
 [editable path="Teleport/Stage 1/cave_teleporter_to_stage_2"]
+[editable path="Teleport/Stage 10/cave_teleporter"]
 [editable path="Bos_Encounter/Bos_1/Hunter_MK_I"]
 [editable path="Bos_Encounter/Bos_1/cave_teleporter_To_Wolf_Cage"]
 [editable path="Bos_Encounter/Bos_2/Hunter_MK_I2"]

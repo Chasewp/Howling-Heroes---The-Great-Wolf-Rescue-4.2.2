@@ -109,15 +109,6 @@ func _ready():
 	platfrom.play("platfrom_move")
 	
 
-	
-	#match MissionStatData.boss_kill:
-		#1:
-			#teleport_eurasian_wolf_cage_cave.visible = true
-		#2:
-			#teleport_to_machenzie_river_wolf_cage_cave.visible = true
-		#3:
-			#teleport_to_northern_rocky_mountain_wolf_cave.visible = true
-		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -223,8 +214,11 @@ func _on_heal_arena_body_entered(body):
 
 func _on_teleport_next_stage_body_entered(body):
 	if body.is_in_group("player"):
+		body.set_position(teleport_to_stage_2_marker.global_position)
+	
+func _on_level_end_body_enter(body):
+	if body.is_in_group("player"):
 		# Emit the exit signal through the proper channel
 		exit_reached.emit(next_level)
-		
 		# Optional: Add transition delay
 		await get_tree().create_timer(1.0).timeout

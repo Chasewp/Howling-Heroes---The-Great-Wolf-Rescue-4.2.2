@@ -37,3 +37,23 @@
    
    [3]: https://store.steampowered.com/app/1105890/Tilesetter/
    [![image](https://github.com/Blizzard03/Howling-Heroes---The-Great-Wolf-Rescue-4.3.1/assets/99153189/3c63a447-091a-4f4b-99ae-e39788222731)][3]
+
+## 🚧 Development Status
+
+This game is currently in the **finalization phase** of development.  
+All core gameplay systems, UI, and level structures have been implemented.  
+Remaining tasks include polishing, balancing, and populating all stages with full enemies and boss variations per biome.
+
+🔧 **Current Build Progress:**
+- [x] Core gameplay mechanics (jump, attack, save wolves)
+- [x] Functional UI and navigation
+- [x] 27 stages level layout completed
+- [x] Wolf Almanac implemented
+- [ ] Full enemy placement across all stages
+- [ ] Boss battles per biome
+- [ ] Optimization and bug fixes
+
+📅 **Estimated Completion:** _A.S.A.P._
+
+This repository is part of the final project submission for my undergraduate degree.  
+Feedback and contributions are always welcome.
