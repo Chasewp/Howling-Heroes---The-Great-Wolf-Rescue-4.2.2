@@ -1,39 +1,39 @@
-[gd_scene load_steps=57 format=3 uid="uid://bpxbs0ncwsrjf"]
+[gd_scene load_steps=57 format=3 uid="uid://qhskkpsclwvo"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Grassland/tiger.gd" id="1_bblrp"]
-[ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="2_gp1tl"]
-[ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hurtbox/Hurt box.gd" id="3_kebdw"]
-[ext_resource type="Texture2D" uid="uid://dnjmveteeevkv" path="res://Assets/Image/Enemy/Animal/Tiger/Attack/Attack 1.png" id="4_8u7wf"]
-[ext_resource type="Texture2D" uid="uid://bkvkyjjycd8pk" path="res://Assets/Image/Enemy/Animal/Tiger/Died/Died 1.png" id="4_c1plh"]
-[ext_resource type="Texture2D" uid="uid://kpta2d3c5b2j" path="res://Assets/Image/Enemy/Animal/Tiger/Iddle/Iddle 1.png" id="4_jm13g"]
-[ext_resource type="Texture2D" uid="uid://bbtytlw5vqepb" path="res://Assets/Image/Enemy/Animal/Tiger/Fall/Fall 1.png" id="4_mk2j2"]
-[ext_resource type="Texture2D" uid="uid://cbox2bnlfkvlk" path="res://Assets/Image/Enemy/Animal/Tiger/Iddle/Iddle 2.png" id="5_1o8ih"]
-[ext_resource type="Texture2D" uid="uid://cbamrplxxfpqk" path="res://Assets/Image/Enemy/Animal/Tiger/Died/Died 2.png" id="5_af82g"]
-[ext_resource type="Texture2D" uid="uid://bqsr75ao7t67e" path="res://Assets/Image/Enemy/Animal/Tiger/Fall/Fall 2.png" id="5_cekx0"]
-[ext_resource type="Texture2D" uid="uid://b7uqqcc5uo75v" path="res://Assets/Image/Enemy/Animal/Tiger/Attack/Attack 2.png" id="5_cr5cn"]
-[ext_resource type="Texture2D" uid="uid://ch11dvd0joeba" path="res://Assets/Image/Enemy/Animal/Tiger/Attack/Attack 3.png" id="6_6ex56"]
-[ext_resource type="Texture2D" uid="uid://crcypbkmqontr" path="res://Assets/Image/Enemy/Animal/Tiger/Fall/Fall 3.png" id="6_cvlml"]
-[ext_resource type="Texture2D" uid="uid://tau6d2bajjqy" path="res://Assets/Image/Enemy/Animal/Tiger/Died/Died 3.png" id="6_op0op"]
-[ext_resource type="Texture2D" uid="uid://cqnvo5m545w26" path="res://Assets/Image/Enemy/Animal/Tiger/Iddle/Iddle 3.png" id="6_wbrr8"]
-[ext_resource type="Texture2D" uid="uid://clk4qn3k6isf6" path="res://Assets/Image/Enemy/Animal/Tiger/Died/Died 4.png" id="7_672rx"]
-[ext_resource type="Texture2D" uid="uid://bfnu63mdq0d5w" path="res://Assets/Image/Enemy/Animal/Tiger/Fall/Fall 4.png" id="7_dfixj"]
-[ext_resource type="Texture2D" uid="uid://ciou7iddbycqq" path="res://Assets/Image/Enemy/Animal/Tiger/Iddle/Iddle 4.png" id="7_mw3hb"]
-[ext_resource type="Texture2D" uid="uid://btkjemqeqwggd" path="res://Assets/Image/Enemy/Animal/Tiger/Died/Died 5.png" id="8_iirrp"]
-[ext_resource type="Texture2D" uid="uid://b0cuxlt0xvcg" path="res://Assets/Image/Enemy/Animal/Tiger/Jump/Jump 1.png" id="8_wao2m"]
-[ext_resource type="Texture2D" uid="uid://d1nw1xvnjgbx1" path="res://Assets/Image/Enemy/Animal/Tiger/Jump/Jump 2.png" id="9_epgbi"]
-[ext_resource type="Texture2D" uid="uid://cr33ichdjk0qp" path="res://Assets/Image/Enemy/Animal/Tiger/Died/Died 6.png" id="9_ns3hh"]
-[ext_resource type="Texture2D" uid="uid://bj6d3l3uh1kna" path="res://Assets/Image/Enemy/Animal/Tiger/Jump/Jump 3.png" id="10_a7f25"]
-[ext_resource type="Texture2D" uid="uid://cy1bfmbrbeuyp" path="res://Assets/Image/Enemy/Animal/Tiger/Jump/Jump 4.png" id="11_7mttk"]
-[ext_resource type="Texture2D" uid="uid://lthkgx3jy73o" path="res://Assets/Image/Enemy/Animal/Tiger/Hurt/Hurt 1.png" id="17_41dlm"]
-[ext_resource type="Texture2D" uid="uid://buau664dtyuog" path="res://Assets/Image/Enemy/Animal/Tiger/Hurt/Hurt 2.png" id="18_7k81e"]
-[ext_resource type="Texture2D" uid="uid://50hh81uv5kh" path="res://Assets/Image/Enemy/Animal/Tiger/Hurt/Hurt 3.png" id="19_wv64a"]
-[ext_resource type="Theme" uid="uid://dc1ctcksywkhs" path="res://Assets/Theme/Credit/Label Details.tres" id="25_ko8u5"]
-[ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="26_nq6bj"]
-[ext_resource type="AudioStream" uid="uid://di4c72haec2ru" path="res://Assets/Music/SFX/Enemy/Animal/Tiger Died.mp3" id="28_i583y"]
-[ext_resource type="AudioStream" uid="uid://dx7reijqhgqvm" path="res://Assets/Music/SFX/Enemy/Animal/Claw Attack Sound Effects - 114 Claw Attack sounds for SFX projects_5.wav" id="28_ikci8"]
-[ext_resource type="AudioStream" uid="uid://c4ggt2parufwq" path="res://Assets/Music/SFX/Enemy/Animal/Body Fall Snow Sound Effects - 346 Body Fall Snow sounds for SFX projects.wav" id="30_hfrfa"]
-[ext_resource type="AudioStream" uid="uid://cjh28s4no7lww" path="res://Assets/Music/SFX/Enemy/Animal/Tiger hurt.mp3" id="31_y42do"]
-[ext_resource type="AudioStream" uid="uid://bjiffgtcy7r74" path="res://Assets/Music/SFX/Enemy/Animal/jump_grass.mp3" id="32_5qpyv"]
+[ext_resource type="Script" path="res://Assets/Scripts/Class/Enemy/Animal/Dessert/Siberian_tiger.gd" id="1_qgrij"]
+[ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hitbox/hitboxes.gd" id="2_x5xh1"]
+[ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hurtbox/Hurt box.gd" id="3_kqbso"]
+[ext_resource type="Texture2D" uid="uid://dnjmveteeevkv" path="res://Assets/Image/Enemy/Animal/Tiger/Attack/Attack 1.png" id="4_k6yqf"]
+[ext_resource type="Texture2D" uid="uid://b7uqqcc5uo75v" path="res://Assets/Image/Enemy/Animal/Tiger/Attack/Attack 2.png" id="5_d04qh"]
+[ext_resource type="Texture2D" uid="uid://ch11dvd0joeba" path="res://Assets/Image/Enemy/Animal/Tiger/Attack/Attack 3.png" id="6_qd71n"]
+[ext_resource type="Texture2D" uid="uid://bkvkyjjycd8pk" path="res://Assets/Image/Enemy/Animal/Tiger/Died/Died 1.png" id="7_s2iqi"]
+[ext_resource type="Texture2D" uid="uid://cbamrplxxfpqk" path="res://Assets/Image/Enemy/Animal/Tiger/Died/Died 2.png" id="8_rru4i"]
+[ext_resource type="Texture2D" uid="uid://tau6d2bajjqy" path="res://Assets/Image/Enemy/Animal/Tiger/Died/Died 3.png" id="9_oionc"]
+[ext_resource type="Texture2D" uid="uid://clk4qn3k6isf6" path="res://Assets/Image/Enemy/Animal/Tiger/Died/Died 4.png" id="10_mrj4a"]
+[ext_resource type="Texture2D" uid="uid://btkjemqeqwggd" path="res://Assets/Image/Enemy/Animal/Tiger/Died/Died 5.png" id="11_4vud3"]
+[ext_resource type="Texture2D" uid="uid://cr33ichdjk0qp" path="res://Assets/Image/Enemy/Animal/Tiger/Died/Died 6.png" id="12_r2po8"]
+[ext_resource type="Texture2D" uid="uid://bbtytlw5vqepb" path="res://Assets/Image/Enemy/Animal/Tiger/Fall/Fall 1.png" id="13_q5cph"]
+[ext_resource type="Texture2D" uid="uid://bqsr75ao7t67e" path="res://Assets/Image/Enemy/Animal/Tiger/Fall/Fall 2.png" id="14_af3hb"]
+[ext_resource type="Texture2D" uid="uid://crcypbkmqontr" path="res://Assets/Image/Enemy/Animal/Tiger/Fall/Fall 3.png" id="15_efvy7"]
+[ext_resource type="Texture2D" uid="uid://bfnu63mdq0d5w" path="res://Assets/Image/Enemy/Animal/Tiger/Fall/Fall 4.png" id="16_hcuog"]
+[ext_resource type="Texture2D" uid="uid://lthkgx3jy73o" path="res://Assets/Image/Enemy/Animal/Tiger/Hurt/Hurt 1.png" id="17_kt328"]
+[ext_resource type="Texture2D" uid="uid://buau664dtyuog" path="res://Assets/Image/Enemy/Animal/Tiger/Hurt/Hurt 2.png" id="18_qoqih"]
+[ext_resource type="Texture2D" uid="uid://50hh81uv5kh" path="res://Assets/Image/Enemy/Animal/Tiger/Hurt/Hurt 3.png" id="19_fh7jb"]
+[ext_resource type="Texture2D" uid="uid://kpta2d3c5b2j" path="res://Assets/Image/Enemy/Animal/Tiger/Iddle/Iddle 1.png" id="20_fjm50"]
+[ext_resource type="Texture2D" uid="uid://cbox2bnlfkvlk" path="res://Assets/Image/Enemy/Animal/Tiger/Iddle/Iddle 2.png" id="21_o15u8"]
+[ext_resource type="Texture2D" uid="uid://cqnvo5m545w26" path="res://Assets/Image/Enemy/Animal/Tiger/Iddle/Iddle 3.png" id="22_dneh0"]
+[ext_resource type="Texture2D" uid="uid://ciou7iddbycqq" path="res://Assets/Image/Enemy/Animal/Tiger/Iddle/Iddle 4.png" id="23_1wbr7"]
+[ext_resource type="Texture2D" uid="uid://b0cuxlt0xvcg" path="res://Assets/Image/Enemy/Animal/Tiger/Jump/Jump 1.png" id="24_enuet"]
+[ext_resource type="Texture2D" uid="uid://d1nw1xvnjgbx1" path="res://Assets/Image/Enemy/Animal/Tiger/Jump/Jump 2.png" id="25_65d7i"]
+[ext_resource type="Texture2D" uid="uid://bj6d3l3uh1kna" path="res://Assets/Image/Enemy/Animal/Tiger/Jump/Jump 3.png" id="26_l1i8y"]
+[ext_resource type="Texture2D" uid="uid://cy1bfmbrbeuyp" path="res://Assets/Image/Enemy/Animal/Tiger/Jump/Jump 4.png" id="27_gv18j"]
+[ext_resource type="AudioStream" uid="uid://dx7reijqhgqvm" path="res://Assets/Music/SFX/Enemy/Animal/Claw Attack Sound Effects - 114 Claw Attack sounds for SFX projects_5.wav" id="28_dgi4h"]
+[ext_resource type="AudioStream" uid="uid://di4c72haec2ru" path="res://Assets/Music/SFX/Enemy/Animal/Tiger Died.mp3" id="29_crtrn"]
+[ext_resource type="AudioStream" uid="uid://c4ggt2parufwq" path="res://Assets/Music/SFX/Enemy/Animal/Body Fall Snow Sound Effects - 346 Body Fall Snow sounds for SFX projects.wav" id="30_sjl5v"]
+[ext_resource type="AudioStream" uid="uid://cjh28s4no7lww" path="res://Assets/Music/SFX/Enemy/Animal/Tiger hurt.mp3" id="31_gg85m"]
+[ext_resource type="AudioStream" uid="uid://bjiffgtcy7r74" path="res://Assets/Music/SFX/Enemy/Animal/jump_grass.mp3" id="32_qkhgp"]
+[ext_resource type="Theme" uid="uid://dc1ctcksywkhs" path="res://Assets/Theme/Credit/Label Details.tres" id="33_nowxl"]
+[ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="34_wwdqj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4txun"]
 radius = 55.9017
@@ -48,13 +48,13 @@ radius = 39.68
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_8u7wf")
+"texture": ExtResource("4_k6yqf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_cr5cn")
+"texture": ExtResource("5_d04qh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_6ex56")
+"texture": ExtResource("6_qd71n")
 }],
 "loop": false,
 "name": &"attack",
@@ -62,22 +62,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_c1plh")
+"texture": ExtResource("7_s2iqi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_af82g")
+"texture": ExtResource("8_rru4i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_op0op")
+"texture": ExtResource("9_oionc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_672rx")
+"texture": ExtResource("10_mrj4a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_iirrp")
+"texture": ExtResource("11_4vud3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_ns3hh")
+"texture": ExtResource("12_r2po8")
 }],
 "loop": false,
 "name": &"died",
@@ -85,16 +85,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_mk2j2")
+"texture": ExtResource("13_q5cph")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_cekx0")
+"texture": ExtResource("14_af3hb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_cvlml")
+"texture": ExtResource("15_efvy7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_dfixj")
+"texture": ExtResource("16_hcuog")
 }],
 "loop": false,
 "name": &"fall",
@@ -102,13 +102,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("17_41dlm")
+"texture": ExtResource("17_kt328")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_7k81e")
+"texture": ExtResource("18_qoqih")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_wv64a")
+"texture": ExtResource("19_fh7jb")
 }],
 "loop": false,
 "name": &"hurt",
@@ -116,16 +116,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_jm13g")
+"texture": ExtResource("20_fjm50")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_1o8ih")
+"texture": ExtResource("21_o15u8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_wbrr8")
+"texture": ExtResource("22_dneh0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_mw3hb")
+"texture": ExtResource("23_1wbr7")
 }],
 "loop": true,
 "name": &"iddle",
@@ -133,16 +133,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_wao2m")
+"texture": ExtResource("24_enuet")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_epgbi")
+"texture": ExtResource("25_65d7i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_a7f25")
+"texture": ExtResource("26_l1i8y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_7mttk")
+"texture": ExtResource("27_gv18j")
 }],
 "loop": false,
 "name": &"jump",
@@ -248,7 +248,7 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("28_ikci8")
+"stream": ExtResource("28_dgi4h")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -314,6 +314,109 @@ tracks/7/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_0jcxn"]
+resource_name = "attack_flip"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["attack"]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("28_dgi4h")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hitboxes:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Hurtboxes:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../RayCast2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(20, -11)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../RayCast2D:target_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(300, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:flip_h")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_1ff8a"]
 length = 1.2
 tracks/0/type = "value"
@@ -350,7 +453,110 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("28_i583y")
+"stream": ExtResource("29_crtrn")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../RayCast2D:target_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-300, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../RayCast2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-20, -11)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Hurtboxes:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Hitboxes:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x51hc"]
+resource_name = "died_flip"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["died"]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("29_crtrn")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -452,7 +658,7 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("30_hfrfa")
+"stream": ExtResource("30_sjl5v")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -518,6 +724,109 @@ tracks/7/keys = {
 "values": [Vector2(-20, -11)]
 }
 
+[sub_resource type="Animation" id="Animation_fnyqn"]
+resource_name = "fall_flip"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["fall"]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_sjl5v")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../RayCast2D:target_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(300, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Hurtboxes:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Hitboxes:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../RayCast2D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(20, -11)]
+}
+
 [sub_resource type="Animation" id="Animation_cjklm"]
 length = 0.9
 tracks/0/type = "value"
@@ -578,7 +887,7 @@ tracks/4/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.1093,
-"stream": ExtResource("31_y42do")
+"stream": ExtResource("31_gg85m")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -594,6 +903,109 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Hurtboxes:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Hitboxes:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_k0u04"]
+resource_name = "hurt_flip"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["hurt"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../RayCast2D:target_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(300, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../RayCast2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(20, -11)]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../AudioStreamPlayer2D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.1093,
+"stream": ExtResource("31_gg85m")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/4/use_blend = true
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -682,6 +1094,95 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-300, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Hurtboxes:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Hitboxes:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vx443"]
+resource_name = "iddle_flip"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["iddle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../RayCast2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(20, -11)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../RayCast2D:target_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(300, 0)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -804,512 +1305,11 @@ tracks/7/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("32_5qpyv")
+"stream": ExtResource("32_qkhgp")
 }],
 "times": PackedFloat32Array(0)
 }
 tracks/7/use_blend = true
-
-[sub_resource type="Animation" id="Animation_0jcxn"]
-resource_name = "attack_flip"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["attack"]
-}
-tracks/2/type = "audio"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../AudioStreamPlayer2D")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("28_ikci8")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/2/use_blend = true
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Hitboxes:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Hurtboxes:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../RayCast2D:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(20, -11)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../RayCast2D:target_position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(300, 0)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath(".:flip_h")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_x51hc"]
-resource_name = "died_flip"
-length = 1.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["died"]
-}
-tracks/2/type = "audio"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../AudioStreamPlayer2D")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("28_i583y")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/2/use_blend = true
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../RayCast2D:target_position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-300, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../RayCast2D:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-20, -11)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:flip_h")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Hurtboxes:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../Hitboxes:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_fnyqn"]
-resource_name = "fall_flip"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["fall"]
-}
-tracks/2/type = "audio"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../AudioStreamPlayer2D")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("30_hfrfa")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/2/use_blend = true
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:flip_h")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../RayCast2D:target_position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(300, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Hurtboxes:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Hitboxes:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../RayCast2D:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(20, -11)]
-}
-
-[sub_resource type="Animation" id="Animation_k0u04"]
-resource_name = "hurt_flip"
-length = 0.9
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["hurt"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../RayCast2D:target_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(300, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../RayCast2D:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(20, -11)]
-}
-tracks/4/type = "audio"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../AudioStreamPlayer2D")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.1093,
-"stream": ExtResource("31_y42do")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/4/use_blend = true
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:flip_h")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Hurtboxes:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../Hitboxes:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_vx443"]
-resource_name = "iddle_flip"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["iddle"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../RayCast2D:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(20, -11)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../RayCast2D:target_position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(300, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Hurtboxes:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Hitboxes:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_yuk5a"]
 resource_name = "jump_flip"
@@ -1408,7 +1408,7 @@ tracks/7/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("32_5qpyv")
+"stream": ExtResource("32_qkhgp")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -1440,8 +1440,8 @@ bg_color = Color(1, 0, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpkd2"]
 
-[node name="Tiger" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast")]
-script = ExtResource("1_bblrp")
+[node name="Siberian Tiger" type="CharacterBody2D" node_paths=PackedStringArray("health_bar", "armor_bar", "hit_box", "hurt_box", "enemy_sprites", "enemy_sprite_animation", "enemy_raycast")]
+script = ExtResource("1_qgrij")
 health_bar = NodePath("Health_Bar")
 armor_bar = NodePath("Armor_Bar")
 hit_box = NodePath("Hitboxes")
@@ -1454,7 +1454,7 @@ arm = 35.0
 jump = 2
 speed = 380.0
 damage = 18.0
-Acceleration = 15.0
+Acceleration = 14.0
 Jump_velocity = -400.0
 eficient_Armor = 0.35
 
@@ -1465,7 +1465,7 @@ debug_color = Color(0.884949, 0.160232, 0.71486, 0.42)
 [node name="Hitboxes" type="Area2D" parent="."]
 collision_layer = 128
 collision_mask = 8
-script = ExtResource("2_gp1tl")
+script = ExtResource("2_x5xh1")
 damage = 18.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitboxes"]
@@ -1475,7 +1475,7 @@ debug_color = Color(0.887212, 0.294723, 0.388904, 0.42)
 [node name="Hurtboxes" type="Area2D" parent="."]
 collision_layer = 64
 collision_mask = 16
-script = ExtResource("3_kebdw")
+script = ExtResource("3_kqbso")
 Healths = 450.0
 Armors = 35.0
 Eficient_Armors = 0.35
@@ -1506,8 +1506,8 @@ offset_left = -26.0
 offset_top = -140.0
 offset_right = 31.0
 offset_bottom = -117.0
-theme = ExtResource("25_ko8u5")
-text = "Tiger"
+theme = ExtResource("33_nowxl")
+text = "Siberian Tiger"
 
 [node name="Health_Bar" type="ProgressBar" parent="."]
 offset_left = -21.0
@@ -1517,7 +1517,7 @@ offset_bottom = -88.0
 theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("26_nq6bj")
+theme_override_fonts/font = ExtResource("34_wwdqj")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/background = SubResource("StyleBoxEmpty_gw37x")
 theme_override_styles/fill = SubResource("StyleBoxFlat_derwl")
@@ -1530,7 +1530,7 @@ offset_bottom = -61.0
 theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("26_nq6bj")
+theme_override_fonts/font = ExtResource("34_wwdqj")
 theme_override_font_sizes/font_size = 14
 theme_override_styles/background = SubResource("StyleBoxEmpty_bimk2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_dpkd2")

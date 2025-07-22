@@ -1472,6 +1472,6 @@ offset_top = -178.0
 offset_right = 26.0
 offset_bottom = -155.0
 theme = ExtResource("12_g1wdy")
-text = "Red Fox"
+text = "Black Mamba"
 
 [connection signal="executed" from="Hurt_Box" to="." method="died"]

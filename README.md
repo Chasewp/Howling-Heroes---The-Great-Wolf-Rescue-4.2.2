@@ -14,9 +14,9 @@
 
 ## **Program Used**
 
-1. **Godot 4.2.1**
+1. **Godot 4.2.2 - Windows**
 
-	[4]: https://github.com/godotengine/godot/releases/download/4.2.1-stable/Godot_v4.2.1-stable_mono_win64.zip
+	[4]: https://github.com/godotengine/godot-builds/releases/download/4.2.2-stable/Godot_v4.2.2-stable_mono_win64.zip
 	[<img src="https://godotengine.org/assets/logo_dark.svg" width="128"/>][4]
 	
    
