@@ -813,6 +813,24 @@ position = Vector2(607, 112)
 [node name="Taiga_Platrom3" parent="Elevator/Stage 1" instance=ExtResource("14_5av82")]
 position = Vector2(1753, 419)
 
+[node name="Stage 2" type="Node" parent="Elevator"]
+
+[node name="Stage 3" type="Node" parent="Elevator"]
+
+[node name="Stage 4" type="Node" parent="Elevator"]
+
+[node name="Stage 5" type="Node" parent="Elevator"]
+
+[node name="Stage 6" type="Node" parent="Elevator"]
+
+[node name="Stage 7" type="Node" parent="Elevator"]
+
+[node name="Stage 8" type="Node" parent="Elevator"]
+
+[node name="Stage 9" type="Node" parent="Elevator"]
+
+[node name="Stage 10" type="Node" parent="Elevator"]
+
 [node name="Enemy" type="Node" parent="."]
 
 [node name="Stage_1" type="Node" parent="Enemy"]
