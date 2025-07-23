@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d153ibh0ftirw"
-path="res://.godot/imported/FenecFox.png-c0eac1f7ec57971007e9395b9c1c38a6.ctex"
+uid="uid://b6lauyva32ac5"
+path="res://.godot/imported/Fall.png-2d68dbbfcee3d3156150e9118f39888a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Image/Enemy/Animal/FenecFox.png"
-dest_files=["res://.godot/imported/FenecFox.png-c0eac1f7ec57971007e9395b9c1c38a6.ctex"]
+source_file="res://Assets/Image/Enemy/Animal/Verreaux Eagle/Fall/Fall.png"
+dest_files=["res://.godot/imported/Fall.png-2d68dbbfcee3d3156150e9118f39888a.ctex"]
 
 [params]
 
