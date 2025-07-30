@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bj0uspn4b86p5"]
+
+[ext_resource type="SpriteFrames" uid="uid://eua740hcrolw" path="res://Assets/Animate/Chacter/Enemy/Humanoid/hunter_mk_1-Shadow_howling.tres" id="1_s5aq3"]
+[ext_resource type="Script" path="res://Assets/Scripts/Utilities/Hurtbox/Hurt box.gd" id="2_l3lk2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_culn5"]
+radius = 33.0
+height = 118.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ah5n"]
+size = Vector2(39, 38)
+
+[node name="Hunter_mk1_Shadow_Howling" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("1_s5aq3")
+animation = &"iddle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("CapsuleShape2D_culn5")
+debug_color = Color(0.82859, 0.393217, 0.086244, 0.42)
+
+[node name="Hurtboxes" type="Area2D" parent="."]
+script = ExtResource("2_l3lk2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtboxes"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_4ah5n")
+debug_color = Color(0.892516, 0.168235, 0.678668, 0.42)
