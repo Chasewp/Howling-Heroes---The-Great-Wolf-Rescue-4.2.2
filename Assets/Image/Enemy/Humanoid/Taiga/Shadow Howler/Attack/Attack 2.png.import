@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csm8ybgd6jbq1"
-path="res://.godot/imported/Attack 2.png-23c595ca6213442cb69de3f8097968c3.ctex"
+path="res://.godot/imported/Attack 2.png-ecb5dd53754676828530c118c79790be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Image/Enemy/Humanoid/Taiga/Shadow Howler/Attack/Attack 2.png"
-dest_files=["res://.godot/imported/Attack 2.png-23c595ca6213442cb69de3f8097968c3.ctex"]
+source_file="res://Assets/Image/Enemy/Humanoid/Taiga/Shadow Howler/attack/Attack 2.png"
+dest_files=["res://.godot/imported/Attack 2.png-ecb5dd53754676828530c118c79790be.ctex"]
 
 [params]
 
