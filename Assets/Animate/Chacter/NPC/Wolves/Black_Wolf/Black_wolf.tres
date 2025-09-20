@@ -1,0 +1,58 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://42j6jhyflb2q"]
+
+[ext_resource type="Texture2D" uid="uid://b3v7vvnxgckvg" path="res://Assets/Image/Character/Wolves/Black/Black_Wolf.png" id="2_7lqve"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkwhv"]
+atlas = ExtResource("2_7lqve")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p76nx"]
+atlas = ExtResource("2_7lqve")
+region = Rect2(448, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cebg"]
+atlas = ExtResource("2_7lqve")
+region = Rect2(512, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_820ak"]
+atlas = ExtResource("2_7lqve")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v657e"]
+atlas = ExtResource("2_7lqve")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdkwo"]
+atlas = ExtResource("2_7lqve")
+region = Rect2(128, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkwhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p76nx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cebg")
+}],
+"loop": false,
+"name": &"Howl",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_820ak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v657e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdkwo")
+}],
+"loop": true,
+"name": &"iddle",
+"speed": 5.0
+}]

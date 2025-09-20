@@ -1,0 +1,260 @@
+[gd_resource type="SpriteFrames" load_steps=56 format=3 uid="uid://c3t1hfxgbhsrt"]
+
+[ext_resource type="Texture2D" uid="uid://c4uskfr6jef8w" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/1_atk/1_atk_1.png" id="1_tyg6s"]
+[ext_resource type="Texture2D" uid="uid://btodhnmir5iye" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/1_atk/1_atk_2.png" id="2_2y1ld"]
+[ext_resource type="Texture2D" uid="uid://bk7gxyaaymulg" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/1_atk/1_atk_3.png" id="3_i50hn"]
+[ext_resource type="Texture2D" uid="uid://dm2ibopgmmy7" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/1_atk/1_atk_4.png" id="4_h2ccs"]
+[ext_resource type="Texture2D" uid="uid://cuqkbw6am8drb" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/1_atk/1_atk_5.png" id="5_jm1k6"]
+[ext_resource type="Texture2D" uid="uid://cr2qsm3u8pf5p" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/1_atk/1_atk_6.png" id="6_rli52"]
+[ext_resource type="Texture2D" uid="uid://c7xwicakifek8" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/1_atk/1_atk_7.png" id="7_5wp2v"]
+[ext_resource type="Texture2D" uid="uid://dera8ste4xd2g" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/1_atk/1_atk_8.png" id="8_a2bnh"]
+[ext_resource type="Texture2D" uid="uid://cnrrymm2kdq80" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_1.png" id="9_gi5my"]
+[ext_resource type="Texture2D" uid="uid://cyhvp2qlky0sr" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_2.png" id="10_ttiaa"]
+[ext_resource type="Texture2D" uid="uid://bpc3fy54441cy" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_3.png" id="11_2i545"]
+[ext_resource type="Texture2D" uid="uid://vk402n2mspu2" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_4.png" id="12_okrqs"]
+[ext_resource type="Texture2D" uid="uid://dq765gfj6k7j4" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_5.png" id="13_3ccht"]
+[ext_resource type="Texture2D" uid="uid://bok10jfixvwr6" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_6.png" id="14_2clkk"]
+[ext_resource type="Texture2D" uid="uid://ceh57rmumg888" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_7.png" id="15_k273e"]
+[ext_resource type="Texture2D" uid="uid://6316l3rtceme" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_8.png" id="16_3cr4f"]
+[ext_resource type="Texture2D" uid="uid://bm1x7i1k0ad20" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_9.png" id="17_pdbc6"]
+[ext_resource type="Texture2D" uid="uid://bqyqvyw7ffyrw" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_10.png" id="18_ed7bh"]
+[ext_resource type="Texture2D" uid="uid://clki4lslldw5t" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_11.png" id="19_4hbk4"]
+[ext_resource type="Texture2D" uid="uid://6uwkacvt5wir" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_12.png" id="20_y7wp1"]
+[ext_resource type="Texture2D" uid="uid://cq5i6yencfmwq" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_13.png" id="21_nyt5q"]
+[ext_resource type="Texture2D" uid="uid://cu5fwgob50oux" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_14.png" id="22_c708d"]
+[ext_resource type="Texture2D" uid="uid://baidjddcgsygk" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_15.png" id="23_33mg5"]
+[ext_resource type="Texture2D" uid="uid://bg8mdahv7ml" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_16.png" id="24_8o2oh"]
+[ext_resource type="Texture2D" uid="uid://bxjru4b0acu0b" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_17.png" id="25_ge5rp"]
+[ext_resource type="Texture2D" uid="uid://dvqc5r0gdda1c" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_18.png" id="26_rbn1h"]
+[ext_resource type="Texture2D" uid="uid://c1o7e8gcw8psx" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/death/death_19.png" id="27_2gexs"]
+[ext_resource type="Texture2D" uid="uid://84sq1po5js1n" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/j_down/j_down_1.png" id="28_qx8iv"]
+[ext_resource type="Texture2D" uid="uid://cpds5y5sksfvs" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/j_down/j_down_2.png" id="29_cf1vt"]
+[ext_resource type="Texture2D" uid="uid://dlv6dynscyn8p" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/j_down/j_down_3.png" id="30_3dbsm"]
+[ext_resource type="Texture2D" uid="uid://8b847ivp5118" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/take_hit/take_hit_1.png" id="31_2hpt3"]
+[ext_resource type="Texture2D" uid="uid://7aiyn2a0u851" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/take_hit/take_hit_2.png" id="32_uthjf"]
+[ext_resource type="Texture2D" uid="uid://cr6ebs2trih5e" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/take_hit/take_hit_3.png" id="33_gbnr8"]
+[ext_resource type="Texture2D" uid="uid://qkyywpu7naw1" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/take_hit/take_hit_4.png" id="34_curgr"]
+[ext_resource type="Texture2D" uid="uid://rtrbicscqqkh" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/take_hit/take_hit_5.png" id="35_ov0tl"]
+[ext_resource type="Texture2D" uid="uid://xnp5yihgrqye" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/take_hit/take_hit_6.png" id="36_k2n3g"]
+[ext_resource type="Texture2D" uid="uid://b1ylx18i3hs6i" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/idle/idle_1.png" id="37_khv77"]
+[ext_resource type="Texture2D" uid="uid://ceclhkpme4j4f" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/idle/idle_2.png" id="38_en30d"]
+[ext_resource type="Texture2D" uid="uid://uodk66ytalpr" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/idle/idle_3.png" id="39_65p17"]
+[ext_resource type="Texture2D" uid="uid://b02a8lguy1rwd" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/idle/idle_4.png" id="40_gh8xj"]
+[ext_resource type="Texture2D" uid="uid://4mb1v5a7h5fn" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/idle/idle_5.png" id="41_282iu"]
+[ext_resource type="Texture2D" uid="uid://cd17t6busehi6" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/idle/idle_6.png" id="42_6vobm"]
+[ext_resource type="Texture2D" uid="uid://drbx1513egp72" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/idle/idle_7.png" id="43_3488q"]
+[ext_resource type="Texture2D" uid="uid://ndmbgr0manj6" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/idle/idle_8.png" id="44_bdibo"]
+[ext_resource type="Texture2D" uid="uid://d188v360akxhl" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/j_up/j_up_1.png" id="45_wdlc7"]
+[ext_resource type="Texture2D" uid="uid://ddxybsfixfjr3" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/j_up/j_up_2.png" id="46_wh5ug"]
+[ext_resource type="Texture2D" uid="uid://bmb58x04kxupk" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/j_up/j_up_3.png" id="47_d6lqn"]
+[ext_resource type="Texture2D" uid="uid://mx8uob1bqu0t" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/run/run_1.png" id="48_8mgrs"]
+[ext_resource type="Texture2D" uid="uid://cs1kur6otnlnj" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/run/run_2.png" id="49_tsiq6"]
+[ext_resource type="Texture2D" uid="uid://dt637rm2x6lup" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/run/run_3.png" id="50_p5dsg"]
+[ext_resource type="Texture2D" uid="uid://dxptbklco7u1d" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/run/run_4.png" id="51_cwqnw"]
+[ext_resource type="Texture2D" uid="uid://d1ffiuwqhuahv" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/run/run_5.png" id="52_hpgif"]
+[ext_resource type="Texture2D" uid="uid://oc30o1reeece" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/run/run_6.png" id="53_oqjrw"]
+[ext_resource type="Texture2D" uid="uid://c4tma2e8dnurm" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/run/run_7.png" id="54_xnimf"]
+[ext_resource type="Texture2D" uid="uid://nwa721i2vomg" path="res://Assets/Image/Enemy/Humanoid/Dessert/elementals_wind_hashashin_FREE_v1.1/PNG/run/run_8.png" id="55_lk6yw"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tyg6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2y1ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i50hn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h2ccs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jm1k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rli52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5wp2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_a2bnh")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_gi5my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ttiaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2i545")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_okrqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3ccht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2clkk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_k273e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3cr4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pdbc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ed7bh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_4hbk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_y7wp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_nyt5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_c708d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_33mg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8o2oh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ge5rp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_rbn1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_2gexs")
+}],
+"loop": false,
+"name": &"died",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_qx8iv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_cf1vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_3dbsm")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_2hpt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_uthjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_gbnr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_curgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ov0tl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_k2n3g")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_khv77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_en30d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_65p17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_gh8xj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_282iu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_6vobm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_3488q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_bdibo")
+}],
+"loop": true,
+"name": &"iddle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_wdlc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_wh5ug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_d6lqn")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48_8mgrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_tsiq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_p5dsg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_cwqnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_hpgif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_oqjrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_xnimf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_lk6yw")
+}],
+"loop": true,
+"name": &"run",
+"speed": 1.0
+}]

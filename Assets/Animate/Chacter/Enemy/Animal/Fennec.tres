@@ -1,0 +1,112 @@
+[gd_resource type="SpriteFrames" load_steps=19 format=3 uid="uid://dqxegrurrve1d"]
+
+[ext_resource type="Texture2D" uid="uid://c06jidqy6rbhu" path="res://Assets/Image/Enemy/Animal/Fennec Fox/Attack/Attack 1.png" id="1_kbbx3"]
+[ext_resource type="Texture2D" uid="uid://t1bqkuhxoku0" path="res://Assets/Image/Enemy/Animal/Fennec Fox/Attack/Attack 2.png" id="2_5ivp6"]
+[ext_resource type="Texture2D" uid="uid://depv0wbag075s" path="res://Assets/Image/Enemy/Animal/Fennec Fox/Attack/Attack 3.png" id="3_4r3wv"]
+[ext_resource type="Texture2D" uid="uid://cvn40cvgbiipo" path="res://Assets/Image/Enemy/Animal/Fennec Fox/Died/Died.png" id="4_e20jh"]
+[ext_resource type="Texture2D" uid="uid://cmd55anvqyw66" path="res://Assets/Image/Enemy/Animal/Fennec Fox/Fall/Fall 1.png" id="5_aw7hm"]
+[ext_resource type="Texture2D" uid="uid://drgshtw0w7ues" path="res://Assets/Image/Enemy/Animal/Fennec Fox/Fall/Fall 2.png" id="6_qe4pa"]
+[ext_resource type="Texture2D" uid="uid://bd2nd2vv8e2ry" path="res://Assets/Image/Enemy/Animal/Fennec Fox/Fall/Fall 3.png" id="7_104t3"]
+[ext_resource type="Texture2D" uid="uid://bnj4ob2cnsxuq" path="res://Assets/Image/Enemy/Animal/Fennec Fox/Hurt/Hurt 1.png" id="8_xuuix"]
+[ext_resource type="Texture2D" uid="uid://cnqrc67ss1wao" path="res://Assets/Image/Enemy/Animal/Fennec Fox/Hurt/Hurt 2.png" id="9_7qk0h"]
+[ext_resource type="Texture2D" uid="uid://be784vnqba6v4" path="res://Assets/Image/Enemy/Animal/Fennec Fox/Iddle/Iddle1.png" id="10_q130j"]
+[ext_resource type="Texture2D" uid="uid://cmfea4i60om2e" path="res://Assets/Image/Enemy/Animal/Fennec Fox/Iddle/Iddle2.png" id="11_j3b6e"]
+[ext_resource type="Texture2D" uid="uid://bwe8tr1jtmbda" path="res://Assets/Image/Enemy/Animal/Fennec Fox/Iddle/Iddle3.png" id="12_0vsuu"]
+[ext_resource type="Texture2D" uid="uid://bsex553tiymxi" path="res://Assets/Image/Enemy/Animal/Fennec Fox/Jump/Jump 1.png" id="13_bnbyt"]
+[ext_resource type="Texture2D" uid="uid://dtj7cpr67r836" path="res://Assets/Image/Enemy/Animal/Fennec Fox/Jump/Jump 2.png" id="14_s14dg"]
+[ext_resource type="Texture2D" uid="uid://chflrx0cycoka" path="res://Assets/Image/Enemy/Animal/Fennec Fox/Jump/Jump 3.png" id="15_gymcn"]
+[ext_resource type="Texture2D" uid="uid://c2uuwy52m7p10" path="res://Assets/Image/Enemy/Animal/Fennec Fox/Run/Run 1.png" id="16_kkuvn"]
+[ext_resource type="Texture2D" uid="uid://c3pp2qt3hv00y" path="res://Assets/Image/Enemy/Animal/Fennec Fox/Run/Run 2.png" id="17_372gn"]
+[ext_resource type="Texture2D" uid="uid://bcijqepkbfw1u" path="res://Assets/Image/Enemy/Animal/Fennec Fox/Run/Run 3.png" id="18_oj3eo"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kbbx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5ivp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4r3wv")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_e20jh")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_aw7hm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qe4pa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_104t3")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_xuuix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7qk0h")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_q130j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_j3b6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0vsuu")
+}],
+"loop": true,
+"name": &"iddle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_bnbyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_s14dg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_gymcn")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_kkuvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_372gn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_oj3eo")
+}],
+"loop": false,
+"name": &"run",
+"speed": 5.0
+}]

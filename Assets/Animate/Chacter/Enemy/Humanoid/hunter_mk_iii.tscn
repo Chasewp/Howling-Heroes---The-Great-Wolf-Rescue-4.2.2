@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmg262c1hmtl1"]
+
+[ext_resource type="SpriteFrames" uid="uid://dkqjmlypx27ua" path="res://Assets/Animate/Chacter/Enemy/Humanoid/Hunter_MK III.tres" id="1_igyid"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yuh0q"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_b5h5p"]
+
+[node name="Hunter MK III" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yuh0q")
+
+[node name="Hunter_MK III Spritesheet" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_igyid")
+animation = &"iddle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hunter_MK III Spritesheet"]
+
+[node name="BTPlayer" type="BTPlayer" parent="."]
+blackboard_plan = SubResource("BlackboardPlan_b5h5p")
