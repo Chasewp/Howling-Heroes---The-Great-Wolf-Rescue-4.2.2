@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://dxuhjidss1q4q"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/Item/Traps/Arrow_Traps/Arrow_Shooter_Top.gd" id="1_jca88"]
+[ext_resource type="Script" uid="uid://ojhtw5f186u6" path="res://Assets/Scripts/Item/Traps/Arrow_Traps/Arrow_Shooter_Top.gd" id="1_jca88"]
 [ext_resource type="Texture2D" uid="uid://8ergr6o1ax4p" path="res://Assets/Image/Items/Traps/Etc/Shooter_Arrow_Trap.png" id="1_wf4de"]
 [ext_resource type="PackedScene" uid="uid://c1uaykkvn7v0t" path="res://Assets/Scences/Items/Traps/arow_trap.tscn" id="2_02xwo"]
 [ext_resource type="AudioStream" uid="uid://d0k0j364o735p" path="res://Assets/Music/SFX/Weapon/Arrow/arrow-body-impact-146419.mp3" id="4_2v3jo"]
@@ -168,8 +168,8 @@ tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ilpdl"]
 _data = {
-"hit": SubResource("Animation_od3v1"),
-"shoot": SubResource("Animation_172dq")
+&"hit": SubResource("Animation_od3v1"),
+&"shoot": SubResource("Animation_172dq")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_18pxq"]
@@ -189,7 +189,7 @@ animation = &"shoot"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
-"": SubResource("AnimationLibrary_ilpdl")
+&"": SubResource("AnimationLibrary_ilpdl")
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

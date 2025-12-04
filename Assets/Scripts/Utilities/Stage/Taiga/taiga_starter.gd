@@ -8,7 +8,6 @@ func _ready():
 	super._ready()
 	music.play()
 	
-
 func _on_teleport_next_stage_body_entered(body):
 	if body.is_in_group("player"):
 		# Emit the exit signal through the proper channel

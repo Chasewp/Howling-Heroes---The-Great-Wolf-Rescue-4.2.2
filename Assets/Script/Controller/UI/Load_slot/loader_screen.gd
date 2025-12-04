@@ -1,22 +1,26 @@
-#extends Node2D
+extends Node2D
 
-enum {LOAD,SAVE}
-
-@onready var Action_Label = $"TextureRect/Action Label"
+@onready var load_slot_1_btn = $"TextureRect/CenterContainer/Slot Container/Load Slot 1"
+@onready var load_slot_2_btn = $"TextureRect/CenterContainer/Slot Container/Load Slot 2"
+@onready var load_slot_3_btn = $"TextureRect/CenterContainer/Slot Container/Load Slot 3"
+@onready var load_slot_4_btn = $"TextureRect/CenterContainer/Slot Container/Load Slot 4"
+@onready var screenshoot_img = $Screenshoot
 @onready var back_btn = $"TextureRect/Back Button"
 @onready var yes_no_dialog = ""
-var action
-var clicked_save_num
 
-signal  load_done
-signal back_btn_pressed
 
-func _process(delta):
-	#super._process(delta)
-	if GlobalUi.is_yes_no_dialog_blocking:
-			back_btn.process_mode = Node.PROCESS_MODE_DISABLED
-	else :
-					back_btn.process_mode = Node.PROCESS_MODE_INHERIT
 
-func _init_slots():
-	pass
+func _on_load_slot_1_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_load_slot_2_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_load_slot_3_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_load_slot_4_pressed() -> void:
+	pass # Replace with function body.

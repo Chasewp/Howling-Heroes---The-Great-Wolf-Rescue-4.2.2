@@ -56,7 +56,7 @@ func configure_trap():
 	detection_ray.add_exception(self)
 	
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if not target_player:
 		target_player = get_tree().get_first_node_in_group("player")
 		return
