@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://nxesci8m8pft"]
+[gd_scene format=3 uid="uid://nxesci8m8pft"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/Splash/Splash_1/Splash_Screen_1.gd" id="1_5jg83"]
-[ext_resource type="Texture2D" uid="uid://cxdcc8vt7kwjm" path="res://Assets/Image/Keyboard and Mouse/—Pngtree—flat wind keyboard mouse vector_5458958.png" id="2_65rb8"]
-[ext_resource type="FontFile" uid="uid://bv6xsykw7vcai" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="2_p3k8t"]
+[ext_resource type="Script" uid="uid://cg1b0m2blo36r" path="res://Assets/Scripts/Splash/Splash_1/Splash_Screen_1.gd" id="1_5jg83"]
+[ext_resource type="Texture2D" uid="uid://cxdcc8vt7kwjm" path="res://Assets/Image/Keyboard and Mouse/—Pngtree—flat wind keyboard mouse vector_5458958.png" id="2_vye2l"]
 
 [sub_resource type="Animation" id="Animation_dtfix"]
 resource_name = "Fade_In"
@@ -53,12 +52,12 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lbx1c"]
 _data = {
-"Fade_In": SubResource("Animation_dtfix"),
-"Fade_Out": SubResource("Animation_uhsud"),
-"RESET": SubResource("Animation_gua5f")
+&"Fade_In": SubResource("Animation_dtfix"),
+&"Fade_Out": SubResource("Animation_uhsud"),
+&"RESET": SubResource("Animation_gua5f")
 }
 
-[node name="Splash_1" type="Control"]
+[node name="Splash_1" type="Control" unique_id=315765952]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,7 +66,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5jg83")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2081332952]
 custom_minimum_size = Vector2(1127, 461)
 layout_mode = 1
 anchors_preset = 8
@@ -81,10 +80,10 @@ offset_right = 563.5
 offset_bottom = 174.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_65rb8")
+texture = ExtResource("2_vye2l")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1986609281]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -97,19 +96,16 @@ offset_right = 266.0
 offset_bottom = -79.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_p3k8t")
 theme_override_font_sizes/font_size = 40
 text = "Play with a keyboard and mouse"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MakeFade" type="ColorRect" parent="."]
+[node name="MakeFade" type="ColorRect" parent="." unique_id=2055262213]
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0, 0, 0, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_lbx1c")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1478329307]
+libraries/ = SubResource("AnimationLibrary_lbx1c")

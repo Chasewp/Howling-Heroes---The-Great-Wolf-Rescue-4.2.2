@@ -113,25 +113,37 @@ func open_red_wolf_alamanac():
 	AlmanacOpenCloser.open_wolf_species_page_8()
 	
 func _ready():
-	# Recsued
-	if WolfData._get_Nortern_Rocky_Mountain_Wolf_Rescue_Status() or WolfData._get_Northwestern_Wolf_Rescue_Status() or WolfData._get_Red_Wolf_Rescue_Status():
+	# Nothern Rocky Mountain Wolf Recsued
+	if WolfData._get_Nortern_Rocky_Mountain_Wolf_Rescue_Status() == true:
 		northern_rocky_mountain_wolf_image()
 		NorthernRockyMountainWolfImage.disabled = false
 		NorthwesternWolfLabel.text = WolfData._get_Northern_Rocky_Mountain_Wolf_Name()
 		NorthernRockyMountainWolfLabel.disabled = false
+	#Not Rescued
+	else:
+		NorthernRockyMountainWolfImage.disabled = true
+		NorthernRockyMountainWolfLabel.disabled = true	
+	
+	#Morthwestern Wolf Rescued
+	if	WolfData._get_Northwestern_Wolf_Rescue_Status() == true:
 		northwestern_wolf_image()
 		NorthwesternWolfImage.disabled = false
 		NorthwesternWolfLabel.text = WolfData._get_Northwestern_Wolf_Name()
 		NorthwesternWolfLabel.disabled = false
+	
+	#Not Rescued
+	else:
+		NorthwesternWolfImage.disabled = true
+		NorthwesternWolfLabel.disabled = true
+		
+	#Red Wolf Rescued	
+	if	WolfData._get_Red_Wolf_Rescue_Status() == true :
 		red_wolf_image()
 		RedWolfImage.disabled = false
 		RedWolfLabel.text = WolfData._get_Red_Wolf_Name()
 		RedWolfLabel.disabled = false
-	else:
-	# not Rescued
-		NorthernRockyMountainWolfImage.disabled = true
-		NorthernRockyMountainWolfLabel.disabled = true
-		NorthwesternWolfImage.disabled = true
-		NorthwesternWolfLabel.disabled = true
+	
+	#Not Rescued
+	else :	
 		RedWolfImage.disabled = true
 		RedWolfLabel.disabled = true

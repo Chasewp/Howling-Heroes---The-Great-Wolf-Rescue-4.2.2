@@ -113,24 +113,37 @@ func open_mongolian_wolf_almanac():
 	AlmanacOpenCloser.open_wolf_species_page_7()
 	
 func _ready():
-	if WolfData._get_Mackenzie_River_Wolf_Rescue_Status() and WolfData._get_Mexican_Wolf_Rescue_Status() or WolfData._get_Mongolian_Wolf_Rescue_Status() == true:
-		#Rescued
+	# Mackenzie River Wolf Rescued
+	if WolfData._get_Mackenzie_River_Wolf_Rescue_Status()  == true:
 		MackenzieRiverWolfImage.disabled = false
 		mackenzie_river_wolf_image()
 		MackenzieRiverWolfLabel.disabled = false
 		MackenzieRiverWolfLabel.text = WolfData._get_Mackenzie_River_Wolf_Name()
+	#Not Resuced
+	else:
+		MackenzieRiverWolfImage.disabled = true
+		MackenzieRiverWolfLabel.disabled = true
+		
+	# Mexician Wolf Rescued
+	if WolfData._get_Mexican_Wolf_Rescue_Status()  == true:	
 		MexicanWolfImage.disabled = false
 		mexican_wolf_image()
 		MexicanWolfLabel.disabled = false
 		MexicanWolfLabel.text = WolfData._get_Mexican_Wolf_Name()
+	
+	#Not Rescued
+	else:
+		MexicanWolfImage.disabled = true
+		MexicanWolfLabel.disabled = true
+		
+	#Mongolian Wolf	
+	if	WolfData._get_Mongolian_Wolf_Rescue_Status() == true:
 		MongolianWolfImage.disabled = false
 		mongolian_wolf_image()
 		MongolianWolfLabel.disabled = false
 		MongolianWolfLabel.text = WolfData._get_Mongolian_Wolf_Name()
+	
+	#Not Rescued
 	else:
-		#Not Rescued
-		MackenzieRiverWolfImage.disabled = true
-		MackenzieRiverWolfLabel.disabled = true
-		MexicanWolfImage.disabled = true
-		MexicanWolfLabel.disabled = true
 		MongolianWolfImage.disabled = true
+		MongolianWolfLabel.disable = true

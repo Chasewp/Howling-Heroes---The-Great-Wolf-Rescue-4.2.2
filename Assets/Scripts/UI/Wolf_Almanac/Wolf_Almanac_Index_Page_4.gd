@@ -17,24 +17,39 @@ var _GreenlandWolfAlmanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/Gree
 var _HimalayanWolf_Almanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/Himalayan Wolf/himalayan_wolf_almanac.tscn")
 
 func _ready():
-	if WolfData._get_Great_Plains_Wolf_Rescue_Status() or WolfData._get_Greenland_Wolf_Rescue_Status() or WolfData._get_Himalyan_Wolf_Rescue_Status() :
+	#Great Plains Wolf Rescued
+	if WolfData._get_Great_Plains_Wolf_Rescue_Status()  == true :
 		GreatPlainWolfImage.disabled = false
 		great_plain_wolf_image()
 		GreatPlainWolfLabel.disabled = false
 		GreatPlainWolfLabel.text = WolfData._get_Great_Plains_Wolf_Name()
+	
+	#Not Rescued
+	else:
+		GreatPlainWolfImage.disabled = true
+		GreatPlainWolfLabel.disabled = true	
+	
+	#Greenland Wolf Rescued
+	if WolfData._get_Greenland_Wolf_Rescue_Status()==true :
 		GreenlandWolfImage.disabled = false
-		great_plain_wolf_image()
+		greenland_wolf_image()
 		GreenlandWolfLabel.disabled = false
 		GreenlandWolfLabel.text = WolfData._get_Greenland_Wolf_Name()
+	
+	#Not Rescued
+	else:
+		GreenlandWolfImage.disabled = true
+		GreenlandWolfLabel.disabled = true
+
+	#Himalayan Wolf Rescued
+	if WolfData._get_Himalayan_Wolf_Rescue_Status() == true:
 		HimalayanWolfImage.disabled = false
 		himalayan_wolf_image()
 		HimalayanWolfLabel.disabled = false
 		HimalayanWolfLabel.text = WolfData._get_Himalayan_Wolf_Name()
-	else:
-		GreatPlainWolfImage.disabled = true
-		GreatPlainWolfLabel.disabled = true
-		GreenlandWolfImage.disabled = true
-		GreenlandWolfLabel.disabled = true
+	
+	#Not Rescued
+	else:	
 		HimalayanWolfImage.disabled = true
 		HimalayanWolfLabel.disabled = true
 

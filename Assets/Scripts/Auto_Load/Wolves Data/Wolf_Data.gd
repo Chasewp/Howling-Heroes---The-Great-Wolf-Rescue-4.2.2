@@ -772,7 +772,7 @@ func _get_Himalayan_Wolf_Diets():
 	return _himalayan_Wolf_Diets
 
 #Rescue
-func _get_Himalyan_Wolf_Rescue_Status():
+func _get_Himalayan_Wolf_Rescue_Status():
 	var _himalyan_Wolf_Rescue_Status = Data_Wolves["Himalayan Wolf"]["Rescued"]
 	return _himalyan_Wolf_Rescue_Status
 

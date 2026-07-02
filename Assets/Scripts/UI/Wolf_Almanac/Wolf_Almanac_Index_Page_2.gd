@@ -17,26 +17,40 @@ var _BaffinIslanWolfAlamanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/B
 var _BritishColumbianWolfAlamanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/British Colombian Wolf/british_colombian_wolf_almanac.tscn")
 
 func _ready():
-	if WolfData._get_Arctic_Wolf_Rescue_Status() or  WolfData._get_Baffin_Island_Wolf_Rescue_Status() or WolfData._get_British_Columbian_Wolf_Rescue_Status() :
+	#Artic Wolf Rescued
+	if WolfData._get_Arctic_Wolf_Rescue_Status() == true  :
 		#Recued
 		ArcticWolfImage.set_disabled(false)
 		artic_wolf_image()
 		ArticWolfLabel.set_disabled(false)
 		ArticWolfLabel.text = WolfData._get_Arctic_Wolf_Name()
-		BaffinIslandWolfImage.set_disabled(false)
-		baffin_wolf_image()
-		BaffinIslandWolfLabel.set_disabled(false)
-		BaffinIslandWolfLabel.text = WolfData._get_Baffin_Island_Wolf_Name()
-		BritishColumbianWolfImage.set_disabled(false)
-		british_columbian_wolf_image()
-		BritishColumbianWolfLabel.set_disabled(false)
-		BritishColumbianWolfLabel.text = WolfData._get_British_Columbian_Wolf_Name()
+		
 	else:
 		#Not Rescued
 		ArcticWolfImage.set_disabled(true)
 		ArticWolfLabel.set_disabled(true)
+		
+	#Baffin Island Wolf Rescued
+	if WolfData._get_Baffin_Island_Wolf_Rescue_Status() == true:
+		BaffinIslandWolfImage.set_disabled(false)
+		baffin_wolf_image()
+		BaffinIslandWolfLabel.set_disabled(false)
+		BaffinIslandWolfLabel.text = WolfData._get_Baffin_Island_Wolf_Name()
+	
+	#Not rescued
+	else: 
 		BaffinIslandWolfImage.set_disabled(true)
 		BaffinIslandWolfLabel.set_disabled(true)
+		
+	#British Columbian Wolf Rescued
+	if WolfData._get_British_Columbian_Wolf_Rescue_Status() == true:
+		BritishColumbianWolfImage.set_disabled(false)
+		british_columbian_wolf_image()
+		BritishColumbianWolfLabel.set_disabled(false)
+		BritishColumbianWolfLabel.text = WolfData._get_British_Columbian_Wolf_Name()
+	
+	#Not Rescued
+	else: 
 		BritishColumbianWolfImage.set_disabled(true)
 		BritishColumbianWolfLabel.set_disabled(true)
 		
@@ -136,4 +150,3 @@ func british_columbian_wolf_image():
 	var texture = ImageTexture.create_from_image(image)
 	BritishColumbianWolfImage.texture_normal=texture	
 	
-

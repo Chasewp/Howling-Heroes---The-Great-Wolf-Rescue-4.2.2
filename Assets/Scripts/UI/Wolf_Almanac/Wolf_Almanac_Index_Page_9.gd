@@ -106,29 +106,39 @@ func vancouver_coastal_island_wolf_image():
 	var texture = ImageTexture.create_from_image(image)
 	VancouverCoastalIslandWolfImage.texture_normal=texture
 
-
 func _ready():
-	#Rescued
-	if WolfData._get_Steppe_Wolf_Rescue_Status() or WolfData._get_Tundra_Wolf_Rescue_Status() or WolfData._get_Vancover_Coastal_Island_Wolf_Rescue_Status():
+	#Steppe Wolf Rescued
+	if WolfData._get_Steppe_Wolf_Rescue_Status() == true:
 		steppe_wolf_caspian_sea_wolf_image()
 		SteppeWolf_Caspian_Sea_WolfImage.disabled = false
 		SteppeWolf_Caspian_Sea_WolfLabel.text = WolfData._get_Steppe_Wolf_Name()
 		SteppeWolf_Caspian_Sea_WolfLabel.disabled = false
-		tundra_wolf_image()
-		TundraWolfImage.disabled = false
-		TundraWolfLabel.text = WolfData._get_Tundra_Wolf_Name()
-		TundraWolfLabel.disabled = false
-		vancouver_coastal_island_wolf_image()
-		VancouverCoastalIslandWolfImage.disabled = false
-		VancouverCoastalIslandWolfLabel.text = WolfData._get_Vancouver_Coastal_Island_Wolf_Name()
-		VancouverCoastalIslandWolfLabel.disabled = false
-
+	
 	#not Rescued
 	else:
 		SteppeWolf_Caspian_Sea_WolfImage.disabled = true
 		SteppeWolf_Caspian_Sea_WolfLabel.disabled = true
+	
+	# Tundra Wolf Rescued
+	if WolfData._get_Tundra_Wolf_Rescue_Status() == true :
+		tundra_wolf_image()
+		TundraWolfImage.disabled = false
+		TundraWolfLabel.text = WolfData._get_Tundra_Wolf_Name()
+		TundraWolfLabel.disabled = false
+	
+	#Not Rescued
+	else:
 		TundraWolfImage.disabled = true
 		TundraWolfLabel.disabled = true
+		
+	#vancover Coastal Island Wolf Rescued
+	if WolfData._get_Vancover_Coastal_Island_Wolf_Rescue_Status():
+		vancouver_coastal_island_wolf_image()
+		VancouverCoastalIslandWolfImage.disabled = false
+		VancouverCoastalIslandWolfLabel.text = WolfData._get_Vancouver_Coastal_Island_Wolf_Name()
+		VancouverCoastalIslandWolfLabel.disabled = false
+	
+	#Not Rescued
+	else:	
 		VancouverCoastalIslandWolfImage.disabled = true
 		VancouverCoastalIslandWolfLabel.disabled = true
-

@@ -113,25 +113,35 @@ func open_indian_wolf_almanac():
 	AlmanacOpenCloser.open_wolf_species_page_5()
 	
 func _ready():
-	if WolfData._get_Hudsom_Bay_Wolf_Rescue_Status() or WolfData._get_Iberian_Wolf_Rescue_Status() or WolfData._get_Indian_Wolf_Rescue_Status() == true:
-	#Rescued
+	#Hudson Wolf Rescued
+	if WolfData._get_Hudsom_Bay_Wolf_Rescue_Status()  == true:
 		HudsonBayWolfImage.disabled = false
 		hudson_bay_wolf_image()
 		HudsonBayWolfLabel.disabled = false
 		HudsonBayWolfLabel.text = WolfData._get_Hudson_Bay_Wolf_Name()
+	
+	#Not Rescued
+	else:	
+		HudsonBayWolfImage.disabled = true
+		HudsonBayWolfLabel.disabled = true
+		
+	#Iberian Wolf Rescued
+	if WolfData._get_Iberian_Wolf_Rescue_Status() == true:
 		IberianWolfImage.disabled = false
 		iberian_wolf_image()
 		IberianWolfLabel.disabled = false
 		IberianWolfLabel.text = WolfData._get_Iberian_Wolf_Name()
+		IberianWolfImage.disabled = true
+		IberianWolfLabel.disabled = true
+		
+	#Indian Wolf Rescued
+	if WolfData._get_Indian_Wolf_Rescue_Status()	== true:	
 		IndianWolfImage.disabled = false
 		indian_wolf_image()
 		IndianWolfLabel.disabled = false
 		IndianWolfLabel.text = WolfData._get_Indian_Wolf_Name()
-	else: 
-	#non Rescued
-		HudsonBayWolfImage.disabled = true
-		HudsonBayWolfLabel.disabled = true
-		IberianWolfImage.disabled = true
-		IberianWolfLabel.disabled = true
+	
+	#Not Rscued
+	else:
 		IndianWolfImage.disabled = true
 		IndianWolfLabel.disabled = true

@@ -7,9 +7,9 @@ extends Wolf_Almanac_Main_Menu_Index
 var _AlaskanTundaWolfAlmanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/Alaskan Tundra Wolf/alaskan_tundra_wolf_almanac.tscn")
 
 #Alexorer Archipelago Wolf
-@onready var AlexorerArchipelagoWolfImage = $"Background/Almanac Index/WolfVBoxContainer2/Wolf 2"
-@onready var AlexaorerArchipelagoWolfLabel = $"Background/Almanac Index/WolfVBoxContainer2/Label_Wolf_2"
-var _AlexorerArchipelagoWolfAlmanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/Alexorer Archipelago Wolf/alexorer_archipelago_wolf_almanac.tscn")
+@onready var AlexanderArchipelagoWolfImage = $"Background/Almanac Index/WolfVBoxContainer2/Wolf 2"
+@onready var AlexanderArchipelagoWolfLabel = $"Background/Almanac Index/WolfVBoxContainer2/Label_Wolf_2"
+var _AlexanderArchipelagoWolfAlmanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/Alexorer Archipelago Wolf/alexorer_archipelago_wolf_almanac.tscn")
 
 #Arabian Wolf
 @onready var ArabianWolfImage = $"Background/Almanac Index/WolfVBoxContainer3/Wolf 3"
@@ -18,27 +18,37 @@ var _ArabianWolfAlmanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/Arabia
 
 
 func _ready():
-	#rescued
-	if WolfData._get_Alaskan_Tundra_Wolf_Rescue_Status() or WolfData._get_Alexander_Archipelago_Wolf_Rescue_Status() or WolfData._get_Arabian_Wolf_Rescue_Status():
+	# Alaskan Tundra Wolf rescued
+	if WolfData._get_Alaskan_Tundra_Wolf_Rescue_Status() == true :
 		AlaskanTundraWolfImage.set_disabled(false)
 		alaskan_tundra_wolf_image()
 		AlaskanTundraWolfLabel.text = WolfData._get_Alaskan_Tundra_Wolf_Name()
-		AlaskanTundraWolfLabel.set_disabled(false)
-		AlexorerArchipelagoWolfImage.set_disabled(false)
-		alexorer_archipelago_wolf_image()
-		AlexaorerArchipelagoWolfLabel.text = WolfData._get_Alexorer_Archipelago_Wolf_Name()
-		AlexaorerArchipelagoWolfLabel.set_disabled(false)
-		ArabianWolfImage.set_disabled(false)
-		arabian_wolf_image()
-		ArabianWolfLabel.set_disabled(false)
-		ArabianWolfLabel.text = WolfData._get_Arabian_Wolf_Name()
-		
+		AlaskanTundraWolfLabel.set_disabled(false)	
 	#Not Rescued
 	else:
 		AlaskanTundraWolfImage.set_disabled(true)
 		AlaskanTundraWolfLabel.set_disabled(true)
-		AlexaorerArchipelagoWolfLabel.set_disabled(true)
-		AlexorerArchipelagoWolfImage.set_disabled(true)
+	
+	#Alexander Archipelago Wolf Rescued	
+	if WolfData._get_Alexander_Archipelago_Wolf_Rescue_Status() == true:	
+		AlexanderArchipelagoWolfImage.set_disabled(false)
+		alexander_archipelago_wolf_image()
+		AlexanderArchipelagoWolfLabel.text = WolfData._get_Alexorer_Archipelago_Wolf_Name()
+		AlexanderArchipelagoWolfLabel.set_disabled(false)
+	# Not Rscued	
+	else :
+		AlexanderArchipelagoWolfLabel.set_disabled(true)
+		AlexanderArchipelagoWolfImage.set_disabled(true)
+		
+	#Arabian Wolf Rescued
+	if WolfData._get_Arabian_Wolf_Rescue_Status() == true:
+		ArabianWolfImage.set_disabled(false)
+		arabian_wolf_image()
+		ArabianWolfLabel.set_disabled(false)
+		ArabianWolfLabel.text = WolfData._get_Arabian_Wolf_Name()
+	
+	# Not Rescued
+	else : 
 		ArabianWolfImage.set_disabled(true)
 		ArabianWolfLabel.set_disabled(true)
 		
@@ -68,30 +78,30 @@ func open_alaskan_tundra_wolf_almanac():
 	AlmanacOpenCloser.wolf_species_name = WolfData._get_Alaskan_Tundra_Wolf_Name()
 	AlmanacOpenCloser.open_wolf_species_page_1()
 	
-func open_alexorer_archipelago_wolf_almanac():
+func open_alexander_archipelago_wolf_almanac():
 	button_sfx.play()
 	# Wolf Name
-	WolfAlmanac.setter_Wolf_Name(WolfData._get_Alexorer_Archipelago_Wolf_Name())
+	WolfAlmanac.setter_Wolf_Name(WolfData._get_Alexander_Archipelago_Wolf_Name())
 	# Wolf Species
-	WolfAlmanac.setter_Wolf_Species(WolfData._get_Alexorer_Archipelago_Wolf_Species())
+	WolfAlmanac.setter_Wolf_Species(WolfData._get_Alexander_Archipelago_Wolf_Species())
 	# Wolf Height
-	WolfAlmanac.setter_Wolf_Height(WolfData._get_Alexorer_Archipelago_Wolf_Height())
+	WolfAlmanac.setter_Wolf_Height(WolfData._get_Alexander_Archipelago_Wolf_Height())
 	# Wolf Weight
-	WolfAlmanac.setter_Wolf_Weight(WolfData._get_Alexorer_Archipelago_Wolf_Weight())
+	WolfAlmanac.setter_Wolf_Weight(WolfData._get_Alexander_Archipelago_Wolf_Weight())
 	# Wolf Length
-	WolfAlmanac.setter_Wolf_Lenght(WolfData._get_Alexorer_Archipelago_Wolf_Lenght())
+	WolfAlmanac.setter_Wolf_Lenght(WolfData._get_Alexander_Archipelago_Wolf_Lenght())
 	# Wolf Conservation Status
-	WolfAlmanac.setter_Wolf_Conservation_Status(WolfData._get_Alexorer_Archipelago_Wolf_Conservation_Status())
+	WolfAlmanac.setter_Wolf_Conservation_Status(WolfData._get_Alexander_Archipelago_Wolf_Conservation_Status())
 	# Wolf Location
-	WolfAlmanac.setter_Wolf_Region(WolfData._get_Alexorer_Archipelago_Wolf_Location())
+	WolfAlmanac.setter_Wolf_Region(WolfData._get_Alexander_Archipelago_Wolf_Location())
 	# Wolf Morphology
-	WolfAlmanac.setter_Wolf_Morphology(WolfData._get_Alexorer_Archipelago_Wolf_Morphology())
+	WolfAlmanac.setter_Wolf_Morphology(WolfData._get_Alexander_Archipelago_Wolf_Morphology())
 	# Wolf Diet
-	WolfAlmanac.setter_Wolf_Diets(WolfData._get_Alexorer_Archipelago_Wolf_Diets())
+	WolfAlmanac.setter_Wolf_Diets(WolfData._get_Alexander_Archipelago_Wolf_Diets())
 	# Wolf Image
-	WolfAlmanac.setter_Wolf_Image(WolfData._get_Alexorer_Archipelago_Wolf_Image_Path())
-	AlmanacOpenCloser.wolf_species_scene = _AlexorerArchipelagoWolfAlmanac
-	AlmanacOpenCloser.wolf_species_name = WolfData._get_Alexorer_Archipelago_Wolf_Name()
+	WolfAlmanac.setter_Wolf_Image(WolfData._get_Alexander_Archipelago_Wolf_Image_Path())
+	AlmanacOpenCloser.wolf_species_scene = _AlexanderArchipelagoWolfAlmanac
+	AlmanacOpenCloser.wolf_species_name = WolfData._get_Alexander_Archipelago_Wolf_Name()
 	AlmanacOpenCloser.open_wolf_species_page_1()
 	
 func open_Arabian_Wolf_Almanac():
@@ -127,11 +137,11 @@ func alaskan_tundra_wolf_image():
 	var texture = ImageTexture.create_from_image(image)
 	AlaskanTundraWolfImage.texture_normal=texture
 
-#Alexorer Archipelago Wolf Image
-func alexorer_archipelago_wolf_image():
+#Alexander Archipelago Wolf Image
+func alexander_archipelago_wolf_image():
 	var image = Image.load_from_file(str(WolfData._get_Alexorer_Archipelago_Wolf_Image_Path()))
 	var texture = ImageTexture.create_from_image(image)
-	AlexorerArchipelagoWolfImage.texture_normal=texture	
+	AlexanderArchipelagoWolfImage.texture_normal=texture	
 
 #Arabian Wolf Image
 func arabian_wolf_image():

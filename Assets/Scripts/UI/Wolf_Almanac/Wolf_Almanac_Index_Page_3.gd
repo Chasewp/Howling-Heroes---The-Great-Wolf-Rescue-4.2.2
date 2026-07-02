@@ -18,29 +18,44 @@ var _EurasianWolfAlmanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/Euras
 var _GrayWolfAlmanac = load("res://Assets/Scences/UI/Wolf_Almanac/Book/Gray Wolf/gray_wolf_almanac.tscn")
 
 func _ready():
-	if WolfData._get_Eastern_Wolf_Rescue_Status() or WolfData._get_Eurasian_Wolf_Rescue_Status() or WolfData._get_Gray_Wolf_Rescue_Status() == true:
+	#Eastern Wolf Rescued
+	if WolfData._get_Eastern_Wolf_Rescue_Status()  == true:
 		#Rescued
 		EasternWolfImage.set_disabled(false)
 		eastern_wolf_image()
-		EasternWolfLabel.set_disabled(false)
-		EasternWolfLabel.text = WolfData._get_Eastern_Wolf_Name()
-		EurasianWolfImage.set_disabled(false)
-		eurasian_wolf_image()
+		
 		EurasianWolfLabel.set_disabled(false)
 		EurasianWolfLabel.text = WolfData._get_Eurasian_Wolf_Name()
-		GrayWolfImage.set_disabled(false)
-		gray_wolf_image()
-		GrayWolfLabel.set_disabled(false)
-		GrayWolfLabel.text = WolfData._get_Gray_Wolf_Name()
+		
 	else:
 		#Not Rescued
 		EasternWolfImage.set_disabled(true)
 		EasternWolfLabel.set_disabled(true)
+		
+	#Eurasian Wolf Rescued 
+	if WolfData._get_Eurasian_Wolf_Rescue_Status() == true:
+		EasternWolfLabel.set_disabled(false)
+		EasternWolfLabel.text = WolfData._get_Eastern_Wolf_Name()
+		EurasianWolfImage.set_disabled(false)
+		eurasian_wolf_image()
+	
+	#not rescued
+	else:
 		EurasianWolfImage.set_disabled(true)
 		EurasianWolfLabel.set_disabled(true)
+		
+	#Gray Wolf Rescued
+	if WolfData._get_Gray_Wolf_Rescue_Status() == true:
+		GrayWolfImage.set_disabled(false)
+		gray_wolf_image()
+		GrayWolfLabel.set_disabled(false)
+		GrayWolfLabel.text = WolfData._get_Gray_Wolf_Name()
+	
+	#not rescued
+	else: 
 		GrayWolfImage.set_disabled(true)
 		GrayWolfLabel.set_disabled(true)
-
+		
 #Eastern Wolf Image
 func eastern_wolf_image():
 	var image = Image.load_from_file(str(WolfData._get_Eastern_Wolf_Image_Path()))

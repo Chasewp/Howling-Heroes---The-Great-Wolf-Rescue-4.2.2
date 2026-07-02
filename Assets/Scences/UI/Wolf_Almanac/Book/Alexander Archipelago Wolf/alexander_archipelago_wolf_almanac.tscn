@@ -1,14 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://txbedasx5itr"]
+[gd_scene format=3 uid="uid://txbedasx5itr"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/UI/Wolf_Alamanac_Book/Wolf_Almanac_Book.gd" id="1_vuw1h"]
-[ext_resource type="Texture2D" uid="uid://8lvpv8lhorhe" path="res://Assets/Image/Background/UI/Wolf_Alamac_Book/opened_notebook_isolated_on_background.png" id="2_om240"]
-[ext_resource type="FontFile" uid="uid://dk1ja3jllfjob" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="3_7ffm2"]
-[ext_resource type="FontFile" uid="uid://dmorfn4drgakd" path="res://Assets/Fonts/DisposableDroidBB_bldital.ttf" id="4_mr6ac"]
-[ext_resource type="FontFile" uid="uid://bj1q5gmkmip6u" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="5_skcu4"]
-[ext_resource type="FontFile" uid="uid://c4dpeuiv2xlp4" path="res://Assets/Fonts/DisposableDroidBB_ital.ttf" id="6_eochf"]
-[ext_resource type="Texture2D" uid="uid://d1bj347xylj36" path="res://Assets/Image/Buttons/right-arrow.png" id="7_ea7tc"]
+[ext_resource type="Script" uid="uid://ck55eec75jkww" path="res://Assets/Scripts/UI/Wolf_Alamanac_Book/Wolf_Almanac_Book.gd" id="1_vuw1h"]
+[ext_resource type="Texture2D" uid="uid://cjaxxmfegjphe" path="res://Assets/Image/Background/UI/Wolf_Alamac_Book/opened_notebook_isolated_on_background.png" id="2_om240"]
+[ext_resource type="FontFile" uid="uid://bv6xsykw7vcai" path="res://Assets/Fonts/DisposableDroidBB_bld.ttf" id="3_7ffm2"]
+[ext_resource type="FontFile" uid="uid://ccpiomxr4hnwi" path="res://Assets/Fonts/DisposableDroidBB_bldital.ttf" id="4_mr6ac"]
+[ext_resource type="FontFile" uid="uid://bsmkjcem4b3i1" path="res://Assets/Fonts/DisposableDroidBB.ttf" id="5_skcu4"]
+[ext_resource type="FontFile" uid="uid://b37vftxdinymo" path="res://Assets/Fonts/DisposableDroidBB_ital.ttf" id="6_eochf"]
+[ext_resource type="Texture2D" uid="uid://c6h50ut55x04r" path="res://Assets/Image/Buttons/right-arrow.png" id="7_ea7tc"]
 
-[node name="Alexander_Archipelago_Wolf_Almanac" type="Control"]
+[node name="Alexander_Archipelago_Wolf_Almanac" type="Control" unique_id=1980911803]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,7 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vuw1h")
 
-[node name="Book_Texturee" type="TextureRect" parent="."]
+[node name="Book_Texturee" type="TextureRect" parent="." unique_id=814513384]
 custom_minimum_size = Vector2(1280, 0)
 layout_mode = 0
 offset_right = 1280.0
@@ -28,7 +28,7 @@ texture = ExtResource("2_om240")
 expand_mode = 1
 metadata/_edit_lock_ = true
 
-[node name="Wolf_Picture" type="TextureRect" parent="."]
+[node name="Wolf_Picture" type="TextureRect" parent="." unique_id=326246903]
 custom_minimum_size = Vector2(430, 615)
 layout_mode = 0
 offset_left = 156.0
@@ -37,7 +37,7 @@ offset_right = 586.0
 offset_bottom = 641.001
 expand_mode = 1
 
-[node name="Name_Wolf" type="Label" parent="."]
+[node name="Name_Wolf" type="Label" parent="." unique_id=631961228]
 layout_mode = 0
 offset_left = 750.97
 offset_top = 35.0
@@ -50,7 +50,7 @@ text = "WOLF NAME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Name_Species" type="Label" parent="."]
+[node name="Name_Species" type="Label" parent="." unique_id=1511244031]
 layout_mode = 0
 offset_left = 665.0
 offset_top = 79.0
@@ -62,7 +62,7 @@ theme_override_font_sizes/font_size = 24
 text = "SPECIES"
 vertical_alignment = 1
 
-[node name="Species" type="Label" parent="."]
+[node name="Species" type="Label" parent="." unique_id=763545846]
 layout_mode = 0
 offset_left = 841.0
 offset_top = 79.0
@@ -74,7 +74,7 @@ theme_override_font_sizes/font_size = 24
 text = "Species_Name"
 vertical_alignment = 1
 
-[node name="Height_sizE" type="Label" parent="."]
+[node name="Height_sizE" type="Label" parent="." unique_id=264219047]
 layout_mode = 0
 offset_left = 665.0
 offset_top = 127.0
@@ -86,7 +86,7 @@ theme_override_font_sizes/font_size = 24
 text = "HEIGHT"
 vertical_alignment = 1
 
-[node name="Height_Label" type="Label" parent="."]
+[node name="Height_Label" type="Label" parent="." unique_id=503041014]
 custom_minimum_size = Vector2(175, 25)
 layout_mode = 0
 offset_left = 841.0
@@ -99,7 +99,7 @@ theme_override_font_sizes/font_size = 24
 text = "HEIGHT SIZE"
 vertical_alignment = 1
 
-[node name="Weight" type="Label" parent="."]
+[node name="Weight" type="Label" parent="." unique_id=635811020]
 layout_mode = 0
 offset_left = 665.0
 offset_top = 175.0
@@ -111,7 +111,7 @@ theme_override_font_sizes/font_size = 24
 text = "WEIGHT"
 vertical_alignment = 1
 
-[node name="Weight_Label" type="Label" parent="."]
+[node name="Weight_Label" type="Label" parent="." unique_id=2121880595]
 custom_minimum_size = Vector2(175, 25)
 layout_mode = 0
 offset_left = 841.0
@@ -124,7 +124,7 @@ theme_override_font_sizes/font_size = 24
 text = "WEIGHT SIZE"
 vertical_alignment = 1
 
-[node name="Length_size" type="Label" parent="."]
+[node name="Length_size" type="Label" parent="." unique_id=83815856]
 layout_mode = 0
 offset_left = 665.0
 offset_top = 223.0
@@ -136,7 +136,7 @@ theme_override_font_sizes/font_size = 24
 text = "LENGHT"
 vertical_alignment = 1
 
-[node name="Leght_Label" type="Label" parent="."]
+[node name="Leght_Label" type="Label" parent="." unique_id=1151375775]
 custom_minimum_size = Vector2(175, 25)
 layout_mode = 0
 offset_left = 841.0
@@ -149,7 +149,7 @@ theme_override_font_sizes/font_size = 24
 text = "LENGHT SIZE"
 vertical_alignment = 1
 
-[node name="CONSERVATION STATUS" type="Label" parent="."]
+[node name="CONSERVATION STATUS" type="Label" parent="." unique_id=189593552]
 layout_mode = 0
 offset_left = 664.0
 offset_top = 260.0
@@ -163,7 +163,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 uppercase = true
 
-[node name="Status" type="Label" parent="."]
+[node name="Status" type="Label" parent="." unique_id=477885946]
 layout_mode = 0
 offset_left = 841.0
 offset_top = 271.0
@@ -175,7 +175,7 @@ theme_override_font_sizes/font_size = 24
 text = "STATUS"
 vertical_alignment = 1
 
-[node name="Region" type="Label" parent="."]
+[node name="Region" type="Label" parent="." unique_id=1044254187]
 layout_mode = 0
 offset_left = 665.0
 offset_top = 328.0
@@ -187,7 +187,7 @@ theme_override_font_sizes/font_size = 24
 text = "REGION"
 vertical_alignment = 1
 
-[node name="Region_List" type="RichTextLabel" parent="."]
+[node name="Region_List" type="RichTextLabel" parent="." unique_id=893139223]
 layout_mode = 0
 offset_left = 842.0
 offset_top = 328.0
@@ -196,12 +196,12 @@ offset_bottom = 392.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("5_skcu4")
 theme_override_fonts/bold_font = ExtResource("3_7ffm2")
-theme_override_fonts/italics_font = ExtResource("6_eochf")
 theme_override_fonts/bold_italics_font = ExtResource("4_mr6ac")
+theme_override_fonts/italics_font = ExtResource("6_eochf")
 theme_override_font_sizes/normal_font_size = 18
 theme_override_font_sizes/bold_font_size = 18
-theme_override_font_sizes/italics_font_size = 18
 theme_override_font_sizes/bold_italics_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
 bbcode_enabled = true
 text = "Region List"
 fit_content = true
@@ -209,7 +209,7 @@ scroll_following = true
 tab_size = 24
 context_menu_enabled = true
 
-[node name="Morphology" type="Label" parent="."]
+[node name="Morphology" type="Label" parent="." unique_id=1339015095]
 layout_mode = 0
 offset_left = 665.0
 offset_top = 454.0
@@ -222,7 +222,7 @@ text = "MORPHOLOGY
 "
 vertical_alignment = 1
 
-[node name="MORPHOLOGY_details" type="RichTextLabel" parent="."]
+[node name="MORPHOLOGY_details" type="RichTextLabel" parent="." unique_id=2008476314]
 custom_minimum_size = Vector2(257, 102)
 layout_mode = 0
 offset_left = 841.0
@@ -232,19 +232,19 @@ offset_bottom = 502.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("5_skcu4")
 theme_override_fonts/bold_font = ExtResource("3_7ffm2")
-theme_override_fonts/italics_font = ExtResource("6_eochf")
 theme_override_fonts/bold_italics_font = ExtResource("4_mr6ac")
+theme_override_fonts/italics_font = ExtResource("6_eochf")
 theme_override_font_sizes/normal_font_size = 18
 theme_override_font_sizes/bold_font_size = 18
-theme_override_font_sizes/italics_font_size = 18
 theme_override_font_sizes/bold_italics_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
 bbcode_enabled = true
 text = "Morphology Details"
 fit_content = true
 tab_size = 24
 context_menu_enabled = true
 
-[node name="Diets" type="Label" parent="."]
+[node name="Diets" type="Label" parent="." unique_id=1125363731]
 layout_mode = 0
 offset_left = 665.0
 offset_top = 606.0
@@ -256,7 +256,7 @@ theme_override_font_sizes/font_size = 24
 text = "DIETS"
 vertical_alignment = 1
 
-[node name="Diets_List" type="RichTextLabel" parent="."]
+[node name="Diets_List" type="RichTextLabel" parent="." unique_id=574882713]
 custom_minimum_size = Vector2(257, 95)
 layout_mode = 0
 offset_left = 841.0
@@ -266,12 +266,12 @@ offset_bottom = 678.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("5_skcu4")
 theme_override_fonts/bold_font = ExtResource("3_7ffm2")
-theme_override_fonts/italics_font = ExtResource("6_eochf")
 theme_override_fonts/bold_italics_font = ExtResource("4_mr6ac")
+theme_override_fonts/italics_font = ExtResource("6_eochf")
 theme_override_font_sizes/normal_font_size = 18
 theme_override_font_sizes/bold_font_size = 18
-theme_override_font_sizes/italics_font_size = 18
 theme_override_font_sizes/bold_italics_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
 bbcode_enabled = true
 text = "Diets List"
 fit_content = true
@@ -279,7 +279,7 @@ scroll_following = true
 tab_size = 24
 context_menu_enabled = true
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1141521723]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
 offset_left = 49.0

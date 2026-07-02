@@ -112,25 +112,36 @@ func open_labrador_wolf_alamanac():
 	AlmanacOpenCloser.open_wolf_species_page_6()
 	
 func _ready():
-	if WolfData._get_Interior_Alaskan_Wolf_Rescue_Status() or WolfData._get_Italian_Wolf_Rescue_Status() or WolfData._get_Labrador_Wolf_Rescue_Status() == true:
+	# Interior Alaskan Wolf Rescued
+	if WolfData._get_Interior_Alaskan_Wolf_Rescue_Status()  == true:
 		#Rescued
 		InteriorAlaskanWolfImage.disabled = false
 		interior_alaskan_wolf_image()
 		InteriorAlaskanWolfLabel.disabled = false
 		InteriorAlaskanWolfLabel.text = WolfData._get_Interior_Alaskan_Wolf_Name()
+	
+	#Not Rescued
+	else:	
+		InteriorAlaskanWolfImage.disabled = true
+		InteriorAlaskanWolfLabel.disabled = true
+	
+	#Italian Wolf Rescued
+	if WolfData._get_Italian_Wolf_Rescue_Status()  == true	:
 		ItalianWolfImage.disabled = false
 		italian_wolf_image()
 		ItalianWolfLabel.disabled = false
 		ItalianWolfLabel.text = WolfData._get_Italian_Wolf_Name()
+		ItalianWolfImage.disabled = true
+		ItalianWolfLabel.disabled = true
+	
+	#Labrador Wolf Rescued
+	if WolfData._get_Labrador_Wolf_Rescue_Status() == true :
 		LabradorWolfImage.disabled = false
 		labrador_wolf_image()
 		LabradorWolfLabel.disabled = false
 		LabradorWolfLabel.text = WolfData._get_Labrador_Wolf_Name()
+	
+	#Not Rescued
 	else:
-		#not Rescued
-		InteriorAlaskanWolfImage.disabled = true
-		InteriorAlaskanWolfLabel.disabled = true
-		ItalianWolfImage.disabled = true
-		ItalianWolfLabel.disabled = true
 		LabradorWolfImage.disabled = true
 		LabradorWolfLabel.disabled = true
