@@ -14,9 +14,9 @@
 
 ## **Program Used**
 
-1. **Godot 4.5 - Windows**
+1. **Godot 4.2.2 - Windows**
 
-	[4]: https://github.com/godotengine/godot/releases/download/4.5-stable/Godot_v4.5-stable_mono_win64.zip
+	[4]: https://release-assets.githubusercontent.com/github-production-release-asset/688986521/f7943d38-fc88-4a73-b369-139eb859ec3a?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-07-04T01%3A42%3A02Z&rscd=attachment%3B+filename%3DGodot_v4.2.2-stable_win64.exe.zip&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-07-04T00%3A41%3A18Z&ske=2026-07-04T01%3A42%3A02Z&sks=b&skv=2018-11-09&sig=mYyA5T%2F%2F9vGCnawauP4VgnauO%2FIKfuC1crw3o5QeRjM%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4MzEyNzc3MywibmJmIjoxNzgzMTI1OTczLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.q57_tI1nLOWDaGw2miN_l1t7ILhVSIYJ_63pxchtqb8&response-content-disposition=attachment%3B%20filename%3DGodot_v4.2.2-stable_win64.exe.zip&response-content-type=application%2Foctet-stream
 	[<img src="https://godotengine.org/assets/logo_dark.svg" width="128"/>][4]
 	
    
